@@ -1,0 +1,10 @@
+default:
+    type: "postgres"
+    host: "localhost"
+    port: 5432
+    username: "kingdom_rush_user"
+    password: process.NODE_ENV.DB_PASSWORD
+    database: "kingdom_rush_db"
+    entities: ["dist/entity/*.js"]
+    logging: true
+    synchronize: true
