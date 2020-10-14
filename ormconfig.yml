@@ -8,3 +8,16 @@ default:
     entities: ["dist/entity/*.js"]
     logging: true
     synchronize: true
+    dropSchema: false
+
+test:
+    type: "postgres"
+    host: "localhost"
+    port: 5432
+    username: "test_user"
+    password: "password"
+    database: "test_db"
+    entities: ["src/entity/*.ts"]
+    logging: false
+    synchronize: true
+    dropSchema: true
