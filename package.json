@@ -6,7 +6,8 @@
     "scripts": {
         "test": "jest",
         "tsc": "tsc -p tsconfig.json --skipLibCheck",
-        "start": "npm run tsc && npm run format && node dist/index.js",
+        "start": "nodemon src/index.ts",
+        "build": "npm run tsc && npm run format && node dist/index.js",
         "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts"
     },
     "repository": {
@@ -32,8 +33,10 @@
         "@types/graphql": "^14.5.0",
         "@types/jest": "^26.0.14",
         "jest": "^26.5.2",
+        "nodemon": "^2.0.5",
         "prettier": "^2.1.2",
         "ts-jest": "^26.4.1",
+        "ts-node": "^9.0.0",
         "typescript": "^4.0.3"
     },
     "dependencies": {
