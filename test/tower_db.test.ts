@@ -1,5 +1,6 @@
 import { createConnection, getConnection, getRepository } from "typeorm"
-import { TowerType, TowerLevel, TowerKingdom, Tower } from "../src/entity/Tower"
+import { Tower } from "../src/entity/Tower"
+import { TowerType, TowerLevel, TowerKingdom } from "../src/enums/TowerEnums"
 
 beforeAll(async () => {
     await createConnection("test")

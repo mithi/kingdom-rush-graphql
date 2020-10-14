@@ -1,30 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from "typeorm"
-
-export enum TowerType {
-    ARCHER = "archer",
-    BARRACKS = "barracks",
-    MAGE = "mage",
-    ARTILLERY = "artillery",
-}
-
-export enum TowerCategory {
-    SPECIAL = "special",
-    BASIC = "basic",
-}
-
-export enum TowerLevel {
-    LVL1 = 1,
-    LVL2 = 2,
-    LVL3 = 3,
-    LVL4 = 4,
-}
-
-export enum TowerKingdom {
-    KR = "kingdom rush",
-    KRF = "kingdom rush: frontiers",
-    KRO = "kingdom rush: origin",
-    KRV = "kingdom rush: vengeance",
-}
+import { TowerType, TowerCategory, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 
 @Entity({ name: "Towers" })
 export class Tower extends BaseEntity {
