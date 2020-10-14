@@ -1,28 +1,167 @@
 import { createConnection } from "typeorm"
-import { TowerType, TowerLevel, TowerKingdom, Tower } from "./entity/Tower"
+import { Tower } from "./entity/Tower"
+import { ApolloServer, gql } from "apollo-server-express"
+const express = require("express")
 
-createConnection().then(async connection => {
-    let tower = new Tower()
-    tower.name = "Militia Barracks"
-    tower.towerType = TowerType.BARRACKS
-    tower.level = TowerLevel.LVL1
-    tower.kingdom = TowerKingdom.KR
-    tower.notes =
-        " This tower spawns three militia which block and attack enemies. Militia are the most basic soldier available, merely civilians with very little training, armor, and weapons. However, with additional tower support, they can hold their own against even a much larger army. They can fall pretty quickly to Orcs, so it appears that they aren't as tough as the tower description says."
+const typeDefs = gql`
+    type Query {
+        getTower(name: String!): Tower
+        getTowerById(id: Int): Tower
+    }
 
-    await connection.manager.save(tower)
-    console.log("Tower has been saved")
+    type Mutation {
+        addTower(
+            name: String!
+            notes: String!
+            level: Int!
+            kingdom: String!
+            towerType: String!
+        ): TowerMutationResult
+    }
 
-    let savedTowers = await connection.manager.find(Tower)
-    console.log("All towers from the db: ", savedTowers)
+    type TowerMutationResult {
+        success: Boolean!
+        message: String!
+        id: Int
+        name: String
+    }
 
-    await connection
-        .createQueryBuilder()
-        .delete()
-        .from(Tower)
-        .where("id <= :id", { id: 20 })
-        .execute()
+    type Tower {
+        id: Int!
+        name: String!
+        notes: String!
+        level: Int!
+        kingdom: String!
+        towerType: String!
+    }
+`
 
-    let savedTowers2 = await connection.manager.find(Tower)
-    console.log("All towers from the db after deleting ", savedTowers2)
-})
+/**
+
+-------------------
+EXAMPLE MUTATION:  ADD A TOWER
+-------------------
+mutation {
+  addTower(
+    name: "mks"
+    notes: "notes"
+    level: 4
+    kingdom: "kingdom rush"
+    towerType: "barracks"
+  ) {
+    success,
+    message,
+    name,
+    id
+  }
+}
+------------
+example result of mutation
+------------
+
+{
+  "data": {
+    "addTower": {
+      "success": false,
+      "message": "duplicate key value violates unique constraint \"UQ_70fea5a9b9cbd8b66dc86b35df2\"",
+      "name": "mks",
+      "id": null
+    }
+  }
+}
+
+{
+  "data": {
+    "addTower": {
+      "success": true,
+      "message": "Tower saved successfully",
+      "name": "mkxs",
+      "id": 36
+    }
+  }
+}
+
+-------------------
+EXAMPLE QUERY
+-------------------
+
+{
+	getTower(name: "mili44rry brracks") {
+    id,
+    name,
+    level,
+    towerType
+  }
+}
+
+{
+  getTowerById(id: 36) {
+    name
+    kingdom
+  }
+}
+
+
+------------
+example result of query
+------------
+
+{
+  "data": {
+    "getTowerById": {
+      "name": "mkxs",
+      "kingdom": "kingdom rush"
+    }
+  }
+}
+
+ ***/
+const resolvers = {
+    Query: {
+        getTower: async (_: any, args: any) => {
+            return await Tower.findOne({ where: { name: args.name } })
+        },
+        getTowerById: async (_: any, args: any) => {
+            return await Tower.findOne({ where: { id: args.id } })
+        },
+    },
+    Mutation: {
+        addTower: async (_: any, args: any) => {
+            const { name, towerType, level, kingdom, notes } = args
+            try {
+                const tower = Tower.create({ name, towerType, level, kingdom, notes })
+                await tower.save()
+                const savedTower = await Tower.findOne({ where: { name } })
+                return {
+                    success: true,
+                    id: savedTower ? savedTower.id : null,
+                    name,
+                    message: "Tower saved successfully",
+                }
+            } catch (error) {
+                console.log("Add tower error!!!", error.message)
+                return {
+                    success: false,
+                    message: error.message,
+                    name,
+                }
+            }
+        },
+    },
+}
+
+const startServer = async () => {
+    const server = new ApolloServer({ typeDefs, resolvers })
+
+    await createConnection()
+
+    const app = express()
+
+    server.applyMiddleware({ app })
+
+    app.listen({ port: 4000 }, () =>
+        console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+    )
+}
+
+startServer()
