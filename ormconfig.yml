@@ -5,10 +5,10 @@ default:
     username: "kingdom_rush_user"
     password: process.NODE_ENV.DB_PASSWORD
     database: "kingdom_rush_db"
-    entities: ["dist/entity/*.js"]
-    logging: true
+    entities: ["dist/entity/*.js", "src/entity/*.ts"]
+    logging: false
     synchronize: true
-    dropSchema: false
+    dropSchema: true
 
 test:
     type: "postgres"
