@@ -5,7 +5,7 @@
     "main": "dist/index.js",
     "scripts": {
         "test": "jest",
-        "tsc": "tsc -p tsconfig.json",
+        "tsc": "tsc -p tsconfig.json --skipLibCheck",
         "start": "npm run tsc && npm run format && node dist/index.js",
         "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts"
     },
@@ -29,6 +29,7 @@
     },
     "homepage": "https://github.com/mithi/kingdom-rush-graphql#readme",
     "devDependencies": {
+        "@types/graphql": "^14.5.0",
         "@types/jest": "^26.0.14",
         "jest": "^26.5.2",
         "prettier": "^2.1.2",
@@ -37,8 +38,10 @@
     },
     "dependencies": {
         "@types/express": "^4.17.8",
+        "apollo-server": "^2.18.2",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
+        "graphql": "^15.3.0",
         "pg": "^8.4.1",
         "reflect-metadata": "^0.1.13",
         "typeorm": "^0.2.28"
