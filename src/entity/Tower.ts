@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from "typeorm"
-import { TowerType, TowerCategory, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
+import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 import { ObjectType, Field, ID } from "type-graphql"
 
 @ObjectType()
@@ -12,10 +12,6 @@ export class Tower extends BaseEntity {
     @Field(() => String)
     @Column({ unique: true })
     name: string
-
-    @Field(() => String)
-    @Column()
-    notes: string
 
     @Field(_ => TowerType)
     @Column({
@@ -37,12 +33,4 @@ export class Tower extends BaseEntity {
         enum: TowerKingdom,
     })
     kingdom: TowerKingdom
-
-    @Field(_ => TowerCategory)
-    @Column({
-        type: "enum",
-        enum: TowerCategory,
-        default: "basic",
-    })
-    towerCategory: TowerCategory
 }
