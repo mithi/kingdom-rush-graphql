@@ -1,5 +1,6 @@
 name: dark knights
 number_of_levels: 4
+type: artillery
 abilities:
     - brutal strike
     - armor of thorns
