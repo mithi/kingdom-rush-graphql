@@ -1,0 +1,56 @@
+name: orc warriors den
+type: barracks
+number_of_levels: 4
+abilities:
+    - lust for combat
+    - captain promotion
+    - seal of blood
+levels:
+    1:
+        damage:
+            min: 1
+            max: 3
+        health: 60
+        armor: 0
+        respawn: 12
+        build_cost: 70
+        health_upgraded: 78
+        damage_upgraded:
+            min: 1
+            max: 3
+    2:
+        damage:
+            min: 3
+            max: 4
+        health: 100
+        armor: 10
+        respawn: 12
+        build_cost: 110
+        health_upgraded: 140
+        damage_upgraded:
+            min: 3
+            max: 4
+    3:
+        damage:
+            min: 5
+            max: 7
+        health: 150
+        armor: 15
+        respawn: 12
+        build_cost: 160
+        health_upgraded: 195
+        damage_upgraded:
+            min: 5
+            max: 7
+    4:
+        damage:
+            min: 9
+            max: 14
+        health: 200
+        armor: 20
+        respawn: 12
+        build_cost: 230
+        health_upgraded: 260
+        damage_upgraded:
+            min: 9
+            max: 15

@@ -1,0 +1,55 @@
+name: dark knights
+number_of_levels: 4
+abilities:
+    - brutal strike
+    - armor of thorns
+    - impervious
+levels:
+    1:
+        damage:
+            min: 2
+            max: 3
+        health: 100
+        armor: 40
+        respawn: 8
+        build_cost: 110
+        health_upgraded: 130
+        damage_upgraded:
+            min: 2
+            max: 3
+    2:
+        damage:
+            min: 4
+            max: 10
+        health: 130
+        armor: 50
+        respawn: 8
+        build_cost: 160
+        health_upgraded: 169
+        damage_upgraded:
+            min: 4
+            max: 11
+    3:
+        damage:
+            min: 7
+            max: 20
+        health: 180
+        armor: 60
+        respawn: 8
+        build_cost: 220
+        health_upgraded: 234
+        damage_upgraded:
+            min: 7
+            max: 22
+    4:
+        damage:
+            min: 12
+            max: 36
+        health: 240
+        armor: 75
+        respawn: 10
+        build_cost: 260
+        health_upgraded: 312
+        damage_upgraded:
+            min: 13
+            max: 39

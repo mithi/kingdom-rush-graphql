@@ -1,0 +1,83 @@
+---
+name: "dwarven bombard"
+physical_damage:
+    min: 8
+    max: 15
+fire_rate: slow
+range: average
+level: 1
+fire_rate_magnitude: 3
+range_magnitude: 320
+build_cost: 125
+range_magnitude_upgraded: 352
+physical_damage_upgraded:
+    min: 9
+    max: 17
+---
+name: "dwarven artillery"
+physical_damage:
+    min: 20
+    max: 40
+fire_rate: very slow
+range: average
+level: 2
+fire_rate_magnitude: 3
+range_magnitude: 320
+build_cost: 220
+range_magnitude_upgraded: 352
+physical_damage_upgraded:
+    min: 22
+    max: 44
+
+---
+name: "dwarven howitzer"
+physical_damage:
+    min: 30
+    max: 60
+fire_rate: very slow
+range: average
+level: 3
+fire_rate_magnitude: 3
+range_magnitude: 360
+build_cost: 320
+range_magnitude_upgraded: 396
+physical_damage_upgraded:
+    min: 33
+    max: 66
+
+---
+name: "dwaarp"
+physical_damage:
+    min: 25
+    max: 45
+fire_rate: very slow
+range: average
+level: 4
+fire_rate_magnitude: 3
+range_magnitude: 360
+build_cost: 400
+range_magnitude_upgraded: 396
+physical_damage_upgraded:
+    min: 28
+    max: 50
+abilities:
+    - furnace blast
+    - core drill
+---
+name: "battle-mecha t-200"
+physical_damage:
+    min: 25
+    max: 55
+fire_rate: very fast
+range: short
+level: 4
+fire_rate_magnitude: 1
+range_magnitude: 350
+build_cost: 375
+range_magnitude_upgraded: 350
+physical_damage_upgraded:
+    min: 28
+    max: 61
+abilities:
+    - waste disposal
+    - wasp missiles

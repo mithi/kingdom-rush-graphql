@@ -1,0 +1,83 @@
+---
+name: "hunter arbor"
+physical_damage:
+    min: 2
+    max: 5
+fire_rate: fast
+range: average
+level: 1
+fire_rate_magnitude: 0.7
+range_magnitude: 320
+build_cost: 70
+physical_damage_upgraded:
+    min: 3
+    max: 6
+range_magnitude_upgraded: 352
+---
+name: "watcher arbor"
+physical_damage:
+    min: 4
+    max: 9
+fire_rate: fast
+range: long
+level: 2
+fire_rate_magnitude: 0.6
+range_magnitude: 360
+build_cost: 110
+physical_damage_upgraded:
+    min: 5
+    max: 10
+range_magnitude_upgraded: 396
+---
+name: "sentinel arbor"
+physical_damage:
+    min: 5
+    max: 11
+fire_rate: very_fast
+range: great
+level: 3
+fire_rate_magnitude: 0.4
+range_magnitude: 400
+build_cost: 160
+physical_damage_upgraded:
+    min: 6
+    max: 12
+range_magnitude_upgraded: 440
+---
+name: "arcane archers"
+physical_damage:
+    min: 22
+    max: 36
+fire_rate: average
+range: great
+level: 4
+fire_rate_magnitude: 0.8
+range_magnitude: 400
+build_cost: 230
+physical_damage_upgraded:
+    min: 24
+    max: 38
+range_magnitude_upgraded: 440
+abilities:
+    - burst arrows
+    - slumber arrows
+---
+name: "golden longbows"
+physical_damage:
+    min: 45
+    max: 60
+fire_rate: slow
+range: extreme
+level: 4
+fire_rate_magnitude: 1.5
+range_magnitude: 600
+build_cost: 275
+physical_damage_upgraded:
+    min: 48
+    max: 63
+range_magnitude_upgraded: 660
+abilities:
+    - crimson sentence
+    - hunter's mark
+---
+

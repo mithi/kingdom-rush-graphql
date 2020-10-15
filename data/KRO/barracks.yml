@@ -1,0 +1,95 @@
+---
+name: "defender barracks"
+hp: 50
+physical_damage:
+    min: 1
+    max: 4
+refresh_in_seconds: 14
+armor: low
+level: 1
+hp_magnitude: 50
+armor_magnitude: 30
+build_cost: 100
+build_cost_upgraded: 90
+armor_magnitude_upgraded: 40
+physical_damage_upgraded:
+    min: 3
+    max: 5
+---
+name: "warden barracks"
+hp: 90
+physical_damage:
+    min: 3
+    max: 7
+refresh_in_seconds: 14
+armor: medium
+level: 2
+hp_magnitude: 90
+armor_magnitude: 40
+build_cost: 160
+build_cost_upgraded: 144
+armor_magnitude_upgraded: 50
+physical_damage_upgraded:
+    min: 5
+    max: 9
+
+---
+name: "ranger barracks"
+hp: 140
+physical_damage:
+    min: 8
+    max: 12
+refresh_in_seconds: 14
+armor: medium
+level: 3
+hp_magnitude: 140
+armor_magnitude: 50
+build_cost: 250
+build_cost_upgraded: 225
+armor_magnitude_upgraded: 60
+physical_damage_upgraded:
+    min: 11
+    max: 14
+
+---
+name: "bladesinger hall"
+hp: 200
+physical_damage:
+    min: 10
+    max: 14
+refresh_in_seconds: 15
+armor: medium
+level: 4
+hp_magnitude: 200
+armor_magnitude: 50
+build_cost: 275
+build_cost_upgraded: 275
+armor_magnitude_upgraded: 60
+physical_damage_upgraded:
+    min: 14
+    max: 18
+abilities:
+    - perfect parry
+    - blade dance
+    - edge mastery
+---
+name: "forest keepers"
+hp: 300
+physical_damage:
+    min: 24
+    max: 36
+refresh_in_seconds: 12
+armor: none
+level: 4
+hp_magnitude: 300
+armor_magnitude: 0
+build_cost: 300
+build_cost_upgraded: 300
+armor_magnitude_upgraded: 10
+physical_damage_upgraded:
+    min: 30
+    max: 42
+abilities:
+    - circle of life
+    - eerie gardener
+    - ancient oak spear

@@ -1,0 +1,48 @@
+name: infernal mage
+type: magic
+abilities:
+    - affliction
+    - lava fissure
+    - infernal portal
+number_of_levels: 4
+levels:
+    1:
+        damage:
+            min: 5
+            max: 16
+        fire_rate: 1.8
+        range: 300
+        build_cost: 100
+        damage_upgraded:
+            min: 5
+            max: 17
+    2:
+        damage:
+            min: 16
+            max: 49
+        fire_rate: 1.8
+        range: 315
+        build_cost: 180
+        damage_upgraded:
+            min: 17
+            max: 53
+    3:
+        damage:
+            min: 33
+            max: 100
+        fire_rate: 1.8
+        range: 330
+        build_cost: 250
+        damage_upgraded:
+            min: 36
+            max: 110
+    4:
+        damage:
+            min: 49
+            max: 146
+        fire_rate: 1.8
+        range: 350
+        build_cost: 300
+        damage_upgraded:
+            min: 53
+            max: 160

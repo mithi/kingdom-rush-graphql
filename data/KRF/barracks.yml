@@ -1,0 +1,78 @@
+---
+name: "militia barracks"
+hp: 50
+physical_damage:
+    min: 1
+    max: 3
+refresh_in_seconds: 10
+level: 1
+hp_magnitude: 50
+armor_magnitude: 0
+build_cost: 70
+hp_magnitude_upgraded: 55
+armor_magnitude_upgraded: 20
+refresh_in_seconds_upgraded: 8
+---
+name: "footmen barracks"
+hp: 100
+physical_damage:
+    min: 3
+    max: 4
+refresh_in_seconds: 10
+level: 2
+hp_magnitude: 100
+armor_magnitude: 15
+build_cost: 110
+hp_magnitude_upgraded: 110
+armor_magnitude_upgraded: 35
+refresh_in_seconds_upgraded: 8
+---
+name: "knights barracks"
+hp: 150
+physical_damage:
+    min: 6
+    max: 10
+refresh_in_seconds: 10
+level: 3
+hp_magnitude: 150
+armor_magnitude: 30
+build_cost: 160
+hp_magnitude_upgraded: 165
+armor_magnitude_upgraded: 50
+refresh_in_seconds_upgraded: 8
+---
+name: "assassins' guild"
+hp: 200
+physical_damage:
+    min: 10
+    max: 14
+refresh_in_seconds: 10
+level: 4
+hp_magnitude: 200
+armor_magnitude: 0
+build_cost: 230
+hp_magnitude_upgraded: 220
+armor_magnitude_upgraded: 20
+refresh_in_seconds_upgraded: 8
+abilities:
+    - "sneak attack"
+    - "counterattack"
+    - "pickpocket"
+---
+name: "knights templar"
+hp: 250
+physical_damage:
+    min: 20
+    max: 30
+refresh_in_seconds: 15
+level: 4
+hp_magnitude: 250
+armor_magnitude: 40
+build_cost: 230
+hp_magnitude_upgraded: 275
+armor_magnitude_upgraded: 60
+refresh_in_seconds_upgraded: 13
+abilities:
+    - arterial strike
+    - holy grail
+    - toughness

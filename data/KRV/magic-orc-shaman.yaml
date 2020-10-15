@@ -1,0 +1,48 @@
+name: orc shaman
+type: magic
+number_of_levels: 4
+abilities:
+    - healing roots
+    - meteor shower
+    - static shock
+levels:
+    1:
+        damage:
+            min: 4
+            max: 20
+        fire_rate: 2.3
+        range: 370
+        build_cost: 130
+        damage_upgraded:
+            min: 4
+            max: 22
+    2:
+        damage:
+            min: 10
+            max: 55
+        fire_rate: 2.3
+        range: 370
+        build_cost: 190
+        damage_upgraded:
+            min: 11
+            max: 60
+    3:
+        damage:
+            min: 20
+            max: 110
+        fire_rate: 2.3
+        range: 370
+        build_cost: 260
+        damage_upgraded:
+            min: 22
+            max: 121
+    4:
+        damage:
+            min: 35
+            max: 190
+        fire_rate: 2.3
+        range: 370
+        build_cost: 320
+        damage_upgraded:
+            min: 38
+            max: 209

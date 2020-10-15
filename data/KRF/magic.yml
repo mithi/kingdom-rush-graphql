@@ -1,0 +1,81 @@
+---
+name: "mage tower"
+magical_damage:
+    min: 9
+    max: 17
+fire_rate: slow
+range: short
+level: 1
+build_cost: 100
+fire_rate_magnitude: 1.5
+range_magnitude: 280
+range_magnitude_upgraded: 308
+magical_damage_upgraded:
+    min: 10
+    max: 19
+---
+name: "adept tower"
+magical_damage:
+    min: 23
+    max: 43
+fire_rate: slow
+range: average
+level: 2
+build_cost: 160
+fire_rate_magnitude: 1.5
+range_magnitude: 320
+range_magnitude_upgraded: 352
+magical_damage_upgraded:
+    min: 26
+    max: 48
+---
+name: "wizard tower"
+magical_damage:
+    min: 40
+    max: 74
+fire_rate: slow
+range: long
+level: 3
+build_cost: 240
+fire_rate_magnitude: 1.5
+range_magnitude: 360
+range_magnitude_upgraded: 396
+magical_damage_upgraded:
+    min: 44
+    max: 82
+---
+name: "archmage tower"
+magical_damage:
+    min: 60
+    max: 120
+fire_rate: slow
+range: long
+level: 4
+build_cost: 300
+fire_rate_magnitude: 1.5
+range_magnitude: 396
+range_magnitude_upgraded: 436
+magical_damage_upgraded:
+    min: 66
+    max: 132
+abilities:
+    - critical mass
+    - twister
+---
+name: "necromancer tower"
+magical_damage:
+    min: 20
+    max: 70
+fire_rate: average
+range: long
+level: 4
+build_cost: 300
+fire_rate_magnitude: 1
+range_magnitude: 396
+range_magnitude_upgraded: 436
+magical_damage_upgraded:
+    min: 22
+    max: 77
+abilities:
+    - pestilence
+    - summon death rider

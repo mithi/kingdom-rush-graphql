@@ -1,0 +1,51 @@
+name: goblirangs
+number_of_levels: 4
+abilities:
+    - biggarangs
+    - readbang
+    - angry bees
+levels:
+    1:
+        damage:
+            min: 3
+            max: 4
+        fire_rate: 1.4
+        range: 350
+        build_cost: 90
+        damage_upgraded:
+            min: 3
+            max: 5
+        range_upgraded: 368
+    2:
+        damage:
+            min: 7
+            max: 14
+        fire_rate: 1.4
+        range: 350
+        build_cost: 140
+        damage_upgraded:
+            min: 7
+            max: 15
+        range_upgraded: 140
+    3:
+        damage:
+            min: 14
+            max: 26
+        fire_rate: 1.4
+        range: 350
+        build_cost: 200
+        damage_upgraded:
+            min: 15
+            max: 28
+        range_upgraded: 368
+    4:
+        damage:
+            min: 25
+            max: 47
+        fire_rate: 1.4
+        range: 350
+        build_cost: 270
+        damage_upgraded:
+            min: 27
+            max: 51
+        range_upgraded: 368

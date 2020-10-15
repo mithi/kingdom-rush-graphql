@@ -1,0 +1,83 @@
+---
+name: mystic dais
+magical_damage:
+    min: 8
+    max: 12
+fire_rate: slow
+range: short
+level: 1
+fire_rate_magnitude: 1.5
+range_magnitude: 280
+build_cost: 100
+range_magnitude_upgraded: 308
+magical_damage_upgraded:
+    min: 10
+    max: 14
+---
+name: arcanist dais
+magical_damage:
+    min: 18
+    max: 30
+fire_rate: slow
+range: average
+level: 2
+fire_rate_magnitude: 1.5
+range_magnitude: 320
+build_cost: 160
+range_magnitude_upgraded: 352
+magical_damage_upgraded:
+    min: 22
+    max: 36
+---
+name: eldritch dais
+magical_damage:
+    min: 34
+    max: 56
+fire_rate: slow
+range: long
+level: 3
+fire_rate_magnitude: 1.5
+range_magnitude: 360
+build_cost: 250
+range_magnitude_upgraded: 396
+magical_damage_upgraded:
+    min: 40
+    max: 66
+---
+name: wild magus
+magical_damage:
+    min: 8
+    max: 16
+fire_rate: very fast
+range: long
+level: 4
+fire_rate_magnitude: 0.3
+range_magnitude: 360
+build_cost: 300
+range_magnitude_upgraded: 396
+magical_damage_upgraded:
+    min: 10
+    max: 19
+abilities:
+    - eldritch doom
+    - ward of disruption
+---
+name: high elven mage
+magical_damage:
+    min: 41
+    max: 74
+fire_rate: slow
+range: long
+level: 4
+fire_rate_magnitude: 1.5
+range_magnitude: 360
+build_cost: 300
+range_magnitude_upgraded: 396
+magical_damage_upgraded:
+    min: 46
+    max: 83
+abilities:
+    - time lapse
+    - arcane sentinel
+---
+

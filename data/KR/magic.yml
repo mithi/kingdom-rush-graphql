@@ -1,0 +1,86 @@
+---
+name: "mage tower"
+magical_damage:
+    min: 9
+    max: 17
+fire_rate: slow
+range: short
+level: 1
+build_cost: 100
+fire_rate_in_seconds: 1.5
+range_magnitude: 280
+range_magnitude_upgraded: 308
+build_cost_upgraded: 90
+magical_damage_upgraded:
+    min: 11
+    max: 20
+---
+name: "adept tower"
+magical_damage:
+    min: 23
+    max: 43
+fire_rate: slow
+range: average
+level: 2
+build_cost: 160
+fire_rate_in_seconds: 1.5
+range_magnitude: 320
+range_magnitude_upgraded: 352
+build_cost_upgraded: 144
+magical_damage_upgraded:
+    min: 27
+    max: 50
+---
+name: "wizard tower"
+magical_damage:
+    min: 40
+    max: 74
+fire_rate: slow
+range: long
+level: 3
+build_cost: 240
+fire_rate_in_seconds: 1.5
+range_magnitude: 360
+range_magnitude_upgraded: 396
+build_cost_upgraded: 216
+magical_damage_upgraded:
+    min: 46
+    max: 86
+---
+name: "arcane tower"
+magical_damage:
+    min: 76
+    max: 140
+fire_rate: very slow
+range: great
+level: 4
+build_cost: 300
+fire_rate_in_seconds: 2
+range_magnitude: 400
+range_magnitude_upgraded: 440
+build_cost_upgraded: 270
+magical_damage_upgraded:
+    min: 88
+    max: 161
+abilities:
+    - "death ray"
+    - "teleport"
+---
+name: "sorcerer tower"
+magical_damage:
+    min: 42
+    max: 78
+fire_rate: slow
+range: great
+level: 4
+build_cost: 300
+fire_rate_in_seconds: 1.5
+range_magnitude: 400
+range_magnitude_upgraded: 440
+build_cost_upgraded: 270
+magical_damage_upgraded:
+    min: 49
+    max: 90
+abilities:
+    - "summon elemental"
+    - "polymorph"

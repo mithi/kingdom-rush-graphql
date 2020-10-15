@@ -1,0 +1,72 @@
+---
+name: "archer tower"
+description: "archers ready to srike at your enimies from a distance"
+physical_damage:
+    min: 4
+    max: 6
+fire_rate: average
+range: short
+level: 1
+build_cost: 70
+range_magnitude: 280
+fire_rate_in_seconds: 0.8
+range_magnitude_upgraded: 339
+---
+name: "marksman tower"
+description: "marksmen shoot broadhead arrows, deading more damage. their longbows have longer attack range."
+physical_damage:
+    min: 7
+    max: 11
+fire_rate: fast
+range: average
+level: 2
+build_cost: 110
+range_magnitude: 320
+fire_rate_in_seconds: 0.6
+range_magnitude_upgraded: 387
+---
+name: "sharpshooter tower"
+description: "once archers reach the sharpshooter level, their attack range and damage potential increase above any other archers"
+physical_damage:
+    min: 10
+    max: 16
+fire_rate: fast
+range: long
+level: 3
+build_cost: 160
+range_magnitude: 360
+fire_rate_in_seconds: 0.5
+range_magnitude_upgraded: 436
+
+---
+name: "rangers hideout"
+description: "legendary masters of the bow, they can unleash a hail of arrows faster and further than any other force in the realm"
+physical_damage:
+    min: 13
+    max: 19
+fire_rate: very fast
+range: great
+level: 4
+build_cost: 230
+range_magnitude: 400
+fire_rate_in_seconds: 0.4
+range_magnitude_upgraded: 484
+abilities:
+    - "poison arrows"
+    - "wrath of the forest"
+---
+name: "musketeer garrison"
+description: "patient, careful, and deadly accurate long-range deadeye shooters, with advanced weaponry"
+physical_damage:
+    min: 35
+    max: 65
+fire_rate: slow
+range: extreme
+level: 4
+build_cost: 230
+range_magnitude: 470
+fire_rate_in_seconds: 1.5
+range_magnitude_upgraded: 569
+abilities:
+    - "sniper shot"
+    - "shrapnel shot"

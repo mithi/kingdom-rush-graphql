@@ -1,0 +1,86 @@
+---
+name: "dwarven bombard"
+physical_damage:
+    min: 8
+    max: 15
+range: average
+fire_rate: very slow
+level: 1
+build_cost: 125
+range_magnitude: 320
+fire_rate_in_seconds: 3
+build_cost_upgraded: 112
+physical_damage_upgraded:
+    min: 9
+    max: 17
+range_magnitude_upgraded: 352
+---
+name: "dwarven artillery"
+physical_damage:
+    min: 20
+    max: 40
+range: average
+fire_rate: very slow
+level: 2
+build_cost: 220
+range_magnitude: 320
+fire_rate_in_seconds: 3
+build_cost_upgraded: 198
+physical_damage_upgraded:
+    min: 22
+    max: 44
+range_magnitude_upgraded: 352
+---
+name: "dwarven howitzer"
+physical_damage:
+    min: 30
+    max: 60
+range: average
+fire_rate: very slow
+level: 3
+build_cost: 320
+range_magnitude: 360
+fire_rate_in_seconds: 3
+build_cost_upgraded: 288
+physical_damage_upgraded:
+    min: 33
+    max: 66
+range_magnitude_upgraded: 396
+---
+name: "500mm big bertha"
+physical_damage:
+    min: 50
+    max: 100
+range: long
+fire_rate: very slow
+level: 4
+build_cost: 400
+range_magnitude: 360
+fire_rate_in_seconds: 3.5
+build_cost_upgraded: 360
+physical_damage_upgraded:
+    min: 55
+    max: 110
+range_magnitude_upgraded: 396
+abilities:
+    - "dragon breath launcher"
+    - "cluster launcher"
+---
+name: "tesla x104"
+physical_damage:
+    min: 60
+    max: 110
+range: average
+fire_rate: very slow
+level: 4
+build_cost: 375
+range_magnitude: 330
+fire_rate_in_seconds: 2.2
+build_cost_upgraded: 337
+physical_damage_upgraded:
+    min: 66
+    max: 121
+range_magnitude_upgraded: 363
+abilities:
+    - supercharged bolt
+    - overcharge

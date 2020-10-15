@@ -1,0 +1,82 @@
+---
+name: stone cirlce
+physical_damage:
+    min: 7
+    max: 12
+fire_rate: very slow
+range: short
+level: 1
+fire_rate_magnitude: 3
+range_magnitude: 300
+build_cost: 125
+range_magnitude_upgraded: 330
+physical_damage_upgraded:
+    min: 8
+    max: 14
+---
+name: boulder circle
+physical_damage:
+    min: 18
+    max: 30
+fire_rate: very slow
+range: average
+level: 2
+fire_rate_magnitude: 3
+range_magnitude: 340
+build_cost: 220
+range_magnitude_upgraded: 374
+physical_damage_upgraded:
+    min: 20
+    max: 33
+---
+name: menhir cirlce
+physical_damage:
+    min: 30
+    max: 50
+fire_rate: very slow
+range: long
+level: 3
+fire_rate_magnitude: 3
+range_magnitude: 380
+build_cost: 320
+range_magnitude_upgraded: 418
+physical_damage_upgraded:
+    min: 33
+    max: 55
+
+---
+name: arch-druid henge
+physical_damage:
+    min: 30
+    max: 50
+fire_rate: fast
+range: long
+level: 4
+fire_rate_magnitude: 1.7
+range_magnitude: 380
+build_cost: 375
+range_magnitude_upgraded: 418
+physical_damage_upgraded:
+    min: 33
+    max: 55
+abilities:
+    - runed bears
+    - sylvan curse
+---
+name: weirdwood
+physical_damage:
+    min: 62
+    max: 106
+fire_rate: very slow
+range: great
+level: 4
+fire_rate_magnitude: 3.5
+range_magnitude: 420
+build_cost: 400
+range_magnitude_upgraded: 462
+physical_damage_upgraded:
+    min: 69
+    max: 117
+abilities:
+    - fiery nut
+    - clobber

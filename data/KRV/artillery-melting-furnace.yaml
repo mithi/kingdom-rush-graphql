@@ -1,0 +1,49 @@
+name: melting furnace
+number_of_levels: 4
+type: artillery
+abilities:
+    - red hot coal
+    - abrasive heat
+    - burning fuel
+
+levels:
+    1:
+        damage:
+            min: 5
+            max: 7
+        fire_rate: 4
+        range: 320
+        build_cost: 120
+        damage_upgraded:
+            min: 5
+            max: 7
+    2:
+        damage:
+            min: 14
+            max: 18
+        fire_rate: 4
+        range: 320
+        build_cost: 190
+        damage_upgraded:
+            min: 15
+            max: 19
+    3:
+        damage:
+            min: 25
+            max: 31
+        fire_rate: 4
+        range: 320
+        build_cost: 240
+        damage_upgraded:
+            min: 27
+            max: 34
+    4:
+        damage:
+            min: 41
+            max: 50
+        fire_rate: 4
+        range: 320
+        build_cost: 300
+        damage_upgraded:
+            min: 45
+            max: 55

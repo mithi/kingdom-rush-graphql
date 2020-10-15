@@ -1,0 +1,57 @@
+name: Elite Harassers
+type: barracks
+number_of_levels: 4
+number_of_units: 2
+abilities:
+    - backstab
+    - arrow storm
+    - fury of the twilight
+levels:
+    1:
+        damage:
+            min: 5
+            max: 7
+        health: 70
+        armor: 0
+        respawn: 12
+        build_cost: 100
+        damage_upgraded:
+            min: 5
+            max: 7
+        health_upgraded: 90
+    2:
+        damage:
+            min: 10
+            max: 13
+        health: 130
+        armor: 0
+        respawn: 12
+        build_cost: 150
+        damage_upgraded:
+            min: 11
+            max: 14
+        health_upgraded: 169
+    3:
+        damage:
+            min: 15
+            max: 25
+        health: 160
+        armor: 0
+        respawn: 12
+        build_cost: 200
+        damage_upgraded:
+            min: 16
+            max: 27
+        health_upgraded: 208
+    4:
+        damage:
+            min: 25
+            max: 35
+        health: 220
+        armor: 0
+        respawn: 12
+        build_cost:250
+        damage_upgraded:
+            min: 27
+            max: 38
+        health_upgraded: 286

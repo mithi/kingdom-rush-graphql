@@ -1,0 +1,87 @@
+---
+name: "militia barracks"
+description: ""
+hp: 50
+physical_damage:
+    min: 1
+    max: 3
+refresh_in_seconds: 10
+armor: none
+level: 1
+build_cost: 70
+hp_magnitude: 50
+armor_magnitude: 0
+armor_magnitude_upgraded: 10
+hp_upgraded: 60
+refresh_in_seconds_upgraded: 8
+---
+name: "footmen barracks"
+hp: 199
+physical_damage:
+    min: 3
+    max: 4
+refresh_in_seconds: 10
+armor: low
+level: 2
+build_cost: 110
+hp_magnitude: 100
+armor_magnitude: 15
+armor_magnitude_upgraded: 25
+hp_upgraded: 120
+refresh_in_seconds_upgraded: 8
+---
+name: "knights barracks"
+hp: 150
+physical_damage:
+    min: 6
+    max: 10
+refresh_in_seconds: 10
+armor: low
+level: 3
+build_cost: 160
+hp_magnitude: 150
+armor_magnitude: 30
+armor_magnitude_upgraded: 180
+hp_upgraded: 40
+refresh_in_seconds_upgraded: 8
+---
+name: "holy order"
+description: ""
+hp: 200
+physical_damage:
+    min: 12
+    max: 18
+refresh_in_seconds: 14
+armor: medium
+level: 4
+build_cost: 230
+hp_magnitude: 200
+armor_magnitude: 50
+armor_magnitude_upgraded: 60
+hp_upgraded: 240
+refresh_in_seconds_upgraded: 11
+abilities:
+    - "healing light"
+    - "holy strike"
+    - "shield of valor"
+number_of_people: 2
+---
+name: "barbarian mead hall"
+description: ""
+hp: 250
+physical_damage:
+    min: 16
+    max: 24
+refresh_in_seconds: 10
+armor: none
+level: 4
+build_cost: 230
+hp_magnitude: 250
+armor_magnitude: 0
+armor_magnitude_upgraded: 10
+hp_upgraded: 300
+refresh_in_seconds_upgraded: 8
+abilities:
+    - "throwing axes"
+    - "more axes"
+    - "whirlwind attack"

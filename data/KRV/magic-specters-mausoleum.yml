@@ -1,0 +1,48 @@
+name: specters mausoleum
+type: magic
+number_of_levels: 4
+abilities:
+    - guardian gargoyles
+    - spectral communion
+    - possession
+levels:
+    1:
+        damage:
+            min: 5
+            max: 8
+        fire_rate: 1.45
+        range: 350
+        build_cost: 110
+        damage_upgraded:
+            min: 5
+            max: 8
+    2:
+        damage:
+            min: 13
+            max: 20
+        fire_rate: 1.45
+        range: 350
+        build_cost: 130
+        damage_upgraded:
+            min: 14
+            max: 22
+    3:
+        damage:
+            min: 26
+            max: 38
+        fire_rate: 1.45
+        range: 350
+        build_cost: 170
+        damage_upgraded:
+            min: 28
+            max: 41
+    4:
+        damage:
+            min: 48
+            max: 71
+        fire_rate: 1.45
+        range: 350
+        build_cost: 230
+        damage_upgraded:
+            min: 52
+            max: 78

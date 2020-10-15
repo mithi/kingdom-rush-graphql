@@ -1,0 +1,87 @@
+---
+name: "archer tower"
+physical_damage:
+    min: 4
+    max: 6
+fire_rate: average
+range: short
+level: 1
+range_magnitude: 280
+fire_rate_magnitude: 0.8
+build_cost: 70
+build_cost_upgraded: 60
+range_magnitude_upgraded: 323
+physical_damage_upgraded:
+    min: 6
+    max: 8
+---
+name: "marksman tower"
+physical_damage:
+    min: 7
+    max: 11
+fire_rate: fast
+range: average
+level: 2
+range_magnitude: 320
+fire_rate_magnitude: 0.6
+build_cost: 110
+build_cost_upgraded: 100
+range_magnitude_upgraded: 370
+physical_damage_upgraded:
+    min: 9
+    max: 14
+---
+name: "sharpshooter tower"
+physical_damage:
+    min: 10
+    max: 16
+fire_rate: fast
+range: long
+level: 3
+range_magnitude: 360
+fire_rate_magnitude: 0.5
+build_cost: 160
+build_cost_upgraded: 150
+range_magnitude_upgraded: 416
+physical_damage_upgraded:
+    min: 13
+    max: 19
+---
+name: "crossbow fort"
+physical_damage:
+    min: 15
+    max: 23
+fire_rate: fast
+range: long
+level: 4
+range_magnitude: 396
+fire_rate_magnitude: 0.5
+build_cost: 230
+build_cost_upgraded: 230
+range_magnitude_upgraded: 458
+physical_damage_upgraded:
+    min: 18
+    max: 28
+abilities:
+    - barrage
+    - falconer
+
+---
+name: "tribal axethrower"
+physical_damage:
+    min: 25
+    max: 40
+fire_rate: average
+range: average
+level: 4
+range_magnitude: 358
+fire_rate_magnitude: 0.8
+build_cost: 230
+build_cost_upgraded: 230
+range_magnitude_upgraded: 414
+physical_damage_upgraded:
+    min: 30
+    max: 47
+abilities:
+    - "totem of weakness"
+    - "totem of spirits"

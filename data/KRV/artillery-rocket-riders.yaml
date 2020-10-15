@@ -1,0 +1,48 @@
+name: rocket riders
+number_of_levels: 4
+type: artillery
+abilities:
+    - minefield
+    - nitro boosters
+    - defective engines
+levels:
+    1:
+        damage:
+            min: 7
+            max: 10
+        fire_rate: 3
+        range: 330
+        build_cost: 120
+        damage_upgraded:
+            min: 7
+            max: 11
+    2:
+        damage:
+            min: 20
+            max: 29
+        fire_rate: 3
+        range: 350
+        build_cost: 210
+        damage_upgraded:
+            min: 22
+            max: 31
+    3:
+        damage:
+            min: 40
+            max: 58
+        fire_rate: 3.0
+        range: 370
+        build_cost: 310
+        damage_upgraded:
+            min: 44
+            max: 63
+    4:
+        damage:
+            min: 64
+            max: 92
+        fire_rate: 2.8
+        range: 390
+        build_cost: 370
+        damage_upgraded:
+            min: 70
+            max: 101

@@ -1,0 +1,52 @@
+name: bone flingers
+type: ranged
+number_of_levels: 4
+abilities:
+    - the walking dead
+    - got milk?
+    - summon bonem
+levels:
+    1:
+        damage:
+            min: 2
+            max: 4
+        fire_rate: 0.6
+        range: 300
+        build_cost: 60
+        range_upgraded: 315
+        damage_upgraded:
+            min: 2
+            max: 4
+    2:
+        damage:
+            min: 5
+            max: 11
+        fire_rate: 0.6
+        range: 300
+        build_cost: 110
+        range_upgraded: 315
+        damage_upgraded:
+            min: 5
+            max: 12
+    3:
+        damage:
+            min: 9
+            max: 20
+        fire_rate: 0.6
+        range: 300
+        build_cost: 150
+        range_upgraded: 315
+        damage_upgraded:
+            min: 5
+            max: 12
+    4:
+        damage:
+            min: 14
+            max: 34
+        fire_rate: 0.6
+        range: 300
+        build_cost: 180
+        range_upgraded: 315
+        damage_upgraded:
+            min: 15
+            max: 37

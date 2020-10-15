@@ -1,0 +1,51 @@
+name: shadow archers
+number_of_levels: 4
+abilities:
+    - shadow mark
+    - blade of demise
+    - crow's nest
+levels:
+    1:
+        damage:
+            min: 3
+            max: 4
+        fire_rate: 0.7
+        range: 300
+        build_cost: 80
+        damage_upgraded:
+            min: 3
+            max: 4
+        range_upgraded: 315
+    2:
+        damage:
+            min: 7
+            max: 11
+        fire_rate: 0.7
+        range: 330
+        build_cost: 120
+        damage_upgraded:
+            min:7
+            max: 12
+        range_upgraded: 346
+    3:
+        damage:
+            min: 14
+            max: 21
+        fire_rate: 0.7
+        range: 360
+        build_cost: 190
+        damage_upgraded:
+            min: 15
+            max: 23
+        range_upgraded: 378
+    4:
+        damage:
+            min: 23
+            max: 34
+        fire_rate: 0.7
+        range: 400
+        build_cost: 280
+        damage_upgraded:
+            min: 25
+            max: 37
+        range_upgraded: 420
