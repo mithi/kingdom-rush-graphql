@@ -8,7 +8,8 @@
         "tsc": "tsc -p tsconfig.json --skipLibCheck",
         "start": "nodemon src/index.ts",
         "build": "npm run tsc && npm run format && node dist/index.js",
-        "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts"
+        "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
+        "migrate-all": "ts-node ./node_modules/typeorm/cli.js migration:run"
     },
     "repository": {
         "type": "git",

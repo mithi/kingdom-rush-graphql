@@ -6,9 +6,12 @@ default:
     password: process.NODE_ENV.DB_PASSWORD
     database: "kingdom_rush_db"
     entities: ["dist/entity/*.js", "src/entity/*.ts"]
-    logging: false
-    synchronize: true
-    dropSchema: true
+    logging: true
+    synchronize: false
+    dropSchema: false
+    migrations: ["migration/*.ts"]
+    cli:
+        migrationsDir: "migration"
 
 test:
     type: "postgres"
