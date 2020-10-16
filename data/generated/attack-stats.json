@@ -1,0 +1,466 @@
+{
+    "towers": [
+        {
+            "name": "dwarven bombard",
+            "kingdom": "kingdom rush",
+            "fireInterval": 3,
+            "range": 320
+        },
+        {
+            "name": "dwarven artillery",
+            "kingdom": "kingdom rush",
+            "fireInterval": 3,
+            "range": 320
+        },
+        {
+            "name": "dwarven howitzer",
+            "kingdom": "kingdom rush",
+            "fireInterval": 3,
+            "range": 360
+        },
+        {
+            "name": "500mm big bertha",
+            "kingdom": "kingdom rush",
+            "fireInterval": 3.5,
+            "range": 360
+        },
+        {
+            "name": "tesla x104",
+            "kingdom": "kingdom rush",
+            "fireInterval": 2.2,
+            "range": 330
+        },
+        {
+            "name": "dwarven bombard",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 3,
+            "range": 320
+        },
+        {
+            "name": "dwarven artillery",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 3,
+            "range": 320
+        },
+        {
+            "name": "dwarven howitzer",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 3,
+            "range": 360
+        },
+        {
+            "name": "dwaarp",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 3,
+            "range": 360
+        },
+        {
+            "name": "battle-mecha t-200",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 1,
+            "range": 350
+        },
+        {
+            "name": "stone cirlce",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 3,
+            "range": 300
+        },
+        {
+            "name": "boulder circle",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 3,
+            "range": 340
+        },
+        {
+            "name": "menhir cirlce",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 3,
+            "range": 380
+        },
+        {
+            "name": "arch-druid henge",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 1.7,
+            "range": 380
+        },
+        {
+            "name": "weirdwood",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 3.5,
+            "range": 420
+        },
+        {
+            "name": "mage tower",
+            "kingdom": "kingdom rush",
+            "fireInterval": 1.5,
+            "range": 280
+        },
+        {
+            "name": "adept tower",
+            "kingdom": "kingdom rush",
+            "fireInterval": 1.5,
+            "range": 320
+        },
+        {
+            "name": "wizard tower",
+            "kingdom": "kingdom rush",
+            "fireInterval": 1.5,
+            "range": 360
+        },
+        {
+            "name": "arcane tower",
+            "kingdom": "kingdom rush",
+            "fireInterval": 2,
+            "range": 400
+        },
+        {
+            "name": "sorcerer tower",
+            "kingdom": "kingdom rush",
+            "fireInterval": 1.5,
+            "range": 400
+        },
+        {
+            "name": "mage tower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 1.5,
+            "range": 280
+        },
+        {
+            "name": "adept tower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 1.5,
+            "range": 320
+        },
+        {
+            "name": "wizard tower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 1.5,
+            "range": 360
+        },
+        {
+            "name": "archmage tower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 1.5,
+            "range": 396
+        },
+        {
+            "name": "necromancer tower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 1,
+            "range": 396
+        },
+        {
+            "name": "mystic dais",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 1.5,
+            "range": 280
+        },
+        {
+            "name": "arcanist dais",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 1.5,
+            "range": 320
+        },
+        {
+            "name": "eldritch dais",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 1.5,
+            "range": 360
+        },
+        {
+            "name": "wild magus",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 0.3,
+            "range": 360
+        },
+        {
+            "name": "high elven mage",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 1.5,
+            "range": 360
+        },
+        {
+            "name": "archer tower",
+            "kingdom": "kingdom rush",
+            "fireInterval": 0.8,
+            "range": 280
+        },
+        {
+            "name": "marksman tower",
+            "kingdom": "kingdom rush",
+            "fireInterval": 0.6,
+            "range": 320
+        },
+        {
+            "name": "sharpshooter tower",
+            "kingdom": "kingdom rush",
+            "fireInterval": 0.5,
+            "range": 360
+        },
+        {
+            "name": "rangers hideout",
+            "kingdom": "kingdom rush",
+            "fireInterval": 0.4,
+            "range": 400
+        },
+        {
+            "name": "musketeer garrison",
+            "kingdom": "kingdom rush",
+            "fireInterval": 1.5,
+            "range": 470
+        },
+        {
+            "name": "archer tower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 0.8,
+            "range": 280
+        },
+        {
+            "name": "marksman tower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 0.6,
+            "range": 320
+        },
+        {
+            "name": "sharpshooter tower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 0.5,
+            "range": 360
+        },
+        {
+            "name": "crossbow fort",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 0.5,
+            "range": 396
+        },
+        {
+            "name": "tribal axethrower",
+            "kingdom": "kingdom rush frontiers",
+            "fireInterval": 0.8,
+            "range": 358
+        },
+        {
+            "name": "hunter arbor",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 0.7,
+            "range": 320
+        },
+        {
+            "name": "watcher arbor",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 0.6,
+            "range": 360
+        },
+        {
+            "name": "sentinel arbor",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 0.4,
+            "range": 400
+        },
+        {
+            "name": "arcane archers",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 0.8,
+            "range": 400
+        },
+        {
+            "name": "golden longbows",
+            "kingdom": "kingdom rush origin",
+            "fireInterval": 1.5,
+            "range": 600
+        },
+        {
+            "name": "goblirangs, 1",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.4,
+            "range": 350
+        },
+        {
+            "name": "goblirangs, 2",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.4,
+            "range": 350
+        },
+        {
+            "name": "goblirangs, 3",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.4,
+            "range": 350
+        },
+        {
+            "name": "goblirangs, 4",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.4,
+            "range": 350
+        },
+        {
+            "name": "bone flingers, 1",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 0.6,
+            "range": 300
+        },
+        {
+            "name": "bone flingers, 2",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 0.6,
+            "range": 300
+        },
+        {
+            "name": "bone flingers, 3",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 0.6,
+            "range": 300
+        },
+        {
+            "name": "bone flingers, 4",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 0.6,
+            "range": 300
+        },
+        {
+            "name": "shadow archers, 1",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 0.7,
+            "range": 300
+        },
+        {
+            "name": "shadow archers, 2",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 0.7,
+            "range": 330
+        },
+        {
+            "name": "shadow archers, 3",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 0.7,
+            "range": 360
+        },
+        {
+            "name": "shadow archers, 4",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 0.7,
+            "range": 400
+        },
+        {
+            "name": "melting furnace, 1",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 4,
+            "range": 320
+        },
+        {
+            "name": "melting furnace, 2",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 4,
+            "range": 320
+        },
+        {
+            "name": "melting furnace, 3",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 4,
+            "range": 320
+        },
+        {
+            "name": "melting furnace, 4",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 4,
+            "range": 320
+        },
+        {
+            "name": "rocket riders, 1",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 3,
+            "range": 330
+        },
+        {
+            "name": "rocket riders, 2",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 3,
+            "range": 350
+        },
+        {
+            "name": "rocket riders, 3",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 3.0,
+            "range": 370
+        },
+        {
+            "name": "rocket riders, 4",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 2.8,
+            "range": 390
+        },
+        {
+            "name": "infernal mage, 1",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.8,
+            "range": 300
+        },
+        {
+            "name": "infernal mage, 2",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.8,
+            "range": 315
+        },
+        {
+            "name": "infernal mage, 3",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.8,
+            "range": 330
+        },
+        {
+            "name": "infernal mage, 4",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.8,
+            "range": 350
+        },
+        {
+            "name": "specters mausoleum, 1",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.45,
+            "range": 350
+        },
+        {
+            "name": "specters mausoleum, 2",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.45,
+            "range": 350
+        },
+        {
+            "name": "specters mausoleum, 3",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.45,
+            "range": 350
+        },
+        {
+            "name": "specters mausoleum, 4",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 1.45,
+            "range": 350
+        },
+        {
+            "name": "orc shaman, 1",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 2.3,
+            "range": 370
+        },
+        {
+            "name": "orc shaman, 2",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 2.3,
+            "range": 370
+        },
+        {
+            "name": "orc shaman, 3",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 2.3,
+            "range": 370
+        },
+        {
+            "name": "orc shaman, 4",
+            "kingdom": "kingdom rush vengeance",
+            "fireInterval": 2.3,
+            "range": 370
+        }
+    ]
+}
