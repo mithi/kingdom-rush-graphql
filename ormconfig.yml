@@ -5,11 +5,11 @@ default:
     username: "kingdom_rush_user"
     password: process.NODE_ENV.DB_PASSWORD
     database: "kingdom_rush_db"
-    entities: ["dist/models/*.js", "src/models/*.ts"]
+    entities: ["dist/models/*.js"]
     logging: true
     synchronize: false
     dropSchema: false
-    migrations: ["migration/*.ts"]
+    migrations: ["src/migrations/*.js"]
     cli:
         migrationsDir: "migration"
 
