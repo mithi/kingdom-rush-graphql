@@ -10,9 +10,9 @@ CURRENT
     name
     kingdom
     health
-    respawn_interval
+    respawnInterval
     armor
-    number_of_units
+    numberOfUnits
 }
 
 --------------
@@ -59,8 +59,8 @@ def get_barracks_stats(kingdom):
             "kingdom": KINGDOM_NAME[kingdom],
             "health": tower["hp_magnitude"],
             "armor": tower["armor_magnitude"],
-            "respawn_interval": tower["refresh_in_seconds"],
-            "number_of_units": number_of_units,
+            "respawnInterval": tower["refresh_in_seconds"],
+            "numberOfUnits": number_of_units,
         }
         print(base_barracks_stats)
         towers.append(base_barracks_stats)
@@ -87,8 +87,8 @@ for path in [b1, b2, b3]:
                 "name": f"{name}, {i}",
                 "health": stats["health"],
                 "armor": stats["armor"],
-                "respawn_interval": stats["respawn"],
-                "number_of_units": number_of_units,
+                "respawnInterval": stats["respawn"],
+                "numberOfUnits": number_of_units,
                 "kingdom": "kingdom rush vengeance"
             }
             print(tower)
