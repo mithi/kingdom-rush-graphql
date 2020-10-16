@@ -75,6 +75,7 @@ abilities:
 ---
 name: "forest keepers"
 hp: 300
+number_of_units: 2
 physical_damage:
     min: 24
     max: 36
