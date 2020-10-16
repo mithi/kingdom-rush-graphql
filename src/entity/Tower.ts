@@ -10,7 +10,7 @@ export class Tower extends BaseEntity {
     id: number
 
     @Field(() => String)
-    @Column({ unique: true })
+    @Column()
     name: string
 
     @Field(_ => TowerType)
