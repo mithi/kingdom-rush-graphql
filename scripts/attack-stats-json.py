@@ -17,8 +17,8 @@ CURRENT
 
 KINGDOM_DIRECTORY = {
     "KR": "kingdom rush",
-    "KRF": "kingdom rush frontiers",
-    "KRO": "kingdom rush origin",
+    "KRF": "kingdom rush: frontiers",
+    "KRO": "kingdom rush: origin",
 }
 
 def get_attack_stats(tower_type, kingdom):
@@ -81,7 +81,7 @@ for path in krv_files_path:
             stats = tower_raw["levels"][i]
             tower = {
                 "name": f"{name}, {i}",
-                "kingdom": "kingdom rush vengeance",
+                "kingdom": "kingdom rush: vengeance",
                 "fireInterval": stats["fire_rate"],
                 "range": stats["range"],
             }

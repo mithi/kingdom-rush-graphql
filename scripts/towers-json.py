@@ -19,8 +19,8 @@ damage: {
 
 KINGDOM_DIRECTORY = {
     "KR": "kingdom rush",
-    "KRF": "kingdom rush frontiers",
-    "KRO": "kingdom rush origin",
+    "KRF": "kingdom rush: frontiers",
+    "KRO": "kingdom rush: origin",
 }
 
 def get_towers(tower_type, kingdom):
@@ -41,7 +41,7 @@ def get_towers(tower_type, kingdom):
             "towerType": tower_type,
             "damage":{
                 "minimum": tower[damage_type]["min"],
-                "maximum:": tower[damage_type]["max"]
+                "maximum": tower[damage_type]["max"]
             }
         }
         towers.append(new_tower)
@@ -91,7 +91,7 @@ for path in krv_files_path:
                     "minimum": stats["damage"]["min"],
                     "maximum": stats["damage"]["max"],
                 },
-                "kingdom": "kingdom rush vengeance"
+                "kingdom": "kingdom rush: vengeance"
             }
 
             krv_towers.append(tower)

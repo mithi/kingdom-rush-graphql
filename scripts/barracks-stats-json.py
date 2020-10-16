@@ -42,8 +42,8 @@ IDEAL:
 
 KINGDOM_NAME = {
     "KR": "kingdom rush",
-    "KRF": "kingdom rush frontiers",
-    "KRO": "kingdom rush origin",
+    "KRF": "kingdom rush: frontiers",
+    "KRO": "kingdom rush: origin",
 }
 
 def get_barracks_stats(kingdom):
@@ -89,7 +89,7 @@ for path in [b1, b2, b3]:
                 "armor": stats["armor"],
                 "respawnInterval": stats["respawn"],
                 "numberOfUnits": number_of_units,
-                "kingdom": "kingdom rush vengeance"
+                "kingdom": "kingdom rush: vengeance"
             }
             print(tower)
             krv_towers.append(tower)
