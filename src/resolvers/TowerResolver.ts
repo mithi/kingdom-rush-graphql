@@ -1,5 +1,5 @@
 import { Resolver, Query, Mutation, Arg, InputType, Field } from "type-graphql"
-import { Tower } from "../entity/Tower"
+import { Tower } from "../models/Tower"
 import { TowerType, TowerKingdom, TowerLevel, TowerCategory } from "../enums/TowerEnums"
 
 @InputType()

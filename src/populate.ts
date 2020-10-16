@@ -1,5 +1,5 @@
 import { getRepository } from "typeorm"
-import { Tower } from "./entity/Tower"
+import { Tower } from "./models/Tower"
 import { TowerType, TowerLevel, TowerKingdom } from "./enums/TowerEnums"
 
 const path: any = require("path")
