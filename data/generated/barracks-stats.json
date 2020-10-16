@@ -1,0 +1,220 @@
+{
+    "towers": [
+        {
+            "name": "militia barracks",
+            "kingdom": "kingdom rush",
+            "health": 50,
+            "armor": 0,
+            "respawn_interval": 10,
+            "number_of_units": 3
+        },
+        {
+            "name": "footmen barracks",
+            "kingdom": "kingdom rush",
+            "health": 100,
+            "armor": 15,
+            "respawn_interval": 10,
+            "number_of_units": 3
+        },
+        {
+            "name": "knights barracks",
+            "kingdom": "kingdom rush",
+            "health": 150,
+            "armor": 30,
+            "respawn_interval": 10,
+            "number_of_units": 3
+        },
+        {
+            "name": "holy order",
+            "kingdom": "kingdom rush",
+            "health": 200,
+            "armor": 50,
+            "respawn_interval": 14,
+            "number_of_units": 3
+        },
+        {
+            "name": "barbarian mead hall",
+            "kingdom": "kingdom rush",
+            "health": 250,
+            "armor": 0,
+            "respawn_interval": 10,
+            "number_of_units": 3
+        },
+        {
+            "name": "militia barracks",
+            "kingdom": "kingdom rush frontiers",
+            "health": 50,
+            "armor": 0,
+            "respawn_interval": 10,
+            "number_of_units": 3
+        },
+        {
+            "name": "footmen barracks",
+            "kingdom": "kingdom rush frontiers",
+            "health": 100,
+            "armor": 15,
+            "respawn_interval": 10,
+            "number_of_units": 3
+        },
+        {
+            "name": "knights barracks",
+            "kingdom": "kingdom rush frontiers",
+            "health": 150,
+            "armor": 30,
+            "respawn_interval": 10,
+            "number_of_units": 3
+        },
+        {
+            "name": "assassins' guild",
+            "kingdom": "kingdom rush frontiers",
+            "health": 200,
+            "armor": 0,
+            "respawn_interval": 10,
+            "number_of_units": 3
+        },
+        {
+            "name": "knights templar",
+            "kingdom": "kingdom rush frontiers",
+            "health": 250,
+            "armor": 40,
+            "respawn_interval": 15,
+            "number_of_units": 3
+        },
+        {
+            "name": "defender barracks",
+            "kingdom": "kingdom rush origin",
+            "health": 50,
+            "armor": 30,
+            "respawn_interval": 14,
+            "number_of_units": 3
+        },
+        {
+            "name": "warden barracks",
+            "kingdom": "kingdom rush origin",
+            "health": 90,
+            "armor": 40,
+            "respawn_interval": 14,
+            "number_of_units": 3
+        },
+        {
+            "name": "ranger barracks",
+            "kingdom": "kingdom rush origin",
+            "health": 140,
+            "armor": 50,
+            "respawn_interval": 14,
+            "number_of_units": 3
+        },
+        {
+            "name": "bladesinger hall",
+            "kingdom": "kingdom rush origin",
+            "health": 200,
+            "armor": 50,
+            "respawn_interval": 15,
+            "number_of_units": 3
+        },
+        {
+            "name": "forest keepers",
+            "kingdom": "kingdom rush origin",
+            "health": 300,
+            "armor": 0,
+            "respawn_interval": 12,
+            "number_of_units": 2
+        },
+        {
+            "name": "dark knights, 1",
+            "health": 100,
+            "armor": 40,
+            "respawn_interval": 8,
+            "number_of_units": 2,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "dark knights, 2",
+            "health": 130,
+            "armor": 50,
+            "respawn_interval": 8,
+            "number_of_units": 2,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "dark knights, 3",
+            "health": 180,
+            "armor": 60,
+            "respawn_interval": 8,
+            "number_of_units": 2,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "dark knights, 4",
+            "health": 240,
+            "armor": 75,
+            "respawn_interval": 10,
+            "number_of_units": 2,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "Elite Harassers, 1",
+            "health": 70,
+            "armor": 0,
+            "respawn_interval": 12,
+            "number_of_units": 2,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "Elite Harassers, 2",
+            "health": 130,
+            "armor": 0,
+            "respawn_interval": 12,
+            "number_of_units": 2,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "Elite Harassers, 3",
+            "health": 160,
+            "armor": 0,
+            "respawn_interval": 12,
+            "number_of_units": 2,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "Elite Harassers, 4",
+            "health": 220,
+            "armor": 0,
+            "respawn_interval": 12,
+            "number_of_units": 2,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "orc warriors den, 1",
+            "health": 60,
+            "armor": 0,
+            "respawn_interval": 12,
+            "number_of_units": 3,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "orc warriors den, 2",
+            "health": 100,
+            "armor": 10,
+            "respawn_interval": 12,
+            "number_of_units": 3,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "orc warriors den, 3",
+            "health": 150,
+            "armor": 15,
+            "respawn_interval": 12,
+            "number_of_units": 3,
+            "kingdom": "kingdom rush vengeance"
+        },
+        {
+            "name": "orc warriors den, 4",
+            "health": 200,
+            "armor": 20,
+            "respawn_interval": 12,
+            "number_of_units": 3,
+            "kingdom": "kingdom rush vengeance"
+        }
+    ]
+}
