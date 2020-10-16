@@ -5,7 +5,7 @@
     "main": "dist/index.js",
     "scripts": {
         "test": "jest",
-        "tsc": "tsc -p tsconfig.json --skipLibCheck",
+        "tsc": "tsc -p tsconfig.json",
         "start": "nodemon src/index.ts",
         "build": "npm run tsc && npm run format && node dist/index.js",
         "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",

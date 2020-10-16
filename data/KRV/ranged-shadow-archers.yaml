@@ -1,5 +1,6 @@
 name: shadow archers
 number_of_levels: 4
+type: ranged
 abilities:
     - shadow mark
     - blade of demise
@@ -24,7 +25,7 @@ levels:
         range: 330
         build_cost: 120
         damage_upgraded:
-            min:7
+            min: 7
             max: 12
         range_upgraded: 346
     3:

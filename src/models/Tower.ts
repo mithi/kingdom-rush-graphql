@@ -1,16 +1,17 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity } from "typeorm"
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, Unique } from "typeorm"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 import { ObjectType, Field, ID } from "type-graphql"
 
 @ObjectType()
 @Entity({ name: "Towers" })
+@Unique("unique_tower", ["name", "kingdom"])
 export class Tower extends BaseEntity {
     @Field(() => ID)
     @PrimaryGeneratedColumn()
     id: number
 
     @Field(() => String)
-    @Column({ unique: true })
+    @Column()
     name: string
 
     @Field(_ => TowerType)

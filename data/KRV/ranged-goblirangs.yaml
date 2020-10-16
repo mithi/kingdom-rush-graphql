@@ -1,5 +1,6 @@
 name: goblirangs
 number_of_levels: 4
+type: ranged
 abilities:
     - biggarangs
     - readbang

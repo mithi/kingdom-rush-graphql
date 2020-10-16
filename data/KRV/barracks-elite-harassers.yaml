@@ -50,7 +50,7 @@ levels:
         health: 220
         armor: 0
         respawn: 12
-        build_cost:250
+        build_cost: 250
         damage_upgraded:
             min: 27
             max: 38
