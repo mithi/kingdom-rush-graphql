@@ -42,7 +42,7 @@
         },
         {
             "name": "militia barracks",
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "health": 50,
             "armor": 0,
             "respawnInterval": 10,
@@ -50,7 +50,7 @@
         },
         {
             "name": "footmen barracks",
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "health": 100,
             "armor": 15,
             "respawnInterval": 10,
@@ -58,7 +58,7 @@
         },
         {
             "name": "knights barracks",
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "health": 150,
             "armor": 30,
             "respawnInterval": 10,
@@ -66,7 +66,7 @@
         },
         {
             "name": "assassins' guild",
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "health": 200,
             "armor": 0,
             "respawnInterval": 10,
@@ -74,7 +74,7 @@
         },
         {
             "name": "knights templar",
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "health": 250,
             "armor": 40,
             "respawnInterval": 15,
@@ -82,7 +82,7 @@
         },
         {
             "name": "defender barracks",
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "health": 50,
             "armor": 30,
             "respawnInterval": 14,
@@ -90,7 +90,7 @@
         },
         {
             "name": "warden barracks",
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "health": 90,
             "armor": 40,
             "respawnInterval": 14,
@@ -98,7 +98,7 @@
         },
         {
             "name": "ranger barracks",
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "health": 140,
             "armor": 50,
             "respawnInterval": 14,
@@ -106,7 +106,7 @@
         },
         {
             "name": "bladesinger hall",
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "health": 200,
             "armor": 50,
             "respawnInterval": 15,
@@ -114,7 +114,7 @@
         },
         {
             "name": "forest keepers",
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "health": 300,
             "armor": 0,
             "respawnInterval": 12,
@@ -126,7 +126,7 @@
             "armor": 40,
             "respawnInterval": 8,
             "numberOfUnits": 2,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "dark knights, 2",
@@ -134,7 +134,7 @@
             "armor": 50,
             "respawnInterval": 8,
             "numberOfUnits": 2,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "dark knights, 3",
@@ -142,7 +142,7 @@
             "armor": 60,
             "respawnInterval": 8,
             "numberOfUnits": 2,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "dark knights, 4",
@@ -150,7 +150,7 @@
             "armor": 75,
             "respawnInterval": 10,
             "numberOfUnits": 2,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "Elite Harassers, 1",
@@ -158,7 +158,7 @@
             "armor": 0,
             "respawnInterval": 12,
             "numberOfUnits": 2,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "Elite Harassers, 2",
@@ -166,7 +166,7 @@
             "armor": 0,
             "respawnInterval": 12,
             "numberOfUnits": 2,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "Elite Harassers, 3",
@@ -174,7 +174,7 @@
             "armor": 0,
             "respawnInterval": 12,
             "numberOfUnits": 2,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "Elite Harassers, 4",
@@ -182,7 +182,7 @@
             "armor": 0,
             "respawnInterval": 12,
             "numberOfUnits": 2,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc warriors den, 1",
@@ -190,7 +190,7 @@
             "armor": 0,
             "respawnInterval": 12,
             "numberOfUnits": 3,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc warriors den, 2",
@@ -198,7 +198,7 @@
             "armor": 10,
             "respawnInterval": 12,
             "numberOfUnits": 3,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc warriors den, 3",
@@ -206,7 +206,7 @@
             "armor": 15,
             "respawnInterval": 12,
             "numberOfUnits": 3,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc warriors den, 4",
@@ -214,7 +214,7 @@
             "armor": 20,
             "respawnInterval": 12,
             "numberOfUnits": 3,
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         }
     ]
 }

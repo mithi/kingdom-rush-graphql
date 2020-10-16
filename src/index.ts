@@ -4,13 +4,14 @@ import { createConnection } from "typeorm"
 import { ApolloServer } from "apollo-server"
 import { buildSchema } from "type-graphql"
 import { TowerResolver } from "./resolvers/TowerResolver"
-import populateTowers from "./populate"
+import { populateTowers, populateMainStats } from "./populate"
 
 async function main() {
     await createConnection()
     if (process.env.SHOULD_POPULATE) {
         console.log("Populating towers...")
         populateTowers()
+        populateMainStats()
     } else {
         console.log("I did not populate the towers")
     }
