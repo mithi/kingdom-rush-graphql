@@ -664,7 +664,7 @@
             "name": "dark knights, 1",
             "level": 1,
             "buildCost": 110,
-            "towerType": "artillery",
+            "towerType": "barracks",
             "damage": {
                 "minimum": 2,
                 "maximum": 3
@@ -675,7 +675,7 @@
             "name": "dark knights, 2",
             "level": 2,
             "buildCost": 160,
-            "towerType": "artillery",
+            "towerType": "barracks",
             "damage": {
                 "minimum": 4,
                 "maximum": 10
@@ -686,7 +686,7 @@
             "name": "dark knights, 3",
             "level": 3,
             "buildCost": 220,
-            "towerType": "artillery",
+            "towerType": "barracks",
             "damage": {
                 "minimum": 7,
                 "maximum": 20
@@ -697,7 +697,7 @@
             "name": "dark knights, 4",
             "level": 4,
             "buildCost": 260,
-            "towerType": "artillery",
+            "towerType": "barracks",
             "damage": {
                 "minimum": 12,
                 "maximum": 36
