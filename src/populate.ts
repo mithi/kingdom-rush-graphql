@@ -46,23 +46,31 @@ const mapStringToTowerType = {
 const populateTowers = async () => {
     const towers: [towerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log(
-            tower.name,
-            tower.kingdom,
-            tower.level,
-            tower.towerType,
-            tower.buildCost,
-            tower.damage
-        )
+        try {
+            console.log(
+                tower.name,
+                tower.kingdom,
+                tower.level,
+                tower.towerType,
+                tower.buildCost,
+                tower.damage
+            )
 
-        const newTower = {
-            name: tower.name,
-            towerType: mapStringToTowerType[tower.towerType],
-            level: mapIntToLevel[tower.level],
-            kingdom: mapStringToKingdom[tower.kingdom],
+            const newTower = {
+                name: tower.name,
+                towerType: mapStringToTowerType[tower.towerType],
+                level: mapIntToLevel[tower.level],
+                kingdom: mapStringToKingdom[tower.kingdom],
+            }
+
+            await getRepository(Tower).insert(newTower)
+        } catch (error) {
+            console.log("ERROR START")
+            console.log("ErrorName:", error.name)
+            console.log("ErrorMessage:", error.message)
+            console.log("ErrorDetails:", error.detail)
+            console.log("ERROR END")
         }
-
-        await getRepository(Tower).insert(newTower)
     }
 }
 

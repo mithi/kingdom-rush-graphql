@@ -9,7 +9,10 @@ import populateTowers from "./populate"
 async function main() {
     await createConnection()
     if (process.env.SHOULD_POPULATE) {
+        console.log("Populating towers...")
         populateTowers()
+    } else {
+        console.log("I did not populate the towers")
     }
 
     const schema = await buildSchema({ resolvers: [TowerResolver] })
