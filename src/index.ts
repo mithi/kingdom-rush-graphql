@@ -4,23 +4,14 @@ import { createConnection } from "typeorm"
 import { ApolloServer } from "apollo-server"
 import { buildSchema } from "type-graphql"
 import { TowerResolver } from "./resolvers/TowerResolver"
-import {
-    populateTowers,
-    populateBarracksStats,
-    populateMainStats,
-    populateAttackStats,
-} from "./populate"
+import seed from "./seed"
 
 async function main() {
     await createConnection()
     if (process.env.SHOULD_POPULATE) {
-        console.log("Populating towers...")
-        await populateTowers()
-        await populateMainStats()
-        await populateBarracksStats()
-        await populateAttackStats()
+        seed()
     } else {
-        console.log("I did not populate the towers")
+        console.log("I did not populate the database")
     }
 
     const schema = await buildSchema({ resolvers: [TowerResolver] })
