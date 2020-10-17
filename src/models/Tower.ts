@@ -45,11 +45,11 @@ export class Tower extends BaseEntity {
     })
     kingdom: TowerKingdom
 
-    @OneToOne(_ => MainStats, { nullable: true })
+    @OneToOne(_ => MainStats, { nullable: true, cascade: true })
     @JoinColumn()
     mainStats: MainStats
 
-    @OneToOne(_ => BarracksStats, { nullable: true })
+    @OneToOne(_ => BarracksStats, { nullable: true, cascade: true })
     @JoinColumn()
     barracksStats: BarracksStats
 }

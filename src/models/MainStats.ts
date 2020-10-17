@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from "typeorm"
+import { Tower } from "./Tower"
 
 @Entity()
 export class MainStats {
@@ -13,4 +14,9 @@ export class MainStats {
 
     @Column({ type: "real" })
     buildCost: number
+
+    @OneToOne(_ => Tower, tower => tower.mainStats, {
+        onDelete: "CASCADE",
+    })
+    mainStats: MainStats
 }
