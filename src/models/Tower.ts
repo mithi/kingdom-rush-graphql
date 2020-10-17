@@ -10,6 +10,7 @@ import {
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 import { ObjectType, Field, ID } from "type-graphql"
 import { MainStats } from "./MainStats"
+import { BarracksStats } from "./BarracksStats"
 
 @ObjectType()
 @Entity({ name: "Towers" })
@@ -44,7 +45,11 @@ export class Tower extends BaseEntity {
     })
     kingdom: TowerKingdom
 
-    @OneToOne(_ => MainStats, { nullable: true })
+    @OneToOne(_ => MainStats, { nullable: true, cascade: true })
     @JoinColumn()
     mainStats: MainStats
+
+    @OneToOne(_ => BarracksStats, { nullable: true, cascade: true })
+    @JoinColumn()
+    barracksStats: BarracksStats
 }

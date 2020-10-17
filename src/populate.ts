@@ -1,20 +1,30 @@
 import { getRepository } from "typeorm"
 import { Tower } from "./models/Tower"
 import { MainStats } from "./models/MainStats"
-
+import { BarracksStats } from "./models/BarracksStats"
 import { TowerType, TowerLevel, TowerKingdom } from "./enums/TowerEnums"
 
 const path: any = require("path")
-const pathToJson = path.join(__dirname, "../data/generated", "towers.json")
-const towerJson: any = require(pathToJson)
+const pathToTowerJson = path.join(__dirname, "../data/generated", "towers.json")
+const towerJson: any = require(pathToTowerJson)
+
+const pathToBarracksJson = path.join(
+    __dirname,
+    "../data/generated",
+    "barracks-stats.json"
+)
+
+const barracksJson: any = require(pathToBarracksJson)
+
+type kingdomType =
+    | "kingdom rush: vengeance"
+    | "kingdom rush: origin"
+    | "kingdom rush"
+    | "kingdom rush: frontiers"
 
 type towerData = {
     name: string
-    kingdom:
-        | "kingdom rush: vengeance"
-        | "kingdom rush: origin"
-        | "kingdom rush"
-        | "kingdom rush: frontiers"
+    kingdom: kingdomType
     level: 1 | 2 | 3 | 4
     towerType: "magic" | "artillery" | "ranged" | "barracks"
     buildCost: number
@@ -22,6 +32,15 @@ type towerData = {
         minimum: number
         maximum: number
     }
+}
+
+type barracksData = {
+    name: string
+    kingdom: kingdomType
+    numberOfUnits: number
+    health: number
+    armor: number
+    respawnInterval: number
 }
 
 const mapStringToKingdom = {
@@ -45,6 +64,55 @@ const mapStringToTowerType = {
     artillery: TowerType.ARTILLERY,
 }
 
+function logError(error: any) {
+    if ("name" in error && "message" in error && "detail" in error) {
+        console.log("ERROR START")
+        console.log("ErrorName:", error.name)
+        console.log("ErrorMessage:", error.message)
+        console.log("ErrorDetails:", error.detail)
+        console.log("ERROR END")
+    }
+}
+
+const buildBaracksStats = (tower: barracksData) => {
+    let barracksStats = new BarracksStats()
+    barracksStats.numberOfUnits = tower.numberOfUnits
+    barracksStats.health = tower.health
+    barracksStats.respawnInterval = tower.respawnInterval
+    barracksStats.armor = tower.armor
+    return barracksStats
+}
+
+const populateBarracksStats = async () => {
+    const barracks: [barracksData] = (<any>barracksJson).towers
+    for (let tower of barracks) {
+        console.log(tower.name)
+        let retrievedTower = await getRepository(Tower).findOne({
+            where: {
+                name: tower.name,
+                kingdom: tower.kingdom,
+            },
+            relations: ["mainStats"],
+        })
+
+        if (retrievedTower && !retrievedTower.barracksStats) {
+            console.log("retrieved Tower:", retrievedTower, tower)
+
+            try {
+                console.log("saving retrieved tower with barracks stats...")
+                retrievedTower.barracksStats = buildBaracksStats(tower)
+                await getRepository(Tower).save(retrievedTower)
+            } catch (error) {
+                logError(error)
+            }
+        } else {
+            console.log(
+                "This tower that you want to assign barracks stats to, either does not exist, or already has barracks...."
+            )
+        }
+    }
+}
+
 const populateMainStats = async () => {
     const towers: [towerData] = (<any>towerJson).towers
     for (let tower of towers) {
@@ -54,50 +122,36 @@ const populateMainStats = async () => {
                 name: tower.name,
                 kingdom: tower.kingdom,
             },
+            relations: ["mainStats"],
         })
 
-        if (retrievedTower !== undefined && "id" in retrievedTower) {
+        if (!retrievedTower) {
+            continue
+        }
+
+        if (!retrievedTower.mainStats) {
             console.log("Retrieved Tower:", retrievedTower, tower)
             const mainStats = new MainStats()
             mainStats.buildCost = tower.buildCost
             mainStats.damageMinimum = tower.damage.minimum
             mainStats.damageMaximum = tower.damage.maximum
-
+            retrievedTower.mainStats = mainStats
             try {
-                console.log("saving mainstats....")
-                await getRepository(MainStats).save(mainStats)
-            } catch (error) {
-                console.log("ERROR START")
-                console.log("ErrorName:", error.name)
-                console.log("ErrorMessage:", error.message)
-                console.log("ErrorDetails:", error.detail)
-                console.log("ERROR END")
-            }
-            try {
-                console.log("saving retrieved tower...")
-                retrievedTower.mainStats = mainStats
+                console.log("saving retrieved tower with main stats...")
                 await getRepository(Tower).save(retrievedTower)
             } catch (error) {
-                console.log("ERROR START")
-                console.log("ErrorName:", error.name)
-                console.log("ErrorMessage:", error.message)
-                console.log("ErrorDetails:", error.detail)
-                console.log("ERROR END")
+                logError(error)
             }
+        } else {
+            console.log("This tower already has a main stats.")
         }
     }
 }
+
 const populateTowers = async () => {
     const towers: [towerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log(
-            tower.name,
-            tower.kingdom,
-            tower.level,
-            tower.towerType,
-            tower.buildCost,
-            tower.damage
-        )
+        console.log(tower.name)
         const newTower = {
             name: tower.name,
             towerType: mapStringToTowerType[tower.towerType],
@@ -105,16 +159,24 @@ const populateTowers = async () => {
             kingdom: mapStringToKingdom[tower.kingdom],
         }
 
-        try {
-            await getRepository(Tower).insert(newTower)
-        } catch (error) {
-            console.log("ERROR START")
-            console.log("ErrorName:", error.name)
-            console.log("ErrorMessage:", error.message)
-            console.log("ErrorDetails:", error.detail)
-            console.log("ERROR END")
+        let retrievedTower = await getRepository(Tower).findOne({
+            where: {
+                name: tower.name,
+                kingdom: tower.kingdom,
+            },
+        })
+
+        if (!retrievedTower) {
+            console.log("inserting new tower:", newTower.name, retrievedTower)
+            try {
+                await getRepository(Tower).insert(newTower)
+            } catch (error) {
+                logError(error)
+            }
+        } else {
+            console.log("This tower is already in the database.")
         }
     }
 }
 
-export { populateTowers, populateMainStats }
+export { populateTowers, populateBarracksStats, populateMainStats }

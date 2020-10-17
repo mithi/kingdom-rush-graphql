@@ -2,21 +2,24 @@ import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from "typeorm"
 import { Tower } from "./Tower"
 
 @Entity()
-export class MainStats {
+export class BarracksStats {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ type: "real" })
-    damageMinimum: number
+    @Column({ type: "int" })
+    numberOfUnits: number
 
     @Column({ type: "real" })
-    damageMaximum: number
+    respawnInterval: number
 
     @Column({ type: "real" })
-    buildCost: number
+    health: number
 
-    @OneToOne(_ => Tower, tower => tower.mainStats, {
+    @Column({ type: "real" })
+    armor: number
+
+    @OneToOne(_ => Tower, tower => tower.barracksStats, {
         onDelete: "CASCADE",
     })
-    mainStats: MainStats
+    barracksStats: BarracksStats
 }

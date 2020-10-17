@@ -15,6 +15,14 @@ Simply get Kingdom Rush Tower information through queries in GraphQL
 
 ## Notes
 
+### Important!
+
+-   currently when you remove a tower, it doesn't automatically delete the stats
+-   even though you put onDelete : true
+-   try: Put your @JoinColumn() on the inverse side (on MainStats)
+-   https://github.com/typeorm/typeorm/issues/3218
+-   https://github.com/typeorm/typeorm/issues/1460
+
 Inspect database
 
 ```sql
@@ -31,7 +39,7 @@ Run migrations and start the server
 ./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js migration:generate -n 'MainStatsCreateTable'
 ```
 
-`No migrations are pending` means that somewhere in the migration table it says that you have already run the migration for your migration file. Delete everything in the migrationtable. Run the migration again
+`No migrations are pending` means that somewhere in the migration table it says that you have already run the migration for your migration file. Delete everything in the migration table. Run the migration again
 
 ## Data Shape
 
