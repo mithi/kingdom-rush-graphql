@@ -8,7 +8,7 @@
             "towerType": "artillery",
             "damage": {
                 "minimum": 8,
-                "maximum:": 15
+                "maximum": 15
             }
         },
         {
@@ -19,7 +19,7 @@
             "towerType": "artillery",
             "damage": {
                 "minimum": 20,
-                "maximum:": 40
+                "maximum": 40
             }
         },
         {
@@ -30,7 +30,7 @@
             "towerType": "artillery",
             "damage": {
                 "minimum": 30,
-                "maximum:": 60
+                "maximum": 60
             }
         },
         {
@@ -41,7 +41,7 @@
             "towerType": "artillery",
             "damage": {
                 "minimum": 50,
-                "maximum:": 100
+                "maximum": 100
             }
         },
         {
@@ -52,117 +52,117 @@
             "towerType": "artillery",
             "damage": {
                 "minimum": 60,
-                "maximum:": 110
+                "maximum": 110
             }
         },
         {
             "name": "dwarven bombard",
             "buildCost": 125,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 1,
             "towerType": "artillery",
             "damage": {
                 "minimum": 8,
-                "maximum:": 15
+                "maximum": 15
             }
         },
         {
             "name": "dwarven artillery",
             "buildCost": 220,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 2,
             "towerType": "artillery",
             "damage": {
                 "minimum": 20,
-                "maximum:": 40
+                "maximum": 40
             }
         },
         {
             "name": "dwarven howitzer",
             "buildCost": 320,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 3,
             "towerType": "artillery",
             "damage": {
                 "minimum": 30,
-                "maximum:": 60
+                "maximum": 60
             }
         },
         {
             "name": "dwaarp",
             "buildCost": 400,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 4,
             "towerType": "artillery",
             "damage": {
                 "minimum": 25,
-                "maximum:": 45
+                "maximum": 45
             }
         },
         {
             "name": "battle-mecha t-200",
             "buildCost": 375,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 4,
             "towerType": "artillery",
             "damage": {
                 "minimum": 25,
-                "maximum:": 55
+                "maximum": 55
             }
         },
         {
             "name": "stone cirlce",
             "buildCost": 125,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 1,
             "towerType": "artillery",
             "damage": {
                 "minimum": 7,
-                "maximum:": 12
+                "maximum": 12
             }
         },
         {
             "name": "boulder circle",
             "buildCost": 220,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 2,
             "towerType": "artillery",
             "damage": {
                 "minimum": 18,
-                "maximum:": 30
+                "maximum": 30
             }
         },
         {
             "name": "menhir cirlce",
             "buildCost": 320,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 3,
             "towerType": "artillery",
             "damage": {
                 "minimum": 30,
-                "maximum:": 50
+                "maximum": 50
             }
         },
         {
             "name": "arch-druid henge",
             "buildCost": 375,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 4,
             "towerType": "artillery",
             "damage": {
                 "minimum": 30,
-                "maximum:": 50
+                "maximum": 50
             }
         },
         {
             "name": "weirdwood",
             "buildCost": 400,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 4,
             "towerType": "artillery",
             "damage": {
                 "minimum": 62,
-                "maximum:": 106
+                "maximum": 106
             }
         },
         {
@@ -173,7 +173,7 @@
             "towerType": "magic",
             "damage": {
                 "minimum": 9,
-                "maximum:": 17
+                "maximum": 17
             }
         },
         {
@@ -184,7 +184,7 @@
             "towerType": "magic",
             "damage": {
                 "minimum": 23,
-                "maximum:": 43
+                "maximum": 43
             }
         },
         {
@@ -195,7 +195,7 @@
             "towerType": "magic",
             "damage": {
                 "minimum": 40,
-                "maximum:": 74
+                "maximum": 74
             }
         },
         {
@@ -206,7 +206,7 @@
             "towerType": "magic",
             "damage": {
                 "minimum": 76,
-                "maximum:": 140
+                "maximum": 140
             }
         },
         {
@@ -217,117 +217,117 @@
             "towerType": "magic",
             "damage": {
                 "minimum": 42,
-                "maximum:": 78
+                "maximum": 78
             }
         },
         {
             "name": "mage tower",
             "buildCost": 100,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 1,
             "towerType": "magic",
             "damage": {
                 "minimum": 9,
-                "maximum:": 17
+                "maximum": 17
             }
         },
         {
             "name": "adept tower",
             "buildCost": 160,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 2,
             "towerType": "magic",
             "damage": {
                 "minimum": 23,
-                "maximum:": 43
+                "maximum": 43
             }
         },
         {
             "name": "wizard tower",
             "buildCost": 240,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 3,
             "towerType": "magic",
             "damage": {
                 "minimum": 40,
-                "maximum:": 74
+                "maximum": 74
             }
         },
         {
             "name": "archmage tower",
             "buildCost": 300,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 4,
             "towerType": "magic",
             "damage": {
                 "minimum": 60,
-                "maximum:": 120
+                "maximum": 120
             }
         },
         {
             "name": "necromancer tower",
             "buildCost": 300,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 4,
             "towerType": "magic",
             "damage": {
                 "minimum": 20,
-                "maximum:": 70
+                "maximum": 70
             }
         },
         {
             "name": "mystic dais",
             "buildCost": 100,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 1,
             "towerType": "magic",
             "damage": {
                 "minimum": 8,
-                "maximum:": 12
+                "maximum": 12
             }
         },
         {
             "name": "arcanist dais",
             "buildCost": 160,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 2,
             "towerType": "magic",
             "damage": {
                 "minimum": 18,
-                "maximum:": 30
+                "maximum": 30
             }
         },
         {
             "name": "eldritch dais",
             "buildCost": 250,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 3,
             "towerType": "magic",
             "damage": {
                 "minimum": 34,
-                "maximum:": 56
+                "maximum": 56
             }
         },
         {
             "name": "wild magus",
             "buildCost": 300,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 4,
             "towerType": "magic",
             "damage": {
                 "minimum": 8,
-                "maximum:": 16
+                "maximum": 16
             }
         },
         {
             "name": "high elven mage",
             "buildCost": 300,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 4,
             "towerType": "magic",
             "damage": {
                 "minimum": 41,
-                "maximum:": 74
+                "maximum": 74
             }
         },
         {
@@ -338,7 +338,7 @@
             "towerType": "ranged",
             "damage": {
                 "minimum": 4,
-                "maximum:": 6
+                "maximum": 6
             }
         },
         {
@@ -349,7 +349,7 @@
             "towerType": "ranged",
             "damage": {
                 "minimum": 7,
-                "maximum:": 11
+                "maximum": 11
             }
         },
         {
@@ -360,7 +360,7 @@
             "towerType": "ranged",
             "damage": {
                 "minimum": 10,
-                "maximum:": 16
+                "maximum": 16
             }
         },
         {
@@ -371,7 +371,7 @@
             "towerType": "ranged",
             "damage": {
                 "minimum": 13,
-                "maximum:": 19
+                "maximum": 19
             }
         },
         {
@@ -382,117 +382,117 @@
             "towerType": "ranged",
             "damage": {
                 "minimum": 35,
-                "maximum:": 65
+                "maximum": 65
             }
         },
         {
             "name": "archer tower",
             "buildCost": 70,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 1,
             "towerType": "ranged",
             "damage": {
                 "minimum": 4,
-                "maximum:": 6
+                "maximum": 6
             }
         },
         {
             "name": "marksman tower",
             "buildCost": 110,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 2,
             "towerType": "ranged",
             "damage": {
                 "minimum": 7,
-                "maximum:": 11
+                "maximum": 11
             }
         },
         {
             "name": "sharpshooter tower",
             "buildCost": 160,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 3,
             "towerType": "ranged",
             "damage": {
                 "minimum": 10,
-                "maximum:": 16
+                "maximum": 16
             }
         },
         {
             "name": "crossbow fort",
             "buildCost": 230,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 4,
             "towerType": "ranged",
             "damage": {
                 "minimum": 15,
-                "maximum:": 23
+                "maximum": 23
             }
         },
         {
             "name": "tribal axethrower",
             "buildCost": 230,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 4,
             "towerType": "ranged",
             "damage": {
                 "minimum": 25,
-                "maximum:": 40
+                "maximum": 40
             }
         },
         {
             "name": "hunter arbor",
             "buildCost": 70,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 1,
             "towerType": "ranged",
             "damage": {
                 "minimum": 2,
-                "maximum:": 5
+                "maximum": 5
             }
         },
         {
             "name": "watcher arbor",
             "buildCost": 110,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 2,
             "towerType": "ranged",
             "damage": {
                 "minimum": 4,
-                "maximum:": 9
+                "maximum": 9
             }
         },
         {
             "name": "sentinel arbor",
             "buildCost": 160,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 3,
             "towerType": "ranged",
             "damage": {
                 "minimum": 5,
-                "maximum:": 11
+                "maximum": 11
             }
         },
         {
             "name": "arcane archers",
             "buildCost": 230,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 4,
             "towerType": "ranged",
             "damage": {
                 "minimum": 22,
-                "maximum:": 36
+                "maximum": 36
             }
         },
         {
             "name": "golden longbows",
             "buildCost": 275,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 4,
             "towerType": "ranged",
             "damage": {
                 "minimum": 45,
-                "maximum:": 60
+                "maximum": 60
             }
         },
         {
@@ -503,7 +503,7 @@
             "towerType": "barracks",
             "damage": {
                 "minimum": 1,
-                "maximum:": 3
+                "maximum": 3
             }
         },
         {
@@ -514,7 +514,7 @@
             "towerType": "barracks",
             "damage": {
                 "minimum": 3,
-                "maximum:": 4
+                "maximum": 4
             }
         },
         {
@@ -525,7 +525,7 @@
             "towerType": "barracks",
             "damage": {
                 "minimum": 6,
-                "maximum:": 10
+                "maximum": 10
             }
         },
         {
@@ -536,7 +536,7 @@
             "towerType": "barracks",
             "damage": {
                 "minimum": 12,
-                "maximum:": 18
+                "maximum": 18
             }
         },
         {
@@ -547,162 +547,162 @@
             "towerType": "barracks",
             "damage": {
                 "minimum": 16,
-                "maximum:": 24
+                "maximum": 24
             }
         },
         {
             "name": "militia barracks",
             "buildCost": 70,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 1,
             "towerType": "barracks",
             "damage": {
                 "minimum": 1,
-                "maximum:": 3
+                "maximum": 3
             }
         },
         {
             "name": "footmen barracks",
             "buildCost": 110,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 2,
             "towerType": "barracks",
             "damage": {
                 "minimum": 3,
-                "maximum:": 4
+                "maximum": 4
             }
         },
         {
             "name": "knights barracks",
             "buildCost": 160,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 3,
             "towerType": "barracks",
             "damage": {
                 "minimum": 6,
-                "maximum:": 10
+                "maximum": 10
             }
         },
         {
             "name": "assassins' guild",
             "buildCost": 230,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 4,
             "towerType": "barracks",
             "damage": {
                 "minimum": 10,
-                "maximum:": 14
+                "maximum": 14
             }
         },
         {
             "name": "knights templar",
             "buildCost": 230,
-            "kingdom": "kingdom rush frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "level": 4,
             "towerType": "barracks",
             "damage": {
                 "minimum": 20,
-                "maximum:": 30
+                "maximum": 30
             }
         },
         {
             "name": "defender barracks",
             "buildCost": 100,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 1,
             "towerType": "barracks",
             "damage": {
                 "minimum": 1,
-                "maximum:": 4
+                "maximum": 4
             }
         },
         {
             "name": "warden barracks",
             "buildCost": 160,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 2,
             "towerType": "barracks",
             "damage": {
                 "minimum": 3,
-                "maximum:": 7
+                "maximum": 7
             }
         },
         {
             "name": "ranger barracks",
             "buildCost": 250,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 3,
             "towerType": "barracks",
             "damage": {
                 "minimum": 8,
-                "maximum:": 12
+                "maximum": 12
             }
         },
         {
             "name": "bladesinger hall",
             "buildCost": 275,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 4,
             "towerType": "barracks",
             "damage": {
                 "minimum": 10,
-                "maximum:": 14
+                "maximum": 14
             }
         },
         {
             "name": "forest keepers",
             "buildCost": 300,
-            "kingdom": "kingdom rush origin",
+            "kingdom": "kingdom rush: origin",
             "level": 4,
             "towerType": "barracks",
             "damage": {
                 "minimum": 24,
-                "maximum:": 36
+                "maximum": 36
             }
         },
         {
             "name": "dark knights, 1",
             "level": 1,
             "buildCost": 110,
-            "towerType": "artillery",
+            "towerType": "barracks",
             "damage": {
                 "minimum": 2,
                 "maximum": 3
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "dark knights, 2",
             "level": 2,
             "buildCost": 160,
-            "towerType": "artillery",
+            "towerType": "barracks",
             "damage": {
                 "minimum": 4,
                 "maximum": 10
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "dark knights, 3",
             "level": 3,
             "buildCost": 220,
-            "towerType": "artillery",
+            "towerType": "barracks",
             "damage": {
                 "minimum": 7,
                 "maximum": 20
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "dark knights, 4",
             "level": 4,
             "buildCost": 260,
-            "towerType": "artillery",
+            "towerType": "barracks",
             "damage": {
                 "minimum": 12,
                 "maximum": 36
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "goblirangs, 1",
@@ -713,7 +713,7 @@
                 "minimum": 3,
                 "maximum": 4
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "goblirangs, 2",
@@ -724,7 +724,7 @@
                 "minimum": 7,
                 "maximum": 14
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "goblirangs, 3",
@@ -735,7 +735,7 @@
                 "minimum": 14,
                 "maximum": 26
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "goblirangs, 4",
@@ -746,7 +746,7 @@
                 "minimum": 25,
                 "maximum": 47
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "bone flingers, 1",
@@ -757,7 +757,7 @@
                 "minimum": 2,
                 "maximum": 4
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "bone flingers, 2",
@@ -768,7 +768,7 @@
                 "minimum": 5,
                 "maximum": 11
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "bone flingers, 3",
@@ -779,7 +779,7 @@
                 "minimum": 9,
                 "maximum": 20
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "bone flingers, 4",
@@ -790,7 +790,7 @@
                 "minimum": 14,
                 "maximum": 34
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc warriors den, 1",
@@ -801,7 +801,7 @@
                 "minimum": 1,
                 "maximum": 3
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc warriors den, 2",
@@ -812,7 +812,7 @@
                 "minimum": 3,
                 "maximum": 4
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc warriors den, 3",
@@ -823,7 +823,7 @@
                 "minimum": 5,
                 "maximum": 7
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc warriors den, 4",
@@ -834,7 +834,7 @@
                 "minimum": 9,
                 "maximum": 14
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "shadow archers, 1",
@@ -845,7 +845,7 @@
                 "minimum": 3,
                 "maximum": 4
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "shadow archers, 2",
@@ -856,7 +856,7 @@
                 "minimum": 7,
                 "maximum": 11
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "shadow archers, 3",
@@ -867,7 +867,7 @@
                 "minimum": 14,
                 "maximum": 21
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "shadow archers, 4",
@@ -878,7 +878,7 @@
                 "minimum": 23,
                 "maximum": 34
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "melting furnace, 1",
@@ -889,7 +889,7 @@
                 "minimum": 5,
                 "maximum": 7
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "melting furnace, 2",
@@ -900,7 +900,7 @@
                 "minimum": 14,
                 "maximum": 18
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "melting furnace, 3",
@@ -911,7 +911,7 @@
                 "minimum": 25,
                 "maximum": 31
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "melting furnace, 4",
@@ -922,7 +922,7 @@
                 "minimum": 41,
                 "maximum": 50
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "rocket riders, 1",
@@ -933,7 +933,7 @@
                 "minimum": 7,
                 "maximum": 10
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "rocket riders, 2",
@@ -944,7 +944,7 @@
                 "minimum": 20,
                 "maximum": 29
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "rocket riders, 3",
@@ -955,7 +955,7 @@
                 "minimum": 40,
                 "maximum": 58
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "rocket riders, 4",
@@ -966,7 +966,7 @@
                 "minimum": 64,
                 "maximum": 92
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "infernal mage, 1",
@@ -977,7 +977,7 @@
                 "minimum": 5,
                 "maximum": 16
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "infernal mage, 2",
@@ -988,7 +988,7 @@
                 "minimum": 16,
                 "maximum": 49
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "infernal mage, 3",
@@ -999,7 +999,7 @@
                 "minimum": 33,
                 "maximum": 100
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "infernal mage, 4",
@@ -1010,7 +1010,7 @@
                 "minimum": 49,
                 "maximum": 146
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "Elite Harassers, 1",
@@ -1021,7 +1021,7 @@
                 "minimum": 5,
                 "maximum": 7
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "Elite Harassers, 2",
@@ -1032,7 +1032,7 @@
                 "minimum": 10,
                 "maximum": 13
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "Elite Harassers, 3",
@@ -1043,7 +1043,7 @@
                 "minimum": 15,
                 "maximum": 25
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "Elite Harassers, 4",
@@ -1054,7 +1054,7 @@
                 "minimum": 25,
                 "maximum": 35
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "specters mausoleum, 1",
@@ -1065,7 +1065,7 @@
                 "minimum": 5,
                 "maximum": 8
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "specters mausoleum, 2",
@@ -1076,7 +1076,7 @@
                 "minimum": 13,
                 "maximum": 20
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "specters mausoleum, 3",
@@ -1087,7 +1087,7 @@
                 "minimum": 26,
                 "maximum": 38
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "specters mausoleum, 4",
@@ -1098,7 +1098,7 @@
                 "minimum": 48,
                 "maximum": 71
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc shaman, 1",
@@ -1109,7 +1109,7 @@
                 "minimum": 4,
                 "maximum": 20
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc shaman, 2",
@@ -1120,7 +1120,7 @@
                 "minimum": 10,
                 "maximum": 55
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc shaman, 3",
@@ -1131,7 +1131,7 @@
                 "minimum": 20,
                 "maximum": 110
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         },
         {
             "name": "orc shaman, 4",
@@ -1142,7 +1142,7 @@
                 "minimum": 35,
                 "maximum": 190
             },
-            "kingdom": "kingdom rush vengeance"
+            "kingdom": "kingdom rush: vengeance"
         }
     ]
 }

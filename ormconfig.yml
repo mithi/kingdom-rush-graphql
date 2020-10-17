@@ -5,13 +5,15 @@ default:
     username: "kingdom_rush_user"
     password: process.NODE_ENV.DB_PASSWORD
     database: "kingdom_rush_db"
-    entities: ["dist/models/*.js"]
+    entities: ["dist/models/*.js", "src/models/*.ts"] # when running 'npm run build' you must remove "src/models/*.ts"
+    #entities: ["dist/models/*.js"]
     logging: true
     synchronize: false
     dropSchema: false
-    migrations: ["src/migrations/*.js"]
+    migrations: ["src/migrations/*.ts"]
+    #migrations: ["dist/migrations/*.js"]
     cli:
-        migrationsDir: "migration"
+        migrationsDir: "src/migrations"
 
 test:
     type: "postgres"

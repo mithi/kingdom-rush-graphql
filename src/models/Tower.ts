@@ -1,6 +1,15 @@
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, Unique } from "typeorm"
+import {
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    BaseEntity,
+    Unique,
+    JoinColumn,
+    OneToOne,
+} from "typeorm"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 import { ObjectType, Field, ID } from "type-graphql"
+import { MainStats } from "./MainStats"
 
 @ObjectType()
 @Entity({ name: "Towers" })
@@ -34,4 +43,8 @@ export class Tower extends BaseEntity {
         enum: TowerKingdom,
     })
     kingdom: TowerKingdom
+
+    @OneToOne(_ => MainStats, { nullable: true })
+    @JoinColumn()
+    mainStats: MainStats
 }

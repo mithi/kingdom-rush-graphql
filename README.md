@@ -27,49 +27,58 @@ Run migrations and start the server
 
 ```bash
 
-# run the database migrations
-$ npm run migrate-all
-
-# start the server
-$ npm run start
+# Generate a migration file
+./node_modules/.bin/ts-node ./node_modules/typeorm/cli.js migration:generate -n 'MainStatsCreateTable'
 ```
 
-## Tables
+`No migrations are pending` means that somewhere in the migration table it says that you have already run the migration for your migration file. Delete everything in the migrationtable. Run the migration again
 
-1. `Towers`
+## Data Shape
 
--   name
--   id
--   kingdom
--   tower type
+```graphql
 
-2. `TowerBaseStats`
+Tower {
+    name
+    kingdom
+    towerType
+    level
+    imageUrl
 
--   build_cost
--   minimum_damage
--   maximum_damage
+    MainStats (required) {
+        buildCost
+        damageMinimum
+        damageMaximum
+    }
 
-3. `MeleeBaseStats`
+    OtherStats (either BarracksStats or AttackStats) {
+        BarrackStats{
+            numberOfUnits
+            respawnInternal
+            health
+            armor
+        }
+        AttackStats {
+            fireInterval
+            range
+        }
+    }
 
--   health
--   respawn_rate
--   armor
--   number_of_units
+    Abilities (nullable) {
+        name
+        description
+        imageUrl
+        towerId
+        abilityLevels: {
+            1: {
+                description
+                buildCost
+            }
+            2: {
+                description
+                buildCost
+            }
+        }
+    }
+}
 
-4. `NonMeleeBaseStats`
-
--   fire_rate
--   range
-
-5. `Abilities`
-
--   tower
--   name
--   description
-
-6. `AbilityLevel`
-
--   ability
--   description
--   build cost
--   level
+```
