@@ -1,12 +1,20 @@
 import { getRepository } from "typeorm"
 import { Tower } from "./models/Tower"
 import { MainStats } from "./models/MainStats"
-
+import { BarracksStats } from "./models/BarracksStats"
 import { TowerType, TowerLevel, TowerKingdom } from "./enums/TowerEnums"
 
 const path: any = require("path")
 const pathToTowerJson = path.join(__dirname, "../data/generated", "towers.json")
 const towerJson: any = require(pathToTowerJson)
+
+const pathToBarracksJson = path.join(
+    __dirname,
+    "../data/generated",
+    "barracks-stats.json"
+)
+
+const barracksJson: any = require(pathToBarracksJson)
 
 type kingdomType =
     | "kingdom rush: vengeance"
@@ -24,6 +32,15 @@ type towerData = {
         minimum: number
         maximum: number
     }
+}
+
+type barracksData = {
+    name: string
+    kingdom: kingdomType
+    numberOfUnits: number
+    health: number
+    armor: number
+    respawnInterval: number
 }
 
 const mapStringToKingdom = {
@@ -54,6 +71,45 @@ function logError(error: any) {
         console.log("ErrorMessage:", error.message)
         console.log("ErrorDetails:", error.detail)
         console.log("ERROR END")
+    }
+}
+
+const buildBaracksStats = (tower: barracksData) => {
+    let barracksStats = new BarracksStats()
+    barracksStats.numberOfUnits = tower.numberOfUnits
+    barracksStats.health = tower.health
+    barracksStats.respawnInterval = tower.respawnInterval
+    barracksStats.armor = tower.armor
+    return barracksStats
+}
+
+const populateBarracksStats = async () => {
+    const barracks: [barracksData] = (<any>barracksJson).towers
+    for (let tower of barracks) {
+        console.log(tower.name)
+        let retrievedTower = await getRepository(Tower).findOne({
+            where: {
+                name: tower.name,
+                kingdom: tower.kingdom,
+            },
+            relations: ["mainStats"],
+        })
+
+        if (retrievedTower && !retrievedTower.barracksStats) {
+            console.log("retrieved Tower:", retrievedTower, tower)
+
+            try {
+                console.log("saving retrieved tower with barracks stats...")
+                retrievedTower.barracksStats = buildBaracksStats(tower)
+                await getRepository(Tower).save(retrievedTower)
+            } catch (error) {
+                logError(error)
+            }
+        } else {
+            console.log(
+                "This tower that you want to assign barracks stats to, either does not exist, or already has barracks...."
+            )
+        }
     }
 }
 
@@ -91,6 +147,7 @@ const populateMainStats = async () => {
         }
     }
 }
+
 const populateTowers = async () => {
     const towers: [towerData] = (<any>towerJson).towers
     for (let tower of towers) {
@@ -122,4 +179,4 @@ const populateTowers = async () => {
     }
 }
 
-export { populateTowers, populateMainStats }
+export { populateTowers, populateBarracksStats, populateMainStats }
