@@ -2,6 +2,8 @@ import { getRepository } from "typeorm"
 import { Tower } from "./models/Tower"
 import { MainStats } from "./models/MainStats"
 import { BarracksStats } from "./models/BarracksStats"
+import { AttackStats } from "./models/AttackStats"
+
 import { TowerType, TowerLevel, TowerKingdom } from "./enums/TowerEnums"
 
 const path: any = require("path")
@@ -15,6 +17,10 @@ const pathToBarracksJson = path.join(
 )
 
 const barracksJson: any = require(pathToBarracksJson)
+
+const pathToAttackJson = path.join(__dirname, "../data/generated", "attack-stats.json")
+
+const attackJson: any = require(pathToAttackJson)
 
 type kingdomType =
     | "kingdom rush: vengeance"
@@ -41,6 +47,13 @@ type barracksData = {
     health: number
     armor: number
     respawnInterval: number
+}
+
+type attacksData = {
+    name: string
+    kingdom: kingdomType
+    fireInterval: number
+    range: number
 }
 
 const mapStringToKingdom = {
@@ -71,6 +84,50 @@ function logError(error: any) {
         console.log("ErrorMessage:", error.message)
         console.log("ErrorDetails:", error.detail)
         console.log("ERROR END")
+    }
+}
+
+const populateAttackStats = async () => {
+    const attackTowers: [attacksData] = attackJson.towers
+    for (let tower of attackTowers) {
+        console.log(tower.name)
+        let retrievedTower = await getRepository(Tower).findOne({
+            where: {
+                name: tower.name,
+                kingdom: tower.kingdom,
+            },
+            relations: ["attackStats"],
+        })
+
+        if (!retrievedTower) {
+            console.log(
+                "The tower you want to populate attack stats does not exist",
+                tower.name,
+                tower.kingdom
+            )
+            continue
+        }
+
+        if (retrievedTower.attackStats) {
+            console.log(
+                "This tower already has attack stats",
+                retrievedTower.name,
+                retrievedTower.kingdom
+            )
+            continue
+        }
+
+        let attackStats = new AttackStats()
+        attackStats.fireInterval = tower.fireInterval
+        attackStats.range = tower.range
+        retrievedTower.attackStats = attackStats
+
+        try {
+            console.log("Saving attackStats data for", retrievedTower.name)
+            await getRepository(Tower).save(retrievedTower)
+        } catch (error) {
+            logError(error)
+        }
     }
 }
 
@@ -151,7 +208,6 @@ const populateMainStats = async () => {
 const populateTowers = async () => {
     const towers: [towerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log(tower.name)
         const newTower = {
             name: tower.name,
             towerType: mapStringToTowerType[tower.towerType],
@@ -179,4 +235,4 @@ const populateTowers = async () => {
     }
 }
 
-export { populateTowers, populateBarracksStats, populateMainStats }
+export { populateTowers, populateBarracksStats, populateMainStats, populateAttackStats }
