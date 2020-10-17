@@ -5,8 +5,8 @@ import { MainStats } from "./models/MainStats"
 import { TowerType, TowerLevel, TowerKingdom } from "./enums/TowerEnums"
 
 const path: any = require("path")
-const pathToJson = path.join(__dirname, "../data/generated", "towers.json")
-const towerJson: any = require(pathToJson)
+const pathToTowerJson = path.join(__dirname, "../data/generated", "towers.json")
+const towerJson: any = require(pathToTowerJson)
 
 type towerData = {
     name: string
@@ -45,6 +45,16 @@ const mapStringToTowerType = {
     artillery: TowerType.ARTILLERY,
 }
 
+function logError(error: any) {
+    if ("name" in error && "message" in error && "detail" in error) {
+        console.log("ERROR START")
+        console.log("ErrorName:", error.name)
+        console.log("ErrorMessage:", error.message)
+        console.log("ErrorDetails:", error.detail)
+        console.log("ERROR END")
+    }
+}
+
 const populateMainStats = async () => {
     const towers: [towerData] = (<any>towerJson).towers
     for (let tower of towers) {
@@ -54,35 +64,30 @@ const populateMainStats = async () => {
                 name: tower.name,
                 kingdom: tower.kingdom,
             },
+            relations: ["mainStats"],
         })
 
         if (retrievedTower !== undefined && "id" in retrievedTower) {
-            console.log("Retrieved Tower:", retrievedTower, tower)
-            const mainStats = new MainStats()
-            mainStats.buildCost = tower.buildCost
-            mainStats.damageMinimum = tower.damage.minimum
-            mainStats.damageMaximum = tower.damage.maximum
+            if (retrievedTower.mainStats.id === undefined) {
+                console.log("Retrieved Tower:", retrievedTower, tower)
+                const mainStats = new MainStats()
+                mainStats.buildCost = tower.buildCost
+                mainStats.damageMinimum = tower.damage.minimum
+                mainStats.damageMaximum = tower.damage.maximum
 
-            try {
-                console.log("saving mainstats....")
-                await getRepository(MainStats).save(mainStats)
-            } catch (error) {
-                console.log("ERROR START")
-                console.log("ErrorName:", error.name)
-                console.log("ErrorMessage:", error.message)
-                console.log("ErrorDetails:", error.detail)
-                console.log("ERROR END")
-            }
-            try {
-                console.log("saving retrieved tower...")
-                retrievedTower.mainStats = mainStats
-                await getRepository(Tower).save(retrievedTower)
-            } catch (error) {
-                console.log("ERROR START")
-                console.log("ErrorName:", error.name)
-                console.log("ErrorMessage:", error.message)
-                console.log("ErrorDetails:", error.detail)
-                console.log("ERROR END")
+                try {
+                    console.log("saving retrieved tower with main stats...")
+                    retrievedTower.mainStats = mainStats
+                    await getRepository(Tower).save(retrievedTower)
+                } catch (error) {
+                    logError(error)
+                }
+            } else {
+                console.log(
+                    "This tower already has a main stats",
+                    retrievedTower.name,
+                    retrievedTower.mainStats
+                )
             }
         }
     }
@@ -90,14 +95,7 @@ const populateMainStats = async () => {
 const populateTowers = async () => {
     const towers: [towerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log(
-            tower.name,
-            tower.kingdom,
-            tower.level,
-            tower.towerType,
-            tower.buildCost,
-            tower.damage
-        )
+        console.log("Tower to insert:", tower)
         const newTower = {
             name: tower.name,
             towerType: mapStringToTowerType[tower.towerType],
@@ -108,11 +106,7 @@ const populateTowers = async () => {
         try {
             await getRepository(Tower).insert(newTower)
         } catch (error) {
-            console.log("ERROR START")
-            console.log("ErrorName:", error.name)
-            console.log("ErrorMessage:", error.message)
-            console.log("ErrorDetails:", error.detail)
-            console.log("ERROR END")
+            logError(error)
         }
     }
 }
