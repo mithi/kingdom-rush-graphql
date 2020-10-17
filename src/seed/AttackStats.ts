@@ -17,8 +17,8 @@ type AttacksData = {
 const populateAttackStats = async () => {
     const attackTowers: [AttacksData] = attackJson.towers
     for (let tower of attackTowers) {
-        console.log("---")
-        console.log(tower.name, tower.kingdom)
+        console.log("...")
+        console.log(tower.name, "|", tower.kingdom)
         let retrievedTower = await getRepository(Tower).findOne({
             where: {
                 name: tower.name,

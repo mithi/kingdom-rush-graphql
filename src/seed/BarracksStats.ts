@@ -24,8 +24,8 @@ type BarracksData = {
 const populateBarracksStats = async () => {
     const barracks: [BarracksData] = (<any>barracksJson).towers
     for (let tower of barracks) {
-        console.log("---")
-        console.log(tower.name, tower.kingdom)
+        console.log("...")
+        console.log(tower.name, "|", tower.kingdom)
         let retrievedTower = await getRepository(Tower).findOne({
             where: {
                 name: tower.name,

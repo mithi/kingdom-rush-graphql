@@ -44,8 +44,8 @@ const mapStringToTowerType = {
 const populateTowers = async () => {
     const towers: [TowerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log("---")
-        console.log(tower.name, tower.kingdom)
+        console.log("...")
+        console.log(tower.name, "|", tower.kingdom)
         const newTower = {
             name: tower.name,
             towerType: mapStringToTowerType[tower.towerType],
@@ -77,8 +77,8 @@ const populateTowers = async () => {
 const populateMainStats = async () => {
     const towers: [TowerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log("---")
-        console.log(tower.name, tower.kingdom)
+        console.log("...")
+        console.log(tower.name, "|", tower.kingdom)
         let retrievedTower = await getRepository(Tower).findOne({
             where: {
                 name: tower.name,
