@@ -8,13 +8,15 @@ const path: any = require("path")
 const pathToTowerJson = path.join(__dirname, "../data/generated", "towers.json")
 const towerJson: any = require(pathToTowerJson)
 
+type kingdomType =
+    | "kingdom rush: vengeance"
+    | "kingdom rush: origin"
+    | "kingdom rush"
+    | "kingdom rush: frontiers"
+
 type towerData = {
     name: string
-    kingdom:
-        | "kingdom rush: vengeance"
-        | "kingdom rush: origin"
-        | "kingdom rush"
-        | "kingdom rush: frontiers"
+    kingdom: kingdomType
     level: 1 | 2 | 3 | 4
     towerType: "magic" | "artillery" | "ranged" | "barracks"
     buildCost: number
@@ -67,35 +69,32 @@ const populateMainStats = async () => {
             relations: ["mainStats"],
         })
 
-        if (retrievedTower !== undefined && "id" in retrievedTower) {
-            if (retrievedTower.mainStats.id === undefined) {
-                console.log("Retrieved Tower:", retrievedTower, tower)
-                const mainStats = new MainStats()
-                mainStats.buildCost = tower.buildCost
-                mainStats.damageMinimum = tower.damage.minimum
-                mainStats.damageMaximum = tower.damage.maximum
+        if (!retrievedTower) {
+            continue
+        }
 
-                try {
-                    console.log("saving retrieved tower with main stats...")
-                    retrievedTower.mainStats = mainStats
-                    await getRepository(Tower).save(retrievedTower)
-                } catch (error) {
-                    logError(error)
-                }
-            } else {
-                console.log(
-                    "This tower already has a main stats",
-                    retrievedTower.name,
-                    retrievedTower.mainStats
-                )
+        if (!retrievedTower.mainStats) {
+            console.log("Retrieved Tower:", retrievedTower, tower)
+            const mainStats = new MainStats()
+            mainStats.buildCost = tower.buildCost
+            mainStats.damageMinimum = tower.damage.minimum
+            mainStats.damageMaximum = tower.damage.maximum
+            retrievedTower.mainStats = mainStats
+            try {
+                console.log("saving retrieved tower with main stats...")
+                await getRepository(Tower).save(retrievedTower)
+            } catch (error) {
+                logError(error)
             }
+        } else {
+            console.log("This tower already has a main stats.")
         }
     }
 }
 const populateTowers = async () => {
     const towers: [towerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log("Tower to insert:", tower)
+        console.log(tower.name)
         const newTower = {
             name: tower.name,
             towerType: mapStringToTowerType[tower.towerType],
@@ -103,10 +102,22 @@ const populateTowers = async () => {
             kingdom: mapStringToKingdom[tower.kingdom],
         }
 
-        try {
-            await getRepository(Tower).insert(newTower)
-        } catch (error) {
-            logError(error)
+        let retrievedTower = await getRepository(Tower).findOne({
+            where: {
+                name: tower.name,
+                kingdom: tower.kingdom,
+            },
+        })
+
+        if (!retrievedTower) {
+            console.log("inserting new tower:", newTower.name, retrievedTower)
+            try {
+                await getRepository(Tower).insert(newTower)
+            } catch (error) {
+                logError(error)
+            }
+        } else {
+            console.log("This tower is already in the database.")
         }
     }
 }
