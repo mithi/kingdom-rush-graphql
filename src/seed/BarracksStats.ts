@@ -21,12 +21,15 @@ type BarracksData = {
     respawnInterval: number
 }
 
-const populateBarracksStats = async () => {
+const populateBarracksStats = async ({ dbName = "default", verbose = true } = {}) => {
     const barracks: [BarracksData] = (<any>barracksJson).towers
     for (let tower of barracks) {
-        console.log("...")
-        console.log(tower.name, "|", tower.kingdom)
-        let retrievedTower = await getRepository(Tower).findOne({
+        if (verbose) {
+            console.log("...")
+            console.log(tower.name, "|", tower.kingdom)
+        }
+
+        let retrievedTower = await getRepository(Tower, dbName).findOne({
             where: {
                 name: tower.name,
                 kingdom: tower.kingdom,
@@ -52,7 +55,7 @@ const populateBarracksStats = async () => {
         retrievedTower.barracksStats = barracksStats
 
         try {
-            await getRepository(Tower).save(retrievedTower)
+            await getRepository(Tower, dbName).save(retrievedTower)
             console.log("Barracks stats saved.")
         } catch (error) {
             logError(error)

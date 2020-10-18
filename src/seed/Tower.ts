@@ -41,11 +41,13 @@ const mapStringToTowerType = {
     artillery: TowerType.ARTILLERY,
 }
 
-const populateTowers = async () => {
+const populateTowers = async ({ dbName = "default", verbose = true } = {}) => {
     const towers: [TowerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log("...")
-        console.log(tower.name, "|", tower.kingdom)
+        if (verbose) {
+            console.log("...")
+            console.log(tower.name, "|", tower.kingdom)
+        }
         const newTower = {
             name: tower.name,
             towerType: mapStringToTowerType[tower.towerType],
@@ -53,7 +55,7 @@ const populateTowers = async () => {
             kingdom: mapStringToKingdom[tower.kingdom],
         }
 
-        let retrievedTower = await getRepository(Tower).findOne({
+        let retrievedTower = await getRepository(Tower, dbName).findOne({
             where: {
                 name: tower.name,
                 kingdom: tower.kingdom,
@@ -66,7 +68,7 @@ const populateTowers = async () => {
         }
 
         try {
-            await getRepository(Tower).insert(newTower)
+            await getRepository(Tower, dbName).insert(newTower)
             console.log("> Tower saved.")
         } catch (error) {
             logError(error)
@@ -74,12 +76,14 @@ const populateTowers = async () => {
     }
 }
 
-const populateMainStats = async () => {
+const populateMainStats = async ({ dbName = "default", verbose = true } = {}) => {
     const towers: [TowerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        console.log("...")
-        console.log(tower.name, "|", tower.kingdom)
-        let retrievedTower = await getRepository(Tower).findOne({
+        if (verbose) {
+            console.log("...")
+            console.log(tower.name, "|", tower.kingdom)
+        }
+        let retrievedTower = await getRepository(Tower, dbName).findOne({
             where: {
                 name: tower.name,
                 kingdom: tower.kingdom,
@@ -103,7 +107,7 @@ const populateMainStats = async () => {
         mainStats.damageMaximum = tower.damage.maximum
         retrievedTower.mainStats = mainStats
         try {
-            await getRepository(Tower).save(retrievedTower)
+            await getRepository(Tower, dbName).save(retrievedTower)
             console.log("> Main stats saved")
         } catch (error) {
             logError(error)
