@@ -29,6 +29,7 @@ Inspect database
 psql -d kingdom_rush_db -U kingdom_rush_user
 \dt
 SELECT * FROM "Towers"
+DROP TABLE "Towers"; DROP TABLE main_stats; DROP TABLE attack_stats; DROP TABLE barracks_stats; DELETE FROM migrations;
 ```
 
 Run migrations and start the server
