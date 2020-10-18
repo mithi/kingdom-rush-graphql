@@ -1,3 +1,10 @@
+/*
+--------
+IMPORTANT
+--------
+This is not a good way to seed the database. Please see `src/seed/index.ts` for more information
+*/
+
 import { getRepository } from "typeorm"
 import { logError, KingdomType } from "./shared"
 import { TowerType, TowerLevel, TowerKingdom } from "../enums/TowerEnums"
@@ -63,13 +70,17 @@ const populateTowers = async ({ dbName = "default", verbose = true } = {}) => {
         })
 
         if (retrievedTower) {
-            console.log("> This tower is already in the database.")
+            if (verbose) {
+                console.log("> This tower is already in the database.")
+            }
             continue
         }
 
         try {
             await getRepository(Tower, dbName).insert(newTower)
-            console.log("> Tower saved.")
+            if (verbose) {
+                console.log("> Tower saved.")
+            }
         } catch (error) {
             logError(error)
         }
@@ -92,12 +103,16 @@ const populateMainStats = async ({ dbName = "default", verbose = true } = {}) =>
         })
 
         if (!retrievedTower) {
-            console.log("> The tower you want to populate main stats does not exist")
+            if (verbose) {
+                console.log("> The tower you want to populate main stats does not exist")
+            }
             continue
         }
 
         if (retrievedTower.mainStats) {
-            console.log("> This tower already has main stats.")
+            if (verbose) {
+                console.log("> This tower already has main stats.")
+            }
             continue
         }
 
@@ -108,7 +123,9 @@ const populateMainStats = async ({ dbName = "default", verbose = true } = {}) =>
         retrievedTower.mainStats = mainStats
         try {
             await getRepository(Tower, dbName).save(retrievedTower)
-            console.log("> Main stats saved")
+            if (verbose) {
+                console.log("> Main stats saved")
+            }
         } catch (error) {
             logError(error)
         }

@@ -1,3 +1,10 @@
+/*
+--------
+IMPORTANT
+--------
+This is not a good way to seed the database. Please see `src/seed/index.ts` for more information
+*/
+
 import { getRepository } from "typeorm"
 import { KingdomType, logError } from "./shared"
 import { AttackStats } from "../models/AttackStats"
@@ -56,9 +63,7 @@ const populateAttackStats = async ({ dbName = "default", verbose = true } = {}) 
                 console.log("> Attack stats saved.")
             }
         } catch (error) {
-            if (verbose) {
-                logError(error)
-            }
+            logError(error)
         }
     }
 }

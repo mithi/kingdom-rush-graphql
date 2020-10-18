@@ -1,3 +1,10 @@
+/*
+--------
+IMPORTANT
+--------
+This is not a good way to seed the database. Please see `src/seed/index.ts` for more information
+*/
+
 import { getRepository } from "typeorm"
 import { KingdomType, logError } from "./shared"
 import { BarracksStats } from "../models/BarracksStats"
@@ -38,12 +45,18 @@ const populateBarracksStats = async ({ dbName = "default", verbose = true } = {}
         })
 
         if (!retrievedTower) {
-            console.log("> The tower you want to populate attack stats does not exist.")
+            if (verbose) {
+                console.log(
+                    "> The tower you want to populate attack stats does not exist."
+                )
+            }
             continue
         }
 
         if (retrievedTower.barracksStats) {
-            console.log("> This tower already has barrack stats.")
+            if (verbose) {
+                console.log("> This tower already has barrack stats.")
+            }
             continue
         }
 
@@ -56,7 +69,9 @@ const populateBarracksStats = async ({ dbName = "default", verbose = true } = {}
 
         try {
             await getRepository(Tower, dbName).save(retrievedTower)
-            console.log("Barracks stats saved.")
+            if (verbose) {
+                console.log("Barracks stats saved.")
+            }
         } catch (error) {
             logError(error)
         }
