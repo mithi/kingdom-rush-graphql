@@ -1,6 +1,6 @@
 import { Resolver, Query, Mutation, Arg, InputType, Field } from "type-graphql"
 import { Tower } from "../models/Tower"
-import { TowerType, TowerKingdom, TowerLevel, TowerCategory } from "../enums/TowerEnums"
+import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 
 @InputType()
 export class CreateTowerInput {
@@ -18,9 +18,6 @@ export class CreateTowerInput {
 
     @Field(_ => TowerKingdom)
     kingdom: TowerKingdom
-
-    @Field(_ => TowerCategory, { nullable: true })
-    towerCategory: TowerCategory
 }
 
 @Resolver()
@@ -41,8 +38,4 @@ export class TowerResolver {
         await tower.save()
         return tower
     }
-
-    // tower by id
-    // tower by name
-    //
 }

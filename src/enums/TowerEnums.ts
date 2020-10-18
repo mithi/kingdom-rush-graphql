@@ -7,11 +7,6 @@ export enum TowerType {
     ARTILLERY = "artillery",
 }
 
-export enum TowerCategory {
-    SPECIAL = "special",
-    BASIC = "basic",
-}
-
 export enum TowerLevel {
     LVL1 = 1,
     LVL2 = 2,
@@ -28,5 +23,4 @@ export enum TowerKingdom {
 
 registerEnumType(TowerType, { name: "TowerType" })
 registerEnumType(TowerLevel, { name: "TowerLevel" })
-registerEnumType(TowerCategory, { name: "TowerCategory" })
 registerEnumType(TowerKingdom, { name: "TowerKingdom" })
