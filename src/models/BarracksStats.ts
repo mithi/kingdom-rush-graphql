@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn } from "typeorm"
 import { Tower } from "./Tower"
 
 @Entity()
@@ -18,8 +18,7 @@ export class BarracksStats {
     @Column({ type: "real" })
     armor: number
 
-    @OneToOne(_ => Tower, tower => tower.barracksStats, {
-        onDelete: "CASCADE",
-    })
-    barracksStats: BarracksStats
+    @OneToOne(_ => Tower, tower => tower.barracksStats, { onDelete: "CASCADE" })
+    @JoinColumn()
+    tower: Tower
 }

@@ -57,13 +57,7 @@ test("Store a tower and add main stats", async () => {
     expect(retrievedTowers[0].name).toBe("dwarven bombard")
     expect(retrievedTowers[0].mainStats.buildCost).toBe(125)
 
-    // currently when you remove a tower, it doesn't automatically delete the stats
-    // even though you put onDelete : true
-    // try: Put your @JoinColumn() on the inverse side (on MainStats)
-    // https://github.com/typeorm/typeorm/issues/3218
-    // https://github.com/typeorm/typeorm/issues/1460
     await repo.remove(retrievedTowers[0])
-    await getRepository(MainStats, "test").remove(retrievedTowers[0].mainStats)
     expect(await getRepository(Tower, "test").count()).toBe(0)
     expect(await getRepository(MainStats, "test").count()).toBe(0)
 })

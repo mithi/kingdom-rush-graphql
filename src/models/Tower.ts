@@ -4,7 +4,6 @@ import {
     PrimaryGeneratedColumn,
     BaseEntity,
     Unique,
-    JoinColumn,
     OneToOne,
 } from "typeorm"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
@@ -46,15 +45,12 @@ export class Tower extends BaseEntity {
     })
     kingdom: TowerKingdom
 
-    @OneToOne(_ => MainStats, { nullable: true, cascade: true })
-    @JoinColumn()
+    @OneToOne(_ => MainStats, mainStats => mainStats.tower, { cascade: true })
     mainStats: MainStats
 
-    @OneToOne(_ => BarracksStats, { nullable: true, cascade: true })
-    @JoinColumn()
+    @OneToOne(_ => BarracksStats, barracksStats => barracksStats.tower, { cascade: true })
     barracksStats: BarracksStats
 
-    @OneToOne(_ => AttackStats, { nullable: true, cascade: true })
-    @JoinColumn()
+    @OneToOne(_ => AttackStats, attackStats => attackStats.tower, { cascade: true })
     attackStats: AttackStats
 }
