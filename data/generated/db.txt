@@ -1,0 +1,338 @@
+                  List of relations
+ Schema |      Name      | Type  |       Owner
+--------+----------------+-------+-------------------
+ public | Towers         | table | kingdom_rush_user
+ public | attack_stats   | table | kingdom_rush_user
+ public | barracks_stats | table | kingdom_rush_user
+ public | main_stats     | table | kingdom_rush_user
+ public | migrations     | table | kingdom_rush_user
+(5 rows)
+
+ id  |         name          | towerType | level |         kingdom
+-----+-----------------------+-----------+-------+-------------------------
+   1 | dwarven bombard       | artillery | 1     | kingdom rush
+   2 | dwarven artillery     | artillery | 2     | kingdom rush
+   3 | dwarven howitzer      | artillery | 3     | kingdom rush
+   4 | 500mm big bertha      | artillery | 4     | kingdom rush
+   5 | tesla x104            | artillery | 4     | kingdom rush
+   6 | dwarven bombard       | artillery | 1     | kingdom rush: frontiers
+   7 | dwarven artillery     | artillery | 2     | kingdom rush: frontiers
+   8 | dwarven howitzer      | artillery | 3     | kingdom rush: frontiers
+   9 | dwaarp                | artillery | 4     | kingdom rush: frontiers
+  10 | battle-mecha t-200    | artillery | 4     | kingdom rush: frontiers
+  11 | stone cirlce          | artillery | 1     | kingdom rush: origin
+  12 | boulder circle        | artillery | 2     | kingdom rush: origin
+  13 | menhir cirlce         | artillery | 3     | kingdom rush: origin
+  14 | arch-druid henge      | artillery | 4     | kingdom rush: origin
+  15 | weirdwood             | artillery | 4     | kingdom rush: origin
+  16 | mage tower            | mage      | 1     | kingdom rush
+  17 | adept tower           | mage      | 2     | kingdom rush
+  18 | wizard tower          | mage      | 3     | kingdom rush
+  19 | arcane tower          | mage      | 4     | kingdom rush
+  20 | sorcerer tower        | mage      | 4     | kingdom rush
+  21 | mage tower            | mage      | 1     | kingdom rush: frontiers
+  22 | adept tower           | mage      | 2     | kingdom rush: frontiers
+  23 | wizard tower          | mage      | 3     | kingdom rush: frontiers
+  24 | archmage tower        | mage      | 4     | kingdom rush: frontiers
+  25 | necromancer tower     | mage      | 4     | kingdom rush: frontiers
+  26 | mystic dais           | mage      | 1     | kingdom rush: origin
+  27 | arcanist dais         | mage      | 2     | kingdom rush: origin
+  28 | eldritch dais         | mage      | 3     | kingdom rush: origin
+  29 | wild magus            | mage      | 4     | kingdom rush: origin
+  30 | high elven mage       | mage      | 4     | kingdom rush: origin
+  31 | archer tower          | archer    | 1     | kingdom rush
+  32 | marksman tower        | archer    | 2     | kingdom rush
+  33 | sharpshooter tower    | archer    | 3     | kingdom rush
+  34 | rangers hideout       | archer    | 4     | kingdom rush
+  35 | musketeer garrison    | archer    | 4     | kingdom rush
+  36 | archer tower          | archer    | 1     | kingdom rush: frontiers
+  37 | marksman tower        | archer    | 2     | kingdom rush: frontiers
+  38 | sharpshooter tower    | archer    | 3     | kingdom rush: frontiers
+  39 | crossbow fort         | archer    | 4     | kingdom rush: frontiers
+  40 | tribal axethrower     | archer    | 4     | kingdom rush: frontiers
+  41 | hunter arbor          | archer    | 1     | kingdom rush: origin
+  42 | watcher arbor         | archer    | 2     | kingdom rush: origin
+  43 | sentinel arbor        | archer    | 3     | kingdom rush: origin
+  44 | arcane archers        | archer    | 4     | kingdom rush: origin
+  45 | golden longbows       | archer    | 4     | kingdom rush: origin
+  46 | militia barracks      | barracks  | 1     | kingdom rush
+  47 | footmen barracks      | barracks  | 2     | kingdom rush
+  48 | knights barracks      | barracks  | 3     | kingdom rush
+  49 | holy order            | barracks  | 4     | kingdom rush
+  50 | barbarian mead hall   | barracks  | 4     | kingdom rush
+  51 | militia barracks      | barracks  | 1     | kingdom rush: frontiers
+  52 | footmen barracks      | barracks  | 2     | kingdom rush: frontiers
+  53 | knights barracks      | barracks  | 3     | kingdom rush: frontiers
+  54 | assassins' guild      | barracks  | 4     | kingdom rush: frontiers
+  55 | knights templar       | barracks  | 4     | kingdom rush: frontiers
+  56 | defender barracks     | barracks  | 1     | kingdom rush: origin
+  57 | warden barracks       | barracks  | 2     | kingdom rush: origin
+  58 | ranger barracks       | barracks  | 3     | kingdom rush: origin
+  59 | bladesinger hall      | barracks  | 4     | kingdom rush: origin
+  60 | forest keepers        | barracks  | 4     | kingdom rush: origin
+  61 | dark knights, 1       | barracks  | 1     | kingdom rush: vengeance
+  62 | dark knights, 2       | barracks  | 2     | kingdom rush: vengeance
+  63 | dark knights, 3       | barracks  | 3     | kingdom rush: vengeance
+  64 | dark knights, 4       | barracks  | 4     | kingdom rush: vengeance
+  65 | goblirangs, 1         | archer    | 1     | kingdom rush: vengeance
+  66 | goblirangs, 2         | archer    | 2     | kingdom rush: vengeance
+  67 | goblirangs, 3         | archer    | 3     | kingdom rush: vengeance
+  68 | goblirangs, 4         | archer    | 4     | kingdom rush: vengeance
+  69 | bone flingers, 1      | archer    | 1     | kingdom rush: vengeance
+  70 | bone flingers, 2      | archer    | 2     | kingdom rush: vengeance
+  71 | bone flingers, 3      | archer    | 3     | kingdom rush: vengeance
+  72 | bone flingers, 4      | archer    | 4     | kingdom rush: vengeance
+  73 | orc warriors den, 1   | barracks  | 1     | kingdom rush: vengeance
+  74 | orc warriors den, 2   | barracks  | 2     | kingdom rush: vengeance
+  75 | orc warriors den, 3   | barracks  | 3     | kingdom rush: vengeance
+  76 | orc warriors den, 4   | barracks  | 4     | kingdom rush: vengeance
+  77 | shadow archers, 1     | archer    | 1     | kingdom rush: vengeance
+  78 | shadow archers, 2     | archer    | 2     | kingdom rush: vengeance
+  79 | shadow archers, 3     | archer    | 3     | kingdom rush: vengeance
+  80 | shadow archers, 4     | archer    | 4     | kingdom rush: vengeance
+  81 | melting furnace, 1    | artillery | 1     | kingdom rush: vengeance
+  82 | melting furnace, 2    | artillery | 2     | kingdom rush: vengeance
+  83 | melting furnace, 3    | artillery | 3     | kingdom rush: vengeance
+  84 | melting furnace, 4    | artillery | 4     | kingdom rush: vengeance
+  85 | rocket riders, 1      | artillery | 1     | kingdom rush: vengeance
+  86 | rocket riders, 2      | artillery | 2     | kingdom rush: vengeance
+  87 | rocket riders, 3      | artillery | 3     | kingdom rush: vengeance
+  88 | rocket riders, 4      | artillery | 4     | kingdom rush: vengeance
+  89 | infernal mage, 1      | mage      | 1     | kingdom rush: vengeance
+  90 | infernal mage, 2      | mage      | 2     | kingdom rush: vengeance
+  91 | infernal mage, 3      | mage      | 3     | kingdom rush: vengeance
+  92 | infernal mage, 4      | mage      | 4     | kingdom rush: vengeance
+  93 | Elite Harassers, 1    | barracks  | 1     | kingdom rush: vengeance
+  94 | Elite Harassers, 2    | barracks  | 2     | kingdom rush: vengeance
+  95 | Elite Harassers, 3    | barracks  | 3     | kingdom rush: vengeance
+  96 | Elite Harassers, 4    | barracks  | 4     | kingdom rush: vengeance
+  97 | specters mausoleum, 1 | mage      | 1     | kingdom rush: vengeance
+  98 | specters mausoleum, 2 | mage      | 2     | kingdom rush: vengeance
+  99 | specters mausoleum, 3 | mage      | 3     | kingdom rush: vengeance
+ 100 | specters mausoleum, 4 | mage      | 4     | kingdom rush: vengeance
+ 101 | orc shaman, 1         | mage      | 1     | kingdom rush: vengeance
+ 102 | orc shaman, 2         | mage      | 2     | kingdom rush: vengeance
+ 103 | orc shaman, 3         | mage      | 3     | kingdom rush: vengeance
+ 104 | orc shaman, 4         | mage      | 4     | kingdom rush: vengeance
+(104 rows)
+
+ id  | damageMinimum | damageMaximum | buildCost | towerId
+-----+---------------+---------------+-----------+---------
+   1 |             8 |            15 |       125 |       1
+   2 |            20 |            40 |       220 |       2
+   3 |            30 |            60 |       320 |       3
+   4 |            50 |           100 |       400 |       4
+   5 |            60 |           110 |       375 |       5
+   6 |             8 |            15 |       125 |       6
+   7 |            20 |            40 |       220 |       7
+   8 |            30 |            60 |       320 |       8
+   9 |            25 |            45 |       400 |       9
+  10 |            25 |            55 |       375 |      10
+  11 |             7 |            12 |       125 |      11
+  12 |            18 |            30 |       220 |      12
+  13 |            30 |            50 |       320 |      13
+  14 |            30 |            50 |       375 |      14
+  15 |            62 |           106 |       400 |      15
+  16 |             9 |            17 |       100 |      16
+  17 |            23 |            43 |       160 |      17
+  18 |            40 |            74 |       240 |      18
+  19 |            76 |           140 |       300 |      19
+  20 |            42 |            78 |       300 |      20
+  21 |             9 |            17 |       100 |      21
+  22 |            23 |            43 |       160 |      22
+  23 |            40 |            74 |       240 |      23
+  24 |            60 |           120 |       300 |      24
+  25 |            20 |            70 |       300 |      25
+  26 |             8 |            12 |       100 |      26
+  27 |            18 |            30 |       160 |      27
+  28 |            34 |            56 |       250 |      28
+  29 |             8 |            16 |       300 |      29
+  30 |            41 |            74 |       300 |      30
+  31 |             4 |             6 |        70 |      31
+  32 |             7 |            11 |       110 |      32
+  33 |            10 |            16 |       160 |      33
+  34 |            13 |            19 |       230 |      34
+  35 |            35 |            65 |       230 |      35
+  36 |             4 |             6 |        70 |      36
+  37 |             7 |            11 |       110 |      37
+  38 |            10 |            16 |       160 |      38
+  39 |            15 |            23 |       230 |      39
+  40 |            25 |            40 |       230 |      40
+  41 |             2 |             5 |        70 |      41
+  42 |             4 |             9 |       110 |      42
+  43 |             5 |            11 |       160 |      43
+  44 |            22 |            36 |       230 |      44
+  45 |            45 |            60 |       275 |      45
+  46 |             1 |             3 |        70 |      46
+  47 |             3 |             4 |       110 |      47
+  48 |             6 |            10 |       160 |      48
+  49 |            12 |            18 |       230 |      49
+  50 |            16 |            24 |       230 |      50
+  51 |             1 |             3 |        70 |      51
+  52 |             3 |             4 |       110 |      52
+  53 |             6 |            10 |       160 |      53
+  54 |            10 |            14 |       230 |      54
+  55 |            20 |            30 |       230 |      55
+  56 |             1 |             4 |       100 |      56
+  57 |             3 |             7 |       160 |      57
+  58 |             8 |            12 |       250 |      58
+  59 |            10 |            14 |       275 |      59
+  60 |            24 |            36 |       300 |      60
+  61 |             2 |             3 |       110 |      61
+  62 |             4 |            10 |       160 |      62
+  63 |             7 |            20 |       220 |      63
+  64 |            12 |            36 |       260 |      64
+  65 |             3 |             4 |        90 |      65
+  66 |             7 |            14 |       140 |      66
+  67 |            14 |            26 |       200 |      67
+  68 |            25 |            47 |       270 |      68
+  69 |             2 |             4 |        60 |      69
+  70 |             5 |            11 |       110 |      70
+  71 |             9 |            20 |       150 |      71
+  72 |            14 |            34 |       180 |      72
+  73 |             1 |             3 |        70 |      73
+  74 |             3 |             4 |       110 |      74
+  75 |             5 |             7 |       160 |      75
+  76 |             9 |            14 |       230 |      76
+  77 |             3 |             4 |        80 |      77
+  78 |             7 |            11 |       120 |      78
+  79 |            14 |            21 |       190 |      79
+  80 |            23 |            34 |       280 |      80
+  81 |             5 |             7 |       120 |      81
+  82 |            14 |            18 |       190 |      82
+  83 |            25 |            31 |       240 |      83
+  84 |            41 |            50 |       300 |      84
+  85 |             7 |            10 |       120 |      85
+  86 |            20 |            29 |       210 |      86
+  87 |            40 |            58 |       310 |      87
+  88 |            64 |            92 |       370 |      88
+  89 |             5 |            16 |       100 |      89
+  90 |            16 |            49 |       180 |      90
+  91 |            33 |           100 |       250 |      91
+  92 |            49 |           146 |       300 |      92
+  93 |             5 |             7 |       100 |      93
+  94 |            10 |            13 |       150 |      94
+  95 |            15 |            25 |       200 |      95
+  96 |            25 |            35 |       250 |      96
+  97 |             5 |             8 |       110 |      97
+  98 |            13 |            20 |       130 |      98
+  99 |            26 |            38 |       170 |      99
+ 100 |            48 |            71 |       230 |     100
+ 101 |             4 |            20 |       130 |     101
+ 102 |            10 |            55 |       190 |     102
+ 103 |            20 |           110 |       260 |     103
+ 104 |            35 |           190 |       320 |     104
+(104 rows)
+
+ id | numberOfUnits | respawnInterval | health | armor | towerId
+----+---------------+-----------------+--------+-------+---------
+  1 |             3 |              10 |     50 |     0 |      46
+  2 |             3 |              10 |    100 |    15 |      47
+  3 |             3 |              10 |    150 |    30 |      48
+  4 |             3 |              14 |    200 |    50 |      49
+  5 |             3 |              10 |    250 |     0 |      50
+  6 |             3 |              10 |     50 |     0 |      51
+  7 |             3 |              10 |    100 |    15 |      52
+  8 |             3 |              10 |    150 |    30 |      53
+  9 |             3 |              10 |    200 |     0 |      54
+ 10 |             3 |              15 |    250 |    40 |      55
+ 11 |             3 |              14 |     50 |    30 |      56
+ 12 |             3 |              14 |     90 |    40 |      57
+ 13 |             3 |              14 |    140 |    50 |      58
+ 14 |             3 |              15 |    200 |    50 |      59
+ 15 |             2 |              12 |    300 |     0 |      60
+ 16 |             2 |               8 |    100 |    40 |      61
+ 17 |             2 |               8 |    130 |    50 |      62
+ 18 |             2 |               8 |    180 |    60 |      63
+ 19 |             2 |              10 |    240 |    75 |      64
+ 20 |             2 |              12 |     70 |     0 |      93
+ 21 |             2 |              12 |    130 |     0 |      94
+ 22 |             2 |              12 |    160 |     0 |      95
+ 23 |             2 |              12 |    220 |     0 |      96
+ 24 |             3 |              12 |     60 |     0 |      73
+ 25 |             3 |              12 |    100 |    10 |      74
+ 26 |             3 |              12 |    150 |    15 |      75
+ 27 |             3 |              12 |    200 |    20 |      76
+(27 rows)
+
+id | fireInterval | range | towerId
+----+--------------+-------+---------
+  1 |            3 |   320 |       1
+  2 |            3 |   320 |       2
+  3 |            3 |   360 |       3
+  4 |          3.5 |   360 |       4
+  5 |          2.2 |   330 |       5
+  6 |            3 |   320 |       6
+  7 |            3 |   320 |       7
+  8 |            3 |   360 |       8
+  9 |            3 |   360 |       9
+ 10 |            1 |   350 |      10
+ 11 |            3 |   300 |      11
+ 12 |            3 |   340 |      12
+ 13 |            3 |   380 |      13
+ 14 |          1.7 |   380 |      14
+ 15 |          3.5 |   420 |      15
+ 16 |          1.5 |   280 |      16
+ 17 |          1.5 |   320 |      17
+ 18 |          1.5 |   360 |      18
+ 19 |            2 |   400 |      19
+ 20 |          1.5 |   400 |      20
+ 21 |          1.5 |   280 |      21
+ 22 |          1.5 |   320 |      22
+ 23 |          1.5 |   360 |      23
+ 24 |          1.5 |   396 |      24
+ 25 |            1 |   396 |      25
+ 26 |          1.5 |   280 |      26
+ 27 |          1.5 |   320 |      27
+ 28 |          1.5 |   360 |      28
+ 29 |          0.3 |   360 |      29
+ 30 |          1.5 |   360 |      30
+ 31 |          0.8 |   280 |      31
+ 32 |          0.6 |   320 |      32
+ 33 |          0.5 |   360 |      33
+ 34 |          0.4 |   400 |      34
+ 35 |          1.5 |   470 |      35
+ 36 |          0.8 |   280 |      36
+ 37 |          0.6 |   320 |      37
+ 38 |          0.5 |   360 |      38
+ 39 |          0.5 |   396 |      39
+ 40 |          0.8 |   358 |      40
+ 41 |          0.7 |   320 |      41
+ 42 |          0.6 |   360 |      42
+ 43 |          0.4 |   400 |      43
+ 44 |          0.8 |   400 |      44
+ 45 |          1.5 |   600 |      45
+ 46 |          1.4 |   350 |      65
+ 47 |          1.4 |   350 |      66
+ 48 |          1.4 |   350 |      67
+ 49 |          1.4 |   350 |      68
+ 50 |          0.6 |   300 |      69
+ 51 |          0.6 |   300 |      70
+ 52 |          0.6 |   300 |      71
+ 53 |          0.6 |   300 |      72
+ 54 |          0.7 |   300 |      77
+ 55 |          0.7 |   330 |      78
+ 56 |          0.7 |   360 |      79
+ 57 |          0.7 |   400 |      80
+ 58 |            4 |   320 |      81
+ 59 |            4 |   320 |      82
+ 60 |            4 |   320 |      83
+ 61 |            4 |   320 |      84
+ 62 |            3 |   330 |      85
+ 63 |            3 |   350 |      86
+ 64 |            3 |   370 |      87
+ 65 |          2.8 |   390 |      88
+ 66 |          1.8 |   300 |      89
+ 67 |          1.8 |   315 |      90
+ 68 |          1.8 |   330 |      91
+ 69 |          1.8 |   350 |      92
+ 70 |         1.45 |   350 |      97
+ 71 |         1.45 |   350 |      98
+ 72 |         1.45 |   350 |      99
+ 73 |         1.45 |   350 |     100
+ 74 |          2.3 |   370 |     101
+ 75 |          2.3 |   370 |     102
+ 76 |          2.3 |   370 |     103
+ 77 |          2.3 |   370 |     104
+(77 rows)
+
