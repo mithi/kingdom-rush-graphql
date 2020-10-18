@@ -9,20 +9,17 @@ import {
 import { Tower } from "./Tower"
 
 @Entity()
-export class MainStats extends BaseEntity {
+export class AttackStats extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
 
-    @Column({ type: "real" })
-    damageMinimum: number
+    @Column({ type: "real", comment: "Number of seconds between each attack" })
+    fireInterval: number
 
     @Column({ type: "real" })
-    damageMaximum: number
+    range: number
 
-    @Column({ type: "real" })
-    buildCost: number
-
-    @OneToOne(_type => Tower, tower => tower.mainStats, {
+    @OneToOne(_type => Tower, tower => tower.attackStats, {
         onDelete: "CASCADE",
         nullable: false,
     })

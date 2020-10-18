@@ -4,13 +4,13 @@ import {
     PrimaryGeneratedColumn,
     BaseEntity,
     Unique,
-    JoinColumn,
     OneToOne,
 } from "typeorm"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 import { ObjectType, Field, ID } from "type-graphql"
 import { MainStats } from "./MainStats"
 import { BarracksStats } from "./BarracksStats"
+import { AttackStats } from "./AttackStats"
 
 @ObjectType()
 @Entity({ name: "Towers" })
@@ -45,11 +45,17 @@ export class Tower extends BaseEntity {
     })
     kingdom: TowerKingdom
 
-    @OneToOne(_ => MainStats, { nullable: true, cascade: true })
-    @JoinColumn()
+    // ALL towers have this
+    @OneToOne(_type => MainStats, mainStats => mainStats.tower, { cascade: true })
     mainStats: MainStats
 
-    @OneToOne(_ => BarracksStats, { nullable: true, cascade: true })
-    @JoinColumn()
+    // Only towers of towerType Barracks have this
+    @OneToOne(_type => BarracksStats, barracksStats => barracksStats.tower, {
+        cascade: true,
+    })
     barracksStats: BarracksStats
+
+    // Only towers that are NOT Barracks have this
+    @OneToOne(_type => AttackStats, attackStats => attackStats.tower, { cascade: true })
+    attackStats: AttackStats
 }
