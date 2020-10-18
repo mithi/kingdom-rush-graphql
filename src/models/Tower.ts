@@ -45,12 +45,17 @@ export class Tower extends BaseEntity {
     })
     kingdom: TowerKingdom
 
-    @OneToOne(_ => MainStats, mainStats => mainStats.tower, { cascade: true })
+    // ALL towers have this
+    @OneToOne(_type => MainStats, mainStats => mainStats.tower, { cascade: true })
     mainStats: MainStats
 
-    @OneToOne(_ => BarracksStats, barracksStats => barracksStats.tower, { cascade: true })
+    // Only towers of towerType Barracks have this
+    @OneToOne(_type => BarracksStats, barracksStats => barracksStats.tower, {
+        cascade: true,
+    })
     barracksStats: BarracksStats
 
-    @OneToOne(_ => AttackStats, attackStats => attackStats.tower, { cascade: true })
+    // Only towers that are NOT Barracks have this
+    @OneToOne(_type => AttackStats, attackStats => attackStats.tower, { cascade: true })
     attackStats: AttackStats
 }
