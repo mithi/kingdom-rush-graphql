@@ -1,5 +1,44 @@
 # Database and Migrations
 
+## Abilities shape
+
+```yaml
+---
+name: ""
+number_of_abilities: 0
+abilities:
+    - name: ""
+      description: ""
+      number_of_levels: 0
+      levels:
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+    - name: ""
+      description: ""
+      number_of_levels: 0
+      levels:
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+    - name: ""
+      description: ""
+      number_of_levels: 0
+      levels:
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+```
+
 ## Migrate from zero
 
 If you want to start from scratch, you can delete everything and run all the migrations again
