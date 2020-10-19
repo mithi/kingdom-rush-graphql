@@ -24,7 +24,7 @@ KINGDOM_DIRECTORY = {
 }
 
 def get_towers(tower_type, kingdom):
-    path = f"../data/{kingdom}/{tower_type}.yml"
+    path = f"./data/{kingdom}/{tower_type}.yml"
     kingdom_string = KINGDOM_DIRECTORY[kingdom]
     damage_type = "magical_damage" if tower_type == 'magic' else "physical_damage"
 
@@ -69,7 +69,7 @@ towers2d = [
 ]
 
 
-krv_dir = "../data/KRV/"
+krv_dir = "./data/KRV/"
 krv_files_path = [f for f in listdir(krv_dir) if isfile(join(krv_dir, f))]
 
 krv_towers = []
@@ -105,6 +105,6 @@ data = { "towers": towers }
 for i, tower in enumerate(towers):
     print(i, tower["name"])
 
-with open("../data/generated/towers.json", 'w') as fout:
+with open("./data/generated/towers.json", 'w') as fout:
     json_dumps_str = json.dumps(data, indent=4)
     print(json_dumps_str, file=fout)
