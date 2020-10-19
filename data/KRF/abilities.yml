@@ -1,0 +1,79 @@
+---
+name: "crossbow fort"
+number_of_abilities: 2
+abilities:
+    - name: "barrage"
+      description: "shoots bolts that deals damagage in quick succession "
+      number_of_levels: 3
+      levels:
+          - description: "6 bolts"
+            cost: 250
+          - description: "8 bolts"
+            cost: 150
+          - description: "10 bolts"
+            cost: 150
+    - name: "falconer"
+      description: "gains a chance to deal double damage and improves attack range of all towers in its range (including itself)"
+      number_of_levels: 3
+      levels:
+          - description: "increase extra range, increase critical chance"
+            cost: 200
+          - description: "increase extra range, increase critical chance"
+            cost: 200
+          - description: "increase extra range, increase critical chance"
+            cost: 200
+---
+name: "tribal axethrowers"
+number_of_abilities: 2
+abilities:
+    - name: "totem of weakness"
+      description: "creates a totem that weakens nearby enemies and makes them suffer more damage from sources"
+      number_of_levels: 3
+      levels:
+          - description: "increase duration"
+            cost: 250
+          - description: "increase duration"
+            cost: 200
+          - description: "increase duration"
+            cost: 200
+    - name: "totem of spirits"
+      description: "creates a totem that dispels all magic and silences spellcaster in range"
+      number_of_levels: 3
+      levels:
+          - description: "increase duration"
+            cost: 150
+          - description: "increase duration"
+            cost: 150
+          - description: "increase duration"
+            cost: 150
+---
+name: "assassin's guild"
+number_of_abilities: 3
+abilities:
+    - name: "sneak attack"
+      description: "attacks gain a chance to bbecome sneak attacks, which deal physical damage and have a chance of instant kill"
+      number_of_levels: 3
+      levels:
+          - description: "increases damage, increases sneak attack chance, increases insant kill chance"
+            cost: 225
+          - description: "increases damage, increases sneak attack chance, increases insant kill chance"
+            cost: 150
+          - description: "increases damage, increases sneak attack chance, increases insant kill chance"
+            cost: 150
+    - name: "counter attack"
+      description: "improves the dogde chance of assassoms and now strikes back upon a successful dodge"
+      number_of_levels: 3
+      levels:
+          - description: "increases dodge chance, increases damage"
+            cost: 150
+          - description: "increases dodge chance, increases damage"
+            cost: 100
+          - description: "increases dodge chance, increases damage"
+            cost: 100
+    - name: "pick pocket"
+      description: "attacks gain a chance of stealing gold"
+      number_of_levels: 2
+      levels:
+          - description: "increases chance of stealing gold"
+            cost: 100
+          - description: "increases chance of stealing gold"
