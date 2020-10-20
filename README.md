@@ -21,7 +21,7 @@ Tower {
     name
     kingdom
     towerType
-    level
+    levels
     imageUrl
 }
 
@@ -50,10 +50,10 @@ Abilities {
     towerId
     name
     description
-    imageUrl
-    abilityLevels: [
-        {abilityId, level: 1, description, buildCost}
-        {abilityId, level: 1, description, buildCost}
+    levels: [
+        { abilityId, level: 0, cost }
+        { abilityId, level: 1, cost }
+        { abilityId, level: 2, cost }
     ]
 }
 

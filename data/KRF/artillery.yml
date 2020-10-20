@@ -64,7 +64,7 @@ abilities:
     - furnace blast
     - core drill
 ---
-name: "battle-mecha t-200"
+name: "battle-mecha t200"
 physical_damage:
     min: 25
     max: 55

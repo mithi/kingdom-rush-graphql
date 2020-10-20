@@ -1,4 +1,4 @@
-id | fireInterval | range | towerId
+ id | fireInterval | range | towerId
 ----+--------------+-------+---------
   1 |            3 |   320 |       1
   2 |            3 |   320 |       2

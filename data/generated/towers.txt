@@ -9,7 +9,7 @@
    7 | dwarven artillery     | artillery | 2     | kingdom rush: frontiers
    8 | dwarven howitzer      | artillery | 3     | kingdom rush: frontiers
    9 | dwaarp                | artillery | 4     | kingdom rush: frontiers
-  10 | battle-mecha t-200    | artillery | 4     | kingdom rush: frontiers
+  10 | battle-mecha t200     | artillery | 4     | kingdom rush: frontiers
   11 | stone cirlce          | artillery | 1     | kingdom rush: origin
   12 | boulder circle        | artillery | 2     | kingdom rush: origin
   13 | menhir cirlce         | artillery | 3     | kingdom rush: origin
@@ -18,8 +18,8 @@
   16 | mage tower            | mage      | 1     | kingdom rush
   17 | adept tower           | mage      | 2     | kingdom rush
   18 | wizard tower          | mage      | 3     | kingdom rush
-  19 | arcane tower          | mage      | 4     | kingdom rush
-  20 | sorcerer tower        | mage      | 4     | kingdom rush
+  19 | arcane wizard         | mage      | 4     | kingdom rush
+  20 | sorcerer mage         | mage      | 4     | kingdom rush
   21 | mage tower            | mage      | 1     | kingdom rush: frontiers
   22 | adept tower           | mage      | 2     | kingdom rush: frontiers
   23 | wizard tower          | mage      | 3     | kingdom rush: frontiers
@@ -39,7 +39,7 @@
   37 | marksman tower        | archer    | 2     | kingdom rush: frontiers
   38 | sharpshooter tower    | archer    | 3     | kingdom rush: frontiers
   39 | crossbow fort         | archer    | 4     | kingdom rush: frontiers
-  40 | tribal axethrower     | archer    | 4     | kingdom rush: frontiers
+  40 | tribal axethrowers    | archer    | 4     | kingdom rush: frontiers
   41 | hunter arbor          | archer    | 1     | kingdom rush: origin
   42 | watcher arbor         | archer    | 2     | kingdom rush: origin
   43 | sentinel arbor        | archer    | 3     | kingdom rush: origin
@@ -53,7 +53,7 @@
   51 | militia barracks      | barracks  | 1     | kingdom rush: frontiers
   52 | footmen barracks      | barracks  | 2     | kingdom rush: frontiers
   53 | knights barracks      | barracks  | 3     | kingdom rush: frontiers
-  54 | assassins' guild      | barracks  | 4     | kingdom rush: frontiers
+  54 | assassin's guild      | barracks  | 4     | kingdom rush: frontiers
   55 | knights templar       | barracks  | 4     | kingdom rush: frontiers
   56 | defender barracks     | barracks  | 1     | kingdom rush: origin
   57 | warden barracks       | barracks  | 2     | kingdom rush: origin
@@ -92,10 +92,10 @@
   90 | infernal mage, 2      | mage      | 2     | kingdom rush: vengeance
   91 | infernal mage, 3      | mage      | 3     | kingdom rush: vengeance
   92 | infernal mage, 4      | mage      | 4     | kingdom rush: vengeance
-  93 | Elite Harassers, 1    | barracks  | 1     | kingdom rush: vengeance
-  94 | Elite Harassers, 2    | barracks  | 2     | kingdom rush: vengeance
-  95 | Elite Harassers, 3    | barracks  | 3     | kingdom rush: vengeance
-  96 | Elite Harassers, 4    | barracks  | 4     | kingdom rush: vengeance
+  93 | elite harassers, 1    | barracks  | 1     | kingdom rush: vengeance
+  94 | elite harassers, 2    | barracks  | 2     | kingdom rush: vengeance
+  95 | elite harassers, 3    | barracks  | 3     | kingdom rush: vengeance
+  96 | elite harassers, 4    | barracks  | 4     | kingdom rush: vengeance
   97 | specters mausoleum, 1 | mage      | 1     | kingdom rush: vengeance
   98 | specters mausoleum, 2 | mage      | 2     | kingdom rush: vengeance
   99 | specters mausoleum, 3 | mage      | 3     | kingdom rush: vengeance

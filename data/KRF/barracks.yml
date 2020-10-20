@@ -41,7 +41,7 @@ hp_magnitude_upgraded: 165
 armor_magnitude_upgraded: 50
 refresh_in_seconds_upgraded: 8
 ---
-name: "assassins' guild"
+name: "assassin's guild"
 hp: 200
 physical_damage:
     min: 10

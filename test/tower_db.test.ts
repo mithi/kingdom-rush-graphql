@@ -1,5 +1,12 @@
 import { createConnection, getConnection, getRepository } from "typeorm"
-import { Tower, MainStats, BarracksStats, AttackStats } from "../src/models/"
+import {
+    Tower,
+    MainStats,
+    BarracksStats,
+    AttackStats,
+    Ability,
+    AbilityLevel,
+} from "../src/models/"
 import { TowerType, TowerLevel, TowerKingdom } from "../src/enums/TowerEnums"
 import seed from "../src/seed"
 
@@ -31,7 +38,7 @@ test("Store tower and fetch it", async () => {
     expect(await getRepository(Tower, "test").count()).toBe(0)
 })
 
-test("Store a tower and add main stats", async () => {
+test("Store a tower and add main stats, deleting the tower would also delete main stats", async () => {
     let tower = new Tower()
     tower.name = "dwarven bombard"
     tower.kingdom = TowerKingdom.KR
@@ -44,7 +51,7 @@ test("Store a tower and add main stats", async () => {
     mainStats.damageMaximum = 15
     tower.mainStats = mainStats
 
-    const repo = await getRepository(Tower, "test")
+    const repo = getRepository(Tower, "test")
     await repo.save(tower)
 
     let retrievedTowers = await repo.find({
@@ -60,6 +67,55 @@ test("Store a tower and add main stats", async () => {
     await repo.remove(retrievedTowers[0])
     expect(await getRepository(Tower, "test").count()).toBe(0)
     expect(await getRepository(MainStats, "test").count()).toBe(0)
+})
+
+test("Be able to store abilities and ability levels of a tower", async () => {
+    let tower = new Tower()
+    tower.name = "dwarven bombard"
+    tower.kingdom = TowerKingdom.KR
+    tower.towerType = TowerType.ARTILLERY
+    tower.level = TowerLevel.LVL1
+
+    let ability1 = new Ability()
+    ability1.name = "poison arrows"
+    ability1.description =
+        "Poisons anemies, causing them to take True damage over a three of seconds. Effects does not stack. True damage ignores any armore or magic resistance that an enemy has. Every upgrade level increases the damage dealt per second."
+
+    let ability1level1 = new AbilityLevel()
+    ability1level1.level = 1
+    ability1level1.cost = 250
+
+    ability1.levels = [ability1level1]
+
+    tower.abilities = [ability1]
+    await getRepository(Tower, "test").save(tower)
+
+    expect(await getRepository(Tower, "test").count()).toBe(1)
+    expect(await getRepository(Ability, "test").count()).toBe(1)
+    expect(await getRepository(AbilityLevel, "test").count()).toBe(1)
+
+    let retrievedTowers = await getRepository(Tower, "test").find({
+        where: {
+            name: "dwarven bombard",
+        },
+        relations: ["abilities"],
+    })
+
+    let abilities = await getRepository(Ability, "test").find({
+        where: {
+            name: retrievedTowers[0].abilities[0].name,
+        },
+        relations: ["levels"],
+    })
+
+    expect(retrievedTowers[0].name).toBe("dwarven bombard")
+    expect(retrievedTowers[0].abilities[0].name).toBe("poison arrows")
+    expect(abilities[0].levels[0].cost).toBe(250)
+
+    await getRepository(Tower, "test").remove(retrievedTowers[0])
+    expect(await getRepository(Tower, "test").count()).toBe(0)
+    expect(await getRepository(Ability, "test").count()).toBe(0)
+    expect(await getRepository(AbilityLevel, "test").count()).toBe(0)
 })
 
 test("Seed() should populate distinct rows in the tables: Towers, main_stats, barack_stats", async () => {

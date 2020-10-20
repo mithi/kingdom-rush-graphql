@@ -100,7 +100,7 @@
             }
         },
         {
-            "name": "battle-mecha t-200",
+            "name": "battle-mecha t200",
             "buildCost": 375,
             "kingdom": "kingdom rush: frontiers",
             "level": 4,
@@ -199,7 +199,7 @@
             }
         },
         {
-            "name": "arcane tower",
+            "name": "arcane wizard",
             "buildCost": 300,
             "kingdom": "kingdom rush",
             "level": 4,
@@ -210,7 +210,7 @@
             }
         },
         {
-            "name": "sorcerer tower",
+            "name": "sorcerer mage",
             "buildCost": 300,
             "kingdom": "kingdom rush",
             "level": 4,
@@ -430,7 +430,7 @@
             }
         },
         {
-            "name": "tribal axethrower",
+            "name": "tribal axethrowers",
             "buildCost": 230,
             "kingdom": "kingdom rush: frontiers",
             "level": 4,
@@ -584,7 +584,7 @@
             }
         },
         {
-            "name": "assassins' guild",
+            "name": "assassin's guild",
             "buildCost": 230,
             "kingdom": "kingdom rush: frontiers",
             "level": 4,
@@ -1013,7 +1013,7 @@
             "kingdom": "kingdom rush: vengeance"
         },
         {
-            "name": "Elite Harassers, 1",
+            "name": "elite harassers, 1",
             "level": 1,
             "buildCost": 100,
             "towerType": "barracks",
@@ -1024,7 +1024,7 @@
             "kingdom": "kingdom rush: vengeance"
         },
         {
-            "name": "Elite Harassers, 2",
+            "name": "elite harassers, 2",
             "level": 2,
             "buildCost": 150,
             "towerType": "barracks",
@@ -1035,7 +1035,7 @@
             "kingdom": "kingdom rush: vengeance"
         },
         {
-            "name": "Elite Harassers, 3",
+            "name": "elite harassers, 3",
             "level": 3,
             "buildCost": 200,
             "towerType": "barracks",
@@ -1046,7 +1046,7 @@
             "kingdom": "kingdom rush: vengeance"
         },
         {
-            "name": "Elite Harassers, 4",
+            "name": "elite harassers, 4",
             "level": 4,
             "buildCost": 250,
             "towerType": "barracks",

@@ -47,7 +47,7 @@ KINGDOM_NAME = {
 }
 
 def get_barracks_stats(kingdom):
-    path = f"../data/{kingdom}/barracks.yml"
+    path = f"../{kingdom}/barracks.yml"
 
     stream = open(path, "r")
     towers = []
@@ -69,9 +69,9 @@ def get_barracks_stats(kingdom):
 
 
 
-b1 = "../data/KRV/barracks-dark-knights.yaml"
-b2 = "../data/KRV/barracks-elite-harassers.yaml"
-b3 = "../data/KRV/barracks-orc-warriors.yaml"
+b1 = "../KRV/barracks-dark-knights.yaml"
+b2 = "../KRV/barracks-elite-harassers.yaml"
+b3 = "../KRV/barracks-orc-warriors.yaml"
 
 krv_towers = []
 for path in [b1, b2, b3]:
@@ -109,7 +109,7 @@ data = { "towers": towers }
 for i, tower in enumerate(towers):
     print(i, tower["name"])
 
-with open("../data/generated/barracks-stats.json", 'w') as fout:
+with open("../generated/barracks-stats.json", 'w') as fout:
     json_dumps_str = json.dumps(data, indent=4)
     print(json_dumps_str, file=fout)
 

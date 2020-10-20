@@ -67,7 +67,7 @@ abilities:
     - falconer
 
 ---
-name: "tribal axethrower"
+name: "tribal axethrowers"
 physical_damage:
     min: 25
     max: 40

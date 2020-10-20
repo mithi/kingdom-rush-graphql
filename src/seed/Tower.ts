@@ -8,12 +8,15 @@ This is not a good way to seed the database. Please see `src/seed/index.ts` for 
 import { getRepository } from "typeorm"
 import { logError, KingdomType } from "./shared"
 import { TowerType, TowerLevel, TowerKingdom } from "../enums/TowerEnums"
-import { MainStats } from "../models/MainStats"
-import { Tower } from "../models/Tower"
+import { MainStats, Tower, Ability, AbilityLevel } from "../models"
+
 const path: any = require("path")
 
 const pathToTowerJson = path.join(__dirname, "../../data/generated", "towers.json")
+const pathToAbilityJson = path.join(__dirname, "../../data/generated", "abilities.json")
+
 const towerJson: any = require(pathToTowerJson)
+const abilityJson: any = require(pathToAbilityJson)
 
 type TowerData = {
     name: string
@@ -25,6 +28,19 @@ type TowerData = {
         minimum: number
         maximum: number
     }
+}
+
+type AbilityLevelData = { cost: number }
+type AbilityData = {
+    abilityName: string
+    description: string
+    levels: AbilityLevelData[]
+}
+
+type TowerWithAbilityData = {
+    towerName: "string"
+    kingdom: KingdomType
+    abilities: AbilityData[]
 }
 
 const mapStringToKingdom = {
@@ -132,4 +148,61 @@ const populateMainStats = async ({ dbName = "default", verbose = true } = {}) =>
     }
 }
 
-export { populateMainStats, populateTowers }
+const populateAbilities = async ({ dbName = "default", verbose = true } = {}) => {
+    const abilitiesTower: [TowerWithAbilityData] = abilityJson.data
+    for (let tower of abilitiesTower) {
+        let newTower = await getRepository(Tower, dbName).findOne({
+            where: {
+                name: tower.towerName,
+                kingdom: tower.kingdom,
+            },
+            relations: ["abilities"],
+        })
+
+        if (verbose) {
+            console.log("...")
+            console.log(tower.towerName, tower.kingdom)
+        }
+
+        if (!newTower) {
+            console.log(
+                "can't save ability because associated tower doesn't exist in the database:",
+                tower.towerName,
+                tower.kingdom
+            )
+            continue
+        }
+
+        if (newTower.abilities.length !== 0) {
+            if (verbose) {
+                console.log(
+                    "> This tower already has abilities.",
+                    tower.towerName,
+                    tower.kingdom,
+                    newTower.abilities
+                )
+            }
+            continue
+        }
+
+        for (let ability of tower.abilities) {
+            console.log("--", ability.abilityName)
+
+            let newAbility = new Ability()
+            newAbility.name = ability.abilityName
+            newAbility.description = ability.description
+            newAbility.tower = newTower
+            await getRepository(Ability, dbName).save(newAbility)
+
+            ability.levels.forEach(async (level, i) => {
+                let newAbilityLevel = new AbilityLevel()
+                newAbilityLevel.cost = level.cost
+                newAbilityLevel.level = i
+                newAbilityLevel.ability = newAbility
+                await getRepository(AbilityLevel, dbName).save(newAbilityLevel)
+            })
+        }
+    }
+}
+
+export { populateMainStats, populateTowers, populateAbilities }
