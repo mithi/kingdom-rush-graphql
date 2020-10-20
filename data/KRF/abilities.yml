@@ -13,7 +13,7 @@ abilities:
           - description: "10 bolts"
             cost: 150
     - name: "falconer"
-      description: "gains a chance to deal double damage and improves attack range of all towers in its range (including itself)"
+      description: "gains a chance to deal double damage and improves attack range of all towers in its range (including itself). every upgrade level, increases the extra range and the critical chance of dealing double damage"
       number_of_levels: 3
       levels:
           - description: "increase extra range, increase critical chance"
@@ -27,7 +27,7 @@ name: "tribal axethrowers"
 number_of_abilities: 2
 abilities:
     - name: "totem of weakness"
-      description: "creates a totem that weakens nearby enemies and makes them suffer more damage from sources"
+      description: "creates a totem that weakens nearby enemies and makes them suffer more damage from sources. every upgrade level increases the duration"
       number_of_levels: 3
       levels:
           - description: "increase duration"
@@ -37,7 +37,7 @@ abilities:
           - description: "increase duration"
             cost: 200
     - name: "totem of spirits"
-      description: "creates a totem that dispels all magic and silences spellcaster in range"
+      description: "creates a totem that dispels all magic and silences spellcaster in range. every upgrade level increases the duration"
       number_of_levels: 3
       levels:
           - description: "increase duration"
@@ -51,7 +51,7 @@ name: "assassin's guild"
 number_of_abilities: 3
 abilities:
     - name: "sneak attack"
-      description: "attacks gain a chance to bbecome sneak attacks, which deal physical damage and have a chance of instant kill"
+      description: "attacks gain a chance to bbecome sneak attacks, which deal physical damage and have a chance of instant kill. every upgrade level increases the damage, sneak attack chance and instant kill chance."
       number_of_levels: 3
       levels:
           - description: "increases damage, increases sneak attack chance, increases instant kill chance"
@@ -61,7 +61,7 @@ abilities:
           - description: "increases damage, increases sneak attack chance, increases instant kill chance"
             cost: 150
     - name: "counter attack"
-      description: "improves the dogde chance of assassoms and now strikes back upon a successful dodge"
+      description: "improves the dogde chance of assassins and now strikes back upon a successful dodge. every upgrade level increases the dodge chance and damage."
       number_of_levels: 3
       levels:
           - description: "increases dodge chance, increases damage"
@@ -71,7 +71,7 @@ abilities:
           - description: "increases dodge chance, increases damage"
             cost: 100
     - name: "pick pocket"
-      description: "attacks gain a chance of stealing gold"
+      description: "attacks gain a chance of stealing gold. every upgrade level increases the chance of stealing gold."
       number_of_levels: 2
       levels:
           - description: "increases chance of stealing gold"
@@ -82,17 +82,17 @@ name: "Knights Templar"
 number_of_abilities: 3
 abilities:
     - name: "toughness"
-      description: "Raises the maximum and current health of the Knights Templar by 50 each upgrade."
+      description: "Raises the maximum and current health of the Knights Templar by 50 each upgrade. Every upgrade level increases the current health bonus and maximum health"
       number_of_levels: 3
       levels:
-          - description: "increases curent health bonus and maximum health"
+          - description: "increases current health bonus and maximum health"
             cost: 200
-          - description: "increases curent health bonus and maximum health"
+          - description: "increases current health bonus and maximum health"
             cost: 200
-          - description: "increases curent health bonus and maximum health"
+          - description: "increases current health bonus and maximum health"
             cost: 200
     - name: "arterial strike"
-      description: "Attacks have a chance of causing bleeding, dealing True Damage over 3 seconds. "
+      description: "Attacks have a chance of causing bleeding, dealing True Damage over 3 seconds. Every upgrade level increases the damage dealt."
       number_of_levels: 3
       levels:
           - description: "increases damage"
@@ -102,7 +102,7 @@ abilities:
           - description: "increases damage"
             cost: 150
     - name: "holy grail"
-      description: "Knights Templar have a chance to cheat death every time they are dealt lethal damage. They regain a percentage of their maximum health upon revival."
+      description: "Knights Templar have a chance to cheat death every time they are dealt lethal damage. They regain a percentage of their maximum health upon revival. Every upgrade level increases the chance to cheat death and the health regained."
       number_of_levels: 3
       levels:
           - description: "increases chance to cheat death, increases health regained"
@@ -116,7 +116,7 @@ name: "archmage tower"
 number_of_abilities: 2
 abilities:
     - name: "twister"
-      description: "A tornado that can run through a crowd of enemies and carry them back down the path, dealing magic damage. Enemies inside the tornado do not receive damage from outside sources."
+      description: "A tornado that can run through a crowd of enemies and carry them back down the path, dealing magic damage. Enemies inside the tornado do not receive damage from outside sources. Every upgrade level increases maximum enemies carried, damage dealth, and distance carried back"
       number_of_levels: 3
       levels:
           - description: "increases maximum enemies carried, damage dealth, and distance carried back"
@@ -126,7 +126,7 @@ abilities:
           - description: "increases maximum enemies carried, damage dealth, and distance carried back"
             cost: 250
     - name: "critical mass"
-      description: "Any fired bolts have a 35% chance to explode dealing magic damage in a small area."
+      description: "Any fired bolts have a 35% chance to explode dealing magic damage in a small area. Every upgrade level increases damage and damage area."
       number_of_levels: 3
       levels:
           - description: "increases damage and damage area"
@@ -140,31 +140,31 @@ name: "necromancer tower"
 number_of_abilities: 2
 abilities:
     - name: "pestilence"
-      description: "The Necromancer contaminates the land, poisoning enemies, dealing 20 True Damage per second."
+      description: "The Necromancer contaminates the land, poisoning enemies, dealing 20 True Damage per second. Every upgrade increases the duration in seconds."
       number_of_levels: 3
       levels:
-          - description: "Increases cost and duration"
+          - description: "Increases duration"
             cost: 325
-          - description: "Increases cost and duration"
+          - description: "Increases duration"
             cost: 200
-          - description: "Increases cost and duration"
+          - description: "Increases duration"
             cost: 200
     - name: "Summon Death Rider"
-      description: "Summons a resilient soldier whose aura increases the damage of nearby skeleton. The Necromancer Tower's most can raise up to 8 skeletal minions from corpses of humanoid enemies that die within its range."
+      description: "Summons a resilient soldier whose aura increases the damage of nearby skeleton. The Necromancer Tower's most can raise up to 8 skeletal minions from corpses of humanoid enemies that die within its range. increases health, damage, and armor of the death rider"
       number_of_levels: 3
       levels:
-          - description: "increases health, damage and armor of the death rider"
+          - description: "increases health, damage, and armor of the death rider"
             cost: 300
-          - description: "increases health, damage and armor of the death rider"
+          - description: "increases health, damage, and armor of the death rider"
             cost: 150
-          - description: "increases health, damage and armor of the death rider"
+          - description: "increases health, damage, and armor of the death rider"
             cost: 150
 ---
 name: "dwaarp"
 number_of_abilities: 2
 abilities:
     - name: "core drill"
-      description: "Sends an automated mining drill towards an enemy, reducing it to a mound of gibs"
+      description: "Sends an automated mining drill towards an enemy, reducing it to a mound of gibs. Every upgrade level decreases cooldown."
       number_of_levels: 3
       levels:
           - description: "decreases cooldown"
@@ -174,7 +174,7 @@ abilities:
           - description: "decreases cooldown"
             cost: 200
     - name: "furnace blast"
-      description: "Burns all enemies in close range over 4 seconds"
+      description: "Burns all enemies in close range over 4 seconds. Every upgrade level increases maximum damage and damage per second"
       number_of_levels: 3
       levels:
           - description: "increases maximum damage and damage per second"
@@ -188,7 +188,7 @@ name: "battle-mecha t200"
 number_of_abilities: 2
 abilities:
     - name: "Wasp Missiles"
-      description: "Fires a volley of seeking missiles that never miss, dealing 20-80 damage each. (Cooldown: 8 seconds)"
+      description: "Fires a volley of seeking missiles that never miss, dealing 20-80 damage each. Every upgrade level increases the number of missiles"
       number_of_levels: 2
       levels:
           - description: "number of missiles: 2"
@@ -196,7 +196,7 @@ abilities:
           - description: "number of missiles: 4"
             cost: 250
     - name: "Waste Disposal"
-      description: "Drops oil on the ground that slows down enemies by 70%. (Cooldown: 10 seconds)"
+      description: "Drops oil on the ground that slows down enemies by 70%. Every upgrade level increases the duration in seconds."
       number_of_levels: 3
       levels:
           - description: "increases duration"

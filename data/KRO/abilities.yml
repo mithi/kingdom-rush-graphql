@@ -3,7 +3,7 @@ name: "arcane archers"
 number_of_abilities: 2
 abilities:
     - name: "burts arrors"
-      description: "Shoots an explosive magical arrow that deals additional area magic damage (damage area: 115). (Cooldown: 12 seconds)"
+      description: "Shoots an explosive magical arrow that deals additional area magic damage (damage area: 115). (Cooldown: 12 seconds). Every upgrade level increases the damage dealt."
       number_of_levels: 3
       levels:
           - description: "Increases damage"
@@ -13,7 +13,7 @@ abilities:
           - description: "Increases damage"
             cost: 200
     - name: "Slumber Arrows"
-      description: "Shoots an arrow that puts an enemy to sleep for 4 seconds."
+      description: "Shoots an arrow that puts an enemy to sleep for 4 seconds. Every upgrade level decreases the cooldown in seconds."
       number_of_levels: 3
       levels:
           - description: "decreases cooldown"
@@ -27,7 +27,7 @@ name: "golden longbows"
 number_of_abilities: 2
 abilities:
     - name: "Crimson Sentence"
-      description: "Every shot has a chance of slaying its victim. "
+      description: "Every shot has a chance of slaying its victim. Every upgrade level increases the chance of instant kill."
       number_of_levels: 3
       levels:
           - description: "Increases chance of instant kill"
@@ -37,7 +37,7 @@ abilities:
           - description: "Increases chance of instant kill"
             cost: 300
     - name: "Hunter's Mark"
-      description: "Marks a target, causing it to suffer 200% (220%) damage from all sources. (Cooldown: 12 seconds)"
+      description: "Marks a target, causing it to suffer 200% (220%) damage from all sources. Every upgrade level increases the duration in seconds."
       number_of_levels: 3
       levels:
           - description: "increases duration"
@@ -51,7 +51,7 @@ name: "bladesinger hall"
 number_of_abilities: 3
 abilities:
     - name: "Perfect Parry"
-      description: "Gives chance of becoming invulnerable for 2 seconds while dealing 36 True Damage in a small area when attacked."
+      description: "Gives chance of becoming invulnerable for 2 seconds while dealing 36 True Damage in a small area when attacked. Every upgrade level increases the chance of invulnerability"
       number_of_levels: 3
       levels:
           - description: "Increases the chance of invulnerability"
@@ -67,21 +67,21 @@ abilities:
           - description: "Increases Bladesingers' attack damage by 5 and attack speed by 20%."
             cost: 200
     - name: "Blade Dance"
-      description: "Special maneuver that slashes many times dealing True Damage. (Cooldown: 10 seconds)"
+      description: "Special maneuver that slashes many times dealing True Damage. (Cooldown: 10 seconds). Increases the number of slashes and the damage per slash."
       number_of_levels: 3
       levels:
-          - description: "Increases the number of slaces and the damage per slash"
+          - description: "Increases the number of slashes and the damage per slash"
             cost: 250
-          - description: "Increases the number of slaces and the damage per slash"
+          - description: "Increases the number of slashes and the damage per slash"
             cost: 250
-          - description: "Increases the number of slaces and the damage per slash"
+          - description: "Increases the number of slashes and the damage per slash"
             cost: 250
 ---
 name: "forest keepers"
 number_of_abilities: 3
 abilities:
     - name: "Circle of Life"
-      description: "Heals themselves and nearby allies over 4 seconds."
+      description: "Heals themselves and nearby allies over 4 seconds. Every upgrade level increases the healed hp."
       number_of_levels: 3
       levels:
           - description: "Increases the healed hp"
@@ -91,7 +91,7 @@ abilities:
           - description: "Increases the healed hp"
             cost: 185
     - name: "Eerie Gardener"
-      description: "Covers an area with barbed vines, slowing and damaging enemies."
+      description: "Covers an area with barbed vines, slowing and damaging enemies. Every upgrade level increases the damage and duration."
       number_of_levels: 2
       levels:
           - description: "Increases the damage and duration"
@@ -99,21 +99,21 @@ abilities:
           - description: "Increases the damage and duration"
             cost: 285
     - name: "Ancient Oak Spear"
-      description: "Empowers the Forest Keepers' spears, making them deal True Damage."
+      description: "Empowers the Forest Keepers' spears, making them deal True Damage. Every upgrade level increases the damage dealt."
       number_of_levels: 3
       levels:
-          - description: "Increases the damage delt"
+          - description: "Increases the damage dealt"
             cost: 250
-          - description: "Increases the damage delt"
+          - description: "Increases the damage dealt"
             cost: 250
-          - description: "Increases the damage delt"
+          - description: "Increases the damage dealt"
             cost: 250
 ---
 name: "wild magus"
 number_of_abilities: 2
 abilities:
     - name: "Eldritch Doom"
-      description: "Detonates an enemy, causing magic damage to all other nearby enemies (damage area: 175). (Cooldown: 28 seconds)"
+      description: "Detonates an enemy, causing magic damage to all other nearby enemies. Every upgrade level increases the damage dealt."
       number_of_levels: 3
       levels:
           - description: "Increases the damage dealt"
@@ -123,7 +123,7 @@ abilities:
           - description: "Increases the damage dealt"
             cost: 185
     - name: "Ward of Disruption"
-      description: "Silences enemies in range, blocking their magical abilities for 10 seconds. (Cooldown: 11 seconds)"
+      description: "Silences enemies in range, blocking their magical abilities for 10 seconds. Every upgrade level increases the maximum number of targets."
       number_of_levels: 3
       levels:
           - description: "Maximum number of targets is 1"
@@ -137,7 +137,7 @@ name: "high elven mage"
 number_of_abilities: 2
 abilities:
     - name: "Timelapse"
-      description: "Phases enemies out of the battlefield for 5 seconds, dealing magical damage. (Cooldown: 16 seconds)"
+      description: "Phases enemies out of the battlefield for 5 seconds, dealing magical damage. Every upgrade level increases maximum number of targets and damage dealt."
       number_of_levels: 3
       levels:
           - description: "Increases maximum number of targets and damage dealt"
@@ -147,7 +147,7 @@ abilities:
           - description: "Increases maximum number of targets and damage dealt"
             cost: 225
     - name: "Arcane Sentinel"
-      description: "Summons magic sentinels that seek and attack nearby enemies at long range."
+      description: "Summons magic sentinels that seek and attack nearby enemies at long range. Every upgrade level increases damage per bolt and the number of sentinels."
       number_of_levels: 2
       levels:
           - description: "Increases damage per bolt and the number of sentinels is 1"
@@ -159,7 +159,7 @@ name: "arch-druid henge"
 number_of_abilities: 2
 abilities:
     - name: "sylvan curse"
-      description: "Curses an enemy for 5 seconds, causing a percentage of all damage dealt to it to also affect nearby enemies."
+      description: "Curses an enemy for 5 seconds, causing a percentage of all damage dealt to it to also affect nearby enemies. Increases the percentage."
       number_of_levels: 3
       levels:
           - description: "Increases the percentage of damage"
@@ -169,7 +169,7 @@ abilities:
           - description: "Increases the percentage of damage"
             cost: 250
     - name: "Runed Bears"
-      description: "Invokes a mythical runed bear to block and fight enemies."
+      description: "Invokes a mythical runed bear to block and fight enemies. Every upgrade level increases the number of bears."
       number_of_levels: 2
       levels:
           - description: "Number of bears is 1"
@@ -181,7 +181,7 @@ name: "weirwood"
 number_of_abilities: 2
 abilities:
     - name: "Fiery Nut"
-      description: "hrows a burning nut that explodes for area damage, setting the ground on fire for 5 seconds."
+      description: "hrows a burning nut that explodes for area damage, setting the ground on fire for 5 seconds. Every upgrade level increases the explosive damage and the maximum fire damage dealt over time."
       number_of_levels: 3
       levels:
           - description: "Increases the explosive damage and the maximum fire damage dealt over time"
@@ -191,7 +191,7 @@ abilities:
           - description: "Increases the explosive damage and the maximum fire damage dealt over time"
             cost: 330
     - name: "Clobber"
-      description: "Shakes the ground, dealing True Damage and stunning enemies in the range. (Cooldown: 14 seconds)"
+      description: "Shakes the ground, dealing True Damage and stunning enemies in the range. Increases the damage and stun in seconds"
       number_of_levels: 3
       levels:
           - description: "Increases the damage and stun"
