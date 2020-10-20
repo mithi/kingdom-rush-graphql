@@ -45,17 +45,17 @@ const populateBarracksStats = async ({ dbName = "default", verbose = true } = {}
         })
 
         if (!retrievedTower) {
-            if (verbose) {
-                console.log(
-                    "> The tower you want to populate attack stats does not exist."
-                )
-            }
+            console.log(
+                "> The tower you want to populate barracks stats does not exist.",
+                tower.name,
+                tower.kingdom
+            )
             continue
         }
 
         if (retrievedTower.barracksStats) {
             if (verbose) {
-                console.log("> This tower already has barrack stats.")
+                console.log("> This tower already has barracks stats.")
             }
             continue
         }

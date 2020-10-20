@@ -44,13 +44,18 @@ abilities:
 If you want to start from scratch, you can delete everything and run all the migrations again
 
 ```sql
+\do out.txt
 SELECT * FROM "Towers";
 SELECT * FROM main_stats;
 SELECT * FROM attack_stats;
 SELECT * FROM barracks_stats;
+SELECT * FROM ability;
+SELECT * FROM ability_level;
 SELECT * FROM migrations;
 
-DROP TABLE "Towers";
+DROP TABLE ability CASCADE;
+DROP TABLE "Towers" CASCADE;
+DROP TABLE ability_level;
 DROP TABLE main_stats;
 DROP TABLE attack_stats;
 DROP TABLE barracks_stats;
