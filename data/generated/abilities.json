@@ -1,0 +1,1390 @@
+{
+    "data": [
+        {
+            "towerName": "rangers hideout",
+            "kingdom": "kingdom rush",
+            "abilities": [
+                {
+                    "abilityName": "poison arrows",
+                    "description": "Poisons anemies, causing them to take True damage over a three of seconds. Effects does not stack. True damage ignores any armore or magic resistance that an enemy has. Every upgrade level increases the damage dealt per second.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "wrath of the forest",
+                    "description": "Summons thorns and vines that trap up to 8 enemies in the range, dealing 40 physical damage every second. Cooldown is 8 seconds. Excludes bosses and mini bosses. Does not affect enemies immune to physical damage. Every upgrade level increases the duration in seconds.",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "muskeeter garrison",
+            "kingdom": "kingdom rush",
+            "abilities": [
+                {
+                    "abilityName": "sniper shot",
+                    "description": "Long range shot with increasing chance of instantly killing an anemy or dealing massive physical damage. Cooldown is 14 seconds Every upgrade level increase the chance of instantly killing an enemy.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "shrapnel shot",
+                    "description": "short range short that blasts an area with shrapnel, dealing explosive damage to all nearby enemies, inlcuding flying enemies with range. Does not aim for flying enemies themselves. Cooldown is 9 seconds. Every upgrade level increases the damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 300
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "holy order",
+            "kingdom": "kingdom rush",
+            "abilities": [
+                {
+                    "abilityName": "healing light",
+                    "description": "paladins can heal themselves every 10 seconds, does not remove debuffs. Every upgrade level increases the amount of healing.",
+                    "levels": [
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "shield of valor",
+                    "description": "enhance's paladins' protection improving their armor.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "holy strike",
+                    "description": "paladin attack have 10% chance of becoming a holy strike, dealing physical damage in a small area. Every upgrade level increases the damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 220
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "arcane wizards",
+            "kingdom": "kingdom rush",
+            "abilities": [
+                {
+                    "abilityName": "death ray",
+                    "description": "disintegrates an enemy into fine creep dust. Every upgrade level decreases the cooldown of the ability.",
+                    "levels": [
+                        {
+                            "cost": 350
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "teleport",
+                    "description": "teleports a group of enimes back down the path. cooldown is 10 seconds. Every upgrade level increases the maximum number of targets and the transfer distance.",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "sorcerer's mage",
+            "kingdom": "kingdom rush",
+            "abilities": [
+                {
+                    "abilityName": "polymorph",
+                    "description": "turns enemies into harmless sheep. sheep are very weak but cannot be blocked. sheep can be tapped to death. Every upgrade level decreases the cooldown of the ability.",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "summon elemental",
+                    "description": "summons an earth elemental, to block and attack your enemies. Every upgrade level increases the health, armor and damage dealt of the elemental.",
+                    "levels": [
+                        {
+                            "cost": 350
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "500mm big bertha",
+            "kingdom": "kingdom rush",
+            "abilities": [
+                {
+                    "abilityName": "dragonbreath launcher",
+                    "description": "launches a seeking missile with extra range that never miss. they find another target if they lose the current one. Every upgrade level increases the damage and detection range.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "cluster launcher xtreme",
+                    "description": "fires a special bom which will explode in the air dropping multiple bomblets in the area. Every upgrade level increases the number of bomblets.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "tesla x104",
+            "kingdom": "kingdom rush",
+            "abilities": [
+                {
+                    "abilityName": "overcharge",
+                    "description": "creates a static field around the tower when attacking dealing explosive to all nearby enemies. Every upgrade level increases the damage dealt by the field.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 125
+                        },
+                        {
+                            "cost": 125
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "supercharged bolt",
+                    "description": "increases the maximum number of targets that the bolt arcs to. base is 3 targets. Every upgrade level increase the number of maximum targets.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "crossbow fort",
+            "kingdom": "kingdom rush: frontiers",
+            "abilities": [
+                {
+                    "abilityName": "barrage",
+                    "description": "shoots bolts that deals damagage in quick succession ",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "falconer",
+                    "description": "gains a chance to deal double damage and improves attack range of all towers in its range (including itself). every upgrade level, increases the extra range and the critical chance of dealing double damage",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "tribal axethrowers",
+            "kingdom": "kingdom rush: frontiers",
+            "abilities": [
+                {
+                    "abilityName": "totem of weakness",
+                    "description": "creates a totem that weakens nearby enemies and makes them suffer more damage from sources. every upgrade level increases the duration",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "totem of spirits",
+                    "description": "creates a totem that dispels all magic and silences spellcaster in range. every upgrade level increases the duration",
+                    "levels": [
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "assassin's guild",
+            "kingdom": "kingdom rush: frontiers",
+            "abilities": [
+                {
+                    "abilityName": "sneak attack",
+                    "description": "attacks gain a chance to bbecome sneak attacks, which deal physical damage and have a chance of instant kill. every upgrade level increases the damage, sneak attack chance and instant kill chance.",
+                    "levels": [
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "counter attack",
+                    "description": "improves the dogde chance of assassins and now strikes back upon a successful dodge. every upgrade level increases the dodge chance and damage.",
+                    "levels": [
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "pick pocket",
+                    "description": "attacks gain a chance of stealing gold. every upgrade level increases the chance of stealing gold.",
+                    "levels": [
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "Knights Templar",
+            "kingdom": "kingdom rush: frontiers",
+            "abilities": [
+                {
+                    "abilityName": "toughness",
+                    "description": "Raises the maximum and current health of the Knights Templar by 50 each upgrade. Every upgrade level increases the current health bonus and maximum health",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "arterial strike",
+                    "description": "Attacks have a chance of causing bleeding, dealing True Damage over 3 seconds. Every upgrade level increases the damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "holy grail",
+                    "description": "Knights Templar have a chance to cheat death every time they are dealt lethal damage. They regain a percentage of their maximum health upon revival. Every upgrade level increases the chance to cheat death and the health regained.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "archmage tower",
+            "kingdom": "kingdom rush: frontiers",
+            "abilities": [
+                {
+                    "abilityName": "twister",
+                    "description": "A tornado that can run through a crowd of enemies and carry them back down the path, dealing magic damage. Enemies inside the tornado do not receive damage from outside sources. Every upgrade level increases maximum enemies carried, damage dealth, and distance carried back",
+                    "levels": [
+                        {
+                            "cost": 350
+                        },
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "critical mass",
+                    "description": "Any fired bolts have a 35% chance to explode dealing magic damage in a small area. Every upgrade level increases damage and damage area.",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "necromancer tower",
+            "kingdom": "kingdom rush: frontiers",
+            "abilities": [
+                {
+                    "abilityName": "pestilence",
+                    "description": "The Necromancer contaminates the land, poisoning enemies, dealing 20 True Damage per second. Every upgrade increases the duration in seconds.",
+                    "levels": [
+                        {
+                            "cost": 325
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Summon Death Rider",
+                    "description": "Summons a resilient soldier whose aura increases the damage of nearby skeleton. The Necromancer Tower's most can raise up to 8 skeletal minions from corpses of humanoid enemies that die within its range. increases health, damage, and armor of the death rider",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "dwaarp",
+            "kingdom": "kingdom rush: frontiers",
+            "abilities": [
+                {
+                    "abilityName": "core drill",
+                    "description": "Sends an automated mining drill towards an enemy, reducing it to a mound of gibs. Every upgrade level decreases cooldown.",
+                    "levels": [
+                        {
+                            "cost": 400
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "furnace blast",
+                    "description": "Burns all enemies in close range over 4 seconds. Every upgrade level increases maximum damage and damage per second",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "battle-mecha t200",
+            "kingdom": "kingdom rush: frontiers",
+            "abilities": [
+                {
+                    "abilityName": "Wasp Missiles",
+                    "description": "Fires a volley of seeking missiles that never miss, dealing 20-80 damage each. Every upgrade level increases the number of missiles",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Waste Disposal",
+                    "description": "Drops oil on the ground that slows down enemies by 70%. Every upgrade level increases the duration in seconds.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "arcane archers",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "burts arrors",
+                    "description": "Shoots an explosive magical arrow that deals additional area magic damage (damage area: 115). (Cooldown: 12 seconds). Every upgrade level increases the damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Slumber Arrows",
+                    "description": "Shoots an arrow that puts an enemy to sleep for 4 seconds. Every upgrade level decreases the cooldown in seconds.",
+                    "levels": [
+                        {
+                            "cost": 180
+                        },
+                        {
+                            "cost": 180
+                        },
+                        {
+                            "cost": 180
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "golden longbows",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Crimson Sentence",
+                    "description": "Every shot has a chance of slaying its victim. Every upgrade level increases the chance of instant kill.",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 300
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Hunter's Mark",
+                    "description": "Marks a target, causing it to suffer 200% (220%) damage from all sources. Every upgrade level increases the duration in seconds.",
+                    "levels": [
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 225
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "bladesinger hall",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Perfect Parry",
+                    "description": "Gives chance of becoming invulnerable for 2 seconds while dealing 36 True Damage in a small area when attacked. Every upgrade level increases the chance of invulnerability",
+                    "levels": [
+                        {
+                            "cost": 175
+                        },
+                        {
+                            "cost": 175
+                        },
+                        {
+                            "cost": 175
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Edge Mastery",
+                    "description": "Increases Bladesingers' attack damage by 5 and attack speed by 20%.",
+                    "levels": [
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Blade Dance",
+                    "description": "Special maneuver that slashes many times dealing True Damage. (Cooldown: 10 seconds). Increases the number of slashes and the damage per slash.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "forest keepers",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Circle of Life",
+                    "description": "Heals themselves and nearby allies over 4 seconds. Every upgrade level increases the healed hp.",
+                    "levels": [
+                        {
+                            "cost": 185
+                        },
+                        {
+                            "cost": 185
+                        },
+                        {
+                            "cost": 185
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Eerie Gardener",
+                    "description": "Covers an area with barbed vines, slowing and damaging enemies. Every upgrade level increases the damage and duration.",
+                    "levels": [
+                        {
+                            "cost": 285
+                        },
+                        {
+                            "cost": 285
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Ancient Oak Spear",
+                    "description": "Empowers the Forest Keepers' spears, making them deal True Damage. Every upgrade level increases the damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "wild magus",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Eldritch Doom",
+                    "description": "Detonates an enemy, causing magic damage to all other nearby enemies. Every upgrade level increases the damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 325
+                        },
+                        {
+                            "cost": 185
+                        },
+                        {
+                            "cost": 185
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Ward of Disruption",
+                    "description": "Silences enemies in range, blocking their magical abilities for 10 seconds. Every upgrade level increases the maximum number of targets.",
+                    "levels": [
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 225
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "high elven mage",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Timelapse",
+                    "description": "Phases enemies out of the battlefield for 5 seconds, dealing magical damage. Every upgrade level increases maximum number of targets and damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 225
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Arcane Sentinel",
+                    "description": "Summons magic sentinels that seek and attack nearby enemies at long range. Every upgrade level increases damage per bolt and the number of sentinels.",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 300
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "arch-druid henge",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "sylvan curse",
+                    "description": "Curses an enemy for 5 seconds, causing a percentage of all damage dealt to it to also affect nearby enemies. Increases the percentage.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Runed Bears",
+                    "description": "Invokes a mythical runed bear to block and fight enemies. Every upgrade level increases the number of bears.",
+                    "levels": [
+                        {
+                            "cost": 0
+                        },
+                        {
+                            "cost": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "weirwood",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Fiery Nut",
+                    "description": "hrows a burning nut that explodes for area damage, setting the ground on fire for 5 seconds. Every upgrade level increases the explosive damage and the maximum fire damage dealt over time.",
+                    "levels": [
+                        {
+                            "cost": 330
+                        },
+                        {
+                            "cost": 330
+                        },
+                        {
+                            "cost": 330
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Clobber",
+                    "description": "Shakes the ground, dealing True Damage and stunning enemies in the range. Increases the damage and stun in seconds",
+                    "levels": [
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 225
+                        },
+                        {
+                            "cost": 225
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "shadow archers",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Shadow Mark",
+                    "description": "Shoots an arrow that marks a target, making it suffer extra damage from all sources for 5 seconds.  Each upgrade level increases the extra damage (30%, 60%, 100%)",
+                    "levels": [
+                        {
+                            "cost": 120
+                        },
+                        {
+                            "cost": 120
+                        },
+                        {
+                            "cost": 120
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Blade of Demise",
+                    "description": "Stabs an enemy in the back and kills it instantly. Each upgrade level decreases the cooldown (40 seconds, 30 seconds, 24 seconds)",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Crow's Nest",
+                    "description": "Summons a crow to attack nearby enemies. The crow locks on to an enemy, dealing physical damage. Each upgrade level increases the damage per half a second.",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "orc warriors den",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Lust For Combat",
+                    "description": "Orcs gain bonus damage. Each upgrade level increases the bonus damage (40%, 80%)",
+                    "levels": [
+                        {
+                            "cost": 180
+                        },
+                        {
+                            "cost": 180
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Captain Promotion",
+                    "description": "Promotes an Orc Warrior to Captain, improving his damage, armor, health rate, and health.",
+                    "levels": [
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 0
+                        },
+                        {
+                            "cost": 0
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Seal of Blood",
+                    "description": "Orc Warriors*win HP regeneration per second. Each upgrade level increases the health rate.",
+                    "levels": [
+                        {
+                            "cost": 120
+                        },
+                        {
+                            "cost": 120
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "infernal mage",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Affliction",
+                    "description": "Places an infernal rune over the path, which reduces resistance of enemies for 5 seconds. Each upgrade level increases the reduction in percent.",
+                    "levels": [
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 0
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Lava Fissure",
+                    "description": "Casts a spell that erupts 8 lava geysers, each dealing magic damage in a small area. Each upgrade level increases the damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Infernal Portal",
+                    "description": "Teleports a group of enemies back along the path. Each upgrade level increases the number of enemies teleported",
+                    "levels": [
+                        {
+                            "cost": 220
+                        },
+                        {
+                            "cost": 220
+                        },
+                        {
+                            "cost": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "rocket riders",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Minefield",
+                    "description": "Places a land mine that explode as enemies pass over. Each mine lasts 50 seconds. Each upgrade level increases the damage dealt by the mine.",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 300
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Boosters",
+                    "description": "Fires a range-boosted rocket, hitting a far away target. Each upgrade level increases the damage dealt",
+                    "levels": [
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Defective Engines",
+                    "description": "Fires a defective rocket, which explodes in mid-air, raining 5 pieces of debris onto the track below. Each upgrade level increases the damage per debris",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "dark knights",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Brutal Strike",
+                    "description": "Dark Knights have a chance of executing their enemy every time they hit. Each upgrade level increases the instant-kill chance.",
+                    "levels": [
+                        {
+                            "cost": 280
+                        },
+                        {
+                            "cost": 280
+                        },
+                        {
+                            "cost": 280
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Armor of Thorns",
+                    "description": "Dark Knights reflect damage for each melee attack they receive. Each upgraded level increases the damage.",
+                    "levels": [
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Impervious",
+                    "description": "Dark Knights shield themselves, resisting hits* without receiving damage.",
+                    "levels": [
+                        {
+                            "cost": 200
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "melting furnace",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Red Hot Coal",
+                    "description": "Throws pieces of hot coal that burn the ground (area: 40 each) for 6 seconds, dealing damage to enemies standing on them. Each upgrade level increases the number of coals and the damage per 0.2 seconds.",
+                    "levels": [
+                        {
+                            "cost": 140
+                        },
+                        {
+                            "cost": 180
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Abrasive Heat",
+                    "description": "Nearby towers gain bonus (stackable) attack damage. Each upgrade level increases the percent bonus damage",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Burning Fuel",
+                    "description": "Infuses itself with a powerful fuel that increases its attack speed for 10 seconds. With the upgrade, the tower alternates between 5 fast attacks and 5 normal slow attacks.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "specters mausoleum",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Guardian Gargoyles",
+                    "description": "Summons a special Gargoyle unit to the field. Each upgrade level increases the number of gargoyles.",
+                    "levels": [
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 250
+                        },
+                        {
+                            "cost": 0
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Spectral Communion",
+                    "description": "Allows the Mausoleum to store extra specters. Each upgrade level increases the maximum number of specters stored",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 150
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Possession",
+                    "description": "Take control of an enemy for 10 seconds, making it to proceed to the opposite direction and fight for your army. Each upgrade level decreases the cooldown in seconds",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "goblirangs",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Biggarangs",
+                    "description": "Throws a massive boomerang which deals damage in an area of 70. In upgrade level increases the damage dealt.",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Headbang",
+                    "description": "Goblirang attacks have a chance to stun the target for 1.2 seconds on each hit. Increases the stun chance",
+                    "levels": [
+                        {
+                            "cost": 130
+                        },
+                        {
+                            "cost": 130
+                        },
+                        {
+                            "cost": 130
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Angry Bees",
+                    "description": "Throws a beehive, dealing physical damage in a small area (80) over 7 seconds. Each upgrade level increases the maximum damage dealt",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "bone flingers",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "The Walking Dead",
+                    "description": "Spawns a clumsy Skeleton/Skeleton Warrior that walks through the path. Each upgrade level increases the damage dealt and increases the health of each clumsy skeleton. It also decreases the cooldown.",
+                    "levels": [
+                        {
+                            "cost": 180
+                        },
+                        {
+                            "cost": 180
+                        },
+                        {
+                            "cost": 0
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Got Milk?",
+                    "description": "Increases basic attack damage on each upgrade.",
+                    "levels": [
+                        {
+                            "cost": 110
+                        },
+                        {
+                            "cost": 110
+                        },
+                        {
+                            "cost": 110
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Summon Bonem",
+                    "description": "Summons a giant skeleton golem that will fight and shoot enemies",
+                    "levels": [
+                        {
+                            "cost": 300
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "elite harassers",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Backstab",
+                    "description": "Improves the dodge chance and lets Harassers counter-attack when dodging an enemy's melee hit. Each upgrade level increases the damage and percent dodge chance.",
+                    "levels": [
+                        {
+                            "cost": 0
+                        },
+                        {
+                            "cost": 0
+                        },
+                        {
+                            "cost": 0
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Arrow Storm",
+                    "description": "Swiftly shoots 5 arrows at their enemies. Each upgrade level increases the damage dealt per arrow.",
+                    "levels": [
+                        {
+                            "cost": 140
+                        },
+                        {
+                            "cost": 140
+                        },
+                        {
+                            "cost": 140
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Fury of the Twilight",
+                    "description": "When Harassers die, they have a 50% chance of going berserk for 6 seconds.",
+                    "levels": [
+                        {
+                            "cost": 220
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "towerName": "orc shaman",
+            "kingdom": "kingdom rush: origin",
+            "abilities": [
+                {
+                    "abilityName": "Healing Roots",
+                    "description": "Fills a zone with powerful healing roots. Allies over it heal over 4 seconds. Each upgrade level increases HP healed",
+                    "levels": [
+                        {
+                            "cost": 130
+                        },
+                        {
+                            "cost": 130
+                        },
+                        {
+                            "cost": 130
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Meteor Shower",
+                    "description": "Cast a meteor shower that deals magic damage in an area. Each upgrade level increases the number of meteors and the damage per meteor",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 200
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Static Shock",
+                    "description": "Every attack now deals additional magic damage in a small area. Each upgrade level increases the damage",
+                    "levels": [
+                        {
+                            "cost": 180
+                        },
+                        {
+                            "cost": 180
+                        },
+                        {
+                            "cost": 180
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
