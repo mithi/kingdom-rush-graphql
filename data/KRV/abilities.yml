@@ -1,0 +1,342 @@
+---
+name: "shadow archers"
+number_of_abilities: 3
+abilities:
+    - name: "Shadow Mark"
+      description: "Shoots an arrow that marks a target, making it suffer extra damage from all sources for 5 seconds.  Each upgrade level increases the extra damage (30%, 60%, 100%)"
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 120
+          - description: ""
+            cost: 120
+          - description: ""
+            cost: 120
+    - name: "Blade of Demise"
+      description: "Stabs an enemy in the back and kills it instantly. Each upgrade level decreases the cooldown (40 seconds, 30 seconds, 24 seconds)"
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 300
+          - description: ""
+            cost: 100
+          - description: ""
+            cost: 100
+    - name: "Crow's Nest"
+      description: "Summons a crow to attack nearby enemies. The crow locks on to an enemy, dealing physical damage. Each upgrade level increases the damage per half a second."
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 200
+---
+name: "orc warriors den"
+number_of_abilities: 3
+abilities:
+    - name: "Lust For Combat"
+      description: "Orcs gain bonus damage. Each upgrade level increases the bonus damage (40%, 80%)"
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 180
+          - description: ""
+            cost: 180
+    - name: "Captain Promotion"
+      description: "Promotes an Orc Warrior to Captain, improving his damage, armor, health rate, and health."
+      number_of_levels: 1
+      levels:
+          - description: ""
+            cost: 150
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+    - name: "Seal of Blood"
+      description: "Orc Warriors*win HP regeneration per second. Each upgrade level increases the health rate."
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 120
+          - description: ""
+            cost: 120
+---
+name: "infernal mage"
+number_of_abilities: 3
+abilities:
+    - name: "Affliction"
+      description: "Places an infernal rune over the path, which reduces resistance of enemies for 5 seconds. Each upgrade level increases the reduction in percent."
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 150
+          - description: ""
+            cost: 150
+          - description: ""
+            cost: 0
+    - name: "Lava Fissure"
+      description: "Casts a spell that erupts 8 lava geysers, each dealing magic damage in a small area. Each upgrade level increases the damage dealt."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 200
+    - name: "Infernal Portal"
+      description: "Teleports a group of enemies back along the path. Each upgrade level increases the number of enemies teleported"
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 220
+          - description: ""
+            cost: 220
+          - description: ""
+            cost: 0
+---
+name: "rocket riders"
+number_of_abilities: 3
+abilities:
+    - name: "Minefield"
+      description: "Places a land mine that explode as enemies pass over. Each mine lasts 50 seconds. Each upgrade level increases the damage dealt by the mine."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 300
+          - description: ""
+            cost: 300
+          - description: ""
+            cost: 300
+    - name: "Boosters"
+      description: "Fires a range-boosted rocket, hitting a far away target. Each upgrade level increases the damage dealt"
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 150
+          - description: ""
+            cost: 150
+    - name: "Defective Engines"
+      description: "Fires a defective rocket, which explodes in mid-air, raining 5 pieces of debris onto the track below. Each upgrade level increases the damage per debris"
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 250
+          - description: ""
+            cost: 250
+---
+name: "dark knights"
+number_of_abilities: 3
+abilities:
+    - name: "Brutal Strike"
+      description: "Dark Knights have a chance of executing their enemy every time they hit. Each upgrade level increases the instant-kill chance."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 280
+          - description: ""
+            cost: 280
+          - description: ""
+            cost: 280
+    - name: "Armor of Thorns"
+      description: "Dark Knights reflect damage for each melee attack they receive. Each upgraded level increases the damage."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 150
+          - description: ""
+            cost: 150
+          - description: ""
+            cost: 150
+    - name: "Impervious"
+      description: "Dark Knights shield themselves, resisting hits* without receiving damage."
+      number_of_levels: 1
+      levels:
+          - description: ""
+            cost: 200
+---
+name: "melting furnace"
+number_of_abilities: 3
+abilities:
+    - name: "Red Hot Coal"
+      description: "Throws pieces of hot coal that burn the ground (area: 40 each) for 6 seconds, dealing damage to enemies standing on them. Each upgrade level increases the number of coals and the damage per 0.2 seconds."
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 140
+          - description: ""
+            cost: 180
+    - name: "Abrasive Heat"
+      description: "Nearby towers gain bonus (stackable) attack damage. Each upgrade level increases the percent bonus damage"
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 200
+    - name: "Burning Fuel"
+      description: "Infuses itself with a powerful fuel that increases its attack speed for 10 seconds. With the upgrade, the tower alternates between 5 fast attacks and 5 normal slow attacks."
+      number_of_levels: 1
+      levels:
+          - description: ""
+            cost: 250
+---
+name: "specters mausoleum"
+number_of_abilities: 3
+abilities:
+    - name: "Guardian Gargoyles"
+      description: "Summons a special Gargoyle unit to the field. Each upgrade level increases the number of gargoyles."
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 250
+          - description: ""
+            cost: 250
+          - description: ""
+            cost: 0
+    - name: "Spectral Communion"
+      description: "Allows the Mausoleum to store extra specters. Each upgrade level increases the maximum number of specters stored"
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 300
+          - description: ""
+            cost: 150
+    - name: "Possession"
+      description: "Take control of an enemy for 10 seconds, making it to proceed to the opposite direction and fight for your army. Each upgrade level decreases the cooldown in seconds"
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 100
+          - description: ""
+            cost: 100
+---
+name: "goblirangs"
+number_of_abilities: 3
+abilities:
+    - name: "Biggarangs"
+      description: "Throws a massive boomerang which deals damage in an area of 70. In upgrade level increases the damage dealt."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 100
+          - description: ""
+            cost: 100
+    - name: "Headbang"
+      description: "Goblirang attacks have a chance to stun the target for 1.2 seconds on each hit. Increases the stun chance"
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 130
+          - description: ""
+            cost: 130
+          - description: ""
+            cost: 130
+    - name: "Angry Bees"
+      description: "Throws a beehive, dealing physical damage in a small area (80) over 7 seconds. Each upgrade level increases the maximum damage dealt"
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 200
+---
+name: "bone flingers"
+number_of_abilities: 3
+abilities:
+    - name: "The Walking Dead"
+      description: "Spawns a clumsy Skeleton/Skeleton Warrior that walks through the path. Each upgrade level increases the damage dealt and increases the health of each clumsy skeleton. It also decreases the cooldown."
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 180
+          - description: ""
+            cost: 180
+          - description: ""
+            cost: 0
+    - name: "Got Milk?"
+      description: "Increases basic attack damage on each upgrade."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 110
+          - description: ""
+            cost: 110
+          - description: ""
+            cost: 110
+    - name: "Summon Bonem"
+      description: "Summons a giant skeleton golem that will fight and shoot enemies"
+      number_of_levels: 1
+      levels:
+          - description: ""
+            cost: 300
+---
+name: "elite harassers"
+number_of_abilities: 3
+abilities:
+    - name: "Backstab"
+      description: "Improves the dodge chance and lets Harassers counter-attack when dodging an enemy's melee hit. Each upgrade level increases the damage and percent dodge chance."
+      number_of_levels: 2
+      levels:
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+          - description: ""
+            cost: 0
+    - name: "Arrow Storm"
+      description: "Swiftly shoots 5 arrows at their enemies. Each upgrade level increases the damage dealt per arrow."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 140
+          - description: ""
+            cost: 140
+          - description: ""
+            cost: 140
+    - name: "Fury of the Twilight"
+      description: "When Harassers die, they have a 50% chance of going berserk for 6 seconds."
+      number_of_levels: 1
+      levels:
+          - description: ""
+            cost: 220
+---
+name: "orc shaman"
+number_of_abilities: 3
+abilities:
+    - name: "Healing Roots"
+      description: "Fills a zone with powerful healing roots. Allies over it heal over 4 seconds. Each upgrade level increases HP healed"
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 130
+          - description: ""
+            cost: 130
+          - description: ""
+            cost: 130
+    - name: "Meteor Shower"
+      description: "Cast a meteor shower that deals magic damage in an area. Each upgrade level increases the number of meteors and the damage per meteor"
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 200
+    - name: "Static Shock"
+      description: "Every attack now deals additional magic damage in a small area. Each upgrade level increases the damage"
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 180
+          - description: ""
+            cost: 180
+          - description: ""
+            cost: 180
