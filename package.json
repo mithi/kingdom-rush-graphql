@@ -6,10 +6,11 @@
     "scripts": {
         "test": "jest",
         "tsc": "tsc -p tsconfig.json",
-        "start": "nodemon src/index.ts",
-        "build": "npm run tsc && npm run format && node dist/index.js",
+        "build": "npm run format && npm run compile",
         "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
-        "migrate-all": "ts-node ./node_modules/typeorm/cli.js migration:run"
+        "migrate-all": "ts-node ./node_modules/typeorm/cli.js migration:run",
+        "compile": "npm run tsc && node dist/index.js",
+        "start": "nodemon -e ts  --exec \"npm run compile\""
     },
     "repository": {
         "type": "git",
@@ -19,10 +20,13 @@
         "kingdom-rush-game",
         "kingdom-rush-videogame",
         "kingdom-rush",
+        "tower-defense",
         "graphql",
         "apollo-server",
         "typescript",
-        "express"
+        "express",
+        "typeorm",
+        "typegraphl"
     ],
     "author": "Mithi",
     "license": "Apache-2.0",
