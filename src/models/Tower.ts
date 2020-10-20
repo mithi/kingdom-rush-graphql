@@ -3,6 +3,7 @@ import {
     Column,
     PrimaryGeneratedColumn,
     BaseEntity,
+    OneToMany,
     Unique,
     OneToOne,
 } from "typeorm"
@@ -11,6 +12,7 @@ import { ObjectType, Field, ID } from "type-graphql"
 import { MainStats } from "./MainStats"
 import { BarracksStats } from "./BarracksStats"
 import { AttackStats } from "./AttackStats"
+import { Ability } from "./Ability"
 
 @ObjectType()
 @Entity({ name: "Towers" })
@@ -44,6 +46,10 @@ export class Tower extends BaseEntity {
         enum: TowerKingdom,
     })
     kingdom: TowerKingdom
+
+    // ALL towers have this
+    @OneToMany(_type => Ability, ability => ability.tower, { cascade: true })
+    abilities: Ability[]
 
     // ALL towers have this
     @OneToOne(_type => MainStats, mainStats => mainStats.tower, { cascade: true })
