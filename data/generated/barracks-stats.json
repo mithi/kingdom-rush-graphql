@@ -65,7 +65,7 @@
             "numberOfUnits": 3
         },
         {
-            "name": "assassins' guild",
+            "name": "assassin's guild",
             "kingdom": "kingdom rush: frontiers",
             "health": 200,
             "armor": 0,
@@ -153,7 +153,7 @@
             "kingdom": "kingdom rush: vengeance"
         },
         {
-            "name": "Elite Harassers, 1",
+            "name": "elite harassers, 1",
             "health": 70,
             "armor": 0,
             "respawnInterval": 12,
@@ -161,7 +161,7 @@
             "kingdom": "kingdom rush: vengeance"
         },
         {
-            "name": "Elite Harassers, 2",
+            "name": "elite harassers, 2",
             "health": 130,
             "armor": 0,
             "respawnInterval": 12,
@@ -169,7 +169,7 @@
             "kingdom": "kingdom rush: vengeance"
         },
         {
-            "name": "Elite Harassers, 3",
+            "name": "elite harassers, 3",
             "health": 160,
             "armor": 0,
             "respawnInterval": 12,
@@ -177,7 +177,7 @@
             "kingdom": "kingdom rush: vengeance"
         },
         {
-            "name": "Elite Harassers, 4",
+            "name": "elite harassers, 4",
             "health": 220,
             "armor": 0,
             "respawnInterval": 12,

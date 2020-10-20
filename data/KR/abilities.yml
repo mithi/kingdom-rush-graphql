@@ -23,7 +23,7 @@ abilities:
           - description: durations, 3 second
             cost: 150
 ---
-name: "muskeeter garrison"
+name: "musketeer garrison"
 number_of_abilities: 2
 abilities:
     - name: "sniper shot"
@@ -77,7 +77,7 @@ abilities:
           - description: "damage: 75-135"
             cost: 150
 ---
-name: "arcane wizards"
+name: "arcane wizard"
 number_of_abilities: 2
 abilities:
     - name: "death ray"
@@ -101,7 +101,7 @@ abilities:
           - description: "maximum targets: 6, transfer distances: 31-40 nodes"
             cost: 100
 ---
-name: "sorcerer's mage"
+name: "sorcerer mage"
 number_of_abilities: 2
 abilities:
     - name: "polymorph"

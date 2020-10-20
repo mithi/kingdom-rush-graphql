@@ -22,7 +22,7 @@ KINGDOM_DIRECTORY = {
 }
 
 def get_attack_stats(tower_type, kingdom):
-    path = f"./data/{kingdom}/{tower_type}.yml"
+    path = f"../{kingdom}/{tower_type}.yml"
     kingdom_string = KINGDOM_DIRECTORY[kingdom]
     stream = open(path, "r")
     towers = []
@@ -64,7 +64,7 @@ towers2d = [
     get_attack_stats(TYPE_RANGED, "KRO"),
 ]
 
-krv_dir = "./data/KRV/"
+krv_dir = "../KRV/"
 krv_files_path = [f for f in listdir(krv_dir) if isfile(join(krv_dir, f))]
 
 krv_towers = []
@@ -97,6 +97,6 @@ data = { "towers": towers }
 for i, tower in enumerate(towers):
     print(i, tower["name"])
 
-with open("./data/generated/attack-stats.json", 'w') as fout:
+with open("../generated/attack-stats.json", 'w') as fout:
     json_dumps_str = json.dumps(data, indent=4)
     print(json_dumps_str, file=fout)

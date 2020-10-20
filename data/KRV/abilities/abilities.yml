@@ -1,5 +1,5 @@
 ---
-name: "shadow archers"
+name: "shadow archers, 4"
 number_of_abilities: 3
 abilities:
     - name: "Shadow Mark"
@@ -31,7 +31,7 @@ abilities:
           - description: ""
             cost: 200
 ---
-name: "orc warriors den"
+name: "orc warriors den, 4"
 number_of_abilities: 3
 abilities:
     - name: "Lust For Combat"
@@ -61,7 +61,7 @@ abilities:
           - description: ""
             cost: 120
 ---
-name: "infernal mage"
+name: "infernal mage, 4"
 number_of_abilities: 3
 abilities:
     - name: "Affliction"
@@ -95,7 +95,7 @@ abilities:
           - description: ""
             cost: 0
 ---
-name: "rocket riders"
+name: "rocket riders, 4"
 number_of_abilities: 3
 abilities:
     - name: "Minefield"
@@ -125,7 +125,7 @@ abilities:
           - description: ""
             cost: 250
 ---
-name: "dark knights"
+name: "dark knights, 4"
 number_of_abilities: 3
 abilities:
     - name: "Brutal Strike"
@@ -155,7 +155,7 @@ abilities:
           - description: ""
             cost: 200
 ---
-name: "melting furnace"
+name: "melting furnace, 4"
 number_of_abilities: 3
 abilities:
     - name: "Red Hot Coal"
@@ -181,7 +181,7 @@ abilities:
           - description: ""
             cost: 250
 ---
-name: "specters mausoleum"
+name: "specters mausoleum, 4"
 number_of_abilities: 3
 abilities:
     - name: "Guardian Gargoyles"
@@ -213,7 +213,7 @@ abilities:
           - description: ""
             cost: 100
 ---
-name: "goblirangs"
+name: "goblirangs, 4"
 number_of_abilities: 3
 abilities:
     - name: "Biggarangs"
@@ -247,7 +247,7 @@ abilities:
           - description: ""
             cost: 200
 ---
-name: "bone flingers"
+name: "bone flingers, 4"
 number_of_abilities: 3
 abilities:
     - name: "The Walking Dead"
@@ -277,7 +277,7 @@ abilities:
           - description: ""
             cost: 300
 ---
-name: "elite harassers"
+name: "elite harassers, 4"
 number_of_abilities: 3
 abilities:
     - name: "Backstab"
@@ -307,7 +307,7 @@ abilities:
           - description: ""
             cost: 220
 ---
-name: "orc shaman"
+name: "orc shaman, 4"
 number_of_abilities: 3
 abilities:
     - name: "Healing Roots"

@@ -47,7 +47,7 @@ magical_damage_upgraded:
     min: 46
     max: 86
 ---
-name: "arcane tower"
+name: "arcane wizard"
 magical_damage:
     min: 76
     max: 140
@@ -66,7 +66,7 @@ abilities:
     - "death ray"
     - "teleport"
 ---
-name: "sorcerer tower"
+name: "sorcerer mage"
 magical_damage:
     min: 42
     max: 78

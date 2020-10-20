@@ -37,7 +37,7 @@
             ]
         },
         {
-            "towerName": "muskeeter garrison",
+            "towerName": "musketeer garrison",
             "kingdom": "kingdom rush",
             "abilities": [
                 {
@@ -118,7 +118,7 @@
             ]
         },
         {
-            "towerName": "arcane wizards",
+            "towerName": "arcane wizard",
             "kingdom": "kingdom rush",
             "abilities": [
                 {
@@ -154,7 +154,7 @@
             ]
         },
         {
-            "towerName": "sorcerer's mage",
+            "towerName": "sorcerer mage",
             "kingdom": "kingdom rush",
             "abilities": [
                 {
@@ -379,7 +379,7 @@
             ]
         },
         {
-            "towerName": "Knights Templar",
+            "towerName": "knights templar",
             "kingdom": "kingdom rush: frontiers",
             "abilities": [
                 {
@@ -838,7 +838,7 @@
             ]
         },
         {
-            "towerName": "weirwood",
+            "towerName": "weirdwood",
             "kingdom": "kingdom rush: origin",
             "abilities": [
                 {
@@ -874,8 +874,8 @@
             ]
         },
         {
-            "towerName": "shadow archers",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "shadow archers, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Shadow Mark",
@@ -922,8 +922,8 @@
             ]
         },
         {
-            "towerName": "orc warriors den",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "orc warriors den, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Lust For Combat",
@@ -967,8 +967,8 @@
             ]
         },
         {
-            "towerName": "infernal mage",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "infernal mage, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Affliction",
@@ -1018,8 +1018,8 @@
             ]
         },
         {
-            "towerName": "rocket riders",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "rocket riders, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Minefield",
@@ -1063,8 +1063,8 @@
             ]
         },
         {
-            "towerName": "dark knights",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "dark knights, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Brutal Strike",
@@ -1108,8 +1108,8 @@
             ]
         },
         {
-            "towerName": "melting furnace",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "melting furnace, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Red Hot Coal",
@@ -1147,8 +1147,8 @@
             ]
         },
         {
-            "towerName": "specters mausoleum",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "specters mausoleum, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Guardian Gargoyles",
@@ -1195,8 +1195,8 @@
             ]
         },
         {
-            "towerName": "goblirangs",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "goblirangs, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Biggarangs",
@@ -1246,8 +1246,8 @@
             ]
         },
         {
-            "towerName": "bone flingers",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "bone flingers, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "The Walking Dead",
@@ -1291,8 +1291,8 @@
             ]
         },
         {
-            "towerName": "elite harassers",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "elite harassers, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Backstab",
@@ -1336,8 +1336,8 @@
             ]
         },
         {
-            "towerName": "orc shaman",
-            "kingdom": "kingdom rush: origin",
+            "towerName": "orc shaman, 4",
+            "kingdom": "kingdom rush: vengeance",
             "abilities": [
                 {
                     "abilityName": "Healing Roots",

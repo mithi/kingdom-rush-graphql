@@ -55,7 +55,7 @@
             "range": 360
         },
         {
-            "name": "battle-mecha t-200",
+            "name": "battle-mecha t200",
             "kingdom": "kingdom rush: frontiers",
             "fireInterval": 1,
             "range": 350
@@ -109,13 +109,13 @@
             "range": 360
         },
         {
-            "name": "arcane tower",
+            "name": "arcane wizard",
             "kingdom": "kingdom rush",
             "fireInterval": 2,
             "range": 400
         },
         {
-            "name": "sorcerer tower",
+            "name": "sorcerer mage",
             "kingdom": "kingdom rush",
             "fireInterval": 1.5,
             "range": 400
@@ -235,7 +235,7 @@
             "range": 396
         },
         {
-            "name": "tribal axethrower",
+            "name": "tribal axethrowers",
             "kingdom": "kingdom rush: frontiers",
             "fireInterval": 0.8,
             "range": 358

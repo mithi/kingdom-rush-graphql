@@ -79,7 +79,7 @@ abilities:
           - description: "increases chance of stealing gold"
             cost: 100 #???
 ---
-name: "Knights Templar"
+name: "knights templar"
 number_of_abilities: 3
 abilities:
     - name: "toughness"
