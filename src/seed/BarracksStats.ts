@@ -13,7 +13,7 @@ const path: any = require("path")
 
 const pathToBarracksJson = path.join(
     __dirname,
-    "../../data/generated",
+    "../../data/generated/json",
     "barracks-stats.json"
 )
 

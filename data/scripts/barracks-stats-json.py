@@ -109,7 +109,7 @@ data = { "towers": towers }
 for i, tower in enumerate(towers):
     print(i, tower["name"])
 
-with open("../generated/barracks-stats.json", 'w') as fout:
+with open("../generated/json/barracks-stats.json", 'w') as fout:
     json_dumps_str = json.dumps(data, indent=4)
     print(json_dumps_str, file=fout)
 

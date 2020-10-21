@@ -12,8 +12,12 @@ import { MainStats, Tower, Ability, AbilityLevel } from "../models"
 
 const path: any = require("path")
 
-const pathToTowerJson = path.join(__dirname, "../../data/generated", "towers.json")
-const pathToAbilityJson = path.join(__dirname, "../../data/generated", "abilities.json")
+const pathToTowerJson = path.join(__dirname, "../../data/generated/json", "towers.json")
+const pathToAbilityJson = path.join(
+    __dirname,
+    "../../data/generated/json",
+    "abilities.json"
+)
 
 const towerJson: any = require(pathToTowerJson)
 const abilityJson: any = require(pathToAbilityJson)
