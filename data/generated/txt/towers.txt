@@ -1,4 +1,4 @@
- id  |         name          | towerType | level |         kingdom
+ id  |         name          | towerType | level |         kingdom         
 -----+-----------------------+-----------+-------+-------------------------
    1 | dwarven bombard       | artillery | 1     | kingdom rush
    2 | dwarven artillery     | artillery | 2     | kingdom rush
@@ -10,11 +10,11 @@
    8 | dwarven howitzer      | artillery | 3     | kingdom rush: frontiers
    9 | dwaarp                | artillery | 4     | kingdom rush: frontiers
   10 | battle-mecha t200     | artillery | 4     | kingdom rush: frontiers
-  11 | stone cirlce          | artillery | 1     | kingdom rush: origin
-  12 | boulder circle        | artillery | 2     | kingdom rush: origin
-  13 | menhir cirlce         | artillery | 3     | kingdom rush: origin
-  14 | arch-druid henge      | artillery | 4     | kingdom rush: origin
-  15 | weirdwood             | artillery | 4     | kingdom rush: origin
+  11 | stone circle          | artillery | 1     | kingdom rush: origins
+  12 | boulder circle        | artillery | 2     | kingdom rush: origins
+  13 | menhir cirlce         | artillery | 3     | kingdom rush: origins
+  14 | arch-druid henge      | artillery | 4     | kingdom rush: origins
+  15 | weirdwood             | artillery | 4     | kingdom rush: origins
   16 | mage tower            | mage      | 1     | kingdom rush
   17 | adept tower           | mage      | 2     | kingdom rush
   18 | wizard tower          | mage      | 3     | kingdom rush
@@ -25,11 +25,11 @@
   23 | wizard tower          | mage      | 3     | kingdom rush: frontiers
   24 | archmage tower        | mage      | 4     | kingdom rush: frontiers
   25 | necromancer tower     | mage      | 4     | kingdom rush: frontiers
-  26 | mystic dais           | mage      | 1     | kingdom rush: origin
-  27 | arcanist dais         | mage      | 2     | kingdom rush: origin
-  28 | eldritch dais         | mage      | 3     | kingdom rush: origin
-  29 | wild magus            | mage      | 4     | kingdom rush: origin
-  30 | high elven mage       | mage      | 4     | kingdom rush: origin
+  26 | mystic dais           | mage      | 1     | kingdom rush: origins
+  27 | arcanist dais         | mage      | 2     | kingdom rush: origins
+  28 | eldritch dais         | mage      | 3     | kingdom rush: origins
+  29 | wild magus            | mage      | 4     | kingdom rush: origins
+  30 | high elven mage       | mage      | 4     | kingdom rush: origins
   31 | archer tower          | archer    | 1     | kingdom rush
   32 | marksman tower        | archer    | 2     | kingdom rush
   33 | sharpshooter tower    | archer    | 3     | kingdom rush
@@ -40,11 +40,11 @@
   38 | sharpshooter tower    | archer    | 3     | kingdom rush: frontiers
   39 | crossbow fort         | archer    | 4     | kingdom rush: frontiers
   40 | tribal axethrowers    | archer    | 4     | kingdom rush: frontiers
-  41 | hunter arbor          | archer    | 1     | kingdom rush: origin
-  42 | watcher arbor         | archer    | 2     | kingdom rush: origin
-  43 | sentinel arbor        | archer    | 3     | kingdom rush: origin
-  44 | arcane archers        | archer    | 4     | kingdom rush: origin
-  45 | golden longbows       | archer    | 4     | kingdom rush: origin
+  41 | hunter arbor          | archer    | 1     | kingdom rush: origins
+  42 | watcher arbor         | archer    | 2     | kingdom rush: origins
+  43 | sentinel arbor        | archer    | 3     | kingdom rush: origins
+  44 | arcane archers        | archer    | 4     | kingdom rush: origins
+  45 | golden longbows       | archer    | 4     | kingdom rush: origins
   46 | militia barracks      | barracks  | 1     | kingdom rush
   47 | footmen barracks      | barracks  | 2     | kingdom rush
   48 | knights barracks      | barracks  | 3     | kingdom rush
@@ -55,11 +55,11 @@
   53 | knights barracks      | barracks  | 3     | kingdom rush: frontiers
   54 | assassin's guild      | barracks  | 4     | kingdom rush: frontiers
   55 | knights templar       | barracks  | 4     | kingdom rush: frontiers
-  56 | defender barracks     | barracks  | 1     | kingdom rush: origin
-  57 | warden barracks       | barracks  | 2     | kingdom rush: origin
-  58 | ranger barracks       | barracks  | 3     | kingdom rush: origin
-  59 | bladesinger hall      | barracks  | 4     | kingdom rush: origin
-  60 | forest keepers        | barracks  | 4     | kingdom rush: origin
+  56 | defender barracks     | barracks  | 1     | kingdom rush: origins
+  57 | warden barracks       | barracks  | 2     | kingdom rush: origins
+  58 | ranger barracks       | barracks  | 3     | kingdom rush: origins
+  59 | bladesinger hall      | barracks  | 4     | kingdom rush: origins
+  60 | forest keepers        | barracks  | 4     | kingdom rush: origins
   61 | dark knights, 1       | barracks  | 1     | kingdom rush: vengeance
   62 | dark knights, 2       | barracks  | 2     | kingdom rush: vengeance
   63 | dark knights, 3       | barracks  | 3     | kingdom rush: vengeance
@@ -105,3 +105,4 @@
  103 | orc shaman, 3         | mage      | 3     | kingdom rush: vengeance
  104 | orc shaman, 4         | mage      | 4     | kingdom rush: vengeance
 (104 rows)
+

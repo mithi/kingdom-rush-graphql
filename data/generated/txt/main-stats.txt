@@ -1,4 +1,4 @@
- id  | damageMinimum | damageMaximum | buildCost | towerId
+ id  | damageMinimum | damageMaximum | buildCost | towerId 
 -----+---------------+---------------+-----------+---------
    1 |             8 |            15 |       125 |       1
    2 |            20 |            40 |       220 |       2
@@ -105,3 +105,4 @@
  103 |            20 |           110 |       260 |     103
  104 |            35 |           190 |       320 |     104
 (104 rows)
+
