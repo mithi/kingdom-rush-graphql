@@ -1,5 +1,5 @@
-python towers-json.py;
-python main-stats-json.py;
-python barracks-stats-json.py;
-python attack-stats-json.py;
-python abilities-json.py;
+python json-towers.py;
+python json-main-stats.py;
+python json-barracks-stats.py;
+python json-attack-stats.py;
+python json-abilities.py;
