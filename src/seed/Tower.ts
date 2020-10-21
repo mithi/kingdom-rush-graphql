@@ -11,12 +11,19 @@ import { TowerType, TowerLevel, TowerKingdom } from "../enums/TowerEnums"
 import { MainStats, Tower, Ability, AbilityLevel } from "../models"
 
 const path: any = require("path")
-
 const pathToTowerJson = path.join(__dirname, JSON_DATA_PATH, "towers.json")
 const pathToAbilityJson = path.join(__dirname, JSON_DATA_PATH, "abilities.json")
+const pathToImageUrlJson = path.join(__dirname, JSON_DATA_PATH, "image-urls.json")
 
 const towerJson: any = require(pathToTowerJson)
 const abilityJson: any = require(pathToAbilityJson)
+const imageJson: any = require(pathToImageUrlJson)
+
+type imageData = {
+    imageUrl: string
+    kingdom: string
+    name: string
+}
 
 type TowerData = {
     name: string
@@ -120,7 +127,9 @@ const populateMainStats = async ({ dbName = "default", verbose = true } = {}) =>
 
         if (!retrievedTower) {
             if (verbose) {
-                console.log("> The tower you want to populate main stats does not exist")
+                console.log(
+                    "> The tower you want to populate with main stats does not exist"
+                )
             }
             continue
         }
@@ -142,6 +151,53 @@ const populateMainStats = async ({ dbName = "default", verbose = true } = {}) =>
             if (verbose) {
                 console.log("> Main stats saved")
             }
+        } catch (error) {
+            logError(error)
+        }
+    }
+}
+
+const populateImageUrls = async ({ dbName = "default", verbose = true } = {}) => {
+    const towers: [imageData] = imageJson.data
+    for (let tower of towers) {
+        //console.log(tower.name, "|", tower.kingdom)
+        let retrievedTower = await getRepository(Tower, dbName).findOne({
+            where: {
+                name: tower.name,
+                kingdom: tower.kingdom,
+            },
+        })
+
+        if (!retrievedTower) {
+            console.log(
+                "> The tower you want to populate with image urls does not exist",
+                tower.name,
+                tower.kingdom
+            )
+            continue
+        }
+
+        if (retrievedTower.imageUrl) {
+            if (verbose) {
+                console.log("> This tower already has an image url")
+            }
+            continue
+        }
+
+        retrievedTower.imageUrl = tower.imageUrl
+
+        try {
+            await getRepository(Tower, dbName).save(retrievedTower)
+            console.log("> image url saved")
+
+            const newTower = await getRepository(Tower, dbName).findOne({
+                where: {
+                    name: tower.name,
+                    kingdom: tower.kingdom,
+                },
+            })
+
+            console.log(newTower)
         } catch (error) {
             logError(error)
         }
@@ -186,8 +242,9 @@ const populateAbilities = async ({ dbName = "default", verbose = true } = {}) =>
         }
 
         for (let ability of tower.abilities) {
-            console.log("--", ability.abilityName)
-
+            if (verbose) {
+                console.log("--", ability.abilityName)
+            }
             let newAbility = new Ability()
             newAbility.name = ability.abilityName
             newAbility.description = ability.description
@@ -205,4 +262,4 @@ const populateAbilities = async ({ dbName = "default", verbose = true } = {}) =>
     }
 }
 
-export { populateMainStats, populateTowers, populateAbilities }
+export { populateMainStats, populateTowers, populateAbilities, populateImageUrls }
