@@ -19,6 +19,23 @@ const getExampleMainStats = (): MainStats => {
     return mainStats
 }
 
+const getExampleTower = (): Tower => {
+    let tower = new Tower()
+    tower.name = "dwarven bombard"
+    tower.kingdom = TowerKingdom.KR
+    tower.towerType = TowerType.ARTILLERY
+    tower.level = TowerLevel.LVL1
+    return tower
+}
+
+const getExampleMainStats = (): MainStats => {
+    let mainStats = new MainStats()
+    mainStats.buildCost = 125
+    mainStats.damageMinimum = 8
+    mainStats.damageMaximum = 15
+    return mainStats
+}
+
 beforeAll(async () => {
     await createConnection("test")
 })
