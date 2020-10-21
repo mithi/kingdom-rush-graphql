@@ -11,7 +11,7 @@ default:
     dropSchema: false
     migrations: ["dist/migrations/*.js"]
     cli:
-        migrationsDir: "dist/migrations"
+        migrationsDir: "src/migrations"
 
 test:
     type: "postgres"
