@@ -17,7 +17,7 @@ export enum TowerLevel {
 export enum TowerKingdom {
     KR = "kingdom rush",
     KRF = "kingdom rush: frontiers",
-    KRO = "kingdom rush: origin",
+    KRO = "kingdom rush: origins",
     KRV = "kingdom rush: vengeance",
 }
 

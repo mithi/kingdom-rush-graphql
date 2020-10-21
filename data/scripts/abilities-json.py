@@ -99,7 +99,7 @@ def get_abilities(path, kingdom):
 
 towers_kr = get_abilities("../KR/abilities.yml", "kingdom rush")
 towers_krf = get_abilities("../KRF/abilities.yml", "kingdom rush: frontiers")
-towers_kro = get_abilities("../KRO/abilities.yml", "kingdom rush: origin")
+towers_kro = get_abilities("../KRO/abilities.yml", "kingdom rush: origins")
 towers_krv = get_abilities("../KRV/abilities/abilities.yml", "kingdom rush: vengeance")
 
 towers2d = [towers_kr, towers_krf, towers_kro, towers_krv]

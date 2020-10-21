@@ -20,7 +20,7 @@ damage: {
 KINGDOM_DIRECTORY = {
     "KR": "kingdom rush",
     "KRF": "kingdom rush: frontiers",
-    "KRO": "kingdom rush: origin",
+    "KRO": "kingdom rush: origins",
 }
 
 def get_towers(tower_type, kingdom):
