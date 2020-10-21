@@ -64,7 +64,7 @@ towers2d = [
     get_attack_stats(TYPE_RANGED, "KRO"),
 ]
 
-krv_dir = "../KRV/"
+krv_dir = "../raw/KRV/"
 krv_files_path = [f for f in listdir(krv_dir) if isfile(join(krv_dir, f))]
 
 krv_towers = []
