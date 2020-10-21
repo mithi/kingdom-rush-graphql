@@ -82,3 +82,13 @@ ts-node ./node_modules/typeorm/cli.js migration:run
 ```sql
 psql -d kingdom_rush_db -U kingdom_rush_user
 ```
+
+```
+python towers-json.py;
+python main-stats-json.py;
+python barracks-stats-json.py;
+python attack-stats-json.py;
+python abilities-json.py;
+
+bash generate.sh
+```
