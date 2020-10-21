@@ -4,6 +4,14 @@ export class MainTablesCreate1603044489891 implements MigrationInterface {
     name = "MainTablesCreate1603044489891"
 
     public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.query(`
+        CREATE TYPE "Towers_towertype_enum" AS ENUM('archer', 'barracks', 'mage', 'artillery');
+        CREATE TYPE "Towers_level_enum" AS ENUM('1', '2', '3', '4');
+        CREATE TYPE "Towers_kingdom_enum" AS ENUM('kingdom rush', 'kingdom rush: frontiers', 'kingdom rush: origins', 'kingdom rush: vengeance');
+        CREATE TYPE "Towers_towercategory_enum" AS ENUM('special', 'basic');
+
+        `)
+
         await queryRunner.query(
             `CREATE TABLE "main_stats" ("id" SERIAL NOT NULL, "damageMinimum" real NOT NULL, "damageMaximum" real NOT NULL, "buildCost" real NOT NULL, "towerId" integer NOT NULL, CONSTRAINT "REL_38a6e0a47022a1c957b9018646" UNIQUE ("towerId"), CONSTRAINT "PK_a9fe6ef57784aff6b73159e9b4d" PRIMARY KEY ("id"))`
         )
@@ -43,5 +51,11 @@ export class MainTablesCreate1603044489891 implements MigrationInterface {
         await queryRunner.query(`DROP TABLE "attack_stats"`)
         await queryRunner.query(`DROP TABLE "barracks_stats"`)
         await queryRunner.query(`DROP TABLE "main_stats"`)
+
+        await queryRunner.query(`
+        DROP TYPE "Towers_towertype_enum";
+        DROP TYPE "Towers_level_enum";
+        DROP TYPE "Towers_kingdom_enum";
+        DROP TYPE "Towers_towercategory_enum";`)
     }
 }
