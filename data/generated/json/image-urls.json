@@ -2,102 +2,102 @@
     "data": [
         {
             "name": "wild magus",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-mage-4b-wild-magus.png"
         },
         {
-            "name": "forest keeper",
-            "kingdom": "kingdom rush: origin",
+            "name": "forest keepers",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-4a-forest-keeper.png"
         },
         {
             "name": "boulder circle",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-2-boulder-circle.png"
         },
         {
             "name": "warden barracks",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-2-warden-barracks.png"
         },
         {
             "name": "high elven mage",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-magic-4a-high-elven-mage.png"
         },
         {
             "name": "menhir circle",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-3-menhir-circle.png"
         },
         {
             "name": "bladesinger hall",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-4b-bladesinger-hall.png"
         },
         {
             "name": "golden longbows",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-4a-golden-longbows.png"
         },
         {
-            "name": "arch druid henge",
-            "kingdom": "kingdom rush: origin",
+            "name": "arch-druid henge",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-4a-arch-druid-henge.png"
         },
         {
             "name": "mystic dais",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-mage-1-mystic-dais.png"
         },
         {
             "name": "weirdwood",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-4b-weirdwood.png"
         },
         {
             "name": "arcane archers",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-4b-arcane-archers.png"
         },
         {
             "name": "stone circle",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-1-stone-circle.png"
         },
         {
             "name": "defender barracks",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-1-defender-barracks.png"
         },
         {
             "name": "watcher arbor",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-2-watcher-arbor.png"
         },
         {
             "name": "sentinel arbor",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-3-sentinel-arbor.png"
         },
         {
-            "name": "arcanis dais",
-            "kingdom": "kingdom rush: origin",
+            "name": "arcanist dais",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-mage-2-arcanis-dais.png"
         },
         {
-            "name": "hunder arbor",
-            "kingdom": "kingdom rush: origin",
+            "name": "hunter arbor",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-1-hunter-arbor.png"
         },
         {
             "name": "eldritch dais",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-mage-3-eldritch-dais.png"
         },
         {
             "name": "ranger barracks",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-3-ranger-barracks.png"
         },
         {
@@ -106,17 +106,17 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-barracks-4a-knights-templar.png"
         },
         {
-            "name": "battle-mecha",
+            "name": "battle-mecha t200",
             "kingdom": "kingdom rush: frontiers",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-artillery-4a-battler-mecha-t200.png"
         },
         {
-            "name": "dwarven arillery",
+            "name": "dwarven artillery",
             "kingdom": "kingdom rush: frontiers",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-artillery-2-dwarven-artillery.png"
         },
         {
-            "name": "archmade tower",
+            "name": "archmage tower",
             "kingdom": "kingdom rush: frontiers",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-mage-4b-archmage-tower.png"
         },
@@ -147,7 +147,7 @@
         },
         {
             "name": "wizard tower",
-            "kingdom": "kingdom rush:frontiers",
+            "kingdom": "kingdom rush: frontiers",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-mage-3-wizard-tower.png"
         },
         {
@@ -206,7 +206,7 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-tesla-x104-4b.png"
         },
         {
-            "name": "400mm big bertha",
+            "name": "500mm big bertha",
             "kingdom": "kingdom rush",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-4a-500mm-big-bertha.png"
         },
@@ -226,7 +226,7 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-ranged-4a-rangers-hideout.png"
         },
         {
-            "name": "barbarian hall",
+            "name": "barbarian mead hall",
             "kingdom": "kingdom rush",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-barracks-4b-barbarian-hall.png"
         },
@@ -276,7 +276,7 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-barracks-4a-holy-order.png"
         },
         {
-            "name": "arcane tower",
+            "name": "arcane wizard",
             "kingdom": "kingdom rush",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-mage-4a-arcane-tower.png"
         },
@@ -362,7 +362,7 @@
         },
         {
             "name": "infernal mage, 3",
-            "kingdom": "kingdom rush:vengeance",
+            "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-infernal-mage-3.png"
         },
         {
@@ -411,7 +411,7 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shaman3.png"
         },
         {
-            "name": "orc shaman, 2 ",
+            "name": "orc shaman, 2",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shaman2.png"
         },
@@ -441,7 +441,7 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-specters-mausoleum-4.png"
         },
         {
-            "name": "shadow archer2, 3",
+            "name": "shadow archers, 3",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shadow-archer-3.png"
         },
@@ -451,7 +451,7 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shadow-archer-2.png"
         },
         {
-            "name": "shadow archer, 1",
+            "name": "shadow archers, 1",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shadow-archer-1.png"
         },
@@ -461,22 +461,22 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shadow-archer-4.png"
         },
         {
-            "name": "rocker riders, 4",
+            "name": "rocket riders, 4",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-rocket-4.png"
         },
         {
-            "name": "rocker riders, 3",
+            "name": "rocket riders, 3",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-rocket-3.png"
         },
         {
-            "name": "rocker riders, 2",
+            "name": "rocket riders, 2",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-rocket-2.png"
         },
         {
-            "name": "rocker riders, 1",
+            "name": "rocket riders, 1",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-rocket-1.png"
         },
@@ -501,22 +501,22 @@
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-goblirangs-4.png"
         },
         {
-            "name": "elite harasser, 1",
+            "name": "elite harassers, 1",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-elite-harasser-2.png"
         },
         {
-            "name": "elite harasser, 2",
+            "name": "elite harassers, 2",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-elite-harasser-3.png"
         },
         {
-            "name": "elite harasser, 3",
+            "name": "elite harassers, 3",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-elite-harasser-1.png"
         },
         {
-            "name": "elite harasser, 4",
+            "name": "elite harassers, 4",
             "kingdom": "kingdom rush: vengeance",
             "imageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-elite-harasser-4.png"
         }
