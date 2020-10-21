@@ -18,7 +18,7 @@ CURRENT
 KINGDOM_DIRECTORY = {
     "KR": "kingdom rush",
     "KRF": "kingdom rush: frontiers",
-    "KRO": "kingdom rush: origin",
+    "KRO": "kingdom rush: origins",
 }
 
 def get_attack_stats(tower_type, kingdom):

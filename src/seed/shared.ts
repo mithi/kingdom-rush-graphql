@@ -1,6 +1,6 @@
 type KingdomType =
     | "kingdom rush: vengeance"
-    | "kingdom rush: origin"
+    | "kingdom rush: origins"
     | "kingdom rush"
     | "kingdom rush: frontiers"
 

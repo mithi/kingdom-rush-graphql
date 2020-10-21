@@ -45,7 +45,7 @@ type TowerWithAbilityData = {
 
 const mapStringToKingdom = {
     "kingdom rush: vengeance": TowerKingdom.KRV,
-    "kingdom rush: origin": TowerKingdom.KRO,
+    "kingdom rush: origins": TowerKingdom.KRO,
     "kingdom rush: frontiers": TowerKingdom.KRF,
     "kingdom rush": TowerKingdom.KR,
 }

@@ -572,7 +572,7 @@
         },
         {
             "towerName": "arcane archers",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "abilities": [
                 {
                     "abilityName": "burts arrors",
@@ -608,7 +608,7 @@
         },
         {
             "towerName": "golden longbows",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "abilities": [
                 {
                     "abilityName": "Crimson Sentence",
@@ -644,7 +644,7 @@
         },
         {
             "towerName": "bladesinger hall",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "abilities": [
                 {
                     "abilityName": "Perfect Parry",
@@ -689,7 +689,7 @@
         },
         {
             "towerName": "forest keepers",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "abilities": [
                 {
                     "abilityName": "Circle of Life",
@@ -737,7 +737,7 @@
         },
         {
             "towerName": "wild magus",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "abilities": [
                 {
                     "abilityName": "Eldritch Doom",
@@ -773,7 +773,7 @@
         },
         {
             "towerName": "high elven mage",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "abilities": [
                 {
                     "abilityName": "Timelapse",
@@ -806,7 +806,7 @@
         },
         {
             "towerName": "arch-druid henge",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "abilities": [
                 {
                     "abilityName": "sylvan curse",
@@ -839,7 +839,7 @@
         },
         {
             "towerName": "weirdwood",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "abilities": [
                 {
                     "abilityName": "Fiery Nut",

@@ -43,7 +43,7 @@ IDEAL:
 KINGDOM_NAME = {
     "KR": "kingdom rush",
     "KRF": "kingdom rush: frontiers",
-    "KRO": "kingdom rush: origin",
+    "KRO": "kingdom rush: origins",
 }
 
 def get_barracks_stats(kingdom):
