@@ -69,9 +69,9 @@ def get_barracks_stats(kingdom):
 
 
 
-b1 = "../KRV/barracks-dark-knights.yaml"
-b2 = "../KRV/barracks-elite-harassers.yaml"
-b3 = "../KRV/barracks-orc-warriors.yaml"
+b1 = "../raw/KRV/barracks-dark-knights.yaml"
+b2 = "../raw/KRV/barracks-elite-harassers.yaml"
+b3 = "../raw/KRV/barracks-orc-warriors.yaml"
 
 krv_towers = []
 for path in [b1, b2, b3]:

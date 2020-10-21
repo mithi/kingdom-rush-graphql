@@ -22,7 +22,7 @@ KINGDOM_DIRECTORY = {
 }
 
 def get_attack_stats(tower_type, kingdom):
-    path = f"../{kingdom}/{tower_type}.yml"
+    path = f"../raw/{kingdom}/{tower_type}.yml"
     kingdom_string = KINGDOM_DIRECTORY[kingdom]
     stream = open(path, "r")
     towers = []

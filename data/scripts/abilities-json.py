@@ -97,10 +97,10 @@ def get_abilities(path, kingdom):
 
     return towers
 
-towers_kr = get_abilities("../KR/abilities.yml", "kingdom rush")
-towers_krf = get_abilities("../KRF/abilities.yml", "kingdom rush: frontiers")
-towers_kro = get_abilities("../KRO/abilities.yml", "kingdom rush: origins")
-towers_krv = get_abilities("../KRV/abilities/abilities.yml", "kingdom rush: vengeance")
+towers_kr = get_abilities("../raw/KR/abilities.yml", "kingdom rush")
+towers_krf = get_abilities("../raw/KRF/abilities.yml", "kingdom rush: frontiers")
+towers_kro = get_abilities("../raw/KRO/abilities.yml", "kingdom rush: origins")
+towers_krv = get_abilities("../raw/KRV/abilities/abilities.yml", "kingdom rush: vengeance")
 
 towers2d = [towers_kr, towers_krf, towers_kro, towers_krv]
 towers = [item for sublist in towers2d for item in sublist]
