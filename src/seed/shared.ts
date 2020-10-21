@@ -26,4 +26,5 @@ function logError(error: any) {
     }
 }
 
-export { TowerData, KingdomType, logError }
+const JSON_DATA_PATH = "../../data/generated/json"
+export { TowerData, KingdomType, logError, JSON_DATA_PATH }
