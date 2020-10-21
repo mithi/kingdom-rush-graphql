@@ -29,7 +29,7 @@ physical_damage_upgraded:
     min: 20
     max: 33
 ---
-name: menhir cirlce
+name: menhir circle
 physical_damage:
     min: 30
     max: 50
