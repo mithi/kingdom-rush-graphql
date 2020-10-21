@@ -1,108 +1,108 @@
- id  |         name          | towerType | level |         kingdom         
------+-----------------------+-----------+-------+-------------------------
-   1 | dwarven bombard       | artillery | 1     | kingdom rush
-   2 | dwarven artillery     | artillery | 2     | kingdom rush
-   3 | dwarven howitzer      | artillery | 3     | kingdom rush
-   4 | 500mm big bertha      | artillery | 4     | kingdom rush
-   5 | tesla x104            | artillery | 4     | kingdom rush
-   6 | dwarven bombard       | artillery | 1     | kingdom rush: frontiers
-   7 | dwarven artillery     | artillery | 2     | kingdom rush: frontiers
-   8 | dwarven howitzer      | artillery | 3     | kingdom rush: frontiers
-   9 | dwaarp                | artillery | 4     | kingdom rush: frontiers
-  10 | battle-mecha t200     | artillery | 4     | kingdom rush: frontiers
-  11 | stone circle          | artillery | 1     | kingdom rush: origins
-  12 | boulder circle        | artillery | 2     | kingdom rush: origins
-  13 | menhir cirlce         | artillery | 3     | kingdom rush: origins
-  14 | arch-druid henge      | artillery | 4     | kingdom rush: origins
-  15 | weirdwood             | artillery | 4     | kingdom rush: origins
-  16 | mage tower            | mage      | 1     | kingdom rush
-  17 | adept tower           | mage      | 2     | kingdom rush
-  18 | wizard tower          | mage      | 3     | kingdom rush
-  19 | arcane wizard         | mage      | 4     | kingdom rush
-  20 | sorcerer mage         | mage      | 4     | kingdom rush
-  21 | mage tower            | mage      | 1     | kingdom rush: frontiers
-  22 | adept tower           | mage      | 2     | kingdom rush: frontiers
-  23 | wizard tower          | mage      | 3     | kingdom rush: frontiers
-  24 | archmage tower        | mage      | 4     | kingdom rush: frontiers
-  25 | necromancer tower     | mage      | 4     | kingdom rush: frontiers
-  26 | mystic dais           | mage      | 1     | kingdom rush: origins
-  27 | arcanist dais         | mage      | 2     | kingdom rush: origins
-  28 | eldritch dais         | mage      | 3     | kingdom rush: origins
-  29 | wild magus            | mage      | 4     | kingdom rush: origins
-  30 | high elven mage       | mage      | 4     | kingdom rush: origins
-  31 | archer tower          | archer    | 1     | kingdom rush
-  32 | marksman tower        | archer    | 2     | kingdom rush
-  33 | sharpshooter tower    | archer    | 3     | kingdom rush
-  34 | rangers hideout       | archer    | 4     | kingdom rush
-  35 | musketeer garrison    | archer    | 4     | kingdom rush
-  36 | archer tower          | archer    | 1     | kingdom rush: frontiers
-  37 | marksman tower        | archer    | 2     | kingdom rush: frontiers
-  38 | sharpshooter tower    | archer    | 3     | kingdom rush: frontiers
-  39 | crossbow fort         | archer    | 4     | kingdom rush: frontiers
-  40 | tribal axethrowers    | archer    | 4     | kingdom rush: frontiers
-  41 | hunter arbor          | archer    | 1     | kingdom rush: origins
-  42 | watcher arbor         | archer    | 2     | kingdom rush: origins
-  43 | sentinel arbor        | archer    | 3     | kingdom rush: origins
-  44 | arcane archers        | archer    | 4     | kingdom rush: origins
-  45 | golden longbows       | archer    | 4     | kingdom rush: origins
-  46 | militia barracks      | barracks  | 1     | kingdom rush
-  47 | footmen barracks      | barracks  | 2     | kingdom rush
-  48 | knights barracks      | barracks  | 3     | kingdom rush
-  49 | holy order            | barracks  | 4     | kingdom rush
-  50 | barbarian mead hall   | barracks  | 4     | kingdom rush
-  51 | militia barracks      | barracks  | 1     | kingdom rush: frontiers
-  52 | footmen barracks      | barracks  | 2     | kingdom rush: frontiers
-  53 | knights barracks      | barracks  | 3     | kingdom rush: frontiers
-  54 | assassin's guild      | barracks  | 4     | kingdom rush: frontiers
-  55 | knights templar       | barracks  | 4     | kingdom rush: frontiers
-  56 | defender barracks     | barracks  | 1     | kingdom rush: origins
-  57 | warden barracks       | barracks  | 2     | kingdom rush: origins
-  58 | ranger barracks       | barracks  | 3     | kingdom rush: origins
-  59 | bladesinger hall      | barracks  | 4     | kingdom rush: origins
-  60 | forest keepers        | barracks  | 4     | kingdom rush: origins
-  61 | dark knights, 1       | barracks  | 1     | kingdom rush: vengeance
-  62 | dark knights, 2       | barracks  | 2     | kingdom rush: vengeance
-  63 | dark knights, 3       | barracks  | 3     | kingdom rush: vengeance
-  64 | dark knights, 4       | barracks  | 4     | kingdom rush: vengeance
-  65 | goblirangs, 1         | archer    | 1     | kingdom rush: vengeance
-  66 | goblirangs, 2         | archer    | 2     | kingdom rush: vengeance
-  67 | goblirangs, 3         | archer    | 3     | kingdom rush: vengeance
-  68 | goblirangs, 4         | archer    | 4     | kingdom rush: vengeance
-  69 | bone flingers, 1      | archer    | 1     | kingdom rush: vengeance
-  70 | bone flingers, 2      | archer    | 2     | kingdom rush: vengeance
-  71 | bone flingers, 3      | archer    | 3     | kingdom rush: vengeance
-  72 | bone flingers, 4      | archer    | 4     | kingdom rush: vengeance
-  73 | orc warriors den, 1   | barracks  | 1     | kingdom rush: vengeance
-  74 | orc warriors den, 2   | barracks  | 2     | kingdom rush: vengeance
-  75 | orc warriors den, 3   | barracks  | 3     | kingdom rush: vengeance
-  76 | orc warriors den, 4   | barracks  | 4     | kingdom rush: vengeance
-  77 | shadow archers, 1     | archer    | 1     | kingdom rush: vengeance
-  78 | shadow archers, 2     | archer    | 2     | kingdom rush: vengeance
-  79 | shadow archers, 3     | archer    | 3     | kingdom rush: vengeance
-  80 | shadow archers, 4     | archer    | 4     | kingdom rush: vengeance
-  81 | melting furnace, 1    | artillery | 1     | kingdom rush: vengeance
-  82 | melting furnace, 2    | artillery | 2     | kingdom rush: vengeance
-  83 | melting furnace, 3    | artillery | 3     | kingdom rush: vengeance
-  84 | melting furnace, 4    | artillery | 4     | kingdom rush: vengeance
-  85 | rocket riders, 1      | artillery | 1     | kingdom rush: vengeance
-  86 | rocket riders, 2      | artillery | 2     | kingdom rush: vengeance
-  87 | rocket riders, 3      | artillery | 3     | kingdom rush: vengeance
-  88 | rocket riders, 4      | artillery | 4     | kingdom rush: vengeance
-  89 | infernal mage, 1      | mage      | 1     | kingdom rush: vengeance
-  90 | infernal mage, 2      | mage      | 2     | kingdom rush: vengeance
-  91 | infernal mage, 3      | mage      | 3     | kingdom rush: vengeance
-  92 | infernal mage, 4      | mage      | 4     | kingdom rush: vengeance
-  93 | elite harassers, 1    | barracks  | 1     | kingdom rush: vengeance
-  94 | elite harassers, 2    | barracks  | 2     | kingdom rush: vengeance
-  95 | elite harassers, 3    | barracks  | 3     | kingdom rush: vengeance
-  96 | elite harassers, 4    | barracks  | 4     | kingdom rush: vengeance
-  97 | specters mausoleum, 1 | mage      | 1     | kingdom rush: vengeance
-  98 | specters mausoleum, 2 | mage      | 2     | kingdom rush: vengeance
-  99 | specters mausoleum, 3 | mage      | 3     | kingdom rush: vengeance
- 100 | specters mausoleum, 4 | mage      | 4     | kingdom rush: vengeance
- 101 | orc shaman, 1         | mage      | 1     | kingdom rush: vengeance
- 102 | orc shaman, 2         | mage      | 2     | kingdom rush: vengeance
- 103 | orc shaman, 3         | mage      | 3     | kingdom rush: vengeance
- 104 | orc shaman, 4         | mage      | 4     | kingdom rush: vengeance
+ id  |         name          | towerType | level |         kingdom         |                                                imageUrl                                                
+-----+-----------------------+-----------+-------+-------------------------+--------------------------------------------------------------------------------------------------------
+   1 | dwarven bombard       | artillery | 1     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-1-dwarven-bombard.png
+   2 | dwarven artillery     | artillery | 2     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-2-dwarven-artillery.png
+   3 | dwarven howitzer      | artillery | 3     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-3-dwarven-howitzer.png
+   4 | 500mm big bertha      | artillery | 4     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-4a-500mm-big-bertha.png
+   5 | tesla x104            | artillery | 4     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-tesla-x104-4b.png
+   6 | dwarven bombard       | artillery | 1     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-artillery-1-dwarven-bombard.png
+   7 | dwarven artillery     | artillery | 2     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-artillery-2-dwarven-artillery.png
+   8 | dwarven howitzer      | artillery | 3     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-artillery-3-dwarven-howitzer.png
+   9 | dwaarp                | artillery | 4     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-artillery-4b-dwaarp.png
+  10 | battle-mecha t200     | artillery | 4     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-artillery-4a-battler-mecha-t200.png
+  11 | stone circle          | artillery | 1     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-1-stone-circle.png
+  12 | boulder circle        | artillery | 2     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-2-boulder-circle.png
+  13 | menhir circle         | artillery | 3     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-3-menhir-circle.png
+  14 | arch-druid henge      | artillery | 4     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-4a-arch-druid-henge.png
+  15 | weirdwood             | artillery | 4     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-artillery-4b-weirdwood.png
+  16 | mage tower            | mage      | 1     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-mage-1-mage-tower.png
+  17 | adept tower           | mage      | 2     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-mage-2-adept-tower.png
+  18 | wizard tower          | mage      | 3     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-mage-3-wizard-tower.png
+  19 | arcane wizard         | mage      | 4     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-mage-4a-arcane-tower.png
+  20 | sorcerer mage         | mage      | 4     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-mage-4b.png
+  21 | mage tower            | mage      | 1     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-mage-1-mage-tower.png
+  22 | adept tower           | mage      | 2     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-mage-2-adept-tower.png
+  23 | wizard tower          | mage      | 3     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-mage-3-wizard-tower.png
+  24 | archmage tower        | mage      | 4     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-mage-4b-archmage-tower.png
+  25 | necromancer tower     | mage      | 4     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-mage-4a-necromancer-tower.png
+  26 | mystic dais           | mage      | 1     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-mage-1-mystic-dais.png
+  27 | arcanist dais         | mage      | 2     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-mage-2-arcanis-dais.png
+  28 | eldritch dais         | mage      | 3     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-mage-3-eldritch-dais.png
+  29 | wild magus            | mage      | 4     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-mage-4b-wild-magus.png
+  30 | high elven mage       | mage      | 4     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-magic-4a-high-elven-mage.png
+  31 | archer tower          | archer    | 1     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-ranged-1-archer-tower.png
+  32 | marksman tower        | archer    | 2     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-ranged-2-marksman-tower.png
+  33 | sharpshooter tower    | archer    | 3     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-ranged-3-sharpshooter-tower.png
+  34 | rangers hideout       | archer    | 4     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-ranged-4a-rangers-hideout.png
+  35 | musketeer garrison    | archer    | 4     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-ranged-4b-musketeer-garrison.png
+  36 | archer tower          | archer    | 1     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-ranged-1-archer-tower.png
+  37 | marksman tower        | archer    | 2     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-ranged-2-marksman-tower.png
+  38 | sharpshooter tower    | archer    | 3     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-ranged-3-sharpshooter-tower.png
+  39 | crossbow fort         | archer    | 4     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-ranged-4b-crossbow-fort.png
+  40 | tribal axethrowers    | archer    | 4     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-ranged-4a-tribal-axethrowers.png
+  41 | hunter arbor          | archer    | 1     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-1-hunter-arbor.png
+  42 | watcher arbor         | archer    | 2     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-2-watcher-arbor.png
+  43 | sentinel arbor        | archer    | 3     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-3-sentinel-arbor.png
+  44 | arcane archers        | archer    | 4     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-4b-arcane-archers.png
+  45 | golden longbows       | archer    | 4     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-ranged-4a-golden-longbows.png
+  46 | militia barracks      | barracks  | 1     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-barracks-1-militia-barracks.png
+  47 | footmen barracks      | barracks  | 2     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-barracks-2-footmen-barracks.png
+  48 | knights barracks      | barracks  | 3     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-barracks-3-knights-barracks.png
+  49 | holy order            | barracks  | 4     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-barracks-4a-holy-order.png
+  50 | barbarian mead hall   | barracks  | 4     | kingdom rush            | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-barracks-4b-barbarian-hall.png
+  51 | militia barracks      | barracks  | 1     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-barracks-1-militia-barracks.png
+  52 | footmen barracks      | barracks  | 2     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-barracks-footmen-barracks-2.png
+  53 | knights barracks      | barracks  | 3     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-barracks-3-knights-barracks.png
+  54 | assassin's guild      | barracks  | 4     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-barracks-4b-assassins-guild.png
+  55 | knights templar       | barracks  | 4     | kingdom rush: frontiers | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krf-barracks-4a-knights-templar.png
+  56 | defender barracks     | barracks  | 1     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-1-defender-barracks.png
+  57 | warden barracks       | barracks  | 2     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-2-warden-barracks.png
+  58 | ranger barracks       | barracks  | 3     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-3-ranger-barracks.png
+  59 | bladesinger hall      | barracks  | 4     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-4b-bladesinger-hall.png
+  60 | forest keepers        | barracks  | 4     | kingdom rush: origins   | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kro-barracks-4a-forest-keeper.png
+  61 | dark knights, 1       | barracks  | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-dark-knight-1.png
+  62 | dark knights, 2       | barracks  | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-dark-knight-2.png
+  63 | dark knights, 3       | barracks  | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-dark-knight-3.png
+  64 | dark knights, 4       | barracks  | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-dark-knight-4.png
+  65 | goblirangs, 1         | archer    | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-goblirangs-1.png
+  66 | goblirangs, 2         | archer    | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-goblirangs-2.png
+  67 | goblirangs, 3         | archer    | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-goblirangs-3.png
+  68 | goblirangs, 4         | archer    | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-goblirangs-4.png
+  69 | bone flingers, 1      | archer    | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-bone-flinger-1.png
+  70 | bone flingers, 2      | archer    | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-bone-flinger-2.png
+  71 | bone flingers, 3      | archer    | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-bone-flinger-3.png
+  72 | bone flingers, 4      | archer    | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-bone-flinger-4.png
+  73 | orc warriors den, 1   | barracks  | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-orc1.png
+  74 | orc warriors den, 2   | barracks  | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-orc2.png
+  75 | orc warriors den, 3   | barracks  | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-orc3.png
+  76 | orc warriors den, 4   | barracks  | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-orc4.png
+  77 | shadow archers, 1     | archer    | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shadow-archer-1.png
+  78 | shadow archers, 2     | archer    | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shadow-archer-2.png
+  79 | shadow archers, 3     | archer    | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shadow-archer-3.png
+  80 | shadow archers, 4     | archer    | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shadow-archer-4.png
+  81 | melting furnace, 1    | artillery | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-furnace-1.png
+  82 | melting furnace, 2    | artillery | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-furnace-2.png
+  83 | melting furnace, 3    | artillery | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-furnace-3.png
+  84 | melting furnace, 4    | artillery | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-furnace-4.png
+  85 | rocket riders, 1      | artillery | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-rocket-1.png
+  86 | rocket riders, 2      | artillery | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-rocket-2.png
+  87 | rocket riders, 3      | artillery | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-rocket-3.png
+  88 | rocket riders, 4      | artillery | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-rocket-4.png
+  89 | infernal mage, 1      | mage      | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-infernal-mage-1.png
+  90 | infernal mage, 2      | mage      | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-infernal-mage-2.png
+  91 | infernal mage, 3      | mage      | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-infernal-mage-3.png
+  92 | infernal mage, 4      | mage      | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-infernal-mage-4.png
+  93 | elite harassers, 1    | barracks  | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-elite-harasser-2.png
+  94 | elite harassers, 2    | barracks  | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-elite-harasser-3.png
+  95 | elite harassers, 3    | barracks  | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-elite-harasser-1.png
+  96 | elite harassers, 4    | barracks  | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-elite-harasser-4.png
+  97 | specters mausoleum, 1 | mage      | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-specters-mausoleum-1.png
+  98 | specters mausoleum, 2 | mage      | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-specters-mausoleum-2.png
+  99 | specters mausoleum, 3 | mage      | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-specters-mausoleum-3.png
+ 100 | specters mausoleum, 4 | mage      | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-specters-mausoleum-4.png
+ 101 | orc shaman, 1         | mage      | 1     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shaman1.png
+ 102 | orc shaman, 2         | mage      | 2     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shaman2.png
+ 103 | orc shaman, 3         | mage      | 3     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shaman3.png
+ 104 | orc shaman, 4         | mage      | 4     | kingdom rush: vengeance | https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shaman4.png
 (104 rows)
 

@@ -26,6 +26,9 @@ export class Tower extends BaseEntity {
     @Column()
     name: string
 
+    @Column({ nullable: true })
+    imageUrl: string
+
     @Field(_ => TowerType)
     @Column({
         type: "enum",

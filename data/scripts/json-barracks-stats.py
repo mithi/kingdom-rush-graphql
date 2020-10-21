@@ -47,7 +47,7 @@ KINGDOM_NAME = {
 }
 
 def get_barracks_stats(kingdom):
-    path = f"../{kingdom}/barracks.yml"
+    path = f"../raw/{kingdom}/barracks.yml"
 
     stream = open(path, "r")
     towers = []
