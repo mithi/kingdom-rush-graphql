@@ -10,7 +10,11 @@ import { KingdomType, logError } from "./shared"
 import { AttackStats } from "../models/AttackStats"
 import { Tower } from "../models/Tower"
 const path: any = require("path")
-const pathToAttackJson = path.join(__dirname, "../../data/generated", "attack-stats.json")
+const pathToAttackJson = path.join(
+    __dirname,
+    "../../data/generated/json",
+    "attack-stats.json"
+)
 
 const attackJson: any = require(pathToAttackJson)
 
