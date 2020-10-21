@@ -18,11 +18,11 @@ CURRENT
 KINGDOM_DIRECTORY = {
     "KR": "kingdom rush",
     "KRF": "kingdom rush: frontiers",
-    "KRO": "kingdom rush: origin",
+    "KRO": "kingdom rush: origins",
 }
 
 def get_attack_stats(tower_type, kingdom):
-    path = f"../{kingdom}/{tower_type}.yml"
+    path = f"../raw/{kingdom}/{tower_type}.yml"
     kingdom_string = KINGDOM_DIRECTORY[kingdom]
     stream = open(path, "r")
     towers = []
@@ -97,6 +97,6 @@ data = { "towers": towers }
 for i, tower in enumerate(towers):
     print(i, tower["name"])
 
-with open("../generated/attack-stats.json", 'w') as fout:
+with open("../generated/json/attack-stats.json", 'w') as fout:
     json_dumps_str = json.dumps(data, indent=4)
     print(json_dumps_str, file=fout)

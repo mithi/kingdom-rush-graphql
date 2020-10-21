@@ -6,14 +6,14 @@ This is not a good way to seed the database. Please see `src/seed/index.ts` for 
 */
 
 import { getRepository } from "typeorm"
-import { logError, KingdomType } from "./shared"
+import { logError, KingdomType, JSON_DATA_PATH } from "./shared"
 import { TowerType, TowerLevel, TowerKingdom } from "../enums/TowerEnums"
 import { MainStats, Tower, Ability, AbilityLevel } from "../models"
 
 const path: any = require("path")
 
-const pathToTowerJson = path.join(__dirname, "../../data/generated", "towers.json")
-const pathToAbilityJson = path.join(__dirname, "../../data/generated", "abilities.json")
+const pathToTowerJson = path.join(__dirname, JSON_DATA_PATH, "towers.json")
+const pathToAbilityJson = path.join(__dirname, JSON_DATA_PATH, "abilities.json")
 
 const towerJson: any = require(pathToTowerJson)
 const abilityJson: any = require(pathToAbilityJson)
@@ -45,7 +45,7 @@ type TowerWithAbilityData = {
 
 const mapStringToKingdom = {
     "kingdom rush: vengeance": TowerKingdom.KRV,
-    "kingdom rush: origin": TowerKingdom.KRO,
+    "kingdom rush: origins": TowerKingdom.KRO,
     "kingdom rush: frontiers": TowerKingdom.KRF,
     "kingdom rush": TowerKingdom.KR,
 }

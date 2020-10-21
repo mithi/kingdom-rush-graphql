@@ -6,16 +6,12 @@ This is not a good way to seed the database. Please see `src/seed/index.ts` for 
 */
 
 import { getRepository } from "typeorm"
-import { KingdomType, logError } from "./shared"
+import { KingdomType, logError, JSON_DATA_PATH } from "./shared"
 import { BarracksStats } from "../models/BarracksStats"
 import { Tower } from "../models/Tower"
 const path: any = require("path")
 
-const pathToBarracksJson = path.join(
-    __dirname,
-    "../../data/generated",
-    "barracks-stats.json"
-)
+const pathToBarracksJson = path.join(__dirname, JSON_DATA_PATH, "barracks-stats.json")
 
 const barracksJson: any = require(pathToBarracksJson)
 

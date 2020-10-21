@@ -61,32 +61,32 @@
             "range": 350
         },
         {
-            "name": "stone cirlce",
-            "kingdom": "kingdom rush: origin",
+            "name": "stone circle",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 3,
             "range": 300
         },
         {
             "name": "boulder circle",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 3,
             "range": 340
         },
         {
             "name": "menhir cirlce",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 3,
             "range": 380
         },
         {
             "name": "arch-druid henge",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 1.7,
             "range": 380
         },
         {
             "name": "weirdwood",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 3.5,
             "range": 420
         },
@@ -152,31 +152,31 @@
         },
         {
             "name": "mystic dais",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 1.5,
             "range": 280
         },
         {
             "name": "arcanist dais",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 1.5,
             "range": 320
         },
         {
             "name": "eldritch dais",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 1.5,
             "range": 360
         },
         {
             "name": "wild magus",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 0.3,
             "range": 360
         },
         {
             "name": "high elven mage",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 1.5,
             "range": 360
         },
@@ -242,31 +242,31 @@
         },
         {
             "name": "hunter arbor",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 0.7,
             "range": 320
         },
         {
             "name": "watcher arbor",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 0.6,
             "range": 360
         },
         {
             "name": "sentinel arbor",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 0.4,
             "range": 400
         },
         {
             "name": "arcane archers",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 0.8,
             "range": 400
         },
         {
             "name": "golden longbows",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "fireInterval": 1.5,
             "range": 600
         },

@@ -82,7 +82,7 @@
         },
         {
             "name": "defender barracks",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "health": 50,
             "armor": 30,
             "respawnInterval": 14,
@@ -90,7 +90,7 @@
         },
         {
             "name": "warden barracks",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "health": 90,
             "armor": 40,
             "respawnInterval": 14,
@@ -98,7 +98,7 @@
         },
         {
             "name": "ranger barracks",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "health": 140,
             "armor": 50,
             "respawnInterval": 14,
@@ -106,7 +106,7 @@
         },
         {
             "name": "bladesinger hall",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "health": 200,
             "armor": 50,
             "respawnInterval": 15,
@@ -114,7 +114,7 @@
         },
         {
             "name": "forest keepers",
-            "kingdom": "kingdom rush: origin",
+            "kingdom": "kingdom rush: origins",
             "health": 300,
             "armor": 0,
             "respawnInterval": 12,

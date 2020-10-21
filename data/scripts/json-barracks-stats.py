@@ -43,7 +43,7 @@ IDEAL:
 KINGDOM_NAME = {
     "KR": "kingdom rush",
     "KRF": "kingdom rush: frontiers",
-    "KRO": "kingdom rush: origin",
+    "KRO": "kingdom rush: origins",
 }
 
 def get_barracks_stats(kingdom):
@@ -69,9 +69,9 @@ def get_barracks_stats(kingdom):
 
 
 
-b1 = "../KRV/barracks-dark-knights.yaml"
-b2 = "../KRV/barracks-elite-harassers.yaml"
-b3 = "../KRV/barracks-orc-warriors.yaml"
+b1 = "../raw/KRV/barracks-dark-knights.yaml"
+b2 = "../raw/KRV/barracks-elite-harassers.yaml"
+b3 = "../raw/KRV/barracks-orc-warriors.yaml"
 
 krv_towers = []
 for path in [b1, b2, b3]:
@@ -109,7 +109,7 @@ data = { "towers": towers }
 for i, tower in enumerate(towers):
     print(i, tower["name"])
 
-with open("../generated/barracks-stats.json", 'w') as fout:
+with open("../generated/json/barracks-stats.json", 'w') as fout:
     json_dumps_str = json.dumps(data, indent=4)
     print(json_dumps_str, file=fout)
 
