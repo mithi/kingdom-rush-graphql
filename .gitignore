@@ -1,5 +1,6 @@
 node_modules
 dist
-data/.DS_Store
 .env
 .DS_Store
+data/generated/txt/ability-levels.txt
+data/generated/csv/ability-levels.csv
