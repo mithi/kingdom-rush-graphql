@@ -188,16 +188,6 @@ const populateImageUrls = async ({ dbName = "default", verbose = true } = {}) =>
 
         try {
             await getRepository(Tower, dbName).save(retrievedTower)
-            console.log("> image url saved")
-
-            const newTower = await getRepository(Tower, dbName).findOne({
-                where: {
-                    name: tower.name,
-                    kingdom: tower.kingdom,
-                },
-            })
-
-            console.log(newTower)
         } catch (error) {
             logError(error)
         }
