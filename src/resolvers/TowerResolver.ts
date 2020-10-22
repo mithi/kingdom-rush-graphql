@@ -2,7 +2,6 @@ import { getRepository } from "typeorm"
 import { Resolver, Query, ArgsType, Args, Field, Int, ObjectType } from "type-graphql"
 import { Tower } from "../models/Tower"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
-
 import { Min, Max } from "class-validator"
 
 @ObjectType()
@@ -44,21 +43,42 @@ class TowerArgs {
     @Field(_type => Int, { defaultValue: 104 })
     @Min(1)
     @Max(104)
-    take: number
+    take: number = 104
+
+    @Field(_type => [TowerLevel], {
+        defaultValue: [
+            TowerLevel.LVL1,
+            TowerLevel.LVL2,
+            TowerLevel.LVL3,
+            TowerLevel.LVL4,
+        ],
+    })
+    onlyLevels: [TowerLevel]
+}
+
+const levelQuery = (levels: [TowerLevel]): string => {
+    const given = levels.map(level => `level = '${level}'`)
+    const result = given.join(" OR ")
+    return result
 }
 
 @Resolver()
 export class TowerResolver {
     @Query(() => [TowerWithStats])
-    async towers(@Args() { skip, take }: TowerArgs) {
-        const result: [TowerWithStats] = await getRepository(Tower).query(
-            `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" ORDER BY "Towers".id ASC LIMIT ${take} OFFSET ${skip}`
-        )
+    async towers(@Args() { skip, take, onlyLevels }: TowerArgs) {
+        const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
+        const filterExpr = `WHERE ${levelQuery(onlyLevels)}`
+        const sortExpr = `ORDER BY "Towers".id ASC`
+        const pageExpr = `LIMIT ${take} OFFSET ${skip}`
+        const queryExpression = `${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
+
+        console.log(queryExpression)
+
+        const result: [TowerWithStats] = await getRepository(Tower).query(queryExpression)
 
         const cleanResult = result.map(tower => ({
             ...tower,
             level: Number(tower["level"]),
-            buildCost: Number(tower["buildCost"]),
         }))
         return cleanResult
     }
