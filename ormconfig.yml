@@ -3,7 +3,7 @@ default:
     host: "localhost"
     port: 5432
     username: "kingdom_rush_user"
-    password: ${DB_PASSWORD}
+    password: ${env:DB_PASSWORD}
     database: "kingdom_rush_db"
     entities: ["dist/models/*.js"]
     logging: false
@@ -17,8 +17,8 @@ test:
     type: "postgres"
     host: "localhost"
     port: 5432
-    username: "test_user"
-    password: "password"
+    username: "kingdom_rush_user"
+    password: ${env:DB_PASSWORD}
     database: "test_db"
     entities: ["src/models/*.ts"]
     logging: false
