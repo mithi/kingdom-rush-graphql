@@ -8,7 +8,6 @@ export class MainTablesCreate1603044489891 implements MigrationInterface {
             CREATE TYPE "Towers_towertype_enum" AS ENUM('archer', 'barracks', 'mage', 'artillery');
             CREATE TYPE "Towers_level_enum" AS ENUM('1', '2', '3', '4');
             CREATE TYPE "Towers_kingdom_enum" AS ENUM('kingdom rush', 'kingdom rush: frontiers', 'kingdom rush: origins', 'kingdom rush: vengeance');
-            CREATE TYPE "Towers_towercategory_enum" AS ENUM('special', 'basic');
             CREATE TABLE "main_stats" ("id" SERIAL NOT NULL, "damageMinimum" real NOT NULL, "damageMaximum" real NOT NULL, "buildCost" real NOT NULL, "towerId" integer NOT NULL, CONSTRAINT "REL_38a6e0a47022a1c957b9018646" UNIQUE ("towerId"), CONSTRAINT "PK_a9fe6ef57784aff6b73159e9b4d" PRIMARY KEY ("id"));
             CREATE TABLE "barracks_stats" ("id" SERIAL NOT NULL, "numberOfUnits" integer NOT NULL, "respawnInterval" real NOT NULL, "health" real NOT NULL, "armor" real NOT NULL, "towerId" integer NOT NULL, CONSTRAINT "REL_d5dcdad1a2b257a2445db6106f" UNIQUE ("towerId"), CONSTRAINT "PK_06005d4dc8ba963484acae34726" PRIMARY KEY ("id"));
             CREATE TABLE "attack_stats" ("id" SERIAL NOT NULL, "fireInterval" real NOT NULL, "range" real NOT NULL, "towerId" integer NOT NULL, CONSTRAINT "REL_a183facc6b66a4851553798f60" UNIQUE ("towerId"), CONSTRAINT "PK_e7cb32239cb7dfd5eebae4d0eaf" PRIMARY KEY ("id"));
@@ -30,7 +29,6 @@ export class MainTablesCreate1603044489891 implements MigrationInterface {
             DROP TABLE "main_stats";
             DROP TYPE "Towers_towertype_enum";
             DROP TYPE "Towers_level_enum";
-            DROP TYPE "Towers_kingdom_enum";
-            DROP TYPE "Towers_towercategory_enum";`)
+            DROP TYPE "Towers_kingdom_enum";`)
     }
 }
