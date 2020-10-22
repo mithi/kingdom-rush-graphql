@@ -6,11 +6,14 @@
     "scripts": {
         "test": "jest",
         "tsc": "tsc -p tsconfig.json",
+        "start": "nodemon -e ts  --exec \"npm run compile\"",
         "build": "npm run format && npm run compile",
-        "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
-        "migrate-all": "ts-node ./node_modules/typeorm/cli.js migration:run",
         "compile": "npm run tsc && node dist/index.js",
-        "start": "nodemon -e ts  --exec \"npm run compile\""
+        "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
+        "migrate-all": "npm run tsc && typeorm migration:run",
+        "seed": "npm run tsc && node dist/seed/populate.js",
+        "generate-json": "bash ./data/scripts/run_generate.sh",
+        "update-data": "bash ./data/scripts/run_save_data.sh"
     },
     "repository": {
         "type": "git",
