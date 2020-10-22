@@ -12,5 +12,3 @@ FROM
 ORDER BY
   enum_name,
   e.enumsortorder;
-
-SELECT * FROM migrations;
