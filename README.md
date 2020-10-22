@@ -32,7 +32,7 @@ MainStats {
     damageMaximum
 }
 
-BarrackStats{
+BarrackStats {
     towerId
     numberOfUnits
     respawnInterval
@@ -51,10 +51,84 @@ Abilities {
     name
     description
     levels: [
-        { abilityId, level: 0, cost }
-        { abilityId, level: 1, cost }
+        { abilityId, level: 0, cost },
+        { abilityId, level: 1, cost },
         { abilityId, level: 2, cost }
     ]
 }
 
+```
+
+## Good First Issue
+
+The descriptions of the tower abilities are a mess, and it needs your help!
+You can checkout [Kingdom Rush TD fandom](https://kingdomrushtd.fandom.com/wiki/Category:Towers)
+for ideas to make it better.
+
+The current descriptions can be found in the following files:
+
+-   [./data/raw/KR/abilities.yml](./data/raw/KR/abilities.yml)
+-   [./data/raw/KRF/abilities.yml](./data/raw/KRF/abilities.yml)
+-   [./data/raw/KRO/abilities.yml](./data/raw/KRO/abilities.yml)
+-   [./data/raw/KRV/abilities/abilities.yml](./data/raw/KRV/abilities/abilities.yml)
+
+### 1. SQL
+
+Make sure you have [postgresql](https://postgresapp.com/) installed and running on port 5432.
+
+### 2. Fork, Clone, Setup Env ariables
+
+Fork this repository, clone. Rename `.env.sample` to `.env`
+
+```bash
+git clone https://github.com/mithi/kingdom-rush-graphql.git
+cd kingdom-rush-graphql
+mv .env.sample .env
+```
+
+### 3. Setup
+
+The following script will create the necessary user roles and database.
+It will then install the npm packages, run the tests, and
+run the migrations to ensure that your default database has the correct schema.
+Submit and issue if something goes wrong.
+
+```bash
+npm run setup
+```
+
+### 4. Update the description
+
+Edit any of the following (tower ability) descriptions in any of the following yaml files
+
+-   [./data/raw/KR/abilities.yml](./data/raw/KR/abilities.yml)
+-   [./data/raw/KRF/abilities.yml](./data/raw/KRF/abilities.yml)
+-   [./data/raw/KRO/abilities.yml](./data/raw/KRO/abilities.yml)
+-   [./data/raw/KRV/abilities/abilities.yml](./data/raw/KRV/abilities/abilities.yml)
+
+### 5. Regenerate Data and Cleanup
+
+Run `npm run update-data` to update the generated/json,
+populate your database and update the files in `/generated/csv/` and `/generated/txt/`.
+`test`, `start`, and `build` should produce no errors.
+Run `npm run cleanup-db` to drop all the created tables, databases and user.
+
+```bash
+npm run update-data
+npm run test
+npm run start
+npm run build
+npm run cleanup-db
+```
+
+### 6. Commit and PR
+
+Congratulations! Looking forward to merging your pull request!
+
+```bash
+git checkout -b feat/update-tower-ability-description
+git push -u origin HEAD
+git add .
+git commit -m "Update tower ability description"
+git push
 ```
