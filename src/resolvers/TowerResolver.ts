@@ -84,6 +84,16 @@ class TowerArgs {
         ],
     })
     onlyKingdoms: [TowerKingdom]
+
+    @Field(_type => [TowerType], {
+        defaultValue: [
+            TowerType.ARCHER,
+            TowerType.BARRACKS,
+            TowerType.ARTILLERY,
+            TowerType.MAGE,
+        ],
+    })
+    onlyTowerTypes: [TowerType]
 }
 
 const levelFilter = (levels: [TowerLevel]): string => {
@@ -98,22 +108,33 @@ const kingdomFilter = (kingdoms: [TowerKingdom]): string => {
     return result
 }
 
+const typeFilter = (towerTypes: [TowerType]): string => {
+    const given = towerTypes.map(towerType => `"towerType" = '${towerType}'`)
+    const result = given.join(" OR ")
+    return result
+}
+
 @Resolver()
 export class TowerResolver {
     @Query(() => [TowerWithStats])
-    async towers(@Args() { skip, take, onlyLevels, onlyKingdoms }: TowerArgs) {
-        if (onlyLevels.length <= 0) {
-            return []
-        }
+    async towers(
+        @Args() { skip, take, onlyLevels, onlyKingdoms, onlyTowerTypes }: TowerArgs
+    ) {
+        const hasNoElement =
+            onlyLevels.length <= 0 ||
+            onlyKingdoms.length <= 0 ||
+            onlyTowerTypes.length <= 0
 
-        if (onlyKingdoms.length <= 0) {
+        if (hasNoElement) {
             return []
         }
 
         const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
-        const filterExpr = `WHERE (${levelFilter(onlyLevels)}) AND (${kingdomFilter(
-            onlyKingdoms
-        )})`
+        const levels = levelFilter(onlyLevels)
+        const kingdoms = kingdomFilter(onlyKingdoms)
+        const towerTypes = typeFilter(onlyTowerTypes)
+
+        const filterExpr = `WHERE (${levels}) AND (${kingdoms}) AND (${towerTypes})`
         const sortExpr = `ORDER BY "Towers".id ASC`
         const pageExpr = `LIMIT ${take} OFFSET ${skip}`
         const queryExpression = `${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
