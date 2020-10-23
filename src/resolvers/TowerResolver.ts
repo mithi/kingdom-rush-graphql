@@ -17,6 +17,7 @@ Towers(
     ]
 )
  */
+require("dotenv").config()
 import { getRepository } from "typeorm"
 import {
     Resolver,
@@ -133,7 +134,7 @@ class TowerArgs {
     onlyTowerTypes: TowerType[]
 
     @Field(_type => [SortDefinitionElement], {
-        defaultValue: [{ column: TowerSortOrderColumn.id, sortType: SortOrder.DESCEND }],
+        defaultValue: [{ column: TowerSortOrderColumn.id, sortType: SortOrder.ASCEND }],
     })
     sortDefinition: SortDefinitionElement[]
 }
@@ -199,7 +200,10 @@ export class TowerResolver {
 
         console.log(queryExpression)
 
-        const result: [TowerWithStats] = await getRepository(Tower).query(queryExpression)
+        const dbName = process.env.NODE_ENV === "test" ? "test" : "default"
+        const result: TowerWithStats[] = await getRepository(Tower, dbName).query(
+            queryExpression
+        )
 
         const cleanResult = result.map(tower => ({
             ...tower,
