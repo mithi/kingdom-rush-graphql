@@ -1,3 +1,22 @@
+/*
+Towers(
+    skip: 5,
+    take: 10,
+    onlyLevels: [1, 2, 3],
+    onlyTypes: [BARRACKS, MAGE]
+    onlyKingdoms: [KR, KRV],
+    sortBy: [
+        {column: "name", order: "ASCENDING"},
+        {column: "kingdom", order: "ASCENDING"},
+        {column: "towerType", order: "ASCENDING"},
+        {column: "towerLevel", order: "ASCENDING"},
+        {column: "id", order: "ASCENDING"},
+        {column: "buildCost", order: "ASCENDING"},
+        {column: "damageMinimum", order: "ASCENDING"},
+        {column: "damageMaximum", order: "ASCENDING"},
+    ]
+)
+ */
 import { getRepository } from "typeorm"
 import {
     Resolver,
@@ -41,26 +60,7 @@ export class SortDefinitionElement {
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortType: SortOrder
 }
-/*
 
-Towers(
-    skip: 5,
-    take: 10,
-    onlyLevels: [1, 2, 3],
-    onlyTypes: [BARRACKS, MAGE]
-    onlyKingdoms: [KR, KRV],
-    sortBy: [
-        {column: "name", order: "ASCENDING"},
-        {column: "kingdom", order: "ASCENDING"},
-        {column: "towerType", order: "ASCENDING"},
-        {column: "towerLevel", order: "ASCENDING"},
-        {column: "id", order: "ASCENDING"},
-        {column: "buildCost", order: "ASCENDING"},
-        {column: "damageMinimum", order: "ASCENDING"},
-        {column: "damageMaximum", order: "ASCENDING"},
-    ]
-)
- */
 @ObjectType()
 class TowerWithStats {
     @Field(() => Number)
@@ -139,29 +139,27 @@ class TowerArgs {
 }
 
 const levelFilter = (levels: TowerLevel[]): string => {
-    const given = Array.from(new Set(levels)).map(level => `level = '${level}'`)
-    const result = given.join(" OR ")
-    return result
+    return Array.from(new Set(levels))
+        .map(level => `level = '${level}'`)
+        .join(" OR ")
 }
 
 const kingdomFilter = (kingdoms: TowerKingdom[]): string => {
-    const given = Array.from(new Set(kingdoms)).map(kingdom => `kingdom = '${kingdom}'`)
-    const result = given.join(" OR ")
-    return result
+    return Array.from(new Set(kingdoms))
+        .map(kingdom => `kingdom = '${kingdom}'`)
+        .join(" OR ")
 }
 
 const typeFilter = (towerTypes: TowerType[]): string => {
-    const given = Array.from(new Set(towerTypes)).map(
-        towerType => `"towerType" = '${towerType}'`
-    )
-    const result = given.join(" OR ")
-    return result
+    return Array.from(new Set(towerTypes))
+        .map(towerType => `"towerType" = '${towerType}'`)
+        .join(" OR ")
 }
 
 const sortExpression = (sortDefinition: SortDefinitionElement[]) => {
-    const given = sortDefinition.map(sortRow => `"${sortRow.column}" ${sortRow.sortType}`)
-    const result = given.join(", ")
-    return result
+    return sortDefinition
+        .map(sortRow => `"${sortRow.column}" ${sortRow.sortType}`)
+        .join(", ")
 }
 
 @Resolver()
@@ -191,6 +189,7 @@ export class TowerResolver {
         const levels = levelFilter(onlyLevels)
         const kingdoms = kingdomFilter(onlyKingdoms)
         const towerTypes = typeFilter(onlyTowerTypes)
+        // TODO: Add check to make sure all elements of the array sortDefinition have unique columns
         const sortColumns = sortExpression(sortDefinition)
 
         const filterExpr = `WHERE (${levels}) AND (${kingdoms}) AND (${towerTypes})`
