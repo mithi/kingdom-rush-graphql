@@ -1,9 +1,46 @@
 import { getRepository } from "typeorm"
-import { Resolver, Query, ArgsType, Args, Field, Int, ObjectType } from "type-graphql"
+import {
+    Resolver,
+    Query,
+    ArgsType,
+    Args,
+    Field,
+    Int,
+    ObjectType,
+    InputType,
+} from "type-graphql"
 import { Tower } from "../models/Tower"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 import { Min, Max } from "class-validator"
 
+import { registerEnumType } from "type-graphql"
+
+export enum SortOrder {
+    ascend = "ASC",
+    descend = "DESC",
+}
+
+export enum TowerSortOrderColumn {
+    name = "name",
+    kingdom = "kingdom",
+    towerType = "towerType",
+    level = "level",
+    id = "towerId",
+    buildCost = "buildCost",
+    damageMinimum = "damageMinimum",
+    damageMaximum = "damageMaximum",
+}
+registerEnumType(SortOrder, { name: "SortOrder" })
+registerEnumType(TowerSortOrderColumn, { name: "TowerSortOrderColumn" })
+
+@InputType()
+export class SortDefinitionElement {
+    @Field(_type => TowerSortOrderColumn)
+    column: TowerSortOrderColumn
+
+    @Field(_type => SortOrder, { defaultValue: SortOrder.ascend })
+    sortType: SortOrder
+}
 /*
 
 Towers(
@@ -94,6 +131,11 @@ class TowerArgs {
         ],
     })
     onlyTowerTypes: [TowerType]
+
+    @Field(_type => [SortDefinitionElement], {
+        defaultValue: [{ column: TowerSortOrderColumn.id, sortType: SortOrder.ascend }],
+    })
+    sortDefinition: [SortDefinitionElement]
 }
 
 const levelFilter = (levels: [TowerLevel]): string => {
@@ -114,11 +156,25 @@ const typeFilter = (towerTypes: [TowerType]): string => {
     return result
 }
 
+const sortExpression = (sortDefinition: [SortDefinitionElement]) => {
+    const given = sortDefinition.map(sortRow => `"${sortRow.column}" ${sortRow.sortType}`)
+    const result = given.join(", ")
+    return result
+}
+
 @Resolver()
 export class TowerResolver {
     @Query(() => [TowerWithStats])
     async towers(
-        @Args() { skip, take, onlyLevels, onlyKingdoms, onlyTowerTypes }: TowerArgs
+        @Args()
+        {
+            skip,
+            take,
+            onlyLevels,
+            onlyKingdoms,
+            onlyTowerTypes,
+            sortDefinition,
+        }: TowerArgs
     ) {
         const hasNoElement =
             onlyLevels.length <= 0 ||
@@ -133,9 +189,10 @@ export class TowerResolver {
         const levels = levelFilter(onlyLevels)
         const kingdoms = kingdomFilter(onlyKingdoms)
         const towerTypes = typeFilter(onlyTowerTypes)
+        const sortColumns = sortExpression(sortDefinition)
 
         const filterExpr = `WHERE (${levels}) AND (${kingdoms}) AND (${towerTypes})`
-        const sortExpr = `ORDER BY "Towers".id ASC`
+        const sortExpr = `ORDER BY ${sortColumns}`
         const pageExpr = `LIMIT ${take} OFFSET ${skip}`
         const queryExpression = `${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
 
