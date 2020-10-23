@@ -16,8 +16,8 @@ import { Min, Max } from "class-validator"
 import { registerEnumType } from "type-graphql"
 
 export enum SortOrder {
-    ascend = "ASC",
-    descend = "DESC",
+    ASCEND = "ASC",
+    DESCEND = "DESC",
 }
 
 export enum TowerSortOrderColumn {
@@ -38,7 +38,7 @@ export class SortDefinitionElement {
     @Field(_type => TowerSortOrderColumn)
     column: TowerSortOrderColumn
 
-    @Field(_type => SortOrder, { defaultValue: SortOrder.ascend })
+    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortType: SortOrder
 }
 /*
@@ -110,7 +110,7 @@ class TowerArgs {
             TowerLevel.LVL4,
         ],
     })
-    onlyLevels: [TowerLevel]
+    onlyLevels: TowerLevel[]
 
     @Field(_type => [TowerKingdom], {
         defaultValue: [
@@ -120,7 +120,7 @@ class TowerArgs {
             TowerKingdom.KRV,
         ],
     })
-    onlyKingdoms: [TowerKingdom]
+    onlyKingdoms: TowerKingdom[]
 
     @Field(_type => [TowerType], {
         defaultValue: [
@@ -130,33 +130,35 @@ class TowerArgs {
             TowerType.MAGE,
         ],
     })
-    onlyTowerTypes: [TowerType]
+    onlyTowerTypes: TowerType[]
 
     @Field(_type => [SortDefinitionElement], {
-        defaultValue: [{ column: TowerSortOrderColumn.id, sortType: SortOrder.ascend }],
+        defaultValue: [{ column: TowerSortOrderColumn.id, sortType: SortOrder.DESCEND }],
     })
-    sortDefinition: [SortDefinitionElement]
+    sortDefinition: SortDefinitionElement[]
 }
 
-const levelFilter = (levels: [TowerLevel]): string => {
-    const given = levels.map(level => `level = '${level}'`)
+const levelFilter = (levels: TowerLevel[]): string => {
+    const given = Array.from(new Set(levels)).map(level => `level = '${level}'`)
     const result = given.join(" OR ")
     return result
 }
 
-const kingdomFilter = (kingdoms: [TowerKingdom]): string => {
-    const given = kingdoms.map(kingdom => `kingdom = '${kingdom}'`)
+const kingdomFilter = (kingdoms: TowerKingdom[]): string => {
+    const given = Array.from(new Set(kingdoms)).map(kingdom => `kingdom = '${kingdom}'`)
     const result = given.join(" OR ")
     return result
 }
 
-const typeFilter = (towerTypes: [TowerType]): string => {
-    const given = towerTypes.map(towerType => `"towerType" = '${towerType}'`)
+const typeFilter = (towerTypes: TowerType[]): string => {
+    const given = Array.from(new Set(towerTypes)).map(
+        towerType => `"towerType" = '${towerType}'`
+    )
     const result = given.join(" OR ")
     return result
 }
 
-const sortExpression = (sortDefinition: [SortDefinitionElement]) => {
+const sortExpression = (sortDefinition: SortDefinitionElement[]) => {
     const given = sortDefinition.map(sortRow => `"${sortRow.column}" ${sortRow.sortType}`)
     const result = given.join(", ")
     return result
