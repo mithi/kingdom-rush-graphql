@@ -4,6 +4,26 @@ import { Tower } from "../models/Tower"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
 import { Min, Max } from "class-validator"
 
+/*
+
+Towers(
+    skip: 5,
+    take: 10,
+    onlyLevels: [1, 2, 3],
+    onlyTypes: [BARRACKS, MAGE]
+    onlyKingdoms: [KR, KRV],
+    sortBy: [
+        {column: "name", order: "ASCENDING"},
+        {column: "kingdom", order: "ASCENDING"},
+        {column: "towerType", order: "ASCENDING"},
+        {column: "towerLevel", order: "ASCENDING"},
+        {column: "id", order: "ASCENDING"},
+        {column: "buildCost", order: "ASCENDING"},
+        {column: "damageMinimum", order: "ASCENDING"},
+        {column: "damageMaximum", order: "ASCENDING"},
+    ]
+)
+ */
 @ObjectType()
 class TowerWithStats {
     @Field(() => Number)
@@ -66,6 +86,10 @@ const levelQuery = (levels: [TowerLevel]): string => {
 export class TowerResolver {
     @Query(() => [TowerWithStats])
     async towers(@Args() { skip, take, onlyLevels }: TowerArgs) {
+        if (onlyLevels.length <= 0) {
+            return []
+        }
+
         const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
         const filterExpr = `WHERE ${levelQuery(onlyLevels)}`
         const sortExpr = `ORDER BY "Towers".id ASC`
