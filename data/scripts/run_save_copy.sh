@@ -1,1 +1,0 @@
-psql kingdom_rush_user -h  localhost -d kingdom_rush_db -f db_save_copy.sql;
