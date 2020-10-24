@@ -63,7 +63,7 @@ Abilities {
 
 The descriptions of the tower abilities are a mess, and it needs your help!
 You can checkout [Kingdom Rush TD fandom](https://kingdomrushtd.fandom.com/wiki/Category:Towers)
-for ideas to make it better.
+for ideas for how to make it better.
 
 The current descriptions can be found in the following files:
 
@@ -72,11 +72,11 @@ The current descriptions can be found in the following files:
 -   [./data/raw/KRO/abilities.yml](./data/raw/KRO/abilities.yml)
 -   [./data/raw/KRV/abilities/abilities.yml](./data/raw/KRV/abilities/abilities.yml)
 
-### 1. SQL
+### 1. Seup postgreSQL
 
 Make sure you have [postgresql](https://postgresapp.com/) installed and running on port 5432.
 
-### 2. Fork, Clone, Setup Env ariables
+### 2. Fork, clone, setup env variables
 
 Fork this repository, clone. Rename `.env.sample` to `.env`
 
@@ -86,9 +86,9 @@ cd kingdom-rush-graphql
 mv .env.sample .env
 ```
 
-### 3. Setup
+### 3. Install npm packages, setup database
 
-The following script will create the necessary user roles and database.
+Running this command, will create the necessary user roles and database.
 It will then install the npm packages, run the tests, and
 run the migrations to ensure that your default database has the correct schema.
 Submit and issue if something goes wrong.
@@ -108,17 +108,15 @@ Edit any of the following (tower ability) descriptions in any of the following y
 
 ### 5. Regenerate Data and Cleanup
 
-Run `npm run update-data` to update the generated/json,
+Run `npm run db:update-data` to update the generated/json,
 populate your database and update the files in `/generated/csv/` and `/generated/txt/`.
 `test`, `start`, and `build` should produce no errors.
-Run `npm run cleanup-db` to drop all the created tables, databases and user.
+Run `npm run db:drop` to drop all the created tables, databases and user.
 
 ```bash
-npm run update-data
+npm run db:update-data
 npm run test
-npm run start
-npm run build
-npm run cleanup-db
+npm run db:drop
 ```
 
 ### 6. Commit and PR

@@ -7,5 +7,4 @@ DROP TABLE barracks_stats;
 DROP TYPE "Towers_towertype_enum";
 DROP TYPE "Towers_level_enum";
 DROP TYPE "Towers_kingdom_enum";
-DROP TYPE "Towers_towercategory_enum";
 DROP TABLE migrations;

@@ -1,3 +1,5 @@
+# Creates a role named kingdom_rush_user with databases named test_db and kingdom_rush_db
+
 # Load all variables in dotenv file
 export $(egrep -v '^#' .env | xargs);
 
@@ -13,9 +15,5 @@ psql -c "ALTER ROLE kingdom_rush_user CREATEDB;";
 psql postgres -U kingdom_rush_user -c "CREATE DATABASE kingdom_rush_db;";
 psql postgres -U kingdom_rush_user -c "CREATE DATABASE test_db;";
 
-npm install;
-npm run test;
-npm run migrate-all;
-
-psql kingdom_rush_user -h  localhost -d kingdom_rush_db -f ./data/scripts/db_gen_info.sql;
-
+echo "Current existing roles:"
+psql -c "SELECT rolname FROM pg_catalog.pg_roles";
