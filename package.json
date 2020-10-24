@@ -4,18 +4,19 @@
     "description": "Simply get Kingdom Rush Tower information through queries in GraphQL",
     "main": "dist/index.js",
     "scripts": {
-        "test": "jest",
         "tsc": "tsc -p tsconfig.json",
         "start": "nodemon -e ts  --exec \"npm run compile\"",
         "build": "npm run format && npm run compile",
         "compile": "npm run tsc && node dist/index.js",
         "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
         "migrate-all": "npm run tsc && typeorm migration:run",
-        "seed": "npm run tsc && node dist/seed/populate.js",
-        "generate-json": "bash ./data/scripts/run_generate.sh",
+        "seed-json": "npm run tsc && node dist/seed/populate.js",
         "update-data": "bash ./data/scripts/run_save_data.sh",
         "setup": "bash ./data/scripts/run_setup.sh",
-        "cleanup-db": "bash ./data/scripts/run_db_cleanup.sh",
+        "db:test-seed-csv": "bash ./data/scripts/run_test_seed_csv.sh",
+        "db:create": "bash ./data/scripts/run_db_create.sh",
+        "db:drop": "bash ./data/scripts/run_db_cleanup.sh",
+        "test": "jest",
         "test:resolver": "jest -i test/tower_resolver.test.ts"
     },
     "repository": {
