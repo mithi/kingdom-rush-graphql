@@ -69,7 +69,7 @@ towers2d = [
 ]
 
 
-krv_dir = "../raw/KRV/"
+krv_dir = "./data/raw/KRV/"
 
 krv_files_path = [f for f in listdir(krv_dir) if isfile(join(krv_dir, f))]
 

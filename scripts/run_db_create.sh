@@ -1,3 +1,5 @@
+# Creates a role named kingdom_rush_user with databases named test_db and kingdom_rush_db
+
 # Load all variables in dotenv file
 export $(egrep -v '^#' .env | xargs);
 
