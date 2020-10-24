@@ -8,14 +8,14 @@ from os.path import isfile, join
 """
 
 
-path = "../raw/image-url.yml"
+path = "./data/raw/image-url.yml"
 stream = open(path, "r")
 data = yaml.load_all(stream, yaml.Loader)
 
 data_dict = [datum for datum in data]
 json_data = { "data": data_dict }
 
-with open("../generated/json/image-urls.json", 'w') as fout:
+with open("./data/generated/json/image-urls.json", 'w') as fout:
     json_dumps_str = json.dumps(json_data, indent=4)
     print(json_dumps_str, file=fout)
 
