@@ -1,41 +1,214 @@
-import { Resolver, Query, Mutation, Arg, InputType, Field } from "type-graphql"
+/*
+Towers(
+    skip: 5,
+    take: 10,
+    onlyLevels: [1, 2, 3],
+    onlyTypes: [BARRACKS, MAGE]
+    onlyKingdoms: [KR, KRV],
+    sortBy: [
+        {column: "name", order: "ASCENDING"},
+        {column: "kingdom", order: "ASCENDING"},
+        {column: "towerType", order: "ASCENDING"},
+        {column: "towerLevel", order: "ASCENDING"},
+        {column: "id", order: "ASCENDING"},
+        {column: "buildCost", order: "ASCENDING"},
+        {column: "damageMinimum", order: "ASCENDING"},
+        {column: "damageMaximum", order: "ASCENDING"},
+    ]
+)
+ */
+require("dotenv").config()
+import { getRepository } from "typeorm"
+import {
+    Resolver,
+    Query,
+    ArgsType,
+    Args,
+    Field,
+    Int,
+    ObjectType,
+    InputType,
+} from "type-graphql"
 import { Tower } from "../models/Tower"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
+import { Min, Max } from "class-validator"
+
+import { registerEnumType } from "type-graphql"
+
+export enum SortOrder {
+    ASCEND = "ASC",
+    DESCEND = "DESC",
+}
+
+export enum TowerSortOrderColumn {
+    name = "name",
+    kingdom = "kingdom",
+    towerType = "towerType",
+    level = "level",
+    id = "towerId",
+    buildCost = "buildCost",
+    damageMinimum = "damageMinimum",
+    damageMaximum = "damageMaximum",
+}
+registerEnumType(SortOrder, { name: "SortOrder" })
+registerEnumType(TowerSortOrderColumn, { name: "TowerSortOrderColumn" })
 
 @InputType()
-export class CreateTowerInput {
-    @Field()
-    name: string
+export class SortDefinitionElement {
+    @Field(_type => TowerSortOrderColumn)
+    column: TowerSortOrderColumn
 
-    @Field()
-    notes: string
+    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
+    sortType: SortOrder
+}
 
-    @Field(_ => TowerType)
+@ObjectType()
+class TowerWithStats {
+    @Field(() => Number)
+    id: Number
+
+    @Field(() => TowerType)
     towerType: TowerType
 
-    @Field(_ => TowerLevel)
+    @Field(() => TowerLevel)
     level: TowerLevel
 
-    @Field(_ => TowerKingdom)
+    @Field(() => String)
+    name: string
+
+    @Field(() => TowerKingdom)
     kingdom: TowerKingdom
+
+    @Field(() => String)
+    imageUrl: string
+
+    @Field(() => Number)
+    buildCost: Number
+
+    @Field(() => Number)
+    damageMinimum: Number
+
+    @Field(() => Number)
+    damageMaximum: Number
+}
+
+@ArgsType()
+class TowerArgs {
+    @Field(_type => Int, { defaultValue: 0 })
+    @Min(0)
+    skip: number = 0
+
+    @Field(_type => Int, { defaultValue: 104 })
+    @Min(1)
+    @Max(104)
+    take: number = 104
+
+    @Field(_type => [TowerLevel], {
+        defaultValue: [
+            TowerLevel.LVL1,
+            TowerLevel.LVL2,
+            TowerLevel.LVL3,
+            TowerLevel.LVL4,
+        ],
+    })
+    onlyLevels: TowerLevel[]
+
+    @Field(_type => [TowerKingdom], {
+        defaultValue: [
+            TowerKingdom.KR,
+            TowerKingdom.KRF,
+            TowerKingdom.KRO,
+            TowerKingdom.KRV,
+        ],
+    })
+    onlyKingdoms: TowerKingdom[]
+
+    @Field(_type => [TowerType], {
+        defaultValue: [
+            TowerType.ARCHER,
+            TowerType.BARRACKS,
+            TowerType.ARTILLERY,
+            TowerType.MAGE,
+        ],
+    })
+    onlyTowerTypes: TowerType[]
+
+    @Field(_type => [SortDefinitionElement], {
+        defaultValue: [{ column: TowerSortOrderColumn.id, sortType: SortOrder.ASCEND }],
+    })
+    sortDefinition: SortDefinitionElement[]
+}
+
+const levelFilter = (levels: TowerLevel[]): string => {
+    return Array.from(new Set(levels))
+        .map(level => `level = '${level}'`)
+        .join(" OR ")
+}
+
+const kingdomFilter = (kingdoms: TowerKingdom[]): string => {
+    return Array.from(new Set(kingdoms))
+        .map(kingdom => `kingdom = '${kingdom}'`)
+        .join(" OR ")
+}
+
+const typeFilter = (towerTypes: TowerType[]): string => {
+    return Array.from(new Set(towerTypes))
+        .map(towerType => `"towerType" = '${towerType}'`)
+        .join(" OR ")
+}
+
+const sortExpression = (sortDefinition: SortDefinitionElement[]) => {
+    return sortDefinition
+        .map(sortRow => `"${sortRow.column}" ${sortRow.sortType}`)
+        .join(", ")
 }
 
 @Resolver()
 export class TowerResolver {
-    @Query(() => String)
-    hello() {
-        return "world"
-    }
+    @Query(() => [TowerWithStats])
+    async towers(
+        @Args()
+        {
+            skip,
+            take,
+            onlyLevels,
+            onlyKingdoms,
+            onlyTowerTypes,
+            sortDefinition,
+        }: TowerArgs
+    ) {
+        const hasNoElement =
+            onlyLevels.length <= 0 ||
+            onlyKingdoms.length <= 0 ||
+            onlyTowerTypes.length <= 0
 
-    @Query(() => [Tower])
-    towers() {
-        return Tower.find()
-    }
+        if (hasNoElement) {
+            return []
+        }
 
-    @Mutation(() => Tower)
-    async createTower(@Arg("data") data: CreateTowerInput) {
-        const tower = Tower.create(data)
-        await tower.save()
-        return tower
+        const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
+        const levels = levelFilter(onlyLevels)
+        const kingdoms = kingdomFilter(onlyKingdoms)
+        const towerTypes = typeFilter(onlyTowerTypes)
+        // TODO: Add check to make sure all elements of the array sortDefinition have unique columns
+        const sortColumns = sortExpression(sortDefinition)
+
+        const filterExpr = `WHERE (${levels}) AND (${kingdoms}) AND (${towerTypes})`
+        const sortExpr = `ORDER BY ${sortColumns}`
+        const pageExpr = `LIMIT ${take} OFFSET ${skip}`
+        const queryExpression = `${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
+
+        console.log(queryExpression)
+
+        const dbName = process.env.NODE_ENV === "test" ? "test" : "default"
+        const result: TowerWithStats[] = await getRepository(Tower, dbName).query(
+            queryExpression
+        )
+
+        const cleanResult = result.map(tower => ({
+            ...tower,
+            level: Number(tower["level"]),
+        }))
+        return cleanResult
     }
 }
