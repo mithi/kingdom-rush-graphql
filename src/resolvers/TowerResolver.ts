@@ -49,21 +49,20 @@ import {
     AllowedSortDefinitionElement,
     FilterableEnums,
     BuildQueryArgs,
-} from "./shared"
+} from "./definitions"
 
 const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
 
-export const sortExpression = (sortDefinition: AllowedSortDefinitionElement[]) => {
-    return sortDefinition
-        .map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`)
-        .join(", ")
-}
+export const buildSortExpression = (sortDefinition: AllowedSortDefinitionElement[]) =>
+    sortDefinition.map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`).join(", ")
 
-export const createFilter = (enums: FilterableEnums[], listType: string): string => {
-    return Array.from(new Set(enums))
+export const buildFilterExpression = (
+    enums: FilterableEnums[],
+    listType: string
+): string =>
+    Array.from(new Set(enums))
         .map(e => `${listType} = '${e}'`)
         .join(" OR ")
-}
 
 const buildQueryExpression = (
     {
@@ -76,11 +75,11 @@ const buildQueryExpression = (
     }: BuildQueryArgs,
     tableExpr: string
 ): string => {
-    const levels = createFilter(onlyLevels, `level`)
-    const kingdoms = createFilter(onlyKingdoms, `kingdom`)
-    const towerTypes = createFilter(onlyTowerTypes, `"towerType"`)
+    const levels = buildFilterExpression(onlyLevels, `level`)
+    const kingdoms = buildFilterExpression(onlyKingdoms, `kingdom`)
+    const towerTypes = buildFilterExpression(onlyTowerTypes, `"towerType"`)
     // TODO: Add check to make sure all elements of the array sortDefinition have unique columns
-    const sortColumns = sortExpression(sortDefinition)
+    const sortColumns = buildSortExpression(sortDefinition)
 
     const filterExpr = `WHERE (${levels}) AND (${kingdoms}) AND (${towerTypes})`
     const sortExpr = `ORDER BY ${sortColumns}`
@@ -92,7 +91,7 @@ const buildQueryExpression = (
 
 const nothingLeft = (args: BuildQueryArgs): boolean => {
     const { onlyLevels, onlyTowerTypes, onlyKingdoms } = args
-    // We have filtered out all options that the result doesn't contain anything
+    // We have filtered out all options that we know the query won't result anything
     return [onlyLevels, onlyTowerTypes, onlyKingdoms].every(list => list.length === 0)
 }
 
@@ -104,8 +103,8 @@ export class TowerResolver {
             return []
         }
 
-        const tableExpr = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
-        const queryExpression = buildQueryExpression(towerArgs, tableExpr)
+        const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
+        const queryExpression = buildQueryExpression(towerArgs, tableExpression)
 
         const result: TowerWithStats[] = await getRepository(Tower, DB_NAME).query(
             queryExpression
@@ -119,8 +118,8 @@ export class TowerResolver {
             return []
         }
 
-        const tableExpr = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
-        const queryExpression = buildQueryExpression(attackTowerArgs, tableExpr)
+        const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
+        const queryExpression = buildQueryExpression(attackTowerArgs, tableExpression)
         const result: AttackTower[] = await getRepository(Tower, DB_NAME).query(
             queryExpression
         )
