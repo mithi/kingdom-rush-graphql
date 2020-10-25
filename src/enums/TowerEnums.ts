@@ -26,7 +26,7 @@ export enum SortOrder {
     DESCEND = "DESC",
 }
 
-export enum TowerSortOrderColumn {
+export enum TowerColumn {
     name = "name",
     kingdom = "kingdom",
     towerType = "towerType",
@@ -38,7 +38,7 @@ export enum TowerSortOrderColumn {
 }
 
 registerEnumType(SortOrder, { name: "SortOrder" })
-registerEnumType(TowerSortOrderColumn, { name: "TowerSortOrderColumn" })
+registerEnumType(TowerColumn, { name: "TowerColumn" })
 registerEnumType(TowerType, { name: "TowerType" })
 registerEnumType(TowerLevel, { name: "TowerLevel" })
 registerEnumType(TowerKingdom, { name: "TowerKingdom" })

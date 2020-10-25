@@ -19,46 +19,25 @@ Towers(
  */
 require("dotenv").config()
 import { getRepository } from "typeorm"
-import { Resolver, Query, ArgsType, Args, Field, Int, ObjectType } from "type-graphql"
+import { Resolver, Query, ArgsType, InputType, Args, Field, Int } from "type-graphql"
 import { Tower } from "../models/Tower"
 import {
     TowerType,
     TowerKingdom,
     TowerLevel,
     SortOrder,
-    TowerSortOrderColumn,
+    TowerColumn,
 } from "../enums/TowerEnums"
 import { Min, Max } from "class-validator"
-import { SortDefinitionElement } from "./shared"
+import { TowerWithStats, allTowerKingdoms, allTowerLevels } from "./shared"
 
-@ObjectType()
-class TowerWithStats {
-    @Field(() => Number)
-    id: Number
+@InputType()
+export class SortDefinitionElement {
+    @Field(_type => TowerColumn)
+    column: TowerColumn
 
-    @Field(() => TowerType)
-    towerType: TowerType
-
-    @Field(() => TowerLevel)
-    level: TowerLevel
-
-    @Field(() => String)
-    name: string
-
-    @Field(() => TowerKingdom)
-    kingdom: TowerKingdom
-
-    @Field(() => String)
-    imageUrl: string
-
-    @Field(() => Number)
-    buildCost: Number
-
-    @Field(() => Number)
-    damageMinimum: Number
-
-    @Field(() => Number)
-    damageMaximum: Number
+    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
+    sortOrder: SortOrder
 }
 
 @ArgsType()
@@ -73,22 +52,12 @@ class TowerArgs {
     take: number = 104
 
     @Field(_type => [TowerLevel], {
-        defaultValue: [
-            TowerLevel.LVL1,
-            TowerLevel.LVL2,
-            TowerLevel.LVL3,
-            TowerLevel.LVL4,
-        ],
+        defaultValue: allTowerLevels,
     })
     onlyLevels: TowerLevel[]
 
     @Field(_type => [TowerKingdom], {
-        defaultValue: [
-            TowerKingdom.KR,
-            TowerKingdom.KRF,
-            TowerKingdom.KRO,
-            TowerKingdom.KRV,
-        ],
+        defaultValue: allTowerKingdoms,
     })
     onlyKingdoms: TowerKingdom[]
 
@@ -103,7 +72,7 @@ class TowerArgs {
     onlyTowerTypes: TowerType[]
 
     @Field(_type => [SortDefinitionElement], {
-        defaultValue: [{ column: TowerSortOrderColumn.id, sortType: SortOrder.ASCEND }],
+        defaultValue: [{ column: TowerColumn.id, sortOrder: SortOrder.ASCEND }],
     })
     sortDefinition: SortDefinitionElement[]
 }
@@ -128,7 +97,7 @@ const typeFilter = (towerTypes: TowerType[]): string => {
 
 const sortExpression = (sortDefinition: SortDefinitionElement[]) => {
     return sortDefinition
-        .map(sortRow => `"${sortRow.column}" ${sortRow.sortType}`)
+        .map(sortRow => `"${sortRow.column}" ${sortRow.sortOrder}`)
         .join(", ")
 }
 
