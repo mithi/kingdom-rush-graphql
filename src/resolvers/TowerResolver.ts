@@ -52,21 +52,11 @@ class TowerArgs extends BaseTowerArgs {
     sortDefinition: SortDefinitionElement[]
 }
 
-const levelFilter = (levels: TowerLevel[]): string => {
-    return Array.from(new Set(levels))
-        .map(level => `level = '${level}'`)
-        .join(" OR ")
-}
+type filterableEnums = TowerLevel | TowerKingdom | TowerType
 
-const kingdomFilter = (kingdoms: TowerKingdom[]): string => {
-    return Array.from(new Set(kingdoms))
-        .map(kingdom => `kingdom = '${kingdom}'`)
-        .join(" OR ")
-}
-
-const typeFilter = (towerTypes: TowerType[]): string => {
-    return Array.from(new Set(towerTypes))
-        .map(towerType => `"towerType" = '${towerType}'`)
+const createFilter = (enums: filterableEnums[], listType: string): string => {
+    return Array.from(new Set(enums))
+        .map(e => `${listType} = '${e}'`)
         .join(" OR ")
 }
 
@@ -100,9 +90,9 @@ export class TowerResolver {
         }
 
         const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
-        const levels = levelFilter(onlyLevels)
-        const kingdoms = kingdomFilter(onlyKingdoms)
-        const towerTypes = typeFilter(onlyTowerTypes)
+        const levels = createFilter(onlyLevels, `level`)
+        const kingdoms = createFilter(onlyKingdoms, `kingdom`)
+        const towerTypes = createFilter(onlyTowerTypes, `"towerType"`)
         // TODO: Add check to make sure all elements of the array sortDefinition have unique columns
         const sortColumns = sortExpression(sortDefinition)
 
