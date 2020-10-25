@@ -1,11 +1,31 @@
 /*
-Towers(
+towers(
     skip: 5,
     take: 10,
     onlyLevels: [1, 2, 3],
     onlyTypes: [BARRACKS, MAGE]
     onlyKingdoms: [KR, KRV],
     sortBy: [
+        {column: "name", order: "ASCENDING"},
+        {column: "kingdom", order: "ASCENDING"},
+        {column: "towerType", order: "ASCENDING"},
+        {column: "towerLevel", order: "ASCENDING"},
+       {column: "id", order: "ASCENDING"},
+        {column: "buildCost", order: "ASCENDING"},
+        {column: "damageMinimum", order: "ASCENDING"},
+        {column: "damageMaximum", order: "ASCENDING"},
+    ]
+)
+
+attackTowers(
+    skip: 5,
+    take: 10,
+    onlyLevels: [1, 2, 3],
+    onlyTypes: [MAGE]
+    onlyKingdoms: [KR, KRV],
+    sortBy: [
+        {column: "fireInterval", order: "ASCENDING"},
+        {column: "range", order: "ASCENDING"},
         {column: "name", order: "ASCENDING"},
         {column: "kingdom", order: "ASCENDING"},
         {column: "towerType", order: "ASCENDING"},
@@ -19,196 +39,90 @@ Towers(
  */
 require("dotenv").config()
 import { getRepository } from "typeorm"
-import {
-    Resolver,
-    Query,
-    ArgsType,
-    Args,
-    Field,
-    Int,
-    ObjectType,
-    InputType,
-} from "type-graphql"
+import { Resolver, Query, Args } from "type-graphql"
 import { Tower } from "../models/Tower"
-import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
-import { Min, Max } from "class-validator"
+import {
+    AttackTower,
+    TowerWithStats,
+    AttackTowerArgs,
+    TowerArgs,
+    AllowedSortDefinitionElement,
+    FilterableEnums,
+    BuildQueryArgs,
+} from "./definitions"
 
-import { registerEnumType } from "type-graphql"
+const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
 
-export enum SortOrder {
-    ASCEND = "ASC",
-    DESCEND = "DESC",
-}
+export const buildSortExpression = (sortDefinition: AllowedSortDefinitionElement[]) =>
+    sortDefinition.map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`).join(", ")
 
-export enum TowerSortOrderColumn {
-    name = "name",
-    kingdom = "kingdom",
-    towerType = "towerType",
-    level = "level",
-    id = "towerId",
-    buildCost = "buildCost",
-    damageMinimum = "damageMinimum",
-    damageMaximum = "damageMaximum",
-}
-registerEnumType(SortOrder, { name: "SortOrder" })
-registerEnumType(TowerSortOrderColumn, { name: "TowerSortOrderColumn" })
-
-@InputType()
-export class SortDefinitionElement {
-    @Field(_type => TowerSortOrderColumn)
-    column: TowerSortOrderColumn
-
-    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
-    sortType: SortOrder
-}
-
-@ObjectType()
-class TowerWithStats {
-    @Field(() => Number)
-    id: Number
-
-    @Field(() => TowerType)
-    towerType: TowerType
-
-    @Field(() => TowerLevel)
-    level: TowerLevel
-
-    @Field(() => String)
-    name: string
-
-    @Field(() => TowerKingdom)
-    kingdom: TowerKingdom
-
-    @Field(() => String)
-    imageUrl: string
-
-    @Field(() => Number)
-    buildCost: Number
-
-    @Field(() => Number)
-    damageMinimum: Number
-
-    @Field(() => Number)
-    damageMaximum: Number
-}
-
-@ArgsType()
-class TowerArgs {
-    @Field(_type => Int, { defaultValue: 0 })
-    @Min(0)
-    skip: number = 0
-
-    @Field(_type => Int, { defaultValue: 104 })
-    @Min(1)
-    @Max(104)
-    take: number = 104
-
-    @Field(_type => [TowerLevel], {
-        defaultValue: [
-            TowerLevel.LVL1,
-            TowerLevel.LVL2,
-            TowerLevel.LVL3,
-            TowerLevel.LVL4,
-        ],
-    })
-    onlyLevels: TowerLevel[]
-
-    @Field(_type => [TowerKingdom], {
-        defaultValue: [
-            TowerKingdom.KR,
-            TowerKingdom.KRF,
-            TowerKingdom.KRO,
-            TowerKingdom.KRV,
-        ],
-    })
-    onlyKingdoms: TowerKingdom[]
-
-    @Field(_type => [TowerType], {
-        defaultValue: [
-            TowerType.ARCHER,
-            TowerType.BARRACKS,
-            TowerType.ARTILLERY,
-            TowerType.MAGE,
-        ],
-    })
-    onlyTowerTypes: TowerType[]
-
-    @Field(_type => [SortDefinitionElement], {
-        defaultValue: [{ column: TowerSortOrderColumn.id, sortType: SortOrder.ASCEND }],
-    })
-    sortDefinition: SortDefinitionElement[]
-}
-
-const levelFilter = (levels: TowerLevel[]): string => {
-    return Array.from(new Set(levels))
-        .map(level => `level = '${level}'`)
+export const buildFilterExpression = (
+    enums: FilterableEnums[],
+    listType: string
+): string =>
+    Array.from(new Set(enums))
+        .map(e => `${listType} = '${e}'`)
         .join(" OR ")
+
+const buildQueryExpression = (
+    {
+        skip,
+        take,
+        onlyLevels,
+        onlyKingdoms,
+        onlyTowerTypes,
+        sortDefinition,
+    }: BuildQueryArgs,
+    tableExpr: string
+): string => {
+    const levels = buildFilterExpression(onlyLevels, `level`)
+    const kingdoms = buildFilterExpression(onlyKingdoms, `kingdom`)
+    const towerTypes = buildFilterExpression(onlyTowerTypes, `"towerType"`)
+    // TODO: Add check to make sure all elements of the array sortDefinition have unique columns
+    const sortColumns = buildSortExpression(sortDefinition)
+
+    const filterExpr = `WHERE (${levels}) AND (${kingdoms}) AND (${towerTypes})`
+    const sortExpr = `ORDER BY ${sortColumns}`
+    const pageExpr = `LIMIT ${take} OFFSET ${skip}`
+    const queryExpression = `SELECT * FROM ${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
+    console.log(queryExpression)
+    return queryExpression
 }
 
-const kingdomFilter = (kingdoms: TowerKingdom[]): string => {
-    return Array.from(new Set(kingdoms))
-        .map(kingdom => `kingdom = '${kingdom}'`)
-        .join(" OR ")
-}
-
-const typeFilter = (towerTypes: TowerType[]): string => {
-    return Array.from(new Set(towerTypes))
-        .map(towerType => `"towerType" = '${towerType}'`)
-        .join(" OR ")
-}
-
-const sortExpression = (sortDefinition: SortDefinitionElement[]) => {
-    return sortDefinition
-        .map(sortRow => `"${sortRow.column}" ${sortRow.sortType}`)
-        .join(", ")
+const nothingLeft = (args: BuildQueryArgs): boolean => {
+    const { onlyLevels, onlyTowerTypes, onlyKingdoms } = args
+    // We have filtered out all options that we know the query won't result anything
+    return [onlyLevels, onlyTowerTypes, onlyKingdoms].every(list => list.length === 0)
 }
 
 @Resolver()
 export class TowerResolver {
     @Query(() => [TowerWithStats])
-    async towers(
-        @Args()
-        {
-            skip,
-            take,
-            onlyLevels,
-            onlyKingdoms,
-            onlyTowerTypes,
-            sortDefinition,
-        }: TowerArgs
-    ) {
-        const hasNoElement =
-            onlyLevels.length <= 0 ||
-            onlyKingdoms.length <= 0 ||
-            onlyTowerTypes.length <= 0
-
-        if (hasNoElement) {
+    async towers(@Args() towerArgs: TowerArgs) {
+        if (nothingLeft(towerArgs)) {
             return []
         }
 
-        const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
-        const levels = levelFilter(onlyLevels)
-        const kingdoms = kingdomFilter(onlyKingdoms)
-        const towerTypes = typeFilter(onlyTowerTypes)
-        // TODO: Add check to make sure all elements of the array sortDefinition have unique columns
-        const sortColumns = sortExpression(sortDefinition)
+        const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
+        const queryExpression = buildQueryExpression(towerArgs, tableExpression)
 
-        const filterExpr = `WHERE (${levels}) AND (${kingdoms}) AND (${towerTypes})`
-        const sortExpr = `ORDER BY ${sortColumns}`
-        const pageExpr = `LIMIT ${take} OFFSET ${skip}`
-        const queryExpression = `${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
-
-        console.log(queryExpression)
-
-        const dbName = process.env.NODE_ENV === "test" ? "test" : "default"
-        const result: TowerWithStats[] = await getRepository(Tower, dbName).query(
+        const result: TowerWithStats[] = await getRepository(Tower, DB_NAME).query(
             queryExpression
         )
+        return result.map(tower => ({ ...tower, level: Number(tower.level) }))
+    }
 
-        const cleanResult = result.map(tower => ({
-            ...tower,
-            level: Number(tower["level"]),
-        }))
-        return cleanResult
+    @Query(() => [AttackTower])
+    async attackTowers(@Args() attackTowerArgs: AttackTowerArgs) {
+        if (nothingLeft(attackTowerArgs)) {
+            return []
+        }
+
+        const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
+        const queryExpression = buildQueryExpression(attackTowerArgs, tableExpression)
+        const result: AttackTower[] = await getRepository(Tower, DB_NAME).query(
+            queryExpression
+        )
+        return result.map(tower => ({ ...tower, level: Number(tower.level) }))
     }
 }
