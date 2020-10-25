@@ -31,6 +31,15 @@ export class TowerWithStats {
     damageMaximum: Number
 }
 
+@ObjectType()
+export class AttackTower extends TowerWithStats {
+    @Field(() => Number)
+    fireInterval: Number
+
+    @Field(() => Number)
+    range: Number
+}
+
 export const allTowerLevels = [
     TowerLevel.LVL1,
     TowerLevel.LVL2,
