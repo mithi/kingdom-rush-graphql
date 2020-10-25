@@ -139,3 +139,18 @@ export class AttackSortDefinitionElement {
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortOrder: SortOrder = SortOrder.ASCEND
 }
+
+export type AllowedSortDefinitionElement =
+    | SortDefinitionElement
+    | AttackSortDefinitionElement
+export type FilterableEnums = TowerLevel | TowerKingdom | TowerType | AttackTowerType
+export type AllowedTowerTypes = TowerType | AttackTowerType
+
+export interface BuildQueryArgs {
+    skip: number
+    take: number
+    onlyLevels: TowerLevel[]
+    onlyKingdoms: TowerKingdom[]
+    onlyTowerTypes: AllowedTowerTypes[]
+    sortDefinition: AllowedSortDefinitionElement[]
+}

@@ -1,5 +1,5 @@
 /*
-attackTowers(
+towers(
     skip: 5,
     take: 10,
     onlyLevels: [1, 2, 3],
@@ -46,33 +46,20 @@ import {
     TowerWithStats,
     AttackTowerArgs,
     TowerArgs,
-    SortDefinitionElement,
-    AttackSortDefinitionElement,
+    AllowedSortDefinitionElement,
+    FilterableEnums,
+    BuildQueryArgs,
 } from "./shared"
-import { TowerType, TowerKingdom, TowerLevel, AttackTowerType } from "../enums/TowerEnums"
 
 const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
 
-type allowedSortDefinitionElement = SortDefinitionElement | AttackSortDefinitionElement
-type filterableEnums = TowerLevel | TowerKingdom | TowerType | AttackTowerType
-type allowedTowerTypes = TowerType | AttackTowerType
-
-interface BuildQueryArgs {
-    skip: number
-    take: number
-    onlyLevels: TowerLevel[]
-    onlyKingdoms: TowerKingdom[]
-    onlyTowerTypes: allowedTowerTypes[]
-    sortDefinition: allowedSortDefinitionElement[]
-}
-
-export const sortExpression = (sortDefinition: allowedSortDefinitionElement[]) => {
+export const sortExpression = (sortDefinition: AllowedSortDefinitionElement[]) => {
     return sortDefinition
         .map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`)
         .join(", ")
 }
 
-export const createFilter = (enums: filterableEnums[], listType: string): string => {
+export const createFilter = (enums: FilterableEnums[], listType: string): string => {
     return Array.from(new Set(enums))
         .map(e => `${listType} = '${e}'`)
         .join(" OR ")
