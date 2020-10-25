@@ -5,20 +5,25 @@ import { ApolloServer, gql } from "apollo-server"
 import { createTestClient } from "apollo-server-testing"
 import seed from "../src/seed"
 import ascendingTowerIds from "./__snapshots__/ASCENDING_TOWER_IDS"
+import attackTowersTypes from "./__snapshots__/ATTACK_TOWER_TYPES"
+import attackTowersFireIntervalDescending from "./__snapshots__/ATTACK_TOWER_FIRE_INTERVAL_DESCEND"
+
+// FIX ME. What type am I? Where will I export this?
+let SCHEMA: any
+let QUERY: any
 
 beforeAll(async () => {
     await createConnection("test")
     await seed({ dbName: "test", verbose: false })
+    SCHEMA = await buildSchema({ resolvers: [TowerResolver] })
+    QUERY = createTestClient(new ApolloServer({ schema: SCHEMA })).query
 })
 
 afterAll(async () => {
     await getConnection("test").close()
 })
 
-test("Be able to get towers, ids should be in ascending order by default", async () => {
-    const schema = await buildSchema({ resolvers: [TowerResolver] })
-    const { query } = createTestClient(new ApolloServer({ schema }))
-
+test("Be able to get towers, ids would be sorted in ascending order by default", async () => {
     const testQuery = gql`
         {
             towers {
@@ -26,6 +31,31 @@ test("Be able to get towers, ids should be in ascending order by default", async
             }
         }
     `
-    const result = await query({ query: testQuery })
+    const result = await QUERY({ query: testQuery })
     expect(result).toMatchInlineSnapshot(ascendingTowerIds())
+})
+
+test("Be able to get attack towers, by default result will be sorted by id in ascending order", async () => {
+    const testQuery = gql`
+        {
+            attackTowers {
+                towerType
+            }
+        }
+    `
+    const result = await QUERY({ query: testQuery })
+    expect(result).toMatchInlineSnapshot(attackTowersTypes())
+})
+
+test("Be able to get attack towers sorted by fire interval in descending order", async () => {
+    const testQuery = gql`
+        {
+            attackTowers(sortDefinition: [{ column: fireInterval, sortOrder: DESCEND }]) {
+                fireInterval
+                towerType
+            }
+        }
+    `
+    const result = await QUERY({ query: testQuery })
+    expect(result).toMatchInlineSnapshot(attackTowersFireIntervalDescending())
 })
