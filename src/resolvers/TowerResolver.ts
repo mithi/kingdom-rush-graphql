@@ -1,11 +1,31 @@
 /*
-Towers(
+attackTowers(
     skip: 5,
     take: 10,
     onlyLevels: [1, 2, 3],
     onlyTypes: [BARRACKS, MAGE]
     onlyKingdoms: [KR, KRV],
     sortBy: [
+        {column: "name", order: "ASCENDING"},
+        {column: "kingdom", order: "ASCENDING"},
+        {column: "towerType", order: "ASCENDING"},
+        {column: "towerLevel", order: "ASCENDING"},
+       {column: "id", order: "ASCENDING"},
+        {column: "buildCost", order: "ASCENDING"},
+        {column: "damageMinimum", order: "ASCENDING"},
+        {column: "damageMaximum", order: "ASCENDING"},
+    ]
+)
+
+attackTowers(
+    skip: 5,
+    take: 10,
+    onlyLevels: [1, 2, 3],
+    onlyTypes: [MAGE]
+    onlyKingdoms: [KR, KRV],
+    sortBy: [
+        {column: "fireInterval", order: "ASCENDING"},
+        {column: "range", order: "ASCENDING"},
         {column: "name", order: "ASCENDING"},
         {column: "kingdom", order: "ASCENDING"},
         {column: "towerType", order: "ASCENDING"},
@@ -31,11 +51,13 @@ import {
 } from "./shared"
 import { TowerType, TowerKingdom, TowerLevel, AttackTowerType } from "../enums/TowerEnums"
 
+const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
+
 type allowedSortDefinitionElement = SortDefinitionElement | AttackSortDefinitionElement
 type filterableEnums = TowerLevel | TowerKingdom | TowerType | AttackTowerType
 type allowedTowerTypes = TowerType | AttackTowerType
 
-interface buildQueryArgs {
+interface BuildQueryArgs {
     skip: number
     take: number
     onlyLevels: TowerLevel[]
@@ -64,7 +86,7 @@ const buildQueryExpression = (
         onlyKingdoms,
         onlyTowerTypes,
         sortDefinition,
-    }: buildQueryArgs,
+    }: BuildQueryArgs,
     tableExpr: string
 ): string => {
     const levels = createFilter(onlyLevels, `level`)
@@ -76,102 +98,45 @@ const buildQueryExpression = (
     const filterExpr = `WHERE (${levels}) AND (${kingdoms}) AND (${towerTypes})`
     const sortExpr = `ORDER BY ${sortColumns}`
     const pageExpr = `LIMIT ${take} OFFSET ${skip}`
-    const queryExpression = `${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
+    const queryExpression = `SELECT * FROM ${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
     console.log(queryExpression)
     return queryExpression
+}
+
+const nothingLeft = (args: BuildQueryArgs): boolean => {
+    const { onlyLevels, onlyTowerTypes, onlyKingdoms } = args
+    // We have filtered out all options that the result doesn't contain anything
+    return [onlyLevels, onlyTowerTypes, onlyKingdoms].every(list => list.length === 0)
 }
 
 @Resolver()
 export class TowerResolver {
     @Query(() => [TowerWithStats])
-    async towers(
-        @Args()
-        {
-            skip,
-            take,
-            onlyLevels,
-            onlyKingdoms,
-            onlyTowerTypes,
-            sortDefinition,
-        }: TowerArgs
-    ) {
-        const hasNoElement =
-            onlyLevels.length <= 0 ||
-            onlyKingdoms.length <= 0 ||
-            onlyTowerTypes.length <= 0
-
-        if (hasNoElement) {
+    async towers(@Args() towerArgs: TowerArgs) {
+        if (nothingLeft(towerArgs)) {
             return []
         }
 
-        const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
-        const queryExpression = buildQueryExpression(
-            {
-                skip,
-                take,
-                onlyLevels,
-                onlyKingdoms,
-                onlyTowerTypes,
-                sortDefinition,
-            },
-            tableExpr
-        )
+        const tableExpr = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
+        const queryExpression = buildQueryExpression(towerArgs, tableExpr)
 
-        const dbName = process.env.NODE_ENV === "test" ? "test" : "default"
-        const result: TowerWithStats[] = await getRepository(Tower, dbName).query(
+        const result: TowerWithStats[] = await getRepository(Tower, DB_NAME).query(
             queryExpression
         )
-
-        const cleanResult = result.map(tower => ({
-            ...tower,
-            level: Number(tower["level"]),
-        }))
-        return cleanResult
+        return result.map(tower => ({ ...tower, level: Number(tower.level) }))
     }
 
     @Query(() => [AttackTower])
-    async attackTowers(
-        @Args()
-        {
-            skip,
-            take,
-            onlyLevels,
-            onlyKingdoms,
-            onlyTowerTypes,
-            sortDefinition,
-        }: AttackTowerArgs
-    ) {
-        const hasNoElement =
-            onlyLevels.length <= 0 ||
-            onlyKingdoms.length <= 0 ||
-            onlyTowerTypes.length <= 0
-
-        if (hasNoElement) {
+    async attackTowers(@Args() attackTowerArgs: AttackTowerArgs) {
+        if (nothingLeft(attackTowerArgs)) {
             return []
         }
 
-        const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
-        const queryExpression = buildQueryExpression(
-            {
-                skip,
-                take,
-                onlyLevels,
-                onlyKingdoms,
-                onlyTowerTypes,
-                sortDefinition,
-            },
-            tableExpr
-        )
-
-        const dbName = process.env.NODE_ENV === "test" ? "test" : "default"
-        const result: AttackTower[] = await getRepository(Tower, dbName).query(
+        const tableExpr = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
+        const queryExpression = buildQueryExpression(attackTowerArgs, tableExpr)
+        const result: AttackTower[] = await getRepository(Tower, DB_NAME).query(
             queryExpression
         )
-
-        const cleanResult = result.map(tower => ({
-            ...tower,
-            level: Number(tower["level"]),
-        }))
-        return cleanResult
+        return result.map(tower => ({ ...tower, level: Number(tower.level) }))
     }
 }
