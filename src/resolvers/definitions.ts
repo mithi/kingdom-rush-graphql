@@ -97,11 +97,6 @@ export class BaseTowerArgs {
     @Max(104)
     take: number = 104
 
-    @Field(_type => [TowerLevel], {
-        defaultValue: allTowerLevels,
-    })
-    onlyLevels: TowerLevel[]
-
     @Field(_type => [TowerKingdom], {
         defaultValue: allTowerKingdoms,
     })
@@ -110,6 +105,11 @@ export class BaseTowerArgs {
 
 @ArgsType()
 export class TowerArgs extends BaseTowerArgs {
+    @Field(_type => [TowerLevel], {
+        defaultValue: allTowerLevels,
+    })
+    onlyLevels: TowerLevel[]
+
     @Field(_type => [TowerType], {
         defaultValue: allTowerTypes,
     })
@@ -123,6 +123,11 @@ export class TowerArgs extends BaseTowerArgs {
 
 @ArgsType()
 export class AttackTowerArgs extends BaseTowerArgs {
+    @Field(_type => [TowerLevel], {
+        defaultValue: allTowerLevels,
+    })
+    onlyLevels: TowerLevel[]
+
     @Field(_type => [AttackTowerType], {
         defaultValue: [
             AttackTowerType.ARCHER,
@@ -140,6 +145,11 @@ export class AttackTowerArgs extends BaseTowerArgs {
 
 @ArgsType()
 export class BarracksTowerArgs extends BaseTowerArgs {
+    @Field(_type => [TowerLevel], {
+        defaultValue: allTowerLevels,
+    })
+    onlyLevels: TowerLevel[]
+
     @Field(_type => [BarracksSortDefinitionElement], {
         defaultValue: [{ column: BarracksTowerColumn.id, sortType: SortOrder.ASCEND }],
     })
