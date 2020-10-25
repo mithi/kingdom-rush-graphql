@@ -7,6 +7,7 @@ import {
     SortOrder,
     TowerColumn,
     AttackTowerColumn,
+    BarracksTowerColumn,
 } from "../enums/TowerEnums"
 import { Min, Max } from "class-validator"
 
@@ -70,6 +71,21 @@ export class AttackTower extends TowerWithStats {
     range: Number
 }
 
+@ObjectType()
+export class BarracksTower extends TowerWithStats {
+    @Field(() => Number)
+    numberOfUnits: Number
+
+    @Field(() => Number)
+    armor: Number
+
+    @Field(() => Number)
+    health: Number
+
+    @Field(() => Number)
+    respawnInterval: Number
+}
+
 @ArgsType()
 export class BaseTowerArgs {
     @Field(_type => Int, { defaultValue: 0 })
@@ -122,6 +138,14 @@ export class AttackTowerArgs extends BaseTowerArgs {
     sortDefinition: AttackSortDefinitionElement[]
 }
 
+@ArgsType()
+export class BarracksTowerArgs extends BaseTowerArgs {
+    @Field(_type => [BarracksSortDefinitionElement], {
+        defaultValue: [{ column: BarracksTowerColumn.id, sortType: SortOrder.ASCEND }],
+    })
+    sortDefinition: BarracksSortDefinitionElement[]
+}
+
 @InputType()
 export class SortDefinitionElement {
     @Field(_type => TowerColumn)
@@ -140,9 +164,20 @@ export class AttackSortDefinitionElement {
     sortOrder: SortOrder = SortOrder.ASCEND
 }
 
+@InputType()
+export class BarracksSortDefinitionElement {
+    @Field(_type => BarracksTowerColumn)
+    column: BarracksTowerColumn
+
+    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
+    sortOrder: SortOrder = SortOrder.ASCEND
+}
+
 export type AllowedSortDefinitionElement =
     | SortDefinitionElement
     | AttackSortDefinitionElement
+    | BarracksSortDefinitionElement
+
 export type FilterableEnums = TowerLevel | TowerKingdom | TowerType | AttackTowerType
 export type AllowedTowerTypes = TowerType | AttackTowerType
 

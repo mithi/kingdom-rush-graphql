@@ -56,9 +56,26 @@ export enum AttackTowerColumn {
     range = `range`,
 }
 
+export enum BarracksTowerColumn {
+    name = `"Towers".name`,
+    kingdom = `kingdom`,
+    level = `level`,
+    id = `"Towers".id`,
+    buildCost = `"buildCost"`,
+    damageMinimum = `"damageMinimum"`,
+    damageMaximum = `"damageMaximum"`,
+    numberOfUnits = `"numberOfUnits"`,
+    armor = `armor`,
+    health = `health`,
+    respawnInterval = `"respawnInterval"`,
+}
+
 registerEnumType(SortOrder, { name: "SortOrder" })
+
 registerEnumType(TowerColumn, { name: "TowerColumn" })
 registerEnumType(AttackTowerColumn, { name: "AttackTowerColumn" })
+registerEnumType(BarracksTowerColumn, { name: "BarracksTowerColumn" })
+
 registerEnumType(TowerType, { name: "TowerType" })
 registerEnumType(AttackTowerType, { name: "AttackTowerType" })
 registerEnumType(TowerLevel, { name: "TowerLevel" })
