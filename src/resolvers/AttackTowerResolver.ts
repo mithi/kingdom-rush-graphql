@@ -22,14 +22,8 @@ Towers(
 )
  */
 import { Resolver, Query, ArgsType, Field, InputType, Args } from "type-graphql"
-import {
-    AttackTowerType,
-    TowerKingdom,
-    TowerLevel,
-    SortOrder,
-    AttackTowerColumn,
-} from "../enums/TowerEnums"
-import { AttackTower, BaseTowerArgs } from "./shared"
+import { AttackTowerType, SortOrder, AttackTowerColumn } from "../enums/TowerEnums"
+import { AttackTower, BaseTowerArgs, createFilter } from "./shared"
 import { getRepository } from "typeorm"
 import { Tower } from "../models/Tower"
 
@@ -57,24 +51,6 @@ export class AttackTowerArgs extends BaseTowerArgs {
         defaultValue: [{ column: AttackTowerColumn.id, sortType: SortOrder.ASCEND }],
     })
     sortDefinition: AttackSortDefinitionElement[]
-}
-
-const levelFilter = (levels: TowerLevel[]): string => {
-    return Array.from(new Set(levels))
-        .map(level => `level = '${level}'`)
-        .join(" OR ")
-}
-
-const kingdomFilter = (kingdoms: TowerKingdom[]): string => {
-    return Array.from(new Set(kingdoms))
-        .map(kingdom => `kingdom = '${kingdom}'`)
-        .join(" OR ")
-}
-
-const typeFilter = (towerTypes: AttackTowerType[]): string => {
-    return Array.from(new Set(towerTypes))
-        .map(towerType => `"towerType" = '${towerType}'`)
-        .join(" OR ")
 }
 
 const sortExpression = (sortDefinition: AttackSortDefinitionElement[]) => {
@@ -107,9 +83,9 @@ export class AttackTowerResolver {
         }
 
         const tableExpr = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
-        const levels = levelFilter(onlyLevels)
-        const kingdoms = kingdomFilter(onlyKingdoms)
-        const towerTypes = typeFilter(onlyTowerTypes)
+        const levels = createFilter(onlyLevels, `level`)
+        const kingdoms = createFilter(onlyKingdoms, `kingdom`)
+        const towerTypes = createFilter(onlyTowerTypes, `"towerType"`)
         // TODO: Add check to make sure all elements of the array sortDefinition have unique columns
         const sortColumns = sortExpression(sortDefinition)
 
