@@ -19,7 +19,7 @@ Towers(
  */
 require("dotenv").config()
 import { getRepository } from "typeorm"
-import { Resolver, Query, ArgsType, InputType, Args, Field, Int } from "type-graphql"
+import { Resolver, Query, ArgsType, InputType, Args, Field } from "type-graphql"
 import { Tower } from "../models/Tower"
 import {
     TowerType,
@@ -28,8 +28,7 @@ import {
     SortOrder,
     TowerColumn,
 } from "../enums/TowerEnums"
-import { Min, Max } from "class-validator"
-import { TowerWithStats, allTowerKingdoms, allTowerLevels } from "./shared"
+import { TowerWithStats, BaseTowerArgs, allTowerTypes } from "./shared"
 
 @InputType()
 export class SortDefinitionElement {
@@ -41,33 +40,9 @@ export class SortDefinitionElement {
 }
 
 @ArgsType()
-class TowerArgs {
-    @Field(_type => Int, { defaultValue: 0 })
-    @Min(0)
-    skip: number = 0
-
-    @Field(_type => Int, { defaultValue: 104 })
-    @Min(1)
-    @Max(104)
-    take: number = 104
-
-    @Field(_type => [TowerLevel], {
-        defaultValue: allTowerLevels,
-    })
-    onlyLevels: TowerLevel[]
-
-    @Field(_type => [TowerKingdom], {
-        defaultValue: allTowerKingdoms,
-    })
-    onlyKingdoms: TowerKingdom[]
-
+class TowerArgs extends BaseTowerArgs {
     @Field(_type => [TowerType], {
-        defaultValue: [
-            TowerType.ARCHER,
-            TowerType.BARRACKS,
-            TowerType.ARTILLERY,
-            TowerType.MAGE,
-        ],
+        defaultValue: allTowerTypes,
     })
     onlyTowerTypes: TowerType[]
 

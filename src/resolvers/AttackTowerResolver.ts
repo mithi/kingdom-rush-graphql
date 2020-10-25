@@ -21,7 +21,7 @@ Towers(
     ]
 )
  */
-import { Resolver, Query, ArgsType, Field, Int, InputType, Args } from "type-graphql"
+import { Resolver, Query, ArgsType, Field, InputType, Args } from "type-graphql"
 import {
     AttackTowerType,
     TowerKingdom,
@@ -29,8 +29,7 @@ import {
     SortOrder,
     AttackTowerColumn,
 } from "../enums/TowerEnums"
-import { Min, Max } from "class-validator"
-import { allTowerLevels, allTowerKingdoms, AttackTower } from "./shared"
+import { AttackTower, BaseTowerArgs } from "./shared"
 import { getRepository } from "typeorm"
 import { Tower } from "../models/Tower"
 
@@ -44,26 +43,7 @@ class AttackSortDefinitionElement {
 }
 
 @ArgsType()
-export class AttackTowerArgs {
-    @Field(_type => Int, { defaultValue: 0 })
-    @Min(0)
-    skip: number = 0
-
-    @Field(_type => Int, { defaultValue: 104 })
-    @Min(1)
-    @Max(104)
-    take: number = 104
-
-    @Field(_type => [TowerLevel], {
-        defaultValue: allTowerLevels,
-    })
-    onlyLevels: TowerLevel[]
-
-    @Field(_type => [TowerKingdom], {
-        defaultValue: allTowerKingdoms,
-    })
-    onlyKingdoms: TowerKingdom[]
-
+export class AttackTowerArgs extends BaseTowerArgs {
     @Field(_type => [AttackTowerType], {
         defaultValue: [
             AttackTowerType.ARCHER,
