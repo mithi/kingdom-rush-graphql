@@ -21,6 +21,24 @@ export enum TowerKingdom {
     KRV = "kingdom rush: vengeance",
 }
 
+export enum SortOrder {
+    ASCEND = "ASC",
+    DESCEND = "DESC",
+}
+
+export enum TowerSortOrderColumn {
+    name = "name",
+    kingdom = "kingdom",
+    towerType = "towerType",
+    level = "level",
+    id = "towerId",
+    buildCost = "buildCost",
+    damageMinimum = "damageMinimum",
+    damageMaximum = "damageMaximum",
+}
+
+registerEnumType(SortOrder, { name: "SortOrder" })
+registerEnumType(TowerSortOrderColumn, { name: "TowerSortOrderColumn" })
 registerEnumType(TowerType, { name: "TowerType" })
 registerEnumType(TowerLevel, { name: "TowerLevel" })
 registerEnumType(TowerKingdom, { name: "TowerKingdom" })

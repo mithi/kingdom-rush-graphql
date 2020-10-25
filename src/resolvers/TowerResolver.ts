@@ -19,48 +19,17 @@ Towers(
  */
 require("dotenv").config()
 import { getRepository } from "typeorm"
-import {
-    Resolver,
-    Query,
-    ArgsType,
-    Args,
-    Field,
-    Int,
-    ObjectType,
-    InputType,
-} from "type-graphql"
+import { Resolver, Query, ArgsType, Args, Field, Int, ObjectType } from "type-graphql"
 import { Tower } from "../models/Tower"
-import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
+import {
+    TowerType,
+    TowerKingdom,
+    TowerLevel,
+    SortOrder,
+    TowerSortOrderColumn,
+} from "../enums/TowerEnums"
 import { Min, Max } from "class-validator"
-
-import { registerEnumType } from "type-graphql"
-
-export enum SortOrder {
-    ASCEND = "ASC",
-    DESCEND = "DESC",
-}
-
-export enum TowerSortOrderColumn {
-    name = "name",
-    kingdom = "kingdom",
-    towerType = "towerType",
-    level = "level",
-    id = "towerId",
-    buildCost = "buildCost",
-    damageMinimum = "damageMinimum",
-    damageMaximum = "damageMaximum",
-}
-registerEnumType(SortOrder, { name: "SortOrder" })
-registerEnumType(TowerSortOrderColumn, { name: "TowerSortOrderColumn" })
-
-@InputType()
-export class SortDefinitionElement {
-    @Field(_type => TowerSortOrderColumn)
-    column: TowerSortOrderColumn
-
-    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
-    sortType: SortOrder
-}
+import { SortDefinitionElement } from "./shared"
 
 @ObjectType()
 class TowerWithStats {
