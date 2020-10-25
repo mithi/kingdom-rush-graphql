@@ -43,13 +43,16 @@ import { Resolver, Query, Args } from "type-graphql"
 import { Tower } from "../models/Tower"
 import {
     AttackTower,
+    BarracksTower,
     TowerWithStats,
     AttackTowerArgs,
+    BarracksTowerArgs,
     TowerArgs,
     AllowedSortDefinitionElement,
     FilterableEnums,
     BuildQueryArgs,
 } from "./definitions"
+import { TowerType } from "../enums/TowerEnums"
 
 const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
 
@@ -121,6 +124,25 @@ export class TowerResolver {
         const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
         const queryExpression = buildQueryExpression(attackTowerArgs, tableExpression)
         const result: AttackTower[] = await getRepository(Tower, DB_NAME).query(
+            queryExpression
+        )
+        return result.map(tower => ({ ...tower, level: Number(tower.level) }))
+    }
+
+    @Query(() => [BarracksTower])
+    async barracksTowers(@Args() barracksTowerArgs: BarracksTowerArgs) {
+        const buildQueryArgs = {
+            ...barracksTowerArgs,
+            onlyTowerTypes: [TowerType.BARRACKS],
+        }
+
+        if (nothingLeft(buildQueryArgs)) {
+            return []
+        }
+
+        const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN barracks_stats ON main_stats."towerId" = barracks_stats."towerId"`
+        const queryExpression = buildQueryExpression(buildQueryArgs, tableExpression)
+        const result: BarracksTower[] = await getRepository(Tower, DB_NAME).query(
             queryExpression
         )
         return result.map(tower => ({ ...tower, level: Number(tower.level) }))

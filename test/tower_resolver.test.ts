@@ -7,6 +7,7 @@ import seed from "../src/seed"
 import ascendingTowerIds from "./__snapshots__/ASCENDING_TOWER_IDS"
 import attackTowersTypes from "./__snapshots__/ATTACK_TOWER_TYPES"
 import attackTowersFireIntervalDescending from "./__snapshots__/ATTACK_TOWER_FIRE_INTERVAL_DESCEND"
+import barracksTowers from "./__snapshots__/BARRACKS_TOWERS"
 
 // FIX ME. What type am I? Where will I export this?
 let SCHEMA: any
@@ -58,4 +59,24 @@ test("Be able to get attack towers sorted by fire interval in descending order",
     `
     const result = await QUERY({ query: testQuery })
     expect(result).toMatchInlineSnapshot(attackTowersFireIntervalDescending())
+})
+
+test("Be able to get barracks towers in correct order", async () => {
+    const testQuery = gql`
+        {
+            barracksTowers(
+                sortDefinition: [
+                    { column: numberOfUnits, sortOrder: ASCEND }
+                    { column: kingdom, sortOrder: DESCEND }
+                    { column: name, sortOrder: DESCEND }
+                ]
+            ) {
+                name
+                kingdom
+                numberOfUnits
+            }
+        }
+    `
+    const result = await QUERY({ query: testQuery })
+    expect(result).toMatchInlineSnapshot(barracksTowers())
 })
