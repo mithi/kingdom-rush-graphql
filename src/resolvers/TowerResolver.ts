@@ -21,14 +21,8 @@ require("dotenv").config()
 import { getRepository } from "typeorm"
 import { Resolver, Query, ArgsType, InputType, Args, Field } from "type-graphql"
 import { Tower } from "../models/Tower"
-import {
-    TowerType,
-    TowerKingdom,
-    TowerLevel,
-    SortOrder,
-    TowerColumn,
-} from "../enums/TowerEnums"
-import { TowerWithStats, BaseTowerArgs, allTowerTypes } from "./shared"
+import { TowerType, SortOrder, TowerColumn } from "../enums/TowerEnums"
+import { TowerWithStats, BaseTowerArgs, allTowerTypes, createFilter } from "./shared"
 
 @InputType()
 export class SortDefinitionElement {
@@ -50,14 +44,6 @@ class TowerArgs extends BaseTowerArgs {
         defaultValue: [{ column: TowerColumn.id, sortOrder: SortOrder.ASCEND }],
     })
     sortDefinition: SortDefinitionElement[]
-}
-
-type filterableEnums = TowerLevel | TowerKingdom | TowerType
-
-const createFilter = (enums: filterableEnums[], listType: string): string => {
-    return Array.from(new Set(enums))
-        .map(e => `${listType} = '${e}'`)
-        .join(" OR ")
 }
 
 const sortExpression = (sortDefinition: SortDefinitionElement[]) => {

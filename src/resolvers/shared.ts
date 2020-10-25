@@ -1,5 +1,5 @@
 import { Field, ObjectType, ArgsType, Int } from "type-graphql"
-import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
+import { TowerType, TowerKingdom, TowerLevel, AttackTowerType } from "../enums/TowerEnums"
 import { Min, Max } from "class-validator"
 
 export const allTowerLevels = [
@@ -82,4 +82,12 @@ export class BaseTowerArgs {
         defaultValue: allTowerKingdoms,
     })
     onlyKingdoms: TowerKingdom[]
+}
+
+type filterableEnums = TowerLevel | TowerKingdom | TowerType | AttackTowerType
+
+export const createFilter = (enums: filterableEnums[], listType: string): string => {
+    return Array.from(new Set(enums))
+        .map(e => `${listType} = '${e}'`)
+        .join(" OR ")
 }
