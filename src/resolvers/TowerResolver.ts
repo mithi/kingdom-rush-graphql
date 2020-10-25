@@ -97,7 +97,7 @@ const typeFilter = (towerTypes: TowerType[]): string => {
 
 const sortExpression = (sortDefinition: SortDefinitionElement[]) => {
     return sortDefinition
-        .map(sortRow => `"${sortRow.column}" ${sortRow.sortOrder}`)
+        .map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`)
         .join(", ")
 }
 
