@@ -21,43 +21,10 @@ Towers(
     ]
 )
  */
-import { Resolver, Query, ArgsType, Field, InputType, Args } from "type-graphql"
-import { AttackTowerType, SortOrder, AttackTowerColumn } from "../enums/TowerEnums"
-import { AttackTower, BaseTowerArgs, createFilter } from "./shared"
+import { Resolver, Query, Args } from "type-graphql"
+import { AttackTower, AttackTowerArgs, createFilter, sortExpression } from "./shared"
 import { getRepository } from "typeorm"
 import { Tower } from "../models/Tower"
-
-@InputType()
-class AttackSortDefinitionElement {
-    @Field(_type => AttackTowerColumn)
-    column: AttackTowerColumn
-
-    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
-    sortOrder: SortOrder = SortOrder.ASCEND
-}
-
-@ArgsType()
-export class AttackTowerArgs extends BaseTowerArgs {
-    @Field(_type => [AttackTowerType], {
-        defaultValue: [
-            AttackTowerType.ARCHER,
-            AttackTowerType.ARTILLERY,
-            AttackTowerType.MAGE,
-        ],
-    })
-    onlyTowerTypes: AttackTowerType[]
-
-    @Field(_type => [AttackSortDefinitionElement], {
-        defaultValue: [{ column: AttackTowerColumn.id, sortType: SortOrder.ASCEND }],
-    })
-    sortDefinition: AttackSortDefinitionElement[]
-}
-
-const sortExpression = (sortDefinition: AttackSortDefinitionElement[]) => {
-    return sortDefinition
-        .map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`)
-        .join(", ")
-}
 
 @Resolver()
 export class AttackTowerResolver {

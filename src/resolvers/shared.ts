@@ -1,5 +1,13 @@
-import { Field, ObjectType, ArgsType, Int } from "type-graphql"
-import { TowerType, TowerKingdom, TowerLevel, AttackTowerType } from "../enums/TowerEnums"
+import { Field, ObjectType, ArgsType, InputType, Int } from "type-graphql"
+import {
+    TowerType,
+    TowerKingdom,
+    TowerLevel,
+    AttackTowerType,
+    SortOrder,
+    TowerColumn,
+    AttackTowerColumn,
+} from "../enums/TowerEnums"
 import { Min, Max } from "class-validator"
 
 export const allTowerLevels = [
@@ -82,6 +90,61 @@ export class BaseTowerArgs {
         defaultValue: allTowerKingdoms,
     })
     onlyKingdoms: TowerKingdom[]
+}
+
+@ArgsType()
+export class TowerArgs extends BaseTowerArgs {
+    @Field(_type => [TowerType], {
+        defaultValue: allTowerTypes,
+    })
+    onlyTowerTypes: TowerType[]
+
+    @Field(_type => [SortDefinitionElement], {
+        defaultValue: [{ column: TowerColumn.id, sortOrder: SortOrder.ASCEND }],
+    })
+    sortDefinition: SortDefinitionElement[]
+}
+
+@ArgsType()
+export class AttackTowerArgs extends BaseTowerArgs {
+    @Field(_type => [AttackTowerType], {
+        defaultValue: [
+            AttackTowerType.ARCHER,
+            AttackTowerType.ARTILLERY,
+            AttackTowerType.MAGE,
+        ],
+    })
+    onlyTowerTypes: AttackTowerType[]
+
+    @Field(_type => [AttackSortDefinitionElement], {
+        defaultValue: [{ column: AttackTowerColumn.id, sortType: SortOrder.ASCEND }],
+    })
+    sortDefinition: AttackSortDefinitionElement[]
+}
+
+@InputType()
+export class SortDefinitionElement {
+    @Field(_type => TowerColumn)
+    column: TowerColumn
+
+    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
+    sortOrder: SortOrder
+}
+
+@InputType()
+class AttackSortDefinitionElement {
+    @Field(_type => AttackTowerColumn)
+    column: AttackTowerColumn
+
+    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
+    sortOrder: SortOrder = SortOrder.ASCEND
+}
+
+type allowedSortDefinitionElement = SortDefinitionElement | AttackSortDefinitionElement
+export const sortExpression = (sortDefinition: allowedSortDefinitionElement[]) => {
+    return sortDefinition
+        .map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`)
+        .join(", ")
 }
 
 type filterableEnums = TowerLevel | TowerKingdom | TowerType | AttackTowerType

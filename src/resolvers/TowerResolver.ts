@@ -19,38 +19,9 @@ Towers(
  */
 require("dotenv").config()
 import { getRepository } from "typeorm"
-import { Resolver, Query, ArgsType, InputType, Args, Field } from "type-graphql"
+import { Resolver, Query, Args } from "type-graphql"
 import { Tower } from "../models/Tower"
-import { TowerType, SortOrder, TowerColumn } from "../enums/TowerEnums"
-import { TowerWithStats, BaseTowerArgs, allTowerTypes, createFilter } from "./shared"
-
-@InputType()
-export class SortDefinitionElement {
-    @Field(_type => TowerColumn)
-    column: TowerColumn
-
-    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
-    sortOrder: SortOrder
-}
-
-@ArgsType()
-class TowerArgs extends BaseTowerArgs {
-    @Field(_type => [TowerType], {
-        defaultValue: allTowerTypes,
-    })
-    onlyTowerTypes: TowerType[]
-
-    @Field(_type => [SortDefinitionElement], {
-        defaultValue: [{ column: TowerColumn.id, sortOrder: SortOrder.ASCEND }],
-    })
-    sortDefinition: SortDefinitionElement[]
-}
-
-const sortExpression = (sortDefinition: SortDefinitionElement[]) => {
-    return sortDefinition
-        .map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`)
-        .join(", ")
-}
+import { TowerWithStats, sortExpression, TowerArgs, createFilter } from "./shared"
 
 @Resolver()
 export class TowerResolver {
