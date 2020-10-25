@@ -132,25 +132,10 @@ export class SortDefinitionElement {
 }
 
 @InputType()
-class AttackSortDefinitionElement {
+export class AttackSortDefinitionElement {
     @Field(_type => AttackTowerColumn)
     column: AttackTowerColumn
 
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortOrder: SortOrder = SortOrder.ASCEND
-}
-
-type allowedSortDefinitionElement = SortDefinitionElement | AttackSortDefinitionElement
-export const sortExpression = (sortDefinition: allowedSortDefinitionElement[]) => {
-    return sortDefinition
-        .map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`)
-        .join(", ")
-}
-
-type filterableEnums = TowerLevel | TowerKingdom | TowerType | AttackTowerType
-
-export const createFilter = (enums: filterableEnums[], listType: string): string => {
-    return Array.from(new Set(enums))
-        .map(e => `${listType} = '${e}'`)
-        .join(" OR ")
 }
