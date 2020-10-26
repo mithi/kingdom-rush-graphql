@@ -5,7 +5,7 @@ IMPORTANT
 This is not a good way to seed the database. Please see `src/seed/index.ts` for more information
 */
 
-import { getRepository, getConnection } from "typeorm"
+import { getRepository } from "typeorm"
 import { KingdomType, JSON_DATA_PATH } from "./shared"
 import { BuildSequence } from "../models/BuildSequence"
 import { mapStringToKingdom } from "./Tower"
@@ -61,19 +61,7 @@ const populateBuildSequence = async ({ dbName = "default", verbose = true } = {}
             }
         })
 
-        await getConnection()
-            .createQueryBuilder()
-            .insert()
-            .into(BuildSequence)
-            .values([
-                {
-                    level1: buildSequence.level1,
-                    level2: buildSequence.level2,
-                    level3: buildSequence.level3,
-                    level4: buildSequence.level4,
-                },
-            ])
-            .execute()
+        await buildSequence.save()
         if (verbose) {
             console.log("saved buildSequence", buildSequence)
         }
