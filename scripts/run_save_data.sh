@@ -5,7 +5,8 @@ python ./scripts/json-towers.py;
 python ./scripts/json-barracks-stats.py;
 python ./scripts/json-attack-stats.py;
 python ./scripts/json-abilities.py;
-python ./scripts/json-image-urls.py
+python ./scripts/json-image-urls.py;
+python ./scripts/json-build-sequence.py
 
 npm run db:seed-kr-db-json;
 
