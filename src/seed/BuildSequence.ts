@@ -67,10 +67,10 @@ const populateBuildSequence = async ({ dbName = "default", verbose = true } = {}
             .into(BuildSequence)
             .values([
                 {
-                    level1: () => String(buildSequence.level1.id),
-                    level2: () => String(buildSequence.level2.id),
-                    level3: () => String(buildSequence.level3.id),
-                    level4: () => String(buildSequence.level4.id),
+                    level1: buildSequence.level1,
+                    level2: buildSequence.level2,
+                    level3: buildSequence.level3,
+                    level4: buildSequence.level4,
                 },
             ])
             .execute()
