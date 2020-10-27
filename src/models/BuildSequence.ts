@@ -2,7 +2,6 @@ import {
     Entity,
     PrimaryGeneratedColumn,
     ManyToOne,
-    OneToOne,
     JoinColumn,
     BaseEntity,
 } from "typeorm"
@@ -25,7 +24,7 @@ export class BuildSequence extends BaseEntity {
     @JoinColumn()
     level3: Tower
 
-    @OneToOne(() => Tower)
+    @ManyToOne(() => Tower)
     @JoinColumn()
     level4: Tower
 }
