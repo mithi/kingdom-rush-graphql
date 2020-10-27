@@ -8,42 +8,35 @@ import {
     OneToOne,
 } from "typeorm"
 import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
-import { ObjectType, Field, ID } from "type-graphql"
 import { MainStats } from "./MainStats"
 import { BarracksStats } from "./BarracksStats"
 import { AttackStats } from "./AttackStats"
 import { Ability } from "./Ability"
 
-@ObjectType()
 @Entity({ name: "Towers" })
 @Unique("unique_tower", ["name", "kingdom"])
 export class Tower extends BaseEntity {
-    @Field(() => ID)
     @PrimaryGeneratedColumn()
     id: number
 
-    @Field(() => String)
     @Column()
     name: string
 
     @Column({ nullable: true })
     imageUrl: string
 
-    @Field(_ => TowerType)
     @Column({
         type: "enum",
         enum: TowerType,
     })
     towerType: TowerType
 
-    @Field(_ => TowerLevel)
     @Column({
         type: "enum",
         enum: TowerLevel,
     })
     level: TowerLevel
 
-    @Field(_ => TowerKingdom)
     @Column({
         type: "enum",
         enum: TowerKingdom,
