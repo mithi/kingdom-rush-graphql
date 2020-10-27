@@ -8,7 +8,7 @@ import {
     TowerColumn,
     AttackTowerColumn,
     BarracksTowerColumn,
-} from "../enums/TowerEnums"
+} from "./TowerEnums"
 import { Min, Max } from "class-validator"
 
 export const allTowerLevels = [

@@ -38,7 +38,7 @@ attackTowers(
 )
  */
 require("dotenv").config()
-import { getRepository } from "typeorm"
+import { getRepository, createQueryBuilder } from "typeorm"
 import { Resolver, Query, Args } from "type-graphql"
 import { Tower } from "../models/Tower"
 import {
@@ -51,7 +51,7 @@ import {
     AllowedSortDefinitionElement,
     FilterableEnums,
     BuildQueryArgs,
-} from "./definitions"
+} from "../enums/definitions"
 import { TowerType } from "../enums/TowerEnums"
 
 const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
