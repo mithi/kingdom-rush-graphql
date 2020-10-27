@@ -46,7 +46,7 @@ import {
     AttackTowerArgs,
     BarracksTowerArgs,
     TowerArgs,
-} from "../definitions/definitions"
+} from "../definitions"
 
 import { TowerService } from "../services/TowerService"
 
