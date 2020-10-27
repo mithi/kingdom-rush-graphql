@@ -133,31 +133,31 @@ const result = () => {
           },
           Object {
             "fireInterval": 1.5,
-            "towerType": "MAGE",
-          },
-          Object {
-            "fireInterval": 1.5,
-            "towerType": "MAGE",
-          },
-          Object {
-            "fireInterval": 1.5,
-            "towerType": "MAGE",
-          },
-          Object {
-            "fireInterval": 1.5,
-            "towerType": "MAGE",
-          },
-          Object {
-            "fireInterval": 1.5,
-            "towerType": "MAGE",
-          },
-          Object {
-            "fireInterval": 1.5,
-            "towerType": "MAGE",
-          },
-          Object {
-            "fireInterval": 1.5,
             "towerType": "ARCHER",
+          },
+          Object {
+            "fireInterval": 1.5,
+            "towerType": "MAGE",
+          },
+          Object {
+            "fireInterval": 1.5,
+            "towerType": "MAGE",
+          },
+          Object {
+            "fireInterval": 1.5,
+            "towerType": "MAGE",
+          },
+          Object {
+            "fireInterval": 1.5,
+            "towerType": "MAGE",
+          },
+          Object {
+            "fireInterval": 1.5,
+            "towerType": "MAGE",
+          },
+          Object {
+            "fireInterval": 1.5,
+            "towerType": "MAGE",
           },
           Object {
             "fireInterval": 1.5,
@@ -214,14 +214,14 @@ const result = () => {
           Object {
             "fireInterval": 1.4,
             "towerType": "ARCHER",
+          },
+          Object {
+            "fireInterval": 1,
+            "towerType": "MAGE",
           },
           Object {
             "fireInterval": 1,
             "towerType": "ARTILLERY",
-          },
-          Object {
-            "fireInterval": 1,
-            "towerType": "MAGE",
           },
           Object {
             "fireInterval": 0.8,
