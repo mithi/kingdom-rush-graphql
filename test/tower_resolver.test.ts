@@ -54,7 +54,12 @@ test("Be able to get attack towers sorted by fire interval in descending order",
 
     const testQuery = gql`
         {
-            attackTowers(sortDefinition: [{ column: fireInterval, sortOrder: DESCEND }]) {
+            attackTowers(
+                sortDefinition: [
+                    { column: fireInterval, sortOrder: DESCEND }
+                    { column: towerType, sortOrder: ASCEND }
+                ]
+            ) {
                 fireInterval
                 towerType
             }
