@@ -10,7 +10,7 @@ towers(
         {column: "kingdom", order: "ASCENDING"},
         {column: "towerType", order: "ASCENDING"},
         {column: "towerLevel", order: "ASCENDING"},
-       {column: "id", order: "ASCENDING"},
+        {column: "id", order: "ASCENDING"},
         {column: "buildCost", order: "ASCENDING"},
         {column: "damageMinimum", order: "ASCENDING"},
         {column: "damageMaximum", order: "ASCENDING"},
@@ -46,7 +46,7 @@ import {
     AttackTowerArgs,
     BarracksTowerArgs,
     TowerArgs,
-} from "../enums/definitions"
+} from "../definitions"
 
 import { TowerService } from "../services/TowerService"
 
