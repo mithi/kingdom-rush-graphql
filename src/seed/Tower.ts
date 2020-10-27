@@ -78,78 +78,24 @@ const populateTowers = async ({ dbName = "default", verbose = true } = {}) => {
             console.log("...")
             console.log(tower.name, "|", tower.kingdom)
         }
-        const newTower = {
-            name: tower.name,
-            towerType: mapStringToTowerType[tower.towerType],
-            level: mapIntToLevel[tower.level],
-            kingdom: mapStringToKingdom[tower.kingdom],
-        }
 
-        let retrievedTower = await getRepository(Tower, dbName).findOne({
-            where: {
-                name: tower.name,
-                kingdom: tower.kingdom,
-            },
-        })
-
-        if (retrievedTower) {
-            if (verbose) {
-                console.log("> This tower is already in the database.")
-            }
-            continue
-        }
-
-        try {
-            await getRepository(Tower, dbName).insert(newTower)
-            if (verbose) {
-                console.log("> Tower saved.")
-            }
-        } catch (error) {
-            logError(error)
-        }
-    }
-}
-
-const populateMainStats = async ({ dbName = "default", verbose = true } = {}) => {
-    const towers: [TowerData] = (<any>towerJson).towers
-    for (let tower of towers) {
-        if (verbose) {
-            console.log("...")
-            console.log(tower.name, "|", tower.kingdom)
-        }
-        let retrievedTower = await getRepository(Tower, dbName).findOne({
-            where: {
-                name: tower.name,
-                kingdom: tower.kingdom,
-            },
-            relations: ["mainStats"],
-        })
-
-        if (!retrievedTower) {
-            if (verbose) {
-                console.log(
-                    "> The tower you want to populate with main stats does not exist"
-                )
-            }
-            continue
-        }
-
-        if (retrievedTower.mainStats) {
-            if (verbose) {
-                console.log("> This tower already has main stats.")
-            }
-            continue
-        }
+        const newTower = new Tower()
+        newTower.name = tower.name
+        newTower.towerType = mapStringToTowerType[tower.towerType]
+        newTower.level = mapIntToLevel[tower.level]
+        newTower.kingdom = mapStringToKingdom[tower.kingdom]
 
         const mainStats = new MainStats()
         mainStats.buildCost = tower.buildCost
         mainStats.damageMinimum = tower.damage.minimum
         mainStats.damageMaximum = tower.damage.maximum
-        retrievedTower.mainStats = mainStats
+        newTower.mainStats = mainStats
+
         try {
-            await getRepository(Tower, dbName).save(retrievedTower)
+            await getRepository(Tower, dbName).save(newTower)
+
             if (verbose) {
-                console.log("> Main stats saved")
+                console.log("> Tower saved.")
             }
         } catch (error) {
             logError(error)
@@ -196,6 +142,8 @@ const populateImageUrls = async ({ dbName = "default", verbose = true } = {}) =>
 
 const populateAbilities = async ({ dbName = "default", verbose = true } = {}) => {
     const abilitiesTower: [TowerWithAbilityData] = abilityJson.data
+
+    let countAbilityLevels = 0
     for (let tower of abilitiesTower) {
         let newTower = await getRepository(Tower, dbName).findOne({
             where: {
@@ -204,11 +152,6 @@ const populateAbilities = async ({ dbName = "default", verbose = true } = {}) =>
             },
             relations: ["abilities"],
         })
-
-        if (verbose) {
-            console.log("...")
-            console.log(tower.towerName, tower.kingdom)
-        }
 
         if (!newTower) {
             console.log(
@@ -232,24 +175,31 @@ const populateAbilities = async ({ dbName = "default", verbose = true } = {}) =>
         }
 
         for (let ability of tower.abilities) {
-            if (verbose) {
-                console.log("--", ability.abilityName)
-            }
             let newAbility = new Ability()
             newAbility.name = ability.abilityName
             newAbility.description = ability.description
             newAbility.tower = newTower
             await getRepository(Ability, dbName).save(newAbility)
 
-            ability.levels.forEach(async (level, i) => {
+            let i = 0
+            for (let level of ability.levels) {
+                countAbilityLevels = countAbilityLevels + 1
                 let newAbilityLevel = new AbilityLevel()
                 newAbilityLevel.cost = level.cost
                 newAbilityLevel.level = i
+                i = i + 1
                 newAbilityLevel.ability = newAbility
-                await getRepository(AbilityLevel, dbName).save(newAbilityLevel)
-            })
+                try {
+                    await getRepository(AbilityLevel, dbName).save(newAbilityLevel)
+                    if (verbose) {
+                        console.log(countAbilityLevels, "|", ability.abilityName, "|", i)
+                    }
+                } catch (e) {
+                    logError(e)
+                }
+            }
         }
     }
 }
 
-export { populateMainStats, populateTowers, populateAbilities, populateImageUrls }
+export { populateTowers, populateAbilities, populateImageUrls }
