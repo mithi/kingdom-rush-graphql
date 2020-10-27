@@ -14,17 +14,11 @@ and efficient to retrieve this data and intert to the database.
  */
 import populateAttackStats from "./AttackStats"
 import populateBarracksStats from "./BarracksStats"
-import {
-    populateTowers,
-    populateMainStats,
-    populateAbilities,
-    populateImageUrls,
-} from "./Tower"
+import { populateTowers, populateAbilities, populateImageUrls } from "./Tower"
 import populateBuildSequences from "./BuildSequence"
 
 const seed = async ({ dbName = "default", verbose = true } = {}) => {
     await populateTowers({ dbName, verbose })
-    await populateMainStats({ dbName, verbose })
     await populateAbilities({ dbName, verbose })
     await populateBarracksStats({ dbName, verbose })
     await populateAttackStats({ dbName, verbose })
