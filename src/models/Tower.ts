@@ -7,7 +7,7 @@ import {
     Unique,
     OneToOne,
 } from "typeorm"
-import { TowerType, TowerKingdom, TowerLevel } from "../enums/TowerEnums"
+import { TowerType, TowerKingdom, TowerLevel } from "../definitions/TowerEnums"
 import { MainStats } from "./MainStats"
 import { BarracksStats } from "./BarracksStats"
 import { AttackStats } from "./AttackStats"

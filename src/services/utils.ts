@@ -2,8 +2,7 @@ import {
     AllowedSortDefinitionElement,
     FilterableEnums,
     BuildQueryArgs,
-} from "../enums/definitions"
-
+} from "../definitions/args"
 export const buildSortExpression = (sortDefinition: AllowedSortDefinitionElement[]) =>
     sortDefinition.map(sortRow => `${sortRow.column} ${sortRow.sortOrder}`).join(", ")
 

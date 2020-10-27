@@ -7,7 +7,7 @@ This is not a good way to seed the database. Please see `src/seed/index.ts` for 
 
 import { getRepository } from "typeorm"
 import { logError, KingdomType, JSON_DATA_PATH } from "./shared"
-import { TowerType, TowerLevel, TowerKingdom } from "../enums/TowerEnums"
+import { TowerType, TowerLevel, TowerKingdom } from "../definitions/TowerEnums"
 import { MainStats, Tower, Ability, AbilityLevel } from "../models"
 
 const path: any = require("path")
