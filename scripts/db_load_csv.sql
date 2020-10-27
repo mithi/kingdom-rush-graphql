@@ -4,3 +4,4 @@
 \copy barracks_stats FROM './data/generated/csv/barracks-stats.csv'  DELIMITER ',' csv;
 \copy ability FROM './data/generated/csv/abilities.csv'  DELIMITER ',' csv;
 \copy ability_level FROM './data/generated/csv/ability-levels.csv'  DELIMITER ',' csv;
+\copy build_sequence FROM './data/generated/csv/build-sequences.csv'  DELIMITER ',' csv;

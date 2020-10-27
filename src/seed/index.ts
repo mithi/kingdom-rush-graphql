@@ -20,6 +20,7 @@ import {
     populateAbilities,
     populateImageUrls,
 } from "./Tower"
+import populateBuildSequences from "./BuildSequence"
 
 const seed = async ({ dbName = "default", verbose = true } = {}) => {
     await populateTowers({ dbName, verbose })
@@ -28,5 +29,6 @@ const seed = async ({ dbName = "default", verbose = true } = {}) => {
     await populateBarracksStats({ dbName, verbose })
     await populateAttackStats({ dbName, verbose })
     await populateImageUrls({ dbName, verbose })
+    await populateBuildSequences({ dbName, verbose })
 }
 export default seed

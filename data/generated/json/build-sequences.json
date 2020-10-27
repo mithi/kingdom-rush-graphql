@@ -1,0 +1,319 @@
+{
+    "buildSequences": [
+        {
+            "kingdom": "kingdom rush",
+            "levels": [
+                "dwarven bombard",
+                "dwarven artillery",
+                "dwarven howitzer",
+                "500mm big bertha"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush",
+            "levels": [
+                "dwarven bombard",
+                "dwarven artillery",
+                "dwarven howitzer",
+                "tesla x104"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: frontiers",
+            "levels": [
+                "dwarven bombard",
+                "dwarven artillery",
+                "dwarven howitzer",
+                "dwaarp"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: frontiers",
+            "levels": [
+                "dwarven bombard",
+                "dwarven artillery",
+                "dwarven howitzer",
+                "battle-mecha t200"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: origins",
+            "levels": [
+                "stone circle",
+                "boulder circle",
+                "menhir circle",
+                "arch-druid henge"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: origins",
+            "levels": [
+                "stone circle",
+                "boulder circle",
+                "menhir circle",
+                "weirdwood"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush",
+            "levels": [
+                "mage tower",
+                "adept tower",
+                "wizard tower",
+                "arcane wizard"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush",
+            "levels": [
+                "mage tower",
+                "adept tower",
+                "wizard tower",
+                "sorcerer mage"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: frontiers",
+            "levels": [
+                "mage tower",
+                "adept tower",
+                "wizard tower",
+                "archmage tower"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: frontiers",
+            "levels": [
+                "mage tower",
+                "adept tower",
+                "wizard tower",
+                "necromancer tower"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: origins",
+            "levels": [
+                "mystic dais",
+                "arcanist dais",
+                "eldritch dais",
+                "wild magus"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: origins",
+            "levels": [
+                "mystic dais",
+                "arcanist dais",
+                "eldritch dais",
+                "high elven mage"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush",
+            "levels": [
+                "archer tower",
+                "marksman tower",
+                "sharpshooter tower",
+                "rangers hideout"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush",
+            "levels": [
+                "archer tower",
+                "marksman tower",
+                "sharpshooter tower",
+                "musketeer garrison"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: frontiers",
+            "levels": [
+                "archer tower",
+                "marksman tower",
+                "sharpshooter tower",
+                "crossbow fort"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: frontiers",
+            "levels": [
+                "archer tower",
+                "marksman tower",
+                "sharpshooter tower",
+                "tribal axethrowers"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: origins",
+            "levels": [
+                "hunter arbor",
+                "watcher arbor",
+                "sentinel arbor",
+                "arcane archers"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: origins",
+            "levels": [
+                "hunter arbor",
+                "watcher arbor",
+                "sentinel arbor",
+                "golden longbows"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush",
+            "levels": [
+                "militia barracks",
+                "footmen barracks",
+                "knights barracks",
+                "holy order"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush",
+            "levels": [
+                "militia barracks",
+                "footmen barracks",
+                "knights barracks",
+                "barbarian mead hall"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: frontiers",
+            "levels": [
+                "militia barracks",
+                "footmen barracks",
+                "knights barracks",
+                "assassin's guild"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: frontiers",
+            "levels": [
+                "militia barracks",
+                "footmen barracks",
+                "knights barracks",
+                "knights templar"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: origins",
+            "levels": [
+                "defender barracks",
+                "warden barracks",
+                "ranger barracks",
+                "bladesinger hall"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: origins",
+            "levels": [
+                "defender barracks",
+                "warden barracks",
+                "ranger barracks",
+                "forest keepers"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "dark knights, 1",
+                "dark knights, 2",
+                "dark knights, 3",
+                "dark knights, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "goblirangs, 1",
+                "goblirangs, 2",
+                "goblirangs, 3",
+                "goblirangs, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "bone flingers, 1",
+                "bone flingers, 2",
+                "bone flingers, 3",
+                "bone flingers, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "orc warriors den, 1",
+                "orc warriors den, 2",
+                "orc warriors den, 3",
+                "orc warriors den, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "shadow archers, 1",
+                "shadow archers, 2",
+                "shadow archers, 3",
+                "shadow archers, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "melting furnace, 1",
+                "melting furnace, 2",
+                "melting furnace, 3",
+                "melting furnace, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "rocket riders, 1",
+                "rocket riders, 2",
+                "rocket riders, 3",
+                "rocket riders, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "infernal mage, 1",
+                "infernal mage, 2",
+                "infernal mage, 3",
+                "infernal mage, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "elite harassers, 1",
+                "elite harassers, 2",
+                "elite harassers, 3",
+                "elite harassers, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "specters mausoleum, 1",
+                "specters mausoleum, 2",
+                "specters mausoleum, 3",
+                "specters mausoleum, 4"
+            ]
+        },
+        {
+            "kingdom": "kingdom rush: vengeance",
+            "levels": [
+                "orc shaman, 1",
+                "orc shaman, 2",
+                "orc shaman, 3",
+                "orc shaman, 4"
+            ]
+        }
+    ]
+}

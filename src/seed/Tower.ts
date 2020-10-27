@@ -50,7 +50,7 @@ type TowerWithAbilityData = {
     abilities: AbilityData[]
 }
 
-const mapStringToKingdom = {
+export const mapStringToKingdom = {
     "kingdom rush: vengeance": TowerKingdom.KRV,
     "kingdom rush: origins": TowerKingdom.KRO,
     "kingdom rush: frontiers": TowerKingdom.KRF,

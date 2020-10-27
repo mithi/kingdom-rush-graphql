@@ -4,6 +4,7 @@ DROP TABLE ability_level;
 DROP TABLE main_stats;
 DROP TABLE attack_stats;
 DROP TABLE barracks_stats;
+DROP TABLE build_sequence;
 DROP TYPE "Towers_towertype_enum";
 DROP TYPE "Towers_level_enum";
 DROP TYPE "Towers_kingdom_enum";
