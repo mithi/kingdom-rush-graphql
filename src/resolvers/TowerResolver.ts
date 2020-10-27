@@ -46,7 +46,7 @@ import {
     AttackTowerArgs,
     BarracksTowerArgs,
     TowerArgs,
-} from "../enums/definitions"
+} from "../definitions/definitions"
 
 import { TowerService } from "../services/TowerService"
 
