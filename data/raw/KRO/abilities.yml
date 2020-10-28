@@ -173,9 +173,9 @@ abilities:
       number_of_levels: 2
       levels:
           - description: "Number of bears is 1"
-            cost: 0
+            cost: 350
           - description: "Number of bears is 2"
-            cost: 0
+            cost: 350
 ---
 name: "weirdwood"
 number_of_abilities: 2

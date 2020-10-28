@@ -8,7 +8,7 @@ import {
     TowerColumn,
     AttackTowerColumn,
     BarracksTowerColumn,
-} from "./TowerEnums"
+} from "./enums"
 import { Min, Max } from "class-validator"
 import {
     SortDefinitionElement,

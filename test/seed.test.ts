@@ -61,5 +61,5 @@ test("3. After populating abilities and ability levels, they should have the exp
     abilityCount = await getRepository(Ability, "test").count()
     abilityLevelCount = await getRepository(AbilityLevel, "test").count()
     expect(abilityCount).toBe(84)
-    expect(abilityLevelCount).toBe(226)
+    expect(abilityLevelCount).toBe(219)
 })
