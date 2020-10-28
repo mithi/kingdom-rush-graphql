@@ -828,10 +828,10 @@
                     "description": "Invokes a mythical runed bear to block and fight enemies. Every upgrade level increases the number of bears.",
                     "levels": [
                         {
-                            "cost": 0
+                            "cost": 350
                         },
                         {
-                            "cost": 0
+                            "cost": 350
                         }
                     ]
                 }
@@ -943,12 +943,6 @@
                     "levels": [
                         {
                             "cost": 150
-                        },
-                        {
-                            "cost": 0
-                        },
-                        {
-                            "cost": 0
                         }
                     ]
                 },
@@ -979,9 +973,6 @@
                         },
                         {
                             "cost": 150
-                        },
-                        {
-                            "cost": 0
                         }
                     ]
                 },
@@ -1009,9 +1000,6 @@
                         },
                         {
                             "cost": 220
-                        },
-                        {
-                            "cost": 0
                         }
                     ]
                 }
@@ -1159,9 +1147,6 @@
                         },
                         {
                             "cost": 250
-                        },
-                        {
-                            "cost": 0
                         }
                     ]
                 },
@@ -1258,9 +1243,6 @@
                         },
                         {
                             "cost": 180
-                        },
-                        {
-                            "cost": 0
                         }
                     ]
                 },
@@ -1299,13 +1281,10 @@
                     "description": "Improves the dodge chance and lets Harassers counter-attack when dodging an enemy's melee hit. Each upgrade level increases the damage and percent dodge chance.",
                     "levels": [
                         {
-                            "cost": 0
+                            "cost": 180
                         },
                         {
-                            "cost": 0
-                        },
-                        {
-                            "cost": 0
+                            "cost": 180
                         }
                     ]
                 },

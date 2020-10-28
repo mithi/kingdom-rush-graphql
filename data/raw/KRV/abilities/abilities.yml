@@ -48,10 +48,6 @@ abilities:
       levels:
           - description: ""
             cost: 150
-          - description: ""
-            cost: 0
-          - description: ""
-            cost: 0
     - name: "Seal of Blood"
       description: "Orc Warriors*win HP regeneration per second. Each upgrade level increases the health rate."
       number_of_levels: 2
@@ -72,8 +68,6 @@ abilities:
             cost: 150
           - description: ""
             cost: 150
-          - description: ""
-            cost: 0
     - name: "Lava Fissure"
       description: "Casts a spell that erupts 8 lava geysers, each dealing magic damage in a small area. Each upgrade level increases the damage dealt."
       number_of_levels: 3
@@ -92,8 +86,6 @@ abilities:
             cost: 220
           - description: ""
             cost: 220
-          - description: ""
-            cost: 0
 ---
 name: "rocket riders, 4"
 number_of_abilities: 3
@@ -192,8 +184,6 @@ abilities:
             cost: 250
           - description: ""
             cost: 250
-          - description: ""
-            cost: 0
     - name: "Spectral Communion"
       description: "Allows the Mausoleum to store extra specters. Each upgrade level increases the maximum number of specters stored"
       number_of_levels: 2
@@ -258,8 +248,6 @@ abilities:
             cost: 180
           - description: ""
             cost: 180
-          - description: ""
-            cost: 0
     - name: "Got Milk?"
       description: "Increases basic attack damage on each upgrade."
       number_of_levels: 3
@@ -285,11 +273,9 @@ abilities:
       number_of_levels: 2
       levels:
           - description: ""
-            cost: 0
+            cost: 180
           - description: ""
-            cost: 0
-          - description: ""
-            cost: 0
+            cost: 180
     - name: "Arrow Storm"
       description: "Swiftly shoots 5 arrows at their enemies. Each upgrade level increases the damage dealt per arrow."
       number_of_levels: 3
