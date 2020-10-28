@@ -118,6 +118,57 @@
             ]
         },
         {
+            "towerName": "barbarian mead hall",
+            "kingdom": "kingdom rush",
+            "abilities": [
+                {
+                    "abilityName": "Throwing Axes",
+                    "description": "Barbarians can throw great axes at ground and flying enemies in range.",
+                    "levels": [
+                        {
+                            "cost": 200
+                        },
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "Whirlwind Attack",
+                    "description": "When struck, Barbarians have a chance of dealing damage to all enemies in the area.",
+                    "levels": [
+                        {
+                            "cost": 150
+                        },
+                        {
+                            "cost": 75
+                        },
+                        {
+                            "cost": 75
+                        }
+                    ]
+                },
+                {
+                    "abilityName": "More Axes",
+                    "description": "Barbarians equip an additional axe to deliver additional damage. Their attack speed is slowed down by 0.3 seconds after this upgrade.",
+                    "levels": [
+                        {
+                            "cost": 300
+                        },
+                        {
+                            "cost": 100
+                        },
+                        {
+                            "cost": 100
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "towerName": "arcane wizard",
             "kingdom": "kingdom rush",
             "abilities": [
