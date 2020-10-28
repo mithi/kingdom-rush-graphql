@@ -1,6 +1,6 @@
 import { createConnection, getConnection, getRepository } from "typeorm"
 import { Tower, MainStats, Ability, AbilityLevel } from "../src/models/"
-import { TowerType, TowerLevel, TowerKingdom } from "../src/definitions/TowerEnums"
+import { TowerType, TowerLevel, TowerKingdom } from "../src/definitions/enums"
 
 const getExampleTower = (): Tower => {
     let tower = new Tower()

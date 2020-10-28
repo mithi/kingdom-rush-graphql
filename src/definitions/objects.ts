@@ -1,5 +1,5 @@
 import { Field, ObjectType } from "type-graphql"
-import { TowerType, TowerKingdom, TowerLevel } from "./TowerEnums"
+import { TowerType, TowerKingdom, TowerLevel } from "./enums"
 
 @ObjectType()
 export class TowerWithStats {

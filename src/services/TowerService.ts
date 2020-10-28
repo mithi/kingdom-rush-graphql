@@ -7,7 +7,7 @@ import {
     BarracksTowerArgs,
     TowerArgs,
 } from "../definitions"
-import { TowerType } from "../definitions/TowerEnums"
+import { TowerType } from "../definitions/enums"
 import { Tower } from "../models/Tower"
 import { nothingLeft, buildQueryExpression } from "./utils"
 const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"

@@ -1,10 +1,5 @@
 import { Field, InputType } from "type-graphql"
-import {
-    SortOrder,
-    TowerColumn,
-    AttackTowerColumn,
-    BarracksTowerColumn,
-} from "./TowerEnums"
+import { SortOrder, TowerColumn, AttackTowerColumn, BarracksTowerColumn } from "./enums"
 
 @InputType()
 export class SortDefinitionElement {
