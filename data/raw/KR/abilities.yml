@@ -77,6 +77,40 @@ abilities:
           - description: "damage: 75-135"
             cost: 150
 ---
+name: "barbarian mead hall"
+number_of_abilities: 3
+abilities:
+    - name: "Throwing Axes"
+      description: "Barbarians can throw great axes at ground and flying enemies in range."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 200
+          - description: ""
+            cost: 100
+          - description: ""
+            cost: 100
+    - name: "Whirlwind Attack"
+      description: "When struck, Barbarians have a chance of dealing damage to all enemies in the area."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 150
+          - description: ""
+            cost: 75
+          - description: ""
+            cost: 75
+    - name: "More Axes"
+      description: "Barbarians equip an additional axe to deliver additional damage. Their attack speed is slowed down by 0.3 seconds after this upgrade."
+      number_of_levels: 3
+      levels:
+          - description: ""
+            cost: 300
+          - description: ""
+            cost: 100
+          - description: ""
+            cost: 100
+---
 name: "arcane wizard"
 number_of_abilities: 2
 abilities:

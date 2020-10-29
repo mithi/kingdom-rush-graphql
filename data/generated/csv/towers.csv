@@ -1,3 +1,4 @@
+id,name,towerType,level,kingdom,imageUrl
 1,dwarven bombard,artillery,1,kingdom rush,https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-1-dwarven-bombard.png
 2,dwarven artillery,artillery,2,kingdom rush,https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-2-dwarven-artillery.png
 3,dwarven howitzer,artillery,3,kingdom rush,https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-3-dwarven-howitzer.png

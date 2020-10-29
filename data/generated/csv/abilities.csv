@@ -1,3 +1,4 @@
+id,name,description,towerId
 1,poison arrows,"Poisons anemies, causing them to take True damage over a three of seconds. Effects does not stack. True damage ignores any armore or magic resistance that an enemy has. Every upgrade level increases the damage dealt per second.",34
 2,wrath of the forest,"Summons thorns and vines that trap up to 8 enemies in the range, dealing 40 physical damage every second. Cooldown is 8 seconds. Excludes bosses and mini bosses. Does not affect enemies immune to physical damage. Every upgrade level increases the duration in seconds.",34
 3,sniper shot,Long range shot with increasing chance of instantly killing an anemy or dealing massive physical damage. Cooldown is 14 seconds Every upgrade level increase the chance of instantly killing an enemy.,35
@@ -82,3 +83,6 @@
 82,Healing Roots,Fills a zone with powerful healing roots. Allies over it heal over 4 seconds. Each upgrade level increases HP healed,104
 83,Meteor Shower,Cast a meteor shower that deals magic damage in an area. Each upgrade level increases the number of meteors and the damage per meteor,104
 84,Static Shock,Every attack now deals additional magic damage in a small area. Each upgrade level increases the damage,104
+85,Throwing Axes,Barbarians can throw great axes at ground and flying enemies in range.,50
+86,Whirlwind Attack,"When struck, Barbarians have a chance of dealing damage to all enemies in the area.",50
+87,More Axes,Barbarians equip an additional axe to deliver additional damage. Their attack speed is slowed down by 0.3 seconds after this upgrade.,50
