@@ -15,6 +15,7 @@ import {
     AttackSortDefinitionElement,
     BarracksSortDefinitionElement,
     AbilitySortDefinitionElement,
+    BuildSequenceSortDefinitionElement,
 } from "./inputs"
 
 export type AllowedSortDefinitionElement =
@@ -22,6 +23,7 @@ export type AllowedSortDefinitionElement =
     | AttackSortDefinitionElement
     | BarracksSortDefinitionElement
     | AbilitySortDefinitionElement
+    | BuildSequenceSortDefinitionElement
 
 export type FilterableEnums = TowerLevel | TowerKingdom | TowerType | AttackTowerType
 export type AllowedTowerTypes = TowerType | AttackTowerType

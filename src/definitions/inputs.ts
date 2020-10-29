@@ -5,6 +5,7 @@ import {
     AttackTowerColumn,
     BarracksTowerColumn,
     AbilityColumn,
+    BuildSequenceColumn,
 } from "./enums"
 
 @InputType()
@@ -38,6 +39,15 @@ export class BarracksSortDefinitionElement {
 export class AbilitySortDefinitionElement {
     @Field(_type => AbilityColumn)
     column: AbilityColumn
+
+    @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
+    sortOrder: SortOrder = SortOrder.ASCEND
+}
+
+@InputType()
+export class BuildSequenceSortDefinitionElement {
+    @Field(_type => BuildSequenceColumn)
+    column: BuildSequenceColumn
 
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortOrder: SortOrder = SortOrder.ASCEND

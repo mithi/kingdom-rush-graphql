@@ -93,3 +93,51 @@ export class Ability {
     @Field(() => [Number])
     levelCosts: [Number]
 }
+
+@ObjectType()
+export class BuildSequenceTower {
+    @Field(() => String)
+    name: String
+
+    @Field(() => Number)
+    id: Number
+
+    @Field(() => Number)
+    buildCost: Number
+
+    @Field(() => String)
+    imageUrl: String
+}
+
+@ObjectType()
+export class BuildSequence {
+    @Field(() => Number)
+    buildSequenceId: Number
+
+    @Field(() => TowerKingdom)
+    kingdom: TowerType
+
+    @Field(() => TowerType)
+    towerType: TowerType
+
+    @Field(() => Number)
+    totalBuildCost: Number
+
+    @Field(() => Number)
+    totalAbilitiesCost: Number
+
+    @Field(() => Number)
+    totalBuildCostFullyUpgraded: Number
+
+    @Field(() => BuildSequenceTower)
+    level1: BuildSequenceTower
+
+    @Field(() => BuildSequenceTower)
+    level2: BuildSequenceTower
+
+    @Field(() => BuildSequenceTower)
+    level3: BuildSequenceTower
+
+    @Field(() => BuildSequenceTower)
+    level4: BuildSequenceTower
+}
