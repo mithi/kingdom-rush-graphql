@@ -13,32 +13,41 @@ const findOneBuildSequence = async (queryExpression: string) => {
     return convertToBuildSequenceShape(results)[0]
 }
 
+const nothingLeft = (arrays: any[]): boolean => {
+    return arrays.some(list => list.length === 0)
+}
+
 export class BuildSequenceService {
     async buildSequences(args: BuildSequenceArgs) {
         const { onlyKingdoms, onlyTowerTypes, take, skip, sortDefinition } = args
+
+        if (nothingLeft([onlyKingdoms, onlyTowerTypes, sortDefinition])) {
+            return []
+        }
+
         const kingdoms = buildFilterExpression(onlyKingdoms, `t4.kingdom`)
         const towerTypes = buildFilterExpression(onlyTowerTypes, `t4."towerType"`)
         const pageExpr = `LIMIT ${take} OFFSET ${skip}`
         const sortColumns = buildSortExpression(sortDefinition)
         const sortExpr = `ORDER BY ${sortColumns}`
         const filterExpr = `WHERE (${kingdoms}) AND (${towerTypes})`
-        const queryExpression = `${TABLE_EXPRESSION} ${filterExpr} ${sortExpr} ${pageExpr}`
-        const results = await getConnection().query(queryExpression)
+        const query = `${TABLE_EXPRESSION} ${filterExpr} ${sortExpr} ${pageExpr}`
+        const results = await getConnection().query(query)
         return convertToBuildSequenceShape(results)
     }
 
     async buildSequenceById(id: Number) {
-        const queryExpression = `${TABLE_EXPRESSION} WHERE bs.id = ${id}`
-        return findOneBuildSequence(queryExpression)
+        const query = `${TABLE_EXPRESSION} WHERE bs.id = ${id}`
+        return findOneBuildSequence(query)
     }
 
     async buildSequenceByTowerId(id: Number) {
-        const queryExpression = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
-        return findOneBuildSequence(queryExpression)
+        const query = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
+        return findOneBuildSequence(query)
     }
 
     async buildSequenceByTowerName(name: String) {
-        const queryExpression = `${TABLE_EXPRESSION} WHERE t4.name = '${name}'`
-        return findOneBuildSequence(queryExpression)
+        const query = `${TABLE_EXPRESSION} WHERE t4.name = '${name}'`
+        return findOneBuildSequence(query)
     }
 }

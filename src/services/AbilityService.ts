@@ -9,9 +9,11 @@ const nothingLeft = (arrays: any[]): boolean => {
 export class AbilityService {
     async abilities(args: AbilityArgs) {
         const { onlyKingdoms, onlyTowerTypes, take, skip, sortDefinition } = args
+
         if (nothingLeft([onlyKingdoms, onlyTowerTypes, sortDefinition])) {
             return []
         }
+
         const kingdoms = buildFilterExpression(onlyKingdoms, `t4.kingdom`)
         const towerTypes = buildFilterExpression(onlyTowerTypes, `t4."towerType"`)
         const pageExpr = `LIMIT ${take} OFFSET ${skip}`
