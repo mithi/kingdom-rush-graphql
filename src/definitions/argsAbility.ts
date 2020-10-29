@@ -17,8 +17,8 @@ export class AbilityArgs extends BaseTowerArgs {
 
     @Field(_type => [AbilitySortDefinitionElement], {
         defaultValue: [
-            { column: AbilityColumn.abilityName, sortOrder: SortOrder.ASCEND },
             { column: AbilityColumn.towerName, sortOrder: SortOrder.ASCEND },
+            { column: AbilityColumn.abilityName, sortOrder: SortOrder.ASCEND },
         ],
     })
     sortDefinition: AbilitySortDefinitionElement[]
