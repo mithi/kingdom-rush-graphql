@@ -4,11 +4,12 @@ import { ApolloServer } from "apollo-server"
 import { buildSchema } from "type-graphql"
 import { TowerResolver } from "./resolvers/TowerResolver"
 import { AbilityResolver } from "./resolvers/AbilityResolver"
+import { BuildSequenceResolver } from "./resolvers/BuildSequenceResolver"
 
 async function main() {
     await createConnection()
     const schema = await buildSchema({
-        resolvers: [TowerResolver, AbilityResolver],
+        resolvers: [TowerResolver, AbilityResolver, BuildSequenceResolver],
         emitSchemaFile: true,
     })
     const server = new ApolloServer({ schema })
