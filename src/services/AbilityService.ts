@@ -55,4 +55,17 @@ export class AbilityService {
         const results = await getConnection().query(queryExpression)
         return results
     }
+
+    async abilitiesByTowerId(id: Number) {
+        const queryExpression = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
+        const results = await getConnection().query(queryExpression)
+        return results
+    }
 }
+
+/*
+
+AbilityById(id: "")
+AbilityByName(name: "")
+AbilitiesByTowerName(name: "")
+*/
