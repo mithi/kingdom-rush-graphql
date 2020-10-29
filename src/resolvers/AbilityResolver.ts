@@ -52,4 +52,9 @@ export class AbilityResolver {
     async abilitiesByTowerName(@Arg("name") name: String) {
         return this.abilityService.abilitiesByTowerName(name)
     }
+
+    @Query(() => Ability, { nullable: true })
+    async abilityById(@Arg("id") id: Number) {
+        return this.abilityService.abilityById(id)
+    }
 }

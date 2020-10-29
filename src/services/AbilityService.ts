@@ -67,10 +67,16 @@ export class AbilityService {
         const results = await getConnection().query(queryExpression)
         return results
     }
+
+    async abilityById(id: Number) {
+        const queryExpression = `${TABLE_EXPRESSION} WHERE ability_table."abilityId" = '${id}'`
+        const results = await getConnection().query(queryExpression)
+        const result = results.length !== 0 ? results[0] : null
+        return result
+    }
 }
 
 /*
 
-AbilityById(id: "")
 AbilityByName(name: "")
 */
