@@ -5,15 +5,15 @@ towers(
     onlyLevels: [1, 2, 3],
     onlyTypes: [BARRACKS, MAGE]
     onlyKingdoms: [KR, KRV],
-    sortBy: [
-        {column: "name", order: "ASCENDING"},
-        {column: "kingdom", order: "ASCENDING"},
-        {column: "towerType", order: "ASCENDING"},
-        {column: "towerLevel", order: "ASCENDING"},
-        {column: "id", order: "ASCENDING"},
-        {column: "buildCost", order: "ASCENDING"},
-        {column: "damageMinimum", order: "ASCENDING"},
-        {column: "damageMaximum", order: "ASCENDING"},
+    sortDefinition: [
+        {column: "name", order: ASCEND},
+        {column: "kingdom", order: ASCEND},
+        {column: "towerType", order: ASCEND},
+        {column: "towerLevel", order: ASCEND},
+        {column: "id", order: ASCEND},
+        {column: "buildCost", order: ASCEND},
+        {column: "damageMinimum", order: ASCEND},
+        {column: "damageMaximum", order: ASCEND},
     ]
 )
 
@@ -23,21 +23,41 @@ attackTowers(
     onlyLevels: [1, 2, 3],
     onlyTypes: [MAGE]
     onlyKingdoms: [KR, KRV],
-    sortBy: [
-        {column: "fireInterval", order: "ASCENDING"},
-        {column: "range", order: "ASCENDING"},
-        {column: "name", order: "ASCENDING"},
-        {column: "kingdom", order: "ASCENDING"},
-        {column: "towerType", order: "ASCENDING"},
-        {column: "towerLevel", order: "ASCENDING"},
-        {column: "id", order: "ASCENDING"},
-        {column: "buildCost", order: "ASCENDING"},
-        {column: "damageMinimum", order: "ASCENDING"},
-        {column: "damageMaximum", order: "ASCENDING"},
+    sortDefinition: [
+        {column: "fireInterval", order: ASCEND},
+        {column: "range", order: ASCEND},
+        {column: "name", order: ASCEND},
+        {column: "kingdom", order: ASCEND},
+        {column: "towerType", order: ASCEND},
+        {column: "towerLevel", order: ASCEND},
+        {column: "id", order: ASCEND},
+        {column: "buildCost", order: ASCEND},
+        {column: "damageMinimum", order: ASCEND},
+        {column: "damageMaximum", order: ASCEND},
+    ]
+)
+
+BarracksTowers(
+    skip: 5,
+    take: 10,
+    onlyLevels: [1, 2, 3],
+    onlyKingdoms: [KR, KRV],
+    sortDefinition: [
+        {column: "cooldown", order: ASCENDING},
+        {column: "health", order: ASCENDING},
+        {column: "armor", order: ASCENDING},
+        {column: "numberOfUnits", order: ASCENDING},
+        {column: "name", order: ASCENDING},
+        {column: "kingdom", order: ASCENDING},
+        {column: "towerType", order: ASCENDING},
+        {column: "towerLevel", order: ASCENDING},
+        {column: "id", order: ASCENDING},
+        {column: "buildCost", order: ASCENDING},
+        {column: "damageMinimum", order: ASCENDING},
+        {column: "damageMaximum", order: ASCENDING},
     ]
 )
  */
-require("dotenv").config()
 import { Resolver, Query, Args } from "type-graphql"
 import {
     AttackTower,
