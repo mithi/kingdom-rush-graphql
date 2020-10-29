@@ -1,7 +1,7 @@
 import { BuildSequenceArgs } from "../definitions/argsBuildSequence"
 import { getConnection } from "typeorm"
 import { buildFilterExpression, buildSortExpression } from "./utils"
-import { convertToBuildSequenceShape } from "./buildSequenceUtils"
+import { convertToBuildSequenceShape } from "./utilsBuildSequence"
 
 const TABLE_EXPRESSION = `SELECT
 bs.id AS "buildSequenceId",
