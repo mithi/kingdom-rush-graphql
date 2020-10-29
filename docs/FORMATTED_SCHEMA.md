@@ -18,6 +18,27 @@ type Query {
         take: Int = 104
     ): [Ability!]!
 
+    buildSequences(
+        onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV]
+        onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE]
+        skip: Int = 0
+        sortDefinition: [BuildSequenceSortDefinitionElement!] = [
+            { column: kingdom, sortOrder: ASCEND }
+            { column: towerType, sortOrder: ASCEND }
+            { column: towerName, sortOrder: ASCEND }
+        ]
+        take: Int = 104
+    ): [BuildSequence!]!
+    
+    towers(
+        onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV]
+        onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4]
+        onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE]
+        skip: Int = 0
+        sortDefinition: [SortDefinitionElement!] = [{ column: id, sortOrder: ASCEND }]
+        take: Int = 104
+    ): [TowerWithStats!]!
+    
     attackTowers(
         onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV]
         onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4]
@@ -38,27 +59,6 @@ type Query {
         ]
         take: Int = 104
     ): [BarracksTower!]!
-
-    buildSequences(
-        onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV]
-        onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE]
-        skip: Int = 0
-        sortDefinition: [BuildSequenceSortDefinitionElement!] = [
-            { column: kingdom, sortOrder: ASCEND }
-            { column: towerType, sortOrder: ASCEND }
-            { column: towerName, sortOrder: ASCEND }
-        ]
-        take: Int = 104
-    ): [BuildSequence!]!
-
-    towers(
-        onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV]
-        onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4]
-        onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE]
-        skip: Int = 0
-        sortDefinition: [SortDefinitionElement!] = [{ column: id, sortOrder: ASCEND }]
-        take: Int = 104
-    ): [TowerWithStats!]!
 
     abilitiesByTowerId(id: Float!): [Ability!]!
     abilitiesByTowerName(name: String!): [Ability!]!
