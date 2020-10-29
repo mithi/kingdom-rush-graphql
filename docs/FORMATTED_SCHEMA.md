@@ -60,8 +60,6 @@ type Query {
         take: Int = 104
     ): [BarracksTower!]!
 
-
-
     abilitiesByTowerId(id: Float!): [Ability!]!
     abilitiesByTowerName(name: String!): [Ability!]!
     abilityById(id: Float!): Ability
