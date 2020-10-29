@@ -58,7 +58,7 @@ BarracksTowers(
     ]
 )
  */
-import { Resolver, Query, Args } from "type-graphql"
+import { Resolver, Query, Args, Arg } from "type-graphql"
 import {
     AttackTower,
     BarracksTower,
@@ -67,7 +67,7 @@ import {
     BarracksTowerArgs,
     TowerArgs,
 } from "../definitions"
-
+import { TowerVerbose } from "../definitions/objects"
 import { TowerService } from "../services/TowerService"
 
 @Resolver()
@@ -87,5 +87,10 @@ export class TowerResolver {
     @Query(() => [BarracksTower])
     async barracksTowers(@Args() barracksTowerArgs: BarracksTowerArgs) {
         return this.towerService.barracksTowers(barracksTowerArgs)
+    }
+
+    @Query(() => TowerVerbose, { nullable: true })
+    async towerById(@Arg("id") id: Number) {
+        return this.towerService.towerById(id)
     }
 }
