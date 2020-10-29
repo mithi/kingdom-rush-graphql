@@ -54,3 +54,42 @@ export class BarracksTower extends TowerWithStats {
     @Field(() => Number)
     respawnInterval: Number
 }
+
+@ObjectType()
+export class Ability {
+    @Field(() => Number)
+    abilityId: Number
+
+    @Field(() => String)
+    abilityName: string
+
+    @Field(() => String)
+    abilityDescription: string
+
+    @Field(() => Number)
+    numberOfLevels: Number
+
+    @Field(() => Number)
+    towerId: Number
+
+    @Field(() => String)
+    towerName: string
+
+    @Field(() => String)
+    towerImageUrl: string
+
+    @Field(() => TowerType)
+    towerType: TowerType
+
+    @Field(() => TowerKingdom)
+    kingdom: TowerKingdom
+
+    @Field(() => Number)
+    totalAbilityCost: Number
+
+    @Field(() => Number)
+    totalCostWithTowers: Number
+
+    @Field(() => [Number])
+    levelCosts: [Number]
+}
