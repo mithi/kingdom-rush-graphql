@@ -3,6 +3,35 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Ability {
+  abilityDescription: String!
+  abilityId: Float!
+  abilityName: String!
+  kingdom: TowerKingdom!
+  levelCosts: [Float!]!
+  numberOfLevels: Float!
+  totalAbilityCost: Float!
+  totalCostWithTowers: Float!
+  towerId: Float!
+  towerImageUrl: String!
+  towerName: String!
+  towerType: TowerType!
+}
+
+enum AbilityColumn {
+  abilityName
+  kingdom
+  totalCost
+  totalCostWithTowers
+  towerName
+  towerType
+}
+
+input AbilitySortDefinitionElement {
+  column: AbilityColumn!
+  sortOrder: SortOrder = ASCEND
+}
+
 input AttackSortDefinitionElement {
   column: AttackTowerColumn!
   sortOrder: SortOrder = ASCEND
@@ -77,6 +106,7 @@ enum BarracksTowerColumn {
 }
 
 type Query {
+  abilities(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AbilitySortDefinitionElement!] = [{column: towerName, sortOrder: ASCEND}, {column: abilityName, sortOrder: ASCEND}], take: Int = 104): [Ability!]!
   attackTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [AttackTowerType!] = [ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AttackSortDefinitionElement!] = [{column: id}], take: Int = 104): [AttackTower!]!
   barracksTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], skip: Int = 0, sortDefinition: [BarracksSortDefinitionElement!] = [{column: id}], take: Int = 104): [BarracksTower!]!
   towers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [SortDefinitionElement!] = [{column: id, sortOrder: ASCEND}], take: Int = 104): [TowerWithStats!]!
