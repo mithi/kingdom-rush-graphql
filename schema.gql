@@ -5,13 +5,13 @@
 
 type Ability {
   abilityDescription: String!
-  abilityId: Float!
+  abilityId: ID!
   abilityName: String!
   kingdom: TowerKingdom!
-  levelCosts: [Float!]!
-  numberOfLevels: Float!
-  totalAbilityCost: Float!
-  totalCostWithTowers: Float!
+  levelCosts: [Int!]!
+  numberOfLevels: Int!
+  totalAbilityCost: Int!
+  totalCostWithTowers: Int!
   towerId: Float!
   towerImageUrl: String!
   towerName: String!
@@ -38,16 +38,16 @@ input AttackSortDefinitionElement {
 }
 
 type AttackTower {
-  buildCost: Float!
-  damageMaximum: Float!
-  damageMinimum: Float!
+  buildCost: Int!
+  damageMaximum: Int!
+  damageMinimum: Int!
   fireInterval: Float!
-  id: Float!
+  id: ID!
   imageUrl: String!
   kingdom: TowerKingdom!
   level: TowerLevel!
   name: String!
-  range: Float!
+  range: Int!
   towerType: TowerType!
 }
 
@@ -76,17 +76,17 @@ input BarracksSortDefinitionElement {
 }
 
 type BarracksTower {
-  armor: Float!
-  buildCost: Float!
-  damageMaximum: Float!
-  damageMinimum: Float!
-  health: Float!
-  id: Float!
+  armor: Int!
+  buildCost: Int!
+  damageMaximum: Int!
+  damageMinimum: Int!
+  health: Int!
+  id: ID!
   imageUrl: String!
   kingdom: TowerKingdom!
   level: TowerLevel!
   name: String!
-  numberOfUnits: Float!
+  numberOfUnits: Int!
   respawnInterval: Float!
   towerType: TowerType!
 }
@@ -106,15 +106,15 @@ enum BarracksTowerSortColumn {
 }
 
 type BuildSequence {
-  buildSequenceId: Float!
+  buildSequenceId: ID!
   kingdom: TowerKingdom!
   level1: BuildSequenceTower!
   level2: BuildSequenceTower!
   level3: BuildSequenceTower!
   level4: BuildSequenceTower!
-  totalAbilitiesCost: Float!
-  totalBuildCost: Float!
-  totalBuildCostFullyUpgraded: Float!
+  totalAbilitiesCost: Int!
+  totalBuildCost: Int!
+  totalBuildCostFullyUpgraded: Int!
   towerType: TowerType!
 }
 
@@ -133,8 +133,8 @@ input BuildSequenceSortDefinitionElement {
 }
 
 type BuildSequenceTower {
-  buildCost: Float!
-  id: Float!
+  buildCost: Int!
+  id: ID!
   imageUrl: String!
   name: String!
 }
@@ -204,28 +204,28 @@ type TowerVerbose {
 }
 
 type TowerWithNullableFields {
-  armor: Float
-  buildCost: Float!
-  damageMaximum: Float!
-  damageMinimum: Float!
+  armor: Int
+  buildCost: Int!
+  damageMaximum: Int!
+  damageMinimum: Int!
   fireInterval: Float
-  health: Float
-  id: Float!
+  health: Int
+  id: ID!
   imageUrl: String!
   kingdom: TowerKingdom!
   level: TowerLevel!
   name: String!
-  numberOfUnits: Float
-  range: Float
+  numberOfUnits: Int
+  range: Int
   respawnInterval: Float
   towerType: TowerType!
 }
 
 type TowerWithStats {
-  buildCost: Float!
-  damageMaximum: Float!
-  damageMinimum: Float!
-  id: Float!
+  buildCost: Int!
+  damageMaximum: Int!
+  damageMinimum: Int!
+  id: ID!
   imageUrl: String!
   kingdom: TowerKingdom!
   level: TowerLevel!
