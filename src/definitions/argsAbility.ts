@@ -2,6 +2,7 @@ import { Field, ArgsType } from "type-graphql"
 import { BaseTowerArgs } from "./args"
 import { TowerType, AbilityColumn, SortOrder } from "./enums"
 import { AbilitySortDefinitionElement } from "./inputs"
+
 @ArgsType()
 export class AbilityArgs extends BaseTowerArgs {
     @Field(_type => [TowerType], {
@@ -12,7 +13,7 @@ export class AbilityArgs extends BaseTowerArgs {
             TowerType.MAGE,
         ],
     })
-    onlyTowerTypes: TowerType[]
+    onlyTowerTypes: [TowerType]
 
     @Field(_type => [AbilitySortDefinitionElement], {
         defaultValue: [

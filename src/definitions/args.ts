@@ -52,7 +52,7 @@ export class BaseTowerArgs {
             TowerKingdom.KRV,
         ],
     })
-    onlyKingdoms: TowerKingdom[]
+    onlyKingdoms: [TowerKingdom]
 }
 
 @ArgsType()
@@ -65,7 +65,7 @@ export class TowerArgs extends BaseTowerArgs {
             TowerLevel.LVL4,
         ],
     })
-    onlyLevels: TowerLevel[]
+    onlyLevels: [TowerLevel]
 
     @Field(_type => [TowerType], {
         defaultValue: [
@@ -75,7 +75,7 @@ export class TowerArgs extends BaseTowerArgs {
             TowerType.MAGE,
         ],
     })
-    onlyTowerTypes: TowerType[]
+    onlyTowerTypes: [TowerType]
 
     @Field(_type => [SortDefinitionElement], {
         defaultValue: [{ column: TowerColumn.id, sortOrder: SortOrder.ASCEND }],
@@ -93,7 +93,7 @@ export class AttackTowerArgs extends BaseTowerArgs {
             TowerLevel.LVL4,
         ],
     })
-    onlyLevels: TowerLevel[]
+    onlyLevels: [TowerLevel]
 
     @Field(_type => [AttackTowerType], {
         defaultValue: [
@@ -102,7 +102,7 @@ export class AttackTowerArgs extends BaseTowerArgs {
             AttackTowerType.MAGE,
         ],
     })
-    onlyTowerTypes: AttackTowerType[]
+    onlyTowerTypes: [AttackTowerType]
 
     @Field(_type => [AttackSortDefinitionElement], {
         defaultValue: [{ column: AttackTowerColumn.id, sortType: SortOrder.ASCEND }],
@@ -120,7 +120,7 @@ export class BarracksTowerArgs extends BaseTowerArgs {
             TowerLevel.LVL4,
         ],
     })
-    onlyLevels: TowerLevel[]
+    onlyLevels: [TowerLevel]
 
     @Field(_type => [BarracksSortDefinitionElement], {
         defaultValue: [{ column: BarracksTowerColumn.id, sortType: SortOrder.ASCEND }],
