@@ -45,4 +45,9 @@ export class BuildSequenceResolver {
     async buildSequenceById(@Arg("id") id: Number) {
         return this.buildSequenceService.buildSequenceById(id)
     }
+
+    @Query(() => BuildSequence, { nullable: true })
+    async buildSequenceByTowerId(@Arg("id") id: Number) {
+        return this.buildSequenceService.buildSequenceByTowerId(id)
+    }
 }
