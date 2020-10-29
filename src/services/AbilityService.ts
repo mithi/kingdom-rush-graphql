@@ -18,35 +18,30 @@ export class AbilityService {
         const sortColumns = buildSortExpression(sortDefinition)
         const sortExpr = `ORDER BY ${sortColumns}`
         const filterExpr = `WHERE (${kingdoms}) AND (${towerTypes})`
-        const queryExpression = `${TABLE_EXPRESSION} ${filterExpr} ${sortExpr} ${pageExpr}`
-        console.log(queryExpression)
-        const results = await getConnection().query(queryExpression)
-        return results
+        const query = `${TABLE_EXPRESSION} ${filterExpr} ${sortExpr} ${pageExpr}`
+        console.log(query)
+        return await getConnection().query(query)
     }
 
     async abilitiesByTowerId(id: Number) {
-        const queryExpression = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
-        const results = await getConnection().query(queryExpression)
-        return results
+        const query = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
+        return await getConnection().query(query)
     }
 
     async abilitiesByTowerName(name: String) {
-        const queryExpression = `${TABLE_EXPRESSION} WHERE t4.name = '${name}'`
-        const results = await getConnection().query(queryExpression)
-        return results
+        const query = `${TABLE_EXPRESSION} WHERE t4.name = '${name}'`
+        return await getConnection().query(query)
     }
 
     async abilityById(id: Number) {
-        const queryExpression = `${TABLE_EXPRESSION} WHERE ability_table."abilityId" = '${id}'`
-        const results = await getConnection().query(queryExpression)
-        const result = results.length !== 0 ? results[0] : null
-        return result
+        const query = `${TABLE_EXPRESSION} WHERE ability_table."abilityId" = '${id}'`
+        const results = await getConnection().query(query)
+        return results.length !== 0 ? results[0] : null
     }
 
     async abilityByName(name: String) {
-        const queryExpression = `${TABLE_EXPRESSION} WHERE ability_table."abilityName" = '${name}'`
-        const results = await getConnection().query(queryExpression)
-        const result = results.length !== 0 ? results[0] : null
-        return result
+        const query = `${TABLE_EXPRESSION} WHERE ability_table."abilityName" = '${name}'`
+        const results = await getConnection().query(query)
+        return results.length !== 0 ? results[0] : null
     }
 }
