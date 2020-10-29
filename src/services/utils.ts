@@ -38,8 +38,8 @@ const buildQueryExpression = (
 
 const nothingLeft = (args: BuildQueryArgs): boolean => {
     const { onlyLevels, onlyTowerTypes, onlyKingdoms } = args
-    // We have filtered out all options that we know the query won't result anything
-    return [onlyLevels, onlyTowerTypes, onlyKingdoms].every(list => list.length === 0)
+    // we know the query won't result anything if one of the parameters don't have value
+    return [onlyLevels, onlyTowerTypes, onlyKingdoms].some(list => list.length === 0)
 }
 
 export { nothingLeft, buildQueryExpression }
