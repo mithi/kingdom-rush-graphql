@@ -1,17 +1,17 @@
 import { Field, InputType } from "type-graphql"
 import {
     SortOrder,
-    TowerColumn,
-    AttackTowerColumn,
-    BarracksTowerColumn,
-    AbilityColumn,
-    BuildSequenceColumn,
+    TowerSortColumn,
+    AttackTowerSortColumn,
+    BarracksTowerSortColumn,
+    AbilitySortColumn,
+    BuildSequenceSortColumn,
 } from "./enums"
 
 @InputType()
 export class SortDefinitionElement {
-    @Field(_type => TowerColumn)
-    column: TowerColumn
+    @Field(_type => TowerSortColumn)
+    column: TowerSortColumn
 
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortOrder: SortOrder
@@ -19,8 +19,8 @@ export class SortDefinitionElement {
 
 @InputType()
 export class AttackSortDefinitionElement {
-    @Field(_type => AttackTowerColumn)
-    column: AttackTowerColumn
+    @Field(_type => AttackTowerSortColumn)
+    column: AttackTowerSortColumn
 
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortOrder: SortOrder = SortOrder.ASCEND
@@ -28,8 +28,8 @@ export class AttackSortDefinitionElement {
 
 @InputType()
 export class BarracksSortDefinitionElement {
-    @Field(_type => BarracksTowerColumn)
-    column: BarracksTowerColumn
+    @Field(_type => BarracksTowerSortColumn)
+    column: BarracksTowerSortColumn
 
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortOrder: SortOrder = SortOrder.ASCEND
@@ -37,8 +37,8 @@ export class BarracksSortDefinitionElement {
 
 @InputType()
 export class AbilitySortDefinitionElement {
-    @Field(_type => AbilityColumn)
-    column: AbilityColumn
+    @Field(_type => AbilitySortColumn)
+    column: AbilitySortColumn
 
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortOrder: SortOrder = SortOrder.ASCEND
@@ -46,8 +46,8 @@ export class AbilitySortDefinitionElement {
 
 @InputType()
 export class BuildSequenceSortDefinitionElement {
-    @Field(_type => BuildSequenceColumn)
-    column: BuildSequenceColumn
+    @Field(_type => BuildSequenceSortColumn)
+    column: BuildSequenceSortColumn
 
     @Field(_type => SortOrder, { defaultValue: SortOrder.ASCEND })
     sortOrder: SortOrder = SortOrder.ASCEND

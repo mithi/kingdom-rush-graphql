@@ -1,9 +1,9 @@
-import { Field, ObjectType } from "type-graphql"
+import { Field, ObjectType, Int } from "type-graphql"
 import { TowerType, TowerKingdom, TowerLevel } from "./enums"
 
 @ObjectType()
 export class TowerWithStats {
-    @Field(() => Number)
+    @Field(() => Int)
     id: Number
 
     @Field(() => TowerType)
@@ -21,13 +21,13 @@ export class TowerWithStats {
     @Field(() => String)
     imageUrl: string
 
-    @Field(() => Number)
+    @Field(() => Int)
     buildCost: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     damageMinimum: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     damageMaximum: Number
 }
 
@@ -36,19 +36,19 @@ export class AttackTower extends TowerWithStats {
     @Field(() => Number)
     fireInterval: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     range: Number
 }
 
 @ObjectType()
 export class BarracksTower extends TowerWithStats {
-    @Field(() => Number)
+    @Field(() => Int)
     numberOfUnits: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     armor: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     health: Number
 
     @Field(() => Number)
@@ -57,7 +57,7 @@ export class BarracksTower extends TowerWithStats {
 
 @ObjectType()
 export class Ability {
-    @Field(() => Number)
+    @Field(() => Int)
     abilityId: Number
 
     @Field(() => String)
@@ -66,10 +66,10 @@ export class Ability {
     @Field(() => String)
     abilityDescription: string
 
-    @Field(() => Number)
+    @Field(() => Int)
     numberOfLevels: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     towerId: Number
 
     @Field(() => String)
@@ -84,13 +84,13 @@ export class Ability {
     @Field(() => TowerKingdom)
     kingdom: TowerKingdom
 
-    @Field(() => Number)
+    @Field(() => Int)
     totalAbilityCost: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     totalCostWithTowers: Number
 
-    @Field(() => [Number])
+    @Field(() => [Int])
     levelCosts: [Number]
 }
 
@@ -99,10 +99,10 @@ export class BuildSequenceTower {
     @Field(() => String)
     name: String
 
-    @Field(() => Number)
+    @Field(() => Int)
     id: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     buildCost: Number
 
     @Field(() => String)
@@ -111,7 +111,7 @@ export class BuildSequenceTower {
 
 @ObjectType()
 export class BuildSequence {
-    @Field(() => Number)
+    @Field(() => Int)
     buildSequenceId: Number
 
     @Field(() => TowerKingdom)
@@ -120,13 +120,13 @@ export class BuildSequence {
     @Field(() => TowerType)
     towerType: TowerType
 
-    @Field(() => Number)
+    @Field(() => Int)
     totalBuildCost: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     totalAbilitiesCost: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     totalBuildCostFullyUpgraded: Number
 
     @Field(() => BuildSequenceTower)
@@ -147,16 +147,16 @@ export class TowerWithNullableFields extends TowerWithStats {
     @Field(() => Number, { nullable: true, defaultValue: null })
     fireInterval?: Number
 
-    @Field(() => Number, { nullable: true, defaultValue: null })
+    @Field(() => Int, { nullable: true, defaultValue: null })
     range?: Number
 
-    @Field(() => Number, { nullable: true, defaultValue: null })
+    @Field(() => Int, { nullable: true, defaultValue: null })
     numberOfUnits?: Number
 
-    @Field(() => Number, { nullable: true, defaultValue: null })
+    @Field(() => Int, { nullable: true, defaultValue: null })
     armor?: Number
 
-    @Field(() => Number, { nullable: true, defaultValue: null })
+    @Field(() => Int, { nullable: true, defaultValue: null })
     health?: Number
 
     @Field(() => Number, { nullable: true, defaultValue: null })

@@ -32,7 +32,7 @@ export enum SortOrder {
     DESCEND = "DESC",
 }
 
-export enum TowerColumn {
+export enum TowerSortColumn {
     name = `"Towers".name`,
     kingdom = `kingdom`,
     towerType = `"towerType"`,
@@ -43,7 +43,7 @@ export enum TowerColumn {
     damageMaximum = `"damageMaximum"`,
 }
 
-export enum AttackTowerColumn {
+export enum AttackTowerSortColumn {
     name = `"Towers".name`,
     kingdom = `kingdom`,
     towerType = `"towerType"`,
@@ -56,7 +56,7 @@ export enum AttackTowerColumn {
     range = `range`,
 }
 
-export enum BarracksTowerColumn {
+export enum BarracksTowerSortColumn {
     name = `"Towers".name`,
     kingdom = `kingdom`,
     level = `level`,
@@ -70,7 +70,7 @@ export enum BarracksTowerColumn {
     respawnInterval = `"respawnInterval"`,
 }
 
-export enum AbilityColumn {
+export enum AbilitySortColumn {
     towerName = `"towerName"`,
     abilityName = `"abilityName"`,
     totalCost = `"totalCost"`,
@@ -79,22 +79,22 @@ export enum AbilityColumn {
     towerType = `"towerType"`,
 }
 
-export enum BuildSequenceColumn {
+export enum BuildSequenceSortColumn {
     towerName = "t4.name",
     towerType = `t4."towerType"`,
     kingdom = "t4.kingdom",
     totalBuildCost = `"totalBuildCost"`,
     totalAbilitiesCost = `"totalAbilitiesCost"`,
-    totalCostFullyUpgraded = `"totalCostFullyUpgraded"`,
+    totalBuildCostFullyUpgraded = `"totalBuildCostFullyUpgraded"`,
 }
 
 registerEnumType(SortOrder, { name: "SortOrder" })
 
-registerEnumType(TowerColumn, { name: "TowerColumn" })
-registerEnumType(AttackTowerColumn, { name: "AttackTowerColumn" })
-registerEnumType(BarracksTowerColumn, { name: "BarracksTowerColumn" })
-registerEnumType(AbilityColumn, { name: "AbilityColumn" })
-registerEnumType(BuildSequenceColumn, { name: "BuildSequenceColumn" })
+registerEnumType(TowerSortColumn, { name: "TowerSortColumn" })
+registerEnumType(AttackTowerSortColumn, { name: "AttackTowerSortColumn" })
+registerEnumType(BarracksTowerSortColumn, { name: "BarracksTowerSortColumn" })
+registerEnumType(AbilitySortColumn, { name: "AbilitySortColumn" })
+registerEnumType(BuildSequenceSortColumn, { name: "BuildSequenceSortColumn" })
 
 registerEnumType(TowerType, { name: "TowerType" })
 registerEnumType(AttackTowerType, { name: "AttackTowerType" })

@@ -5,20 +5,20 @@
 
 type Ability {
   abilityDescription: String!
-  abilityId: Float!
+  abilityId: Int!
   abilityName: String!
   kingdom: TowerKingdom!
-  levelCosts: [Float!]!
-  numberOfLevels: Float!
-  totalAbilityCost: Float!
-  totalCostWithTowers: Float!
-  towerId: Float!
+  levelCosts: [Int!]!
+  numberOfLevels: Int!
+  totalAbilityCost: Int!
+  totalCostWithTowers: Int!
+  towerId: Int!
   towerImageUrl: String!
   towerName: String!
   towerType: TowerType!
 }
 
-enum AbilityColumn {
+enum AbilitySortColumn {
   abilityName
   kingdom
   totalCost
@@ -28,30 +28,30 @@ enum AbilityColumn {
 }
 
 input AbilitySortDefinitionElement {
-  column: AbilityColumn!
+  column: AbilitySortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
 input AttackSortDefinitionElement {
-  column: AttackTowerColumn!
+  column: AttackTowerSortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
 type AttackTower {
-  buildCost: Float!
-  damageMaximum: Float!
-  damageMinimum: Float!
+  buildCost: Int!
+  damageMaximum: Int!
+  damageMinimum: Int!
   fireInterval: Float!
-  id: Float!
+  id: Int!
   imageUrl: String!
   kingdom: TowerKingdom!
   level: TowerLevel!
   name: String!
-  range: Float!
+  range: Int!
   towerType: TowerType!
 }
 
-enum AttackTowerColumn {
+enum AttackTowerSortColumn {
   buildCost
   damageMaximum
   damageMinimum
@@ -71,27 +71,27 @@ enum AttackTowerType {
 }
 
 input BarracksSortDefinitionElement {
-  column: BarracksTowerColumn!
+  column: BarracksTowerSortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
 type BarracksTower {
-  armor: Float!
-  buildCost: Float!
-  damageMaximum: Float!
-  damageMinimum: Float!
-  health: Float!
-  id: Float!
+  armor: Int!
+  buildCost: Int!
+  damageMaximum: Int!
+  damageMinimum: Int!
+  health: Int!
+  id: Int!
   imageUrl: String!
   kingdom: TowerKingdom!
   level: TowerLevel!
   name: String!
-  numberOfUnits: Float!
+  numberOfUnits: Int!
   respawnInterval: Float!
   towerType: TowerType!
 }
 
-enum BarracksTowerColumn {
+enum BarracksTowerSortColumn {
   armor
   buildCost
   damageMaximum
@@ -106,35 +106,35 @@ enum BarracksTowerColumn {
 }
 
 type BuildSequence {
-  buildSequenceId: Float!
+  buildSequenceId: Int!
   kingdom: TowerKingdom!
   level1: BuildSequenceTower!
   level2: BuildSequenceTower!
   level3: BuildSequenceTower!
   level4: BuildSequenceTower!
-  totalAbilitiesCost: Float!
-  totalBuildCost: Float!
-  totalBuildCostFullyUpgraded: Float!
+  totalAbilitiesCost: Int!
+  totalBuildCost: Int!
+  totalBuildCostFullyUpgraded: Int!
   towerType: TowerType!
 }
 
-enum BuildSequenceColumn {
+enum BuildSequenceSortColumn {
   kingdom
   totalAbilitiesCost
   totalBuildCost
-  totalCostFullyUpgraded
+  totalBuildCostFullyUpgraded
   towerName
   towerType
 }
 
 input BuildSequenceSortDefinitionElement {
-  column: BuildSequenceColumn!
+  column: BuildSequenceSortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
 type BuildSequenceTower {
-  buildCost: Float!
-  id: Float!
+  buildCost: Int!
+  id: Int!
   imageUrl: String!
   name: String!
 }
@@ -145,8 +145,8 @@ type Query {
   abilitiesByTowerName(name: String!): [Ability!]!
   abilityById(id: Float!): Ability
   abilityByName(name: String!): Ability
-  attackTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [AttackTowerType!] = [ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AttackSortDefinitionElement!] = [{column: id}], take: Int = 104): [AttackTower!]!
-  barracksTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], skip: Int = 0, sortDefinition: [BarracksSortDefinitionElement!] = [{column: id}], take: Int = 104): [BarracksTower!]!
+  attackTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [AttackTowerType!] = [ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AttackSortDefinitionElement!] = [{column: id, sortOrder: ASCEND}], take: Int = 104): [AttackTower!]!
+  barracksTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], skip: Int = 0, sortDefinition: [BarracksSortDefinitionElement!] = [{column: id, sortOrder: ASCEND}], take: Int = 104): [BarracksTower!]!
   buildSequenceById(id: Float!): BuildSequence
   buildSequenceByTowerId(id: Float!): BuildSequence
   buildSequenceByTowerName(name: String!): BuildSequence
@@ -156,24 +156,13 @@ type Query {
 }
 
 input SortDefinitionElement {
-  column: TowerColumn!
+  column: TowerSortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
 enum SortOrder {
   ASCEND
   DESCEND
-}
-
-enum TowerColumn {
-  buildCost
-  damageMaximum
-  damageMinimum
-  id
-  kingdom
-  level
-  name
-  towerType
 }
 
 enum TowerKingdom {
@@ -190,6 +179,17 @@ enum TowerLevel {
   LVL4
 }
 
+enum TowerSortColumn {
+  buildCost
+  damageMaximum
+  damageMinimum
+  id
+  kingdom
+  level
+  name
+  towerType
+}
+
 enum TowerType {
   ARCHER
   ARTILLERY
@@ -204,28 +204,28 @@ type TowerVerbose {
 }
 
 type TowerWithNullableFields {
-  armor: Float
-  buildCost: Float!
-  damageMaximum: Float!
-  damageMinimum: Float!
+  armor: Int
+  buildCost: Int!
+  damageMaximum: Int!
+  damageMinimum: Int!
   fireInterval: Float
-  health: Float
-  id: Float!
+  health: Int
+  id: Int!
   imageUrl: String!
   kingdom: TowerKingdom!
   level: TowerLevel!
   name: String!
-  numberOfUnits: Float
-  range: Float
+  numberOfUnits: Int
+  range: Int
   respawnInterval: Float
   towerType: TowerType!
 }
 
 type TowerWithStats {
-  buildCost: Float!
-  damageMaximum: Float!
-  damageMinimum: Float!
-  id: Float!
+  buildCost: Int!
+  damageMaximum: Int!
+  damageMinimum: Int!
+  id: Int!
   imageUrl: String!
   kingdom: TowerKingdom!
   level: TowerLevel!
