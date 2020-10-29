@@ -17,7 +17,7 @@
         "db:seed-json": "npm run tsc && node dist/seed/populate.js",
         "db:drop": "bash ./scripts/run_db_cleanup.sh",
         "test": "jest",
-        "test:resolver": "jest -i test/tower_resolver.test.ts"
+        "test:resolver": "jest -i tests/tower_resolver.test.ts"
     },
     "repository": {
         "type": "git",
