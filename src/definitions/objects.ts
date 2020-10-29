@@ -115,7 +115,7 @@ export class BuildSequence {
     buildSequenceId: Number
 
     @Field(() => TowerKingdom)
-    kingdom: TowerType
+    kingdom: TowerKingdom
 
     @Field(() => TowerType)
     towerType: TowerType
