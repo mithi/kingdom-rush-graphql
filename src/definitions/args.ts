@@ -37,6 +37,20 @@ export interface BuildQueryArgs {
     sortDefinition: AllowedSortDefinitionElement[]
 }
 
+const ALL_TOWER_KINGDOMS = [
+    TowerKingdom.KR,
+    TowerKingdom.KRF,
+    TowerKingdom.KRO,
+    TowerKingdom.KRV,
+]
+
+const ALL_TOWER_LEVELS = [
+    TowerLevel.LVL1,
+    TowerLevel.LVL2,
+    TowerLevel.LVL3,
+    TowerLevel.LVL4,
+]
+
 @ArgsType()
 export class BaseTowerArgs {
     @Field(_type => Int, { defaultValue: 0 })
@@ -49,12 +63,7 @@ export class BaseTowerArgs {
     take: number = 104
 
     @Field(_type => [TowerKingdom], {
-        defaultValue: [
-            TowerKingdom.KR,
-            TowerKingdom.KRF,
-            TowerKingdom.KRO,
-            TowerKingdom.KRV,
-        ],
+        defaultValue: ALL_TOWER_KINGDOMS,
     })
     onlyKingdoms: [TowerKingdom]
 }
@@ -62,12 +71,7 @@ export class BaseTowerArgs {
 @ArgsType()
 export class TowerArgs extends BaseTowerArgs {
     @Field(_type => [TowerLevel], {
-        defaultValue: [
-            TowerLevel.LVL1,
-            TowerLevel.LVL2,
-            TowerLevel.LVL3,
-            TowerLevel.LVL4,
-        ],
+        defaultValue: ALL_TOWER_LEVELS,
     })
     onlyLevels: [TowerLevel]
 
@@ -90,12 +94,7 @@ export class TowerArgs extends BaseTowerArgs {
 @ArgsType()
 export class AttackTowerArgs extends BaseTowerArgs {
     @Field(_type => [TowerLevel], {
-        defaultValue: [
-            TowerLevel.LVL1,
-            TowerLevel.LVL2,
-            TowerLevel.LVL3,
-            TowerLevel.LVL4,
-        ],
+        defaultValue: ALL_TOWER_LEVELS,
     })
     onlyLevels: [TowerLevel]
 
@@ -117,12 +116,7 @@ export class AttackTowerArgs extends BaseTowerArgs {
 @ArgsType()
 export class BarracksTowerArgs extends BaseTowerArgs {
     @Field(_type => [TowerLevel], {
-        defaultValue: [
-            TowerLevel.LVL1,
-            TowerLevel.LVL2,
-            TowerLevel.LVL3,
-            TowerLevel.LVL4,
-        ],
+        defaultValue: ALL_TOWER_LEVELS,
     })
     onlyLevels: [TowerLevel]
 
