@@ -70,11 +70,20 @@ export enum BarracksTowerColumn {
     respawnInterval = `"respawnInterval"`,
 }
 
+export enum AbilityColumn {
+    towerName = "towerName",
+    abilityName = "abilityName",
+    totalCost = "totalCost",
+    totalCostWithTowers = "totalCostWithTowers",
+    kingdom = "kingdom",
+    towerType = "level",
+}
 registerEnumType(SortOrder, { name: "SortOrder" })
 
 registerEnumType(TowerColumn, { name: "TowerColumn" })
 registerEnumType(AttackTowerColumn, { name: "AttackTowerColumn" })
 registerEnumType(BarracksTowerColumn, { name: "BarracksTowerColumn" })
+registerEnumType(BarracksTowerColumn, { name: "AbilityColumn" })
 
 registerEnumType(TowerType, { name: "TowerType" })
 registerEnumType(AttackTowerType, { name: "AttackTowerType" })
