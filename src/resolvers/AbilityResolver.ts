@@ -28,7 +28,7 @@
 }
 */
 
-import { Resolver, Query, Args } from "type-graphql"
+import { Resolver, Query, Args, Arg } from "type-graphql"
 import { Ability } from "../definitions/objects"
 import { AbilityArgs } from "../definitions/argsAbility"
 
@@ -41,5 +41,25 @@ export class AbilityResolver {
     @Query(() => [Ability])
     async abilities(@Args() abilityArgs: AbilityArgs) {
         return this.abilityService.abilities(abilityArgs)
+    }
+
+    @Query(() => [Ability])
+    async abilitiesByTowerId(@Arg("id") id: Number) {
+        return this.abilityService.abilitiesByTowerId(id)
+    }
+
+    @Query(() => [Ability])
+    async abilitiesByTowerName(@Arg("name") name: String) {
+        return this.abilityService.abilitiesByTowerName(name)
+    }
+
+    @Query(() => Ability, { nullable: true })
+    async abilityById(@Arg("id") id: Number) {
+        return this.abilityService.abilityById(id)
+    }
+
+    @Query(() => Ability, { nullable: true })
+    async abilityByName(@Arg("name") name: String) {
+        return this.abilityService.abilityByName(name)
     }
 }

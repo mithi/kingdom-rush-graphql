@@ -45,9 +45,37 @@ export class BuildSequenceService {
         const sortExpr = `ORDER BY ${sortColumns}`
         const filterExpr = `WHERE (${kingdoms}) AND (${towerTypes})`
         const queryExpression = `${TABLE_EXPRESSION} ${filterExpr} ${sortExpr} ${pageExpr}`
-        console.log(queryExpression)
         const results = await getConnection().query(queryExpression)
-
         return convertToBuildSequenceShape(results)
+    }
+
+    async buildSequenceById(id: Number) {
+        const queryExpression = `${TABLE_EXPRESSION} WHERE bs.id = ${id}`
+        const results = await getConnection().query(queryExpression)
+        const result = results.length !== 0 ? results[0] : null
+        if (result === null) {
+            return null
+        }
+        return convertToBuildSequenceShape(results)[0]
+    }
+
+    async buildSequenceByTowerId(id: Number) {
+        const queryExpression = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
+        const results = await getConnection().query(queryExpression)
+        const result = results.length !== 0 ? results[0] : null
+        if (result === null) {
+            return null
+        }
+        return convertToBuildSequenceShape(results)[0]
+    }
+
+    async buildSequenceByTowerName(name: String) {
+        const queryExpression = `${TABLE_EXPRESSION} WHERE t4.name = '${name}'`
+        const results = await getConnection().query(queryExpression)
+        const result = results.length !== 0 ? results[0] : null
+        if (result === null) {
+            return null
+        }
+        return convertToBuildSequenceShape(results)[0]
     }
 }

@@ -115,7 +115,7 @@ export class BuildSequence {
     buildSequenceId: Number
 
     @Field(() => TowerKingdom)
-    kingdom: TowerType
+    kingdom: TowerKingdom
 
     @Field(() => TowerType)
     towerType: TowerType
@@ -140,4 +140,37 @@ export class BuildSequence {
 
     @Field(() => BuildSequenceTower)
     level4: BuildSequenceTower
+}
+
+@ObjectType()
+export class TowerWithNullableFields extends TowerWithStats {
+    @Field(() => Number, { nullable: true, defaultValue: null })
+    fireInterval?: Number
+
+    @Field(() => Number, { nullable: true, defaultValue: null })
+    range?: Number
+
+    @Field(() => Number, { nullable: true, defaultValue: null })
+    numberOfUnits?: Number
+
+    @Field(() => Number, { nullable: true, defaultValue: null })
+    armor?: Number
+
+    @Field(() => Number, { nullable: true, defaultValue: null })
+    health?: Number
+
+    @Field(() => Number, { nullable: true, defaultValue: null })
+    respawnInterval?: Number
+}
+
+@ObjectType()
+export class TowerVerbose {
+    @Field(() => TowerWithNullableFields)
+    allStats: TowerWithNullableFields
+
+    @Field(() => [Ability], { nullable: true })
+    abilities?: Ability[]
+
+    @Field(() => BuildSequence, { nullable: true })
+    buildSequence?: BuildSequence | null
 }

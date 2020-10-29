@@ -141,9 +141,17 @@ type BuildSequenceTower {
 
 type Query {
   abilities(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AbilitySortDefinitionElement!] = [{column: towerName, sortOrder: ASCEND}, {column: abilityName, sortOrder: ASCEND}], take: Int = 104): [Ability!]!
+  abilitiesByTowerId(id: Float!): [Ability!]!
+  abilitiesByTowerName(name: String!): [Ability!]!
+  abilityById(id: Float!): Ability
+  abilityByName(name: String!): Ability
   attackTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [AttackTowerType!] = [ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AttackSortDefinitionElement!] = [{column: id}], take: Int = 104): [AttackTower!]!
   barracksTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], skip: Int = 0, sortDefinition: [BarracksSortDefinitionElement!] = [{column: id}], take: Int = 104): [BarracksTower!]!
+  buildSequenceById(id: Float!): BuildSequence
+  buildSequenceByTowerId(id: Float!): BuildSequence
+  buildSequenceByTowerName(name: String!): BuildSequence
   buildSequences(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [BuildSequenceSortDefinitionElement!] = [{column: kingdom, sortOrder: ASCEND}, {column: towerType, sortOrder: ASCEND}, {column: towerName, sortOrder: ASCEND}], take: Int = 104): [BuildSequence!]!
+  towerById(id: Float!): TowerVerbose
   towers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [SortDefinitionElement!] = [{column: id, sortOrder: ASCEND}], take: Int = 104): [TowerWithStats!]!
 }
 
@@ -187,6 +195,30 @@ enum TowerType {
   ARTILLERY
   BARRACKS
   MAGE
+}
+
+type TowerVerbose {
+  abilities: [Ability!]
+  allStats: TowerWithNullableFields!
+  buildSequence: BuildSequence
+}
+
+type TowerWithNullableFields {
+  armor: Float
+  buildCost: Float!
+  damageMaximum: Float!
+  damageMinimum: Float!
+  fireInterval: Float
+  health: Float
+  id: Float!
+  imageUrl: String!
+  kingdom: TowerKingdom!
+  level: TowerLevel!
+  name: String!
+  numberOfUnits: Float
+  range: Float
+  respawnInterval: Float
+  towerType: TowerType!
 }
 
 type TowerWithStats {

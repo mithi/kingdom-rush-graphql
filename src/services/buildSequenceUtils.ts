@@ -1,5 +1,5 @@
 import { TowerType, TowerKingdom } from "../definitions/enums"
-
+import { BuildSequence } from "../definitions/objects"
 interface BuildSequenceQueryResult {
     buildSequenceId: Number
     kingdom: TowerKingdom
@@ -27,7 +27,6 @@ interface BuildSequenceQueryResult {
 
 export const convertToBuildSequenceShape = (results: BuildSequenceQueryResult[]) =>
     results.map(entry => {
-        console.log(entry)
         const {
             buildSequenceId,
             kingdom,
@@ -36,10 +35,11 @@ export const convertToBuildSequenceShape = (results: BuildSequenceQueryResult[])
             totalBuildCost,
             totalBuildCostFullyUpgraded,
         } = entry
-        return {
+
+        const result: BuildSequence = {
             buildSequenceId,
-            kingdom,
             towerType,
+            kingdom,
             totalBuildCost,
             totalAbilitiesCost,
             totalBuildCostFullyUpgraded,
@@ -68,4 +68,5 @@ export const convertToBuildSequenceShape = (results: BuildSequenceQueryResult[])
                 imageUrl: entry.l4ImageUrl,
             },
         }
+        return result
     })
