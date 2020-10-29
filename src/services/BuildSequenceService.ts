@@ -4,6 +4,15 @@ import { buildFilterExpression, buildSortExpression } from "./utils"
 import { convertToBuildSequenceShape } from "./utilsBuildSequence"
 import { TABLE_EXPRESSION } from "./utilsBuildSequenceTableExpr"
 
+const findOneBuildSequence = async (queryExpression: string) => {
+    const results = await getConnection().query(queryExpression)
+    const result = results.length !== 0 ? results[0] : null
+    if (result === null) {
+        return null
+    }
+    return convertToBuildSequenceShape(results)[0]
+}
+
 export class BuildSequenceService {
     async buildSequences(args: BuildSequenceArgs) {
         const { onlyKingdoms, onlyTowerTypes, take, skip, sortDefinition } = args
@@ -20,31 +29,16 @@ export class BuildSequenceService {
 
     async buildSequenceById(id: Number) {
         const queryExpression = `${TABLE_EXPRESSION} WHERE bs.id = ${id}`
-        const results = await getConnection().query(queryExpression)
-        const result = results.length !== 0 ? results[0] : null
-        if (result === null) {
-            return null
-        }
-        return convertToBuildSequenceShape(results)[0]
+        return findOneBuildSequence(queryExpression)
     }
 
     async buildSequenceByTowerId(id: Number) {
         const queryExpression = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
-        const results = await getConnection().query(queryExpression)
-        const result = results.length !== 0 ? results[0] : null
-        if (result === null) {
-            return null
-        }
-        return convertToBuildSequenceShape(results)[0]
+        return findOneBuildSequence(queryExpression)
     }
 
     async buildSequenceByTowerName(name: String) {
         const queryExpression = `${TABLE_EXPRESSION} WHERE t4.name = '${name}'`
-        const results = await getConnection().query(queryExpression)
-        const result = results.length !== 0 ? results[0] : null
-        if (result === null) {
-            return null
-        }
-        return convertToBuildSequenceShape(results)[0]
+        return findOneBuildSequence(queryExpression)
     }
 }
