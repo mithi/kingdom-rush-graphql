@@ -3,11 +3,12 @@ import { createConnection } from "typeorm"
 import { ApolloServer } from "apollo-server"
 import { buildSchema } from "type-graphql"
 import { TowerResolver } from "./resolvers/TowerResolver"
+import { AbilityResolver } from "./resolvers/AbilityResolver"
 
 async function main() {
     await createConnection()
     const schema = await buildSchema({
-        resolvers: [TowerResolver],
+        resolvers: [TowerResolver, AbilityResolver],
         emitSchemaFile: true,
     })
     const server = new ApolloServer({ schema })
