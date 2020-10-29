@@ -1,9 +1,9 @@
-import { Field, ObjectType, Int, ID } from "type-graphql"
+import { Field, ObjectType, Int } from "type-graphql"
 import { TowerType, TowerKingdom, TowerLevel } from "./enums"
 
 @ObjectType()
 export class TowerWithStats {
-    @Field(() => ID)
+    @Field(() => Int)
     id: Number
 
     @Field(() => TowerType)
@@ -57,7 +57,7 @@ export class BarracksTower extends TowerWithStats {
 
 @ObjectType()
 export class Ability {
-    @Field(() => ID)
+    @Field(() => Int)
     abilityId: Number
 
     @Field(() => String)
@@ -69,7 +69,7 @@ export class Ability {
     @Field(() => Int)
     numberOfLevels: Number
 
-    @Field(() => Number)
+    @Field(() => Int)
     towerId: Number
 
     @Field(() => String)
@@ -99,7 +99,7 @@ export class BuildSequenceTower {
     @Field(() => String)
     name: String
 
-    @Field(() => ID)
+    @Field(() => Int)
     id: Number
 
     @Field(() => Int)
@@ -111,7 +111,7 @@ export class BuildSequenceTower {
 
 @ObjectType()
 export class BuildSequence {
-    @Field(() => ID)
+    @Field(() => Int)
     buildSequenceId: Number
 
     @Field(() => TowerKingdom)
