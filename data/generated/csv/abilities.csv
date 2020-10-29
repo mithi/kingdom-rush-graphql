@@ -6,83 +6,83 @@ id,name,description,towerId
 5,healing light,"paladins can heal themselves every 10 seconds, does not remove debuffs. Every upgrade level increases the amount of healing.",49
 6,shield of valor,enhance's paladins' protection improving their armor.,49
 7,holy strike,"paladin attack have 10% chance of becoming a holy strike, dealing physical damage in a small area. Every upgrade level increases the damage dealt.",49
-8,death ray,disintegrates an enemy into fine creep dust. Every upgrade level decreases the cooldown of the ability.,19
-9,teleport,teleports a group of enimes back down the path. cooldown is 10 seconds. Every upgrade level increases the maximum number of targets and the transfer distance.,19
-10,polymorph,turns enemies into harmless sheep. sheep are very weak but cannot be blocked. sheep can be tapped to death. Every upgrade level decreases the cooldown of the ability.,20
-11,summon elemental,"summons an earth elemental, to block and attack your enemies. Every upgrade level increases the health, armor and damage dealt of the elemental.",20
-12,dragonbreath launcher,launches a seeking missile with extra range that never miss. they find another target if they lose the current one. Every upgrade level increases the damage and detection range.,4
-13,cluster launcher xtreme,fires a special bom which will explode in the air dropping multiple bomblets in the area. Every upgrade level increases the number of bomblets.,4
-14,overcharge,creates a static field around the tower when attacking dealing explosive to all nearby enemies. Every upgrade level increases the damage dealt by the field.,5
-15,supercharged bolt,increases the maximum number of targets that the bolt arcs to. base is 3 targets. Every upgrade level increase the number of maximum targets.,5
-16,barrage,shoots bolts that deals damagage in quick succession ,39
-17,falconer,"gains a chance to deal double damage and improves attack range of all towers in its range (including itself). every upgrade level, increases the extra range and the critical chance of dealing double damage",39
-18,totem of weakness,creates a totem that weakens nearby enemies and makes them suffer more damage from sources. every upgrade level increases the duration,40
-19,totem of spirits,creates a totem that dispels all magic and silences spellcaster in range. every upgrade level increases the duration,40
-20,sneak attack,"attacks gain a chance to bbecome sneak attacks, which deal physical damage and have a chance of instant kill. every upgrade level increases the damage, sneak attack chance and instant kill chance.",54
-21,counter attack,improves the dogde chance of assassins and now strikes back upon a successful dodge. every upgrade level increases the dodge chance and damage.,54
-22,pick pocket,attacks gain a chance of stealing gold. every upgrade level increases the chance of stealing gold.,54
-23,toughness,Raises the maximum and current health of the Knights Templar by 50 each upgrade. Every upgrade level increases the current health bonus and maximum health,55
-24,arterial strike,"Attacks have a chance of causing bleeding, dealing True Damage over 3 seconds. Every upgrade level increases the damage dealt.",55
-25,holy grail,Knights Templar have a chance to cheat death every time they are dealt lethal damage. They regain a percentage of their maximum health upon revival. Every upgrade level increases the chance to cheat death and the health regained.,55
-26,twister,"A tornado that can run through a crowd of enemies and carry them back down the path, dealing magic damage. Enemies inside the tornado do not receive damage from outside sources. Every upgrade level increases maximum enemies carried, damage dealth, and distance carried back",24
-27,critical mass,Any fired bolts have a 35% chance to explode dealing magic damage in a small area. Every upgrade level increases damage and damage area.,24
-28,pestilence,"The Necromancer contaminates the land, poisoning enemies, dealing 20 True Damage per second. Every upgrade increases the duration in seconds.",25
-29,Summon Death Rider,"Summons a resilient soldier whose aura increases the damage of nearby skeleton. The Necromancer Tower's most can raise up to 8 skeletal minions from corpses of humanoid enemies that die within its range. increases health, damage, and armor of the death rider",25
-30,core drill,"Sends an automated mining drill towards an enemy, reducing it to a mound of gibs. Every upgrade level decreases cooldown.",9
-31,furnace blast,Burns all enemies in close range over 4 seconds. Every upgrade level increases maximum damage and damage per second,9
-32,Wasp Missiles,"Fires a volley of seeking missiles that never miss, dealing 20-80 damage each. Every upgrade level increases the number of missiles",10
-33,Waste Disposal,Drops oil on the ground that slows down enemies by 70%. Every upgrade level increases the duration in seconds.,10
-34,burts arrors,Shoots an explosive magical arrow that deals additional area magic damage (damage area: 115). (Cooldown: 12 seconds). Every upgrade level increases the damage dealt.,44
-35,Slumber Arrows,Shoots an arrow that puts an enemy to sleep for 4 seconds. Every upgrade level decreases the cooldown in seconds.,44
-36,Crimson Sentence,Every shot has a chance of slaying its victim. Every upgrade level increases the chance of instant kill.,45
-37,Hunter's Mark,"Marks a target, causing it to suffer 200% (220%) damage from all sources. Every upgrade level increases the duration in seconds.",45
-38,Perfect Parry,Gives chance of becoming invulnerable for 2 seconds while dealing 36 True Damage in a small area when attacked. Every upgrade level increases the chance of invulnerability,59
-39,Edge Mastery,Increases Bladesingers' attack damage by 5 and attack speed by 20%.,59
-40,Blade Dance,Special maneuver that slashes many times dealing True Damage. (Cooldown: 10 seconds). Increases the number of slashes and the damage per slash.,59
-41,Circle of Life,Heals themselves and nearby allies over 4 seconds. Every upgrade level increases the healed hp.,60
-42,Eerie Gardener,"Covers an area with barbed vines, slowing and damaging enemies. Every upgrade level increases the damage and duration.",60
-43,Ancient Oak Spear,"Empowers the Forest Keepers' spears, making them deal True Damage. Every upgrade level increases the damage dealt.",60
-44,Eldritch Doom,"Detonates an enemy, causing magic damage to all other nearby enemies. Every upgrade level increases the damage dealt.",29
-45,Ward of Disruption,"Silences enemies in range, blocking their magical abilities for 10 seconds. Every upgrade level increases the maximum number of targets.",29
-46,Timelapse,"Phases enemies out of the battlefield for 5 seconds, dealing magical damage. Every upgrade level increases maximum number of targets and damage dealt.",30
-47,Arcane Sentinel,Summons magic sentinels that seek and attack nearby enemies at long range. Every upgrade level increases damage per bolt and the number of sentinels.,30
-48,sylvan curse,"Curses an enemy for 5 seconds, causing a percentage of all damage dealt to it to also affect nearby enemies. Increases the percentage.",14
-49,Runed Bears,Invokes a mythical runed bear to block and fight enemies. Every upgrade level increases the number of bears.,14
-50,Fiery Nut,"hrows a burning nut that explodes for area damage, setting the ground on fire for 5 seconds. Every upgrade level increases the explosive damage and the maximum fire damage dealt over time.",15
-51,Clobber,"Shakes the ground, dealing True Damage and stunning enemies in the range. Increases the damage and stun in seconds",15
-52,Shadow Mark,"Shoots an arrow that marks a target, making it suffer extra damage from all sources for 5 seconds.  Each upgrade level increases the extra damage (30%, 60%, 100%)",80
-53,Blade of Demise,"Stabs an enemy in the back and kills it instantly. Each upgrade level decreases the cooldown (40 seconds, 30 seconds, 24 seconds)",80
-54,Crow's Nest,"Summons a crow to attack nearby enemies. The crow locks on to an enemy, dealing physical damage. Each upgrade level increases the damage per half a second.",80
-55,Lust For Combat,"Orcs gain bonus damage. Each upgrade level increases the bonus damage (40%, 80%)",76
-56,Captain Promotion,"Promotes an Orc Warrior to Captain, improving his damage, armor, health rate, and health.",76
-57,Seal of Blood,Orc Warriors*win HP regeneration per second. Each upgrade level increases the health rate.,76
-58,Affliction,"Places an infernal rune over the path, which reduces resistance of enemies for 5 seconds. Each upgrade level increases the reduction in percent.",92
-59,Lava Fissure,"Casts a spell that erupts 8 lava geysers, each dealing magic damage in a small area. Each upgrade level increases the damage dealt.",92
-60,Infernal Portal,Teleports a group of enemies back along the path. Each upgrade level increases the number of enemies teleported,92
-61,Minefield,Places a land mine that explode as enemies pass over. Each mine lasts 50 seconds. Each upgrade level increases the damage dealt by the mine.,88
-62,Boosters,"Fires a range-boosted rocket, hitting a far away target. Each upgrade level increases the damage dealt",88
-63,Defective Engines,"Fires a defective rocket, which explodes in mid-air, raining 5 pieces of debris onto the track below. Each upgrade level increases the damage per debris",88
-64,Brutal Strike,Dark Knights have a chance of executing their enemy every time they hit. Each upgrade level increases the instant-kill chance.,64
-65,Armor of Thorns,Dark Knights reflect damage for each melee attack they receive. Each upgraded level increases the damage.,64
-66,Impervious,"Dark Knights shield themselves, resisting hits* without receiving damage.",64
-67,Red Hot Coal,"Throws pieces of hot coal that burn the ground (area: 40 each) for 6 seconds, dealing damage to enemies standing on them. Each upgrade level increases the number of coals and the damage per 0.2 seconds.",84
-68,Abrasive Heat,Nearby towers gain bonus (stackable) attack damage. Each upgrade level increases the percent bonus damage,84
-69,Burning Fuel,"Infuses itself with a powerful fuel that increases its attack speed for 10 seconds. With the upgrade, the tower alternates between 5 fast attacks and 5 normal slow attacks.",84
-70,Guardian Gargoyles,Summons a special Gargoyle unit to the field. Each upgrade level increases the number of gargoyles.,100
-71,Spectral Communion,Allows the Mausoleum to store extra specters. Each upgrade level increases the maximum number of specters stored,100
-72,Possession,"Take control of an enemy for 10 seconds, making it to proceed to the opposite direction and fight for your army. Each upgrade level decreases the cooldown in seconds",100
-73,Biggarangs,Throws a massive boomerang which deals damage in an area of 70. In upgrade level increases the damage dealt.,68
-74,Headbang,Goblirang attacks have a chance to stun the target for 1.2 seconds on each hit. Increases the stun chance,68
-75,Angry Bees,"Throws a beehive, dealing physical damage in a small area (80) over 7 seconds. Each upgrade level increases the maximum damage dealt",68
-76,The Walking Dead,Spawns a clumsy Skeleton/Skeleton Warrior that walks through the path. Each upgrade level increases the damage dealt and increases the health of each clumsy skeleton. It also decreases the cooldown.,72
-77,Got Milk?,Increases basic attack damage on each upgrade.,72
-78,Summon Bonem,Summons a giant skeleton golem that will fight and shoot enemies,72
-79,Backstab,Improves the dodge chance and lets Harassers counter-attack when dodging an enemy's melee hit. Each upgrade level increases the damage and percent dodge chance.,96
-80,Arrow Storm,Swiftly shoots 5 arrows at their enemies. Each upgrade level increases the damage dealt per arrow.,96
-81,Fury of the Twilight,"When Harassers die, they have a 50% chance of going berserk for 6 seconds.",96
-82,Healing Roots,Fills a zone with powerful healing roots. Allies over it heal over 4 seconds. Each upgrade level increases HP healed,104
-83,Meteor Shower,Cast a meteor shower that deals magic damage in an area. Each upgrade level increases the number of meteors and the damage per meteor,104
-84,Static Shock,Every attack now deals additional magic damage in a small area. Each upgrade level increases the damage,104
-85,Throwing Axes,Barbarians can throw great axes at ground and flying enemies in range.,50
-86,Whirlwind Attack,"When struck, Barbarians have a chance of dealing damage to all enemies in the area.",50
-87,More Axes,Barbarians equip an additional axe to deliver additional damage. Their attack speed is slowed down by 0.3 seconds after this upgrade.,50
+8,Throwing Axes,Barbarians can throw great axes at ground and flying enemies in range.,50
+9,Whirlwind Attack,"When struck, Barbarians have a chance of dealing damage to all enemies in the area.",50
+10,More Axes,Barbarians equip an additional axe to deliver additional damage. Their attack speed is slowed down by 0.3 seconds after this upgrade.,50
+11,death ray,disintegrates an enemy into fine creep dust. Every upgrade level decreases the cooldown of the ability.,19
+12,teleport,teleports a group of enimes back down the path. cooldown is 10 seconds. Every upgrade level increases the maximum number of targets and the transfer distance.,19
+13,polymorph,turns enemies into harmless sheep. sheep are very weak but cannot be blocked. sheep can be tapped to death. Every upgrade level decreases the cooldown of the ability.,20
+14,summon elemental,"summons an earth elemental, to block and attack your enemies. Every upgrade level increases the health, armor and damage dealt of the elemental.",20
+15,dragonbreath launcher,launches a seeking missile with extra range that never miss. they find another target if they lose the current one. Every upgrade level increases the damage and detection range.,4
+16,cluster launcher xtreme,fires a special bom which will explode in the air dropping multiple bomblets in the area. Every upgrade level increases the number of bomblets.,4
+17,overcharge,creates a static field around the tower when attacking dealing explosive to all nearby enemies. Every upgrade level increases the damage dealt by the field.,5
+18,supercharged bolt,increases the maximum number of targets that the bolt arcs to. base is 3 targets. Every upgrade level increase the number of maximum targets.,5
+19,barrage,shoots bolts that deals damagage in quick succession ,39
+20,falconer,"gains a chance to deal double damage and improves attack range of all towers in its range (including itself). every upgrade level, increases the extra range and the critical chance of dealing double damage",39
+21,totem of weakness,creates a totem that weakens nearby enemies and makes them suffer more damage from sources. every upgrade level increases the duration,40
+22,totem of spirits,creates a totem that dispels all magic and silences spellcaster in range. every upgrade level increases the duration,40
+23,sneak attack,"attacks gain a chance to bbecome sneak attacks, which deal physical damage and have a chance of instant kill. every upgrade level increases the damage, sneak attack chance and instant kill chance.",54
+24,counter attack,improves the dogde chance of assassins and now strikes back upon a successful dodge. every upgrade level increases the dodge chance and damage.,54
+25,pick pocket,attacks gain a chance of stealing gold. every upgrade level increases the chance of stealing gold.,54
+26,toughness,Raises the maximum and current health of the Knights Templar by 50 each upgrade. Every upgrade level increases the current health bonus and maximum health,55
+27,arterial strike,"Attacks have a chance of causing bleeding, dealing True Damage over 3 seconds. Every upgrade level increases the damage dealt.",55
+28,holy grail,Knights Templar have a chance to cheat death every time they are dealt lethal damage. They regain a percentage of their maximum health upon revival. Every upgrade level increases the chance to cheat death and the health regained.,55
+29,twister,"A tornado that can run through a crowd of enemies and carry them back down the path, dealing magic damage. Enemies inside the tornado do not receive damage from outside sources. Every upgrade level increases maximum enemies carried, damage dealth, and distance carried back",24
+30,critical mass,Any fired bolts have a 35% chance to explode dealing magic damage in a small area. Every upgrade level increases damage and damage area.,24
+31,pestilence,"The Necromancer contaminates the land, poisoning enemies, dealing 20 True Damage per second. Every upgrade increases the duration in seconds.",25
+32,Summon Death Rider,"Summons a resilient soldier whose aura increases the damage of nearby skeleton. The Necromancer Tower's most can raise up to 8 skeletal minions from corpses of humanoid enemies that die within its range. increases health, damage, and armor of the death rider",25
+33,core drill,"Sends an automated mining drill towards an enemy, reducing it to a mound of gibs. Every upgrade level decreases cooldown.",9
+34,furnace blast,Burns all enemies in close range over 4 seconds. Every upgrade level increases maximum damage and damage per second,9
+35,Wasp Missiles,"Fires a volley of seeking missiles that never miss, dealing 20-80 damage each. Every upgrade level increases the number of missiles",10
+36,Waste Disposal,Drops oil on the ground that slows down enemies by 70%. Every upgrade level increases the duration in seconds.,10
+37,burts arrors,Shoots an explosive magical arrow that deals additional area magic damage (damage area: 115). (Cooldown: 12 seconds). Every upgrade level increases the damage dealt.,44
+38,Slumber Arrows,Shoots an arrow that puts an enemy to sleep for 4 seconds. Every upgrade level decreases the cooldown in seconds.,44
+39,Crimson Sentence,Every shot has a chance of slaying its victim. Every upgrade level increases the chance of instant kill.,45
+40,Hunter's Mark,"Marks a target, causing it to suffer 200% (220%) damage from all sources. Every upgrade level increases the duration in seconds.",45
+41,Perfect Parry,Gives chance of becoming invulnerable for 2 seconds while dealing 36 True Damage in a small area when attacked. Every upgrade level increases the chance of invulnerability,59
+42,Edge Mastery,Increases Bladesingers' attack damage by 5 and attack speed by 20%.,59
+43,Blade Dance,Special maneuver that slashes many times dealing True Damage. (Cooldown: 10 seconds). Increases the number of slashes and the damage per slash.,59
+44,Circle of Life,Heals themselves and nearby allies over 4 seconds. Every upgrade level increases the healed hp.,60
+45,Eerie Gardener,"Covers an area with barbed vines, slowing and damaging enemies. Every upgrade level increases the damage and duration.",60
+46,Ancient Oak Spear,"Empowers the Forest Keepers' spears, making them deal True Damage. Every upgrade level increases the damage dealt.",60
+47,Eldritch Doom,"Detonates an enemy, causing magic damage to all other nearby enemies. Every upgrade level increases the damage dealt.",29
+48,Ward of Disruption,"Silences enemies in range, blocking their magical abilities for 10 seconds. Every upgrade level increases the maximum number of targets.",29
+49,Timelapse,"Phases enemies out of the battlefield for 5 seconds, dealing magical damage. Every upgrade level increases maximum number of targets and damage dealt.",30
+50,Arcane Sentinel,Summons magic sentinels that seek and attack nearby enemies at long range. Every upgrade level increases damage per bolt and the number of sentinels.,30
+51,sylvan curse,"Curses an enemy for 5 seconds, causing a percentage of all damage dealt to it to also affect nearby enemies. Increases the percentage.",14
+52,Runed Bears,Invokes a mythical runed bear to block and fight enemies. Every upgrade level increases the number of bears.,14
+53,Fiery Nut,"hrows a burning nut that explodes for area damage, setting the ground on fire for 5 seconds. Every upgrade level increases the explosive damage and the maximum fire damage dealt over time.",15
+54,Clobber,"Shakes the ground, dealing True Damage and stunning enemies in the range. Increases the damage and stun in seconds",15
+55,Shadow Mark,"Shoots an arrow that marks a target, making it suffer extra damage from all sources for 5 seconds.  Each upgrade level increases the extra damage (30%, 60%, 100%)",80
+56,Blade of Demise,"Stabs an enemy in the back and kills it instantly. Each upgrade level decreases the cooldown (40 seconds, 30 seconds, 24 seconds)",80
+57,Crow's Nest,"Summons a crow to attack nearby enemies. The crow locks on to an enemy, dealing physical damage. Each upgrade level increases the damage per half a second.",80
+58,Lust For Combat,"Orcs gain bonus damage. Each upgrade level increases the bonus damage (40%, 80%)",76
+59,Captain Promotion,"Promotes an Orc Warrior to Captain, improving his damage, armor, health rate, and health.",76
+60,Seal of Blood,Orc Warriors*win HP regeneration per second. Each upgrade level increases the health rate.,76
+61,Affliction,"Places an infernal rune over the path, which reduces resistance of enemies for 5 seconds. Each upgrade level increases the reduction in percent.",92
+62,Lava Fissure,"Casts a spell that erupts 8 lava geysers, each dealing magic damage in a small area. Each upgrade level increases the damage dealt.",92
+63,Infernal Portal,Teleports a group of enemies back along the path. Each upgrade level increases the number of enemies teleported,92
+64,Minefield,Places a land mine that explode as enemies pass over. Each mine lasts 50 seconds. Each upgrade level increases the damage dealt by the mine.,88
+65,Boosters,"Fires a range-boosted rocket, hitting a far away target. Each upgrade level increases the damage dealt",88
+66,Defective Engines,"Fires a defective rocket, which explodes in mid-air, raining 5 pieces of debris onto the track below. Each upgrade level increases the damage per debris",88
+67,Brutal Strike,Dark Knights have a chance of executing their enemy every time they hit. Each upgrade level increases the instant-kill chance.,64
+68,Armor of Thorns,Dark Knights reflect damage for each melee attack they receive. Each upgraded level increases the damage.,64
+69,Impervious,"Dark Knights shield themselves, resisting hits* without receiving damage.",64
+70,Red Hot Coal,"Throws pieces of hot coal that burn the ground (area: 40 each) for 6 seconds, dealing damage to enemies standing on them. Each upgrade level increases the number of coals and the damage per 0.2 seconds.",84
+71,Abrasive Heat,Nearby towers gain bonus (stackable) attack damage. Each upgrade level increases the percent bonus damage,84
+72,Burning Fuel,"Infuses itself with a powerful fuel that increases its attack speed for 10 seconds. With the upgrade, the tower alternates between 5 fast attacks and 5 normal slow attacks.",84
+73,Guardian Gargoyles,Summons a special Gargoyle unit to the field. Each upgrade level increases the number of gargoyles.,100
+74,Spectral Communion,Allows the Mausoleum to store extra specters. Each upgrade level increases the maximum number of specters stored,100
+75,Possession,"Take control of an enemy for 10 seconds, making it to proceed to the opposite direction and fight for your army. Each upgrade level decreases the cooldown in seconds",100
+76,Biggarangs,Throws a massive boomerang which deals damage in an area of 70. In upgrade level increases the damage dealt.,68
+77,Headbang,Goblirang attacks have a chance to stun the target for 1.2 seconds on each hit. Increases the stun chance,68
+78,Angry Bees,"Throws a beehive, dealing physical damage in a small area (80) over 7 seconds. Each upgrade level increases the maximum damage dealt",68
+79,The Walking Dead,Spawns a clumsy Skeleton/Skeleton Warrior that walks through the path. Each upgrade level increases the damage dealt and increases the health of each clumsy skeleton. It also decreases the cooldown.,72
+80,Got Milk?,Increases basic attack damage on each upgrade.,72
+81,Summon Bonem,Summons a giant skeleton golem that will fight and shoot enemies,72
+82,Backstab,Improves the dodge chance and lets Harassers counter-attack when dodging an enemy's melee hit. Each upgrade level increases the damage and percent dodge chance.,96
+83,Arrow Storm,Swiftly shoots 5 arrows at their enemies. Each upgrade level increases the damage dealt per arrow.,96
+84,Fury of the Twilight,"When Harassers die, they have a 50% chance of going berserk for 6 seconds.",96
+85,Healing Roots,Fills a zone with powerful healing roots. Allies over it heal over 4 seconds. Each upgrade level increases HP healed,104
+86,Meteor Shower,Cast a meteor shower that deals magic damage in an area. Each upgrade level increases the number of meteors and the damage per meteor,104
+87,Static Shock,Every attack now deals additional magic damage in a small area. Each upgrade level increases the damage,104
