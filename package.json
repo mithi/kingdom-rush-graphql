@@ -13,7 +13,7 @@
         "db:e2e": "bash ./scripts/run_end_to_end.sh",
         "db:create": "bash ./scripts/run_db_create.sh",
         "db:migrate-all": "rm -rf ./dist/migrations && npm run tsc && typeorm migration:run",
-        "db:create-migrate": "npm run db:create && npm run db:migrate",
+        "db:create-migrate": "npm run db:create && npm run db:migrate-all-",
         "db:update-data": "bash ./scripts/run_save_data.sh",
         "db:seed-json": "npm run tsc && node dist/seed/populate.js",
         "db:drop": "bash ./scripts/run_db_cleanup.sh",
