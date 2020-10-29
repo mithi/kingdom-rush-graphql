@@ -72,7 +72,6 @@ export class BuildSequenceService {
     async buildSequenceByTowerName(name: String) {
         const queryExpression = `${TABLE_EXPRESSION} WHERE t4.name = '${name}'`
         const results = await getConnection().query(queryExpression)
-        console.log(results)
         const result = results.length !== 0 ? results[0] : null
         if (result === null) {
             return null
