@@ -105,10 +105,45 @@ enum BarracksTowerColumn {
   respawnInterval
 }
 
+type BuildSequence {
+  buildSequenceId: Float!
+  kingdom: TowerKingdom!
+  level1: BuildSequenceTower!
+  level2: BuildSequenceTower!
+  level3: BuildSequenceTower!
+  level4: BuildSequenceTower!
+  totalAbilitiesCost: Float!
+  totalBuildCost: Float!
+  totalBuildCostFullyUpgraded: Float!
+  towerType: TowerType!
+}
+
+enum BuildSequenceColumn {
+  kingdom
+  totalAbilitiesCost
+  totalBuildCost
+  totalCostFullyUpgraded
+  towerName
+  towerType
+}
+
+input BuildSequenceSortDefinitionElement {
+  column: BuildSequenceColumn!
+  sortOrder: SortOrder = ASCEND
+}
+
+type BuildSequenceTower {
+  buildCost: Float!
+  id: Float!
+  imageUrl: String!
+  name: String!
+}
+
 type Query {
   abilities(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AbilitySortDefinitionElement!] = [{column: towerName, sortOrder: ASCEND}, {column: abilityName, sortOrder: ASCEND}], take: Int = 104): [Ability!]!
   attackTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [AttackTowerType!] = [ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AttackSortDefinitionElement!] = [{column: id}], take: Int = 104): [AttackTower!]!
   barracksTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], skip: Int = 0, sortDefinition: [BarracksSortDefinitionElement!] = [{column: id}], take: Int = 104): [BarracksTower!]!
+  buildSequences(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [BuildSequenceSortDefinitionElement!] = [{column: kingdom, sortOrder: ASCEND}, {column: towerType, sortOrder: ASCEND}, {column: towerName, sortOrder: ASCEND}], take: Int = 104): [BuildSequence!]!
   towers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [SortDefinitionElement!] = [{column: id, sortOrder: ASCEND}], take: Int = 104): [TowerWithStats!]!
 }
 
