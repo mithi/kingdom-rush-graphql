@@ -144,6 +144,7 @@ type Query {
   abilitiesByTowerId(id: Float!): [Ability!]!
   abilitiesByTowerName(name: String!): [Ability!]!
   abilityById(id: Float!): Ability
+  abilityByName(name: String!): Ability
   attackTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [AttackTowerType!] = [ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [AttackSortDefinitionElement!] = [{column: id}], take: Int = 104): [AttackTower!]!
   barracksTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], skip: Int = 0, sortDefinition: [BarracksSortDefinitionElement!] = [{column: id}], take: Int = 104): [BarracksTower!]!
   buildSequences(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [BuildSequenceSortDefinitionElement!] = [{column: kingdom, sortOrder: ASCEND}, {column: towerType, sortOrder: ASCEND}, {column: towerName, sortOrder: ASCEND}], take: Int = 104): [BuildSequence!]!

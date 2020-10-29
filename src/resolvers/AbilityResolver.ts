@@ -57,4 +57,9 @@ export class AbilityResolver {
     async abilityById(@Arg("id") id: Number) {
         return this.abilityService.abilityById(id)
     }
+
+    @Query(() => Ability, { nullable: true })
+    async abilityByName(@Arg("name") name: String) {
+        return this.abilityService.abilityByName(name)
+    }
 }

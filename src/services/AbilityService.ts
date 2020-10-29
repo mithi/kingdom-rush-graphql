@@ -74,9 +74,11 @@ export class AbilityService {
         const result = results.length !== 0 ? results[0] : null
         return result
     }
+
+    async abilityByName(name: String) {
+        const queryExpression = `${TABLE_EXPRESSION} WHERE ability_table."abilityName" = '${name}'`
+        const results = await getConnection().query(queryExpression)
+        const result = results.length !== 0 ? results[0] : null
+        return result
+    }
 }
-
-/*
-
-AbilityByName(name: "")
-*/
