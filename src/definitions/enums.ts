@@ -85,7 +85,7 @@ export enum BuildSequenceSortColumn {
     kingdom = "t4.kingdom",
     totalBuildCost = `"totalBuildCost"`,
     totalAbilitiesCost = `"totalAbilitiesCost"`,
-    totalCostFullyUpgraded = `"totalCostFullyUpgraded"`,
+    totalBuildCostFullyUpgraded = `"totalBuildCostFullyUpgraded"`,
 }
 
 registerEnumType(SortOrder, { name: "SortOrder" })

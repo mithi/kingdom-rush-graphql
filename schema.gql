@@ -122,7 +122,7 @@ enum BuildSequenceSortColumn {
   kingdom
   totalAbilitiesCost
   totalBuildCost
-  totalCostFullyUpgraded
+  totalBuildCostFullyUpgraded
   towerName
   towerType
 }
