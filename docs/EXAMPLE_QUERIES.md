@@ -1,3 +1,69 @@
+# Towers
+
+```graphql
+{
+    towers(
+        onlyLevels: [LVL4]
+        sortDefinition: [{ column: damageMaximum, sortOrder: DESCEND }]
+    ) {
+        name
+        kingdom
+        damageMaximum
+    }
+}
+```
+
+```graphql
+{
+    barracksTowers(
+        sortDefinition: [
+            { column: kingdom, sortOrder: ASCEND }
+            { column: name, sortOrder: ASCEND }
+        ]
+    ) {
+        name
+        kingdom
+    }
+}
+```
+
+```graphql
+{
+    attackTowers(
+        take: 10
+        sortDefinition: [
+            { column: towerType, sortOrder: ASCEND }
+            { column: name, sortOrder: DESCEND }
+        ]
+        onlyKingdoms: [KR, KRF]
+    ) {
+        towerType
+        name
+    }
+}
+```
+
+```graphql
+{
+    towerById(id: 10) {
+        allStats {
+            name
+            fireInterval
+            numberOfUnits
+        }
+        abilities {
+            abilityName
+            abilityDescription
+            levelCosts
+        }
+        buildSequence {
+            totalBuildCost
+            totalBuildCostFullyUpgraded
+        }
+    }
+}
+```
+
 # Abilities
 
 ```graphql
@@ -150,59 +216,6 @@
             id
         }
         totalBuildCost
-    }
-}
-```
-
-# Towers
-
-```graphql
-{
-    barracksTowers(
-        sortDefinition: [
-            { column: kingdom, sortOrder: ASCEND }
-            { column: name, sortOrder: ASCEND }
-        ]
-    ) {
-        name
-        kingdom
-    }
-}
-```
-
-```graphql
-{
-    attackTowers(
-        take: 10
-        sortDefinition: [
-            { column: towerType, sortOrder: ASCEND }
-            { column: name, sortOrder: DESCEND }
-        ]
-        onlyKingdoms: [KR, KRF]
-    ) {
-        towerType
-        name
-    }
-}
-```
-
-```graphql
-{
-    towerById(id: 10) {
-        allStats {
-            name
-            fireInterval
-            numberOfUnits
-        }
-        abilities {
-            abilityName
-            abilityDescription
-            levelCosts
-        }
-        buildSequence {
-            totalBuildCost
-            totalBuildCostFullyUpgraded
-        }
     }
 }
 ```
