@@ -27,7 +27,7 @@ buildSequences(
 
 */
 
-import { Resolver, Query, Args } from "type-graphql"
+import { Resolver, Query, Args, Arg } from "type-graphql"
 import { BuildSequence } from "../definitions/objects"
 import { BuildSequenceArgs } from "../definitions/argsBuildSequence"
 import { BuildSequenceService } from "../services/BuildSequenceService"
@@ -39,5 +39,10 @@ export class BuildSequenceResolver {
     @Query(() => [BuildSequence])
     async buildSequences(@Args() args: BuildSequenceArgs) {
         return this.buildSequenceService.buildSequences(args)
+    }
+
+    @Query(() => BuildSequence, { nullable: true })
+    async buildSequenceById(@Arg("id") id: Number) {
+        return this.buildSequenceService.buildSequenceById(id)
     }
 }
