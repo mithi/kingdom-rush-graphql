@@ -5,9 +5,9 @@ import {
     TowerLevel,
     AttackTowerType,
     SortOrder,
-    TowerColumn,
-    AttackTowerColumn,
-    BarracksTowerColumn,
+    TowerSortColumn,
+    AttackTowerSortColumn,
+    BarracksTowerSortColumn,
 } from "./enums"
 import { Min, Max } from "class-validator"
 import {
@@ -86,7 +86,7 @@ export class TowerArgs extends BaseTowerArgs {
     onlyTowerTypes: [TowerType]
 
     @Field(_type => [SortDefinitionElement], {
-        defaultValue: [{ column: TowerColumn.id, sortOrder: SortOrder.ASCEND }],
+        defaultValue: [{ column: TowerSortColumn.id, sortOrder: SortOrder.ASCEND }],
     })
     sortDefinition: [SortDefinitionElement]
 }
@@ -108,7 +108,7 @@ export class AttackTowerArgs extends BaseTowerArgs {
     onlyTowerTypes: [AttackTowerType]
 
     @Field(_type => [AttackSortDefinitionElement], {
-        defaultValue: [{ column: AttackTowerColumn.id, sortOrder: SortOrder.ASCEND }],
+        defaultValue: [{ column: AttackTowerSortColumn.id, sortOrder: SortOrder.ASCEND }],
     })
     sortDefinition: [AttackSortDefinitionElement]
 }
@@ -121,7 +121,9 @@ export class BarracksTowerArgs extends BaseTowerArgs {
     onlyLevels: [TowerLevel]
 
     @Field(_type => [BarracksSortDefinitionElement], {
-        defaultValue: [{ column: BarracksTowerColumn.id, sortOrder: SortOrder.ASCEND }],
+        defaultValue: [
+            { column: BarracksTowerSortColumn.id, sortOrder: SortOrder.ASCEND },
+        ],
     })
     sortDefinition: [BarracksSortDefinitionElement]
 }

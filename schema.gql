@@ -18,7 +18,7 @@ type Ability {
   towerType: TowerType!
 }
 
-enum AbilityColumn {
+enum AbilitySortColumn {
   abilityName
   kingdom
   totalCost
@@ -28,12 +28,12 @@ enum AbilityColumn {
 }
 
 input AbilitySortDefinitionElement {
-  column: AbilityColumn!
+  column: AbilitySortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
 input AttackSortDefinitionElement {
-  column: AttackTowerColumn!
+  column: AttackTowerSortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
@@ -51,7 +51,7 @@ type AttackTower {
   towerType: TowerType!
 }
 
-enum AttackTowerColumn {
+enum AttackTowerSortColumn {
   buildCost
   damageMaximum
   damageMinimum
@@ -71,7 +71,7 @@ enum AttackTowerType {
 }
 
 input BarracksSortDefinitionElement {
-  column: BarracksTowerColumn!
+  column: BarracksTowerSortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
@@ -91,7 +91,7 @@ type BarracksTower {
   towerType: TowerType!
 }
 
-enum BarracksTowerColumn {
+enum BarracksTowerSortColumn {
   armor
   buildCost
   damageMaximum
@@ -118,7 +118,7 @@ type BuildSequence {
   towerType: TowerType!
 }
 
-enum BuildSequenceColumn {
+enum BuildSequenceSortColumn {
   kingdom
   totalAbilitiesCost
   totalBuildCost
@@ -128,7 +128,7 @@ enum BuildSequenceColumn {
 }
 
 input BuildSequenceSortDefinitionElement {
-  column: BuildSequenceColumn!
+  column: BuildSequenceSortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
@@ -156,24 +156,13 @@ type Query {
 }
 
 input SortDefinitionElement {
-  column: TowerColumn!
+  column: TowerSortColumn!
   sortOrder: SortOrder = ASCEND
 }
 
 enum SortOrder {
   ASCEND
   DESCEND
-}
-
-enum TowerColumn {
-  buildCost
-  damageMaximum
-  damageMinimum
-  id
-  kingdom
-  level
-  name
-  towerType
 }
 
 enum TowerKingdom {
@@ -188,6 +177,17 @@ enum TowerLevel {
   LVL2
   LVL3
   LVL4
+}
+
+enum TowerSortColumn {
+  buildCost
+  damageMaximum
+  damageMinimum
+  id
+  kingdom
+  level
+  name
+  towerType
 }
 
 enum TowerType {
