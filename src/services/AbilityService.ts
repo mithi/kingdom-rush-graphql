@@ -40,9 +40,15 @@ INNER JOIN (
 ) AS ability_table ON t4.name = ability_table."towerName"
 `
 
+const nothingLeft = (arrays: any[]): boolean => {
+    return arrays.some(list => list.length === 0)
+}
 export class AbilityService {
     async abilities(args: AbilityArgs) {
         const { onlyKingdoms, onlyTowerTypes, take, skip, sortDefinition } = args
+        if (nothingLeft([onlyKingdoms, onlyTowerTypes, sortDefinition])) {
+            return []
+        }
         // we know the query won't result anything if one of the parameters don't have value
         const kingdoms = buildFilterExpression(onlyKingdoms, `t4.kingdom`)
         const towerTypes = buildFilterExpression(onlyTowerTypes, `t4."towerType"`)
