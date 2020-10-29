@@ -21,5 +21,5 @@ export class AbilityArgs extends BaseTowerArgs {
             { column: AbilityColumn.abilityName, sortOrder: SortOrder.ASCEND },
         ],
     })
-    sortDefinition: AbilitySortDefinitionElement[]
+    sortDefinition: [AbilitySortDefinitionElement]
 }

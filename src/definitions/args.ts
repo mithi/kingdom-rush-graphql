@@ -88,7 +88,7 @@ export class TowerArgs extends BaseTowerArgs {
     @Field(_type => [SortDefinitionElement], {
         defaultValue: [{ column: TowerColumn.id, sortOrder: SortOrder.ASCEND }],
     })
-    sortDefinition: SortDefinitionElement[]
+    sortDefinition: [SortDefinitionElement]
 }
 
 @ArgsType()
@@ -110,7 +110,7 @@ export class AttackTowerArgs extends BaseTowerArgs {
     @Field(_type => [AttackSortDefinitionElement], {
         defaultValue: [{ column: AttackTowerColumn.id, sortOrder: SortOrder.ASCEND }],
     })
-    sortDefinition: AttackSortDefinitionElement[]
+    sortDefinition: [AttackSortDefinitionElement]
 }
 
 @ArgsType()
@@ -123,5 +123,5 @@ export class BarracksTowerArgs extends BaseTowerArgs {
     @Field(_type => [BarracksSortDefinitionElement], {
         defaultValue: [{ column: BarracksTowerColumn.id, sortOrder: SortOrder.ASCEND }],
     })
-    sortDefinition: BarracksSortDefinitionElement[]
+    sortDefinition: [BarracksSortDefinitionElement]
 }
