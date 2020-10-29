@@ -71,19 +71,19 @@ export enum BarracksTowerColumn {
 }
 
 export enum AbilityColumn {
-    towerName = "towerName",
-    abilityName = "abilityName",
-    totalCost = "totalCost",
-    totalCostWithTowers = "totalCostWithTowers",
+    towerName = `"towerName"`,
+    abilityName = `"abilityName"`,
+    totalCost = `"totalCost"`,
+    totalCostWithTowers = `"totalCostWithTowers"`,
     kingdom = "kingdom",
-    towerType = "level",
+    towerType = `"towerType"`,
 }
 registerEnumType(SortOrder, { name: "SortOrder" })
 
 registerEnumType(TowerColumn, { name: "TowerColumn" })
 registerEnumType(AttackTowerColumn, { name: "AttackTowerColumn" })
 registerEnumType(BarracksTowerColumn, { name: "BarracksTowerColumn" })
-registerEnumType(BarracksTowerColumn, { name: "AbilityColumn" })
+registerEnumType(AbilityColumn, { name: "AbilityColumn" })
 
 registerEnumType(TowerType, { name: "TowerType" })
 registerEnumType(AttackTowerType, { name: "AttackTowerType" })
