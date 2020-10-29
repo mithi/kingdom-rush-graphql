@@ -50,4 +50,9 @@ export class BuildSequenceResolver {
     async buildSequenceByTowerId(@Arg("id") id: Number) {
         return this.buildSequenceService.buildSequenceByTowerId(id)
     }
+
+    @Query(() => BuildSequence, { nullable: true })
+    async buildSequenceByTowerName(@Arg("name") name: String) {
+        return this.buildSequenceService.buildSequenceByTowerName(name)
+    }
 }

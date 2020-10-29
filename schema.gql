@@ -149,6 +149,7 @@ type Query {
   barracksTowers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], skip: Int = 0, sortDefinition: [BarracksSortDefinitionElement!] = [{column: id}], take: Int = 104): [BarracksTower!]!
   buildSequenceById(id: Float!): BuildSequence
   buildSequenceByTowerId(id: Float!): BuildSequence
+  buildSequenceByTowerName(name: String!): BuildSequence
   buildSequences(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [BuildSequenceSortDefinitionElement!] = [{column: kingdom, sortOrder: ASCEND}, {column: towerType, sortOrder: ASCEND}, {column: towerName, sortOrder: ASCEND}], take: Int = 104): [BuildSequence!]!
   towers(onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV], onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4], onlyTowerTypes: [TowerType!] = [BARRACKS, ARCHER, ARTILLERY, MAGE], skip: Int = 0, sortDefinition: [SortDefinitionElement!] = [{column: id, sortOrder: ASCEND}], take: Int = 104): [TowerWithStats!]!
 }
