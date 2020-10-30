@@ -27,7 +27,10 @@ const EXAMPLE_TOWER_DATA = {
 }
 
 beforeAll(async () => {
+    const t0 = Date.now()
     await createConnection("test")
+    const t1 = Date.now()
+    console.log(` 👩‍🔬 Connected database in ${t1 - t0}ms`)
 })
 
 afterAll(async () => {

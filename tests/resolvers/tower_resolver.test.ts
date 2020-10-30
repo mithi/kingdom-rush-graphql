@@ -10,8 +10,11 @@ import attackTowersFireIntervalDescending from "./__snapshots__/ATTACK_TOWER_FIR
 import barracksTowers from "./__snapshots__/BARRACKS_TOWERS"
 
 beforeAll(async () => {
+    const t0 = Date.now()
     await createConnection("test")
     await seed({ dbName: "test", verbose: false })
+    const t1 = Date.now()
+    console.log(` 👩‍🔬 Connected and populated database in ${t1 - t0}ms`)
 })
 
 afterAll(async () => {
