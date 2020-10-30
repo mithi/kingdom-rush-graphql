@@ -18,7 +18,7 @@ afterAll(async () => {
     await getConnection("test").close()
 })
 
-test("Be able to get towers, ids would be sorted in ascending order by default", async () => {
+test("1. Be able to get towers, ids would be sorted in ascending order by default", async () => {
     const schema = await buildSchema({ resolvers: [TowerResolver] })
     const { query } = createTestClient(new ApolloServer({ schema }))
 
@@ -33,7 +33,7 @@ test("Be able to get towers, ids would be sorted in ascending order by default",
     expect(result).toMatchInlineSnapshot(ascendingTowerIds())
 })
 
-test("Be able to get attack towers, by default result will be sorted by id in ascending order", async () => {
+test("2. Be able to get attack towers, by default result will be sorted by id in ascending order", async () => {
     const schema = await buildSchema({ resolvers: [TowerResolver] })
     const { query } = createTestClient(new ApolloServer({ schema }))
 
@@ -48,7 +48,7 @@ test("Be able to get attack towers, by default result will be sorted by id in as
     expect(result).toMatchInlineSnapshot(attackTowersTypes())
 })
 
-test("Be able to get attack towers sorted by fire interval in descending order", async () => {
+test("3. Be able to get attack towers sorted by fire interval in descending order", async () => {
     const schema = await buildSchema({ resolvers: [TowerResolver] })
     const { query } = createTestClient(new ApolloServer({ schema }))
 
@@ -69,7 +69,7 @@ test("Be able to get attack towers sorted by fire interval in descending order",
     expect(result).toMatchInlineSnapshot(attackTowersFireIntervalDescending())
 })
 
-test("Be able to get barracks towers in correct order", async () => {
+test("4. Be able to get barracks towers in correct order", async () => {
     const schema = await buildSchema({ resolvers: [TowerResolver] })
     const { query } = createTestClient(new ApolloServer({ schema }))
 
