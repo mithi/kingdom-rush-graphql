@@ -7,9 +7,11 @@ import {
     Ability,
     AbilityLevel,
 } from "../src/models/"
+import { BuildSequence } from "../src/models/BuildSequence"
 import populateAttackStats from "../src/seed/AttackStats"
 import populateBarracksStats from "../src/seed/BarracksStats"
 import { populateTowers, populateAbilities } from "../src/seed/Tower"
+import populateBuildSequence from "../src/seed/BuildSequence"
 
 beforeEach(async () => {
     await createConnection("test")
@@ -62,4 +64,15 @@ test("3. After populating abilities and ability levels, they should have the exp
     abilityLevelCount = await getRepository(AbilityLevel, "test").count()
     expect(abilityCount).toBe(87)
     expect(abilityLevelCount).toBe(228)
+})
+
+test("4. After populating build sequences, they should have the expected number of entries", async () => {
+    let buildSequenceCount = await getRepository(BuildSequence, "test").count()
+    expect(buildSequenceCount).toBe(0)
+
+    await populateTowers({ dbName: "test", verbose: false })
+    await populateBuildSequence({ dbName: "test", verbose: false })
+
+    buildSequenceCount = await getRepository(BuildSequence, "test").count()
+    expect(buildSequenceCount).toBe(35)
 })
