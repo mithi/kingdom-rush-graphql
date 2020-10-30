@@ -21,7 +21,7 @@ export class AbilityService {
         const sortExpr = `ORDER BY ${sortColumns}`
         const filterExpr = `WHERE (${kingdoms}) AND (${towerTypes})`
         const query = `${TABLE_EXPRESSION} ${filterExpr} ${sortExpr} ${pageExpr}`
-        console.log(query)
+        //console.log(query)
         return await getConnection().query(query)
     }
 
