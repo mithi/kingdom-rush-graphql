@@ -13,11 +13,11 @@ import populateBarracksStats from "../src/seed/BarracksStats"
 import { populateTowers, populateAbilities } from "../src/seed/Tower"
 import populateBuildSequence from "../src/seed/BuildSequence"
 
-beforeEach(async () => {
+beforeAll(async () => {
     await createConnection("test")
 })
 
-afterEach(async () => {
+afterAll(async () => {
     await getConnection("test").close()
 })
 
@@ -41,7 +41,6 @@ test("2. After populating BarracksStats and AttackStats, they should have the ex
     expect(barracksCount).toBe(0)
     expect(attackCount).toBe(0)
 
-    await populateTowers({ dbName: "test", verbose: false })
     await populateBarracksStats({ dbName: "test", verbose: false })
     await populateAttackStats({ dbName: "test", verbose: false })
 
@@ -57,7 +56,6 @@ test("3. After populating abilities and ability levels, they should have the exp
     expect(abilityCount).toBe(0)
     expect(abilityLevelCount).toBe(0)
 
-    await populateTowers({ dbName: "test", verbose: false })
     await populateAbilities({ dbName: "test", verbose: false })
 
     abilityCount = await getRepository(Ability, "test").count()
@@ -70,7 +68,6 @@ test("4. After populating build sequences, they should have the expected number 
     let buildSequenceCount = await getRepository(BuildSequence, "test").count()
     expect(buildSequenceCount).toBe(0)
 
-    await populateTowers({ dbName: "test", verbose: false })
     await populateBuildSequence({ dbName: "test", verbose: false })
 
     buildSequenceCount = await getRepository(BuildSequence, "test").count()
