@@ -19,6 +19,13 @@ const getExampleMainStats = (): MainStats => {
     return mainStats
 }
 
+const EXAMPLE_TOWER_DATA = {
+    name: "Militia Barracks",
+    towerType: TowerType.BARRACKS,
+    level: TowerLevel.LVL1,
+    kingdom: TowerKingdom.KR,
+}
+
 beforeAll(async () => {
     await createConnection("test")
 })
@@ -27,35 +34,30 @@ afterAll(async () => {
     await getConnection("test").close()
 })
 
-test("Store tower and fetch it", async () => {
+test("Be able to store, fetch, and remove a tower", async () => {
     const TOWER_REPO = getRepository(Tower, "test")
-
-    const exampleTowerData = {
-        name: "Militia Barracks",
-        towerType: TowerType.BARRACKS,
-        level: TowerLevel.LVL1,
-        kingdom: TowerKingdom.KR,
-    }
 
     let retrievedTowers = await TOWER_REPO.find({
         where: {
-            name: exampleTowerData.name,
+            name: EXAMPLE_TOWER_DATA.name,
         },
     })
 
     expect(retrievedTowers.length).toBe(0)
 
-    await TOWER_REPO.insert(exampleTowerData)
+    await TOWER_REPO.insert(EXAMPLE_TOWER_DATA)
+    expect(await TOWER_REPO.count()).toBe(1)
+
     retrievedTowers = await TOWER_REPO.find({
         where: {
-            name: exampleTowerData.name,
+            name: EXAMPLE_TOWER_DATA.name,
         },
     })
 
     expect(retrievedTowers.length).toBe(1)
 
     const retrievedTower = retrievedTowers[0]
-    expect(retrievedTower.name).toBe(exampleTowerData.name)
+    expect(retrievedTower.name).toBe(EXAMPLE_TOWER_DATA.name)
 
     await TOWER_REPO.remove(retrievedTower)
     expect(await TOWER_REPO.count()).toBe(0)
@@ -78,6 +80,8 @@ test("Store a tower and add main stats, deleting the tower would also delete mai
     expect(retrievedTowers.length).toBe(0)
 
     await TOWER_REPO.save(tower)
+    expect(await TOWER_REPO.count()).toBe(1)
+    expect(await MAIN_STATS_REPO.count()).toBe(1)
 
     retrievedTowers = await TOWER_REPO.find({
         where: {
@@ -97,7 +101,7 @@ test("Store a tower and add main stats, deleting the tower would also delete mai
     expect(await MAIN_STATS_REPO.count()).toBe(0)
 })
 
-test("Be able to store abilities and ability levels of a tower", async () => {
+test("Be able to store abilities and ability levels of a tower, deleting tower would remove ability and ability levels", async () => {
     const TOWER_REPO = getRepository(Tower, "test")
     const ABILITY_REPO = getRepository(Ability, "test")
     const ABILITY_LEVEL_REPO = getRepository(AbilityLevel, "test")
@@ -145,6 +149,10 @@ test("Be able to store abilities and ability levels of a tower", async () => {
     expect(retrievedTower.name).toBe(tower.name)
     expect(retrievedTower.abilities[0].name).toBe(ability1.name)
     expect(abilities[0].levels[0].cost).toBe(250)
+
+    expect(await TOWER_REPO.count()).toBe(1)
+    expect(await ABILITY_REPO.count()).toBe(1)
+    expect(await ABILITY_LEVEL_REPO.count()).toBe(1)
 
     await TOWER_REPO.remove(retrievedTower)
     expect(await TOWER_REPO.count()).toBe(0)
