@@ -1,4 +1,82 @@
-const result = () => {
+import { gql } from "apollo-server"
+
+export const description =
+    "Be able to query by a level 4 artillery tower by id.\
+ Build sequence and abilities must not be null.\
+ Because it is not a barracks type tower, \
+ numberOfUnits, respawnInterval, health and armor must be null."
+
+export const testQuery = gql`
+    {
+        towerById(id: 5) {
+            abilities {
+                abilityDescription
+                abilityId
+                abilityName
+                kingdom
+                levelCosts
+                numberOfLevels
+                totalAbilityCost
+                totalCostWithTowers
+                towerId
+                towerImageUrl
+                towerName
+                towerType
+            }
+
+            allStats {
+                armor
+                buildCost
+                damageMaximum
+                damageMinimum
+                fireInterval
+                health
+                id
+                imageUrl
+                kingdom
+                level
+                name
+                numberOfUnits
+                range
+                respawnInterval
+                towerType
+            }
+            buildSequence {
+                buildSequenceId
+                kingdom
+                level1 {
+                    buildCost
+                    id
+                    imageUrl
+                    name
+                }
+                level2 {
+                    buildCost
+                    id
+                    imageUrl
+                    name
+                }
+                level3 {
+                    buildCost
+                    id
+                    imageUrl
+                    name
+                }
+                level4 {
+                    buildCost
+                    id
+                    imageUrl
+                    name
+                }
+                totalAbilitiesCost
+                totalBuildCost
+                totalBuildCostFullyUpgraded
+                towerType
+            }
+        }
+    }
+`
+export const result = () => {
     return `
     Object {
       "data": Object {
@@ -101,5 +179,3 @@ const result = () => {
     }
 `
 }
-
-export default result
