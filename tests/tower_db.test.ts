@@ -2,6 +2,8 @@ import { createConnection, getConnection, getRepository } from "typeorm"
 import { Tower, MainStats, Ability, AbilityLevel } from "../src/models/"
 import { TowerType, TowerLevel, TowerKingdom } from "../src/definitions/enums"
 
+const DB_NAME = "empty_test"
+
 const getExampleTower = (): Tower => {
     let tower = new Tower()
     tower.name = "dwarven bombard"
@@ -27,18 +29,15 @@ const EXAMPLE_TOWER_DATA = {
 }
 
 beforeAll(async () => {
-    const t0 = Date.now()
-    await createConnection("test")
-    const t1 = Date.now()
-    console.log(` 👩‍🔬 Connected database in ${t1 - t0}ms`)
+    await createConnection("empty_test")
 })
 
 afterAll(async () => {
-    await getConnection("test").close()
+    await getConnection("empty_test").close()
 })
 
 test("1. Be able to store, fetch, and remove a tower", async () => {
-    const TOWER_REPO = getRepository(Tower, "test")
+    const TOWER_REPO = getRepository(Tower, DB_NAME)
 
     /********************
      * Our example tower shouldn't exist yet in our empty test database
@@ -80,8 +79,8 @@ test("1. Be able to store, fetch, and remove a tower", async () => {
 })
 
 test("2. Store a tower and add main stats deleting the tower would also delete main stats", async () => {
-    const TOWER_REPO = getRepository(Tower, "test")
-    const MAIN_STATS_REPO = getRepository(MainStats, "test")
+    const TOWER_REPO = getRepository(Tower, DB_NAME)
+    const MAIN_STATS_REPO = getRepository(MainStats, DB_NAME)
 
     let tower = getExampleTower()
     let mainStats = getExampleMainStats()
@@ -132,9 +131,9 @@ test("2. Store a tower and add main stats deleting the tower would also delete m
 })
 
 test("3. Be able to store abilities and ability levels of a tower, deleting tower would remove ability and ability levels", async () => {
-    const TOWER_REPO = getRepository(Tower, "test")
-    const ABILITY_REPO = getRepository(Ability, "test")
-    const ABILITY_LEVEL_REPO = getRepository(AbilityLevel, "test")
+    const TOWER_REPO = getRepository(Tower, DB_NAME)
+    const ABILITY_REPO = getRepository(Ability, DB_NAME)
+    const ABILITY_LEVEL_REPO = getRepository(AbilityLevel, DB_NAME)
 
     /********************
      * We should start with an empty database
