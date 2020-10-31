@@ -1,12 +1,13 @@
 import { gql } from "apollo-server"
+import { DocumentNode } from "graphql"
 
-export const description =
+const description =
     "Be able to query by a level 4 artillery tower by id.\
  Build sequence and abilities must not be null.\
  Because it is not a barracks type tower, \
  numberOfUnits, respawnInterval, health and armor must be null."
 
-export const testQuery = gql`
+const testQuery = gql`
     {
         towerById(id: 5) {
             abilities {
@@ -179,3 +180,10 @@ export const result = () => {
     }
 `
 }
+
+const returnValue: [string, { testQuery: DocumentNode; result: Function }] = [
+    description,
+    { testQuery, result },
+]
+
+export default returnValue

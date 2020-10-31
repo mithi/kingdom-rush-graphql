@@ -1,7 +1,8 @@
 import { gql } from "apollo-server"
+import { DocumentNode } from "graphql"
 
-export const description = "Be able to get ability data by its id"
-export const testQuery = gql`
+const description = "Be able to get ability data by its id"
+const testQuery = gql`
     {
         abilityById(id: 85) {
             abilityDescription
@@ -20,7 +21,7 @@ export const testQuery = gql`
     }
 `
 
-export const result = () => {
+const result = () => {
     return `
     Object {
       "data": Object {
@@ -53,3 +54,10 @@ export const result = () => {
     }
 `
 }
+
+const returnValue: [string, { testQuery: DocumentNode; result: Function }] = [
+    description,
+    { testQuery, result },
+]
+
+export default returnValue

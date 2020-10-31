@@ -1,7 +1,9 @@
 import { createConnection, getConnection } from "typeorm"
-import * as case1 from "./__snapshots__/singleAbility/case1"
+import sAcase1 from "./__snapshots__/singleAbility/case1"
+import sTcase1 from "./__snapshots__/singleTower/case1"
 import { executeTest } from "./utils"
 
+const CASES = [sTcase1, sAcase1]
 beforeAll(async () => {
     await createConnection("test")
 })
@@ -10,6 +12,6 @@ afterAll(async () => {
     await getConnection("test").close()
 })
 
-test(case1.description, async () => {
-    await executeTest(case1.testQuery, case1.result())
+test.each(CASES)("%s", async (_description, { testQuery, result }) => {
+    await executeTest(testQuery, result())
 })
