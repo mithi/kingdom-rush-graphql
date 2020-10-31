@@ -5,20 +5,20 @@ import { TowerType, TowerLevel, TowerKingdom } from "../src/definitions/enums"
 const DB_NAME = "empty_test"
 
 const getExampleTower = (): Tower => {
-    let tower = new Tower()
-    tower.name = "dwarven bombard"
-    tower.kingdom = TowerKingdom.KR
-    tower.towerType = TowerType.ARTILLERY
-    tower.level = TowerLevel.LVL1
-    return tower
+    let t = new Tower()
+    t.name = "dwarven bombard"
+    t.kingdom = TowerKingdom.KR
+    t.towerType = TowerType.ARTILLERY
+    t.level = TowerLevel.LVL1
+    return t
 }
 
 const getExampleMainStats = (): MainStats => {
-    let mainStats = new MainStats()
-    mainStats.buildCost = 125
-    mainStats.damageMinimum = 8
-    mainStats.damageMaximum = 15
-    return mainStats
+    let m = new MainStats()
+    m.buildCost = 125
+    m.damageMinimum = 8
+    m.damageMaximum = 15
+    return m
 }
 
 const EXAMPLE_TOWER_DATA = {
@@ -36,166 +36,180 @@ afterAll(async () => {
     await getConnection("empty_test").close()
 })
 
-test("1. Be able to store, fetch, and remove a tower", async () => {
-    const TOWER_REPO = getRepository(Tower, DB_NAME)
+const expectCount = async (entity: Function, expectedCount: number) => {
+    const actualCount = await getRepository(entity, DB_NAME).count()
+    expect(actualCount).toBe(expectedCount)
+}
 
+const getTowerRepo = () => getRepository(Tower, DB_NAME)
+
+test("1. Be able to store, fetch, and remove a tower", async () => {
     /********************
      * Our example tower shouldn't exist yet in our empty test database
      ********************/
-    let retrievedTowers = await TOWER_REPO.find({
+    let towers = await getTowerRepo().find({
         where: {
             name: EXAMPLE_TOWER_DATA.name,
         },
     })
 
-    expect(retrievedTowers.length).toBe(0)
+    expect(towers.length).toBe(0)
 
     /********************
-     * We shoud ne able to successfully insert the tower,
-     * increasing entry count of table by one
+     * We should be able to successfully insert the tower increasing entry count of table by one
      ********************/
-    await TOWER_REPO.insert(EXAMPLE_TOWER_DATA)
-    expect(await TOWER_REPO.count()).toBe(1)
+    await getTowerRepo().insert(EXAMPLE_TOWER_DATA)
+    await expectCount(Tower, 1)
 
     /********************
      * We should able to find our inserted tower by name
      ********************/
-    retrievedTowers = await TOWER_REPO.find({
+    towers = await getTowerRepo().find({
         where: {
             name: EXAMPLE_TOWER_DATA.name,
         },
     })
 
-    expect(retrievedTowers.length).toBe(1)
-
-    const retrievedTower = retrievedTowers[0]
-    expect(retrievedTower.name).toBe(EXAMPLE_TOWER_DATA.name)
+    expect(towers.length).toBe(1)
+    const tower = towers[0]
+    expect(tower.name).toBe(EXAMPLE_TOWER_DATA.name)
 
     /********************
      * We should be able to remove the tower we inserted
      ********************/
-    await TOWER_REPO.remove(retrievedTower)
-    expect(await TOWER_REPO.count()).toBe(0)
+    await getTowerRepo().remove(tower)
+    await expectCount(Tower, 0)
 })
 
 test("2. Store a tower and add main stats deleting the tower would also delete main stats", async () => {
-    const TOWER_REPO = getRepository(Tower, DB_NAME)
-    const MAIN_STATS_REPO = getRepository(MainStats, DB_NAME)
-
-    let tower = getExampleTower()
-    let mainStats = getExampleMainStats()
-    tower.mainStats = mainStats
-
     /********************
-     * Our example tower shouldn't exist in our empty database yet
-     * It is currently just in memory
+     * Our example tower shouldn't exist in our empty database yet It is currently just in memory
      ********************/
-    let retrievedTowers = await TOWER_REPO.find({
+    let exampleTower = getExampleTower()
+    exampleTower.mainStats = getExampleMainStats()
+
+    let towers = await getTowerRepo().find({
         where: {
-            name: tower.name,
+            name: exampleTower.name,
         },
     })
 
-    expect(retrievedTowers.length).toBe(0)
+    await expectCount(Tower, 0)
+    expect(towers.length).toBe(0)
 
     /********************
      * Saving our tower should also save its main stats
      ********************/
-    await TOWER_REPO.save(tower)
-    expect(await TOWER_REPO.count()).toBe(1)
-    expect(await MAIN_STATS_REPO.count()).toBe(1)
+    await getTowerRepo().save(exampleTower)
+    await expectCount(Tower, 1)
+    await expectCount(MainStats, 1)
 
     /********************
-     * Querying the tower should also load its main stats
-     * With the expected column entries
+     * Querying the tower should also load its main stats with the expected column entries
      ********************/
-    retrievedTowers = await TOWER_REPO.find({
+    towers = await getTowerRepo().find({
         where: {
-            name: tower.name,
+            name: exampleTower.name,
         },
         relations: ["mainStats"],
     })
 
-    expect(retrievedTowers.length).toBe(1)
+    expect(towers.length).toBe(1)
 
-    const retrievedTower = retrievedTowers[0]
-    expect(retrievedTower.name).toBe(tower.name)
-    expect(retrievedTower.mainStats.buildCost).toBe(tower.mainStats.buildCost)
+    const tower = towers[0]
+    expect(tower.name).toBe(tower.name)
+    expect(tower.mainStats.buildCost).toBe(tower.mainStats.buildCost)
 
     /********************
      * Removing the tower should also remove its mainstats
      ********************/
-    await TOWER_REPO.remove(retrievedTower)
-    expect(await TOWER_REPO.count()).toBe(0)
-    expect(await MAIN_STATS_REPO.count()).toBe(0)
+    await getTowerRepo().remove(tower)
+    await expectCount(Tower, 0)
+    await expectCount(MainStats, 0)
 })
 
 test("3. Be able to store abilities and ability levels of a tower, deleting tower would remove ability and ability levels", async () => {
-    const TOWER_REPO = getRepository(Tower, DB_NAME)
-    const ABILITY_REPO = getRepository(Ability, DB_NAME)
-    const ABILITY_LEVEL_REPO = getRepository(AbilityLevel, DB_NAME)
-
     /********************
      * We should start with an empty database
      ********************/
-    expect(await TOWER_REPO.count()).toBe(0)
-    expect(await ABILITY_REPO.count()).toBe(0)
-    expect(await ABILITY_LEVEL_REPO.count()).toBe(0)
+    await expectCount(Tower, 0)
+    await expectCount(Ability, 0)
+    await expectCount(AbilityLevel, 0)
 
     /********************
-     * Saving a tower should also save its
-     * ability and ability levels
+     * Saving a tower should also save its ability and ability levels
      ********************/
     let tower = getExampleTower()
 
-    let ability1 = new Ability()
-    ability1.name = "poison arrows"
-    ability1.description = "Poisons enemies"
+    let a1 = new Ability()
+    a1.name = "poison arrows"
+    a1.description = "Poisons enemies"
 
-    let ability1level1 = new AbilityLevel()
-    ability1level1.level = 1
-    ability1level1.cost = 250
-    ability1.levels = [ability1level1]
-    tower.abilities = [ability1]
+    let lev1a1 = new AbilityLevel()
+    lev1a1.level = 1
+    lev1a1.cost = 250
 
-    await TOWER_REPO.save(tower)
+    a1.levels = [lev1a1]
 
-    expect(await TOWER_REPO.count()).toBe(1)
-    expect(await ABILITY_REPO.count()).toBe(1)
-    expect(await ABILITY_LEVEL_REPO.count()).toBe(1)
+    let a2 = new Ability()
+    a2.name = "poison arrow2s"
+    a2.description = "Poisons enemies2"
+
+    let lev1a2 = new AbilityLevel()
+    lev1a2.level = 1
+    lev1a2.cost = 175
+
+    let lev2a2 = new AbilityLevel()
+    lev2a2.level = 2
+    lev2a2.cost = 200
+    a2.levels = [lev1a2, lev2a2]
+
+    tower.abilities = [a1, a2]
+
+    await getTowerRepo().save(tower)
+
+    await expectCount(Tower, 1)
+    await expectCount(Ability, 2)
+    await expectCount(AbilityLevel, 3)
 
     /********************
-     * Querying the tower should also load its main stats
+     * Querying the tower should also load its abilities
      ********************/
-    let retrievedTowers = await TOWER_REPO.find({
+    let dbTowers = await getTowerRepo().find({
         where: {
             name: tower.name,
         },
         relations: ["abilities"],
     })
 
-    expect(retrievedTowers.length).toBe(1)
+    expect(dbTowers.length).toBe(1)
+    let dbTower = dbTowers[0]
+
+    expect(dbTower.name).toBe(tower.name)
+    expect(dbTower.abilities[0].name).toBe(a1.name)
+    expect(dbTower.abilities[1].name).toBe(a2.name)
 
     /********************
      * Querying an ability should also load its levels
      ********************/
-    let retrievedTower = retrievedTowers[0]
-    let abilities = await ABILITY_REPO.find({
+
+    const abilityRepo = getRepository(Ability, DB_NAME)
+
+    let abilities = await abilityRepo.find({
         where: {
-            name: retrievedTower.abilities[0].name,
+            name: a2.name,
         },
         relations: ["levels"],
     })
 
-    expect(retrievedTower.name).toBe(tower.name)
-    expect(retrievedTower.abilities[0].name).toBe(ability1.name)
-    expect(abilities[0].levels[0].cost).toBe(250)
+    expect(abilities[0].levels[0].cost).toBe(lev1a2.cost)
+    expect(abilities[0].levels[1].cost).toBe(lev2a2.cost)
 
     /********************
      * Removing a tower should also remove its ability and ability levels
      ********************/
-    await TOWER_REPO.remove(retrievedTower)
-    expect(await TOWER_REPO.count()).toBe(0)
-    expect(await ABILITY_REPO.count()).toBe(0)
-    expect(await ABILITY_LEVEL_REPO.count()).toBe(0)
+    await getTowerRepo().remove(dbTower)
+    await expectCount(Tower, 0)
+    await expectCount(Ability, 0)
+    await expectCount(AbilityLevel, 0)
 })

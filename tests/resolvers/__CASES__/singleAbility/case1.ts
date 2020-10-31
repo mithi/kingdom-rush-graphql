@@ -1,3 +1,26 @@
+import { gql } from "apollo-server"
+import { DocumentNode } from "graphql"
+
+const description = "Be able to get ability data by its id"
+const testQuery = gql`
+    {
+        abilityById(id: 85) {
+            abilityDescription
+            abilityId
+            abilityName
+            kingdom
+            levelCosts
+            numberOfLevels
+            totalAbilityCost
+            totalCostWithTowers
+            towerId
+            towerImageUrl
+            towerName
+            towerType
+        }
+    }
+`
+
 const result = () => {
     return `
     Object {
@@ -32,4 +55,9 @@ const result = () => {
 `
 }
 
-export default result
+const testCase: [string, { testQuery: DocumentNode; result: Function }] = [
+    description,
+    { testQuery, result },
+]
+
+export default testCase
