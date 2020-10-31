@@ -14,9 +14,22 @@ module.exports = [
         },
     },
     {
-        url: `${process.env.DB_TEST_URL}`,
         name: "test",
         type: "postgres",
+        url: `${process.env.DB_TEST_URL}`,
+        entities: ["src/models/*.ts"],
+        logging: false,
+        synchronize: false,
+        dropSchema: false,
+        migrations: ["src/migrations/*.ts"],
+        cli: {
+            migrationsDir: "src/migrations",
+        },
+    },
+    {
+        name: "empty_test",
+        type: "postgres",
+        url: `${process.env.DB_EMPTY_TEST_URL}`,
         entities: ["src/models/*.ts"],
         logging: false,
         synchronize: true,
