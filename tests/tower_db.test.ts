@@ -159,13 +159,27 @@ test("3. Be able to store abilities and ability levels of a tower, deleting towe
     ability1level1.level = 1
     ability1level1.cost = 250
     ability1.levels = [ability1level1]
-    tower.abilities = [ability1]
+
+    let ability2 = new Ability()
+    ability2.name = "poison arrow2s"
+    ability2.description = "Poisons enemies2"
+
+    let ability2level1 = new AbilityLevel()
+    ability2level1.level = 1
+    ability2level1.cost = 175
+
+    let ability2level2 = new AbilityLevel()
+    ability2level2.level = 2
+    ability2level2.cost = 200
+    ability2.levels = [ability2level1, ability2level2]
+
+    tower.abilities = [ability1, ability2]
 
     await TOWER_REPO.save(tower)
 
     await expectCount(Tower, 1)
-    await expectCount(Ability, 1)
-    await expectCount(AbilityLevel, 1)
+    await expectCount(Ability, 2)
+    await expectCount(AbilityLevel, 3)
 
     /********************
      * Querying the tower should also load its main stats
