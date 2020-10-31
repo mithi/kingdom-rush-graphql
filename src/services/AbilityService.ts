@@ -3,6 +3,8 @@ import { getConnection } from "typeorm"
 import { buildFilterExpression, buildSortExpression } from "./utils"
 import { TABLE_EXPRESSION } from "./utilsAbilityTableExpr"
 
+const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
+
 const nothingLeft = (arrays: any[]): boolean => {
     return arrays.some(list => list.length === 0)
 }
@@ -21,29 +23,29 @@ export class AbilityService {
         const sortExpr = `ORDER BY ${sortColumns}`
         const filterExpr = `WHERE (${kingdoms}) AND (${towerTypes})`
         const query = `${TABLE_EXPRESSION} ${filterExpr} ${sortExpr} ${pageExpr}`
-        console.log(query)
-        return await getConnection().query(query)
+        //console.log(query)
+        return await getConnection(DB_NAME).query(query)
     }
 
     async abilitiesByTowerId(id: Number) {
         const query = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
-        return await getConnection().query(query)
+        return await getConnection(DB_NAME).query(query)
     }
 
     async abilitiesByTowerName(name: String) {
         const query = `${TABLE_EXPRESSION} WHERE t4.name = '${name}'`
-        return await getConnection().query(query)
+        return await getConnection(DB_NAME).query(query)
     }
 
     async abilityById(id: Number) {
         const query = `${TABLE_EXPRESSION} WHERE ability_table."abilityId" = '${id}'`
-        const results = await getConnection().query(query)
+        const results = await getConnection(DB_NAME).query(query)
         return results.length !== 0 ? results[0] : null
     }
 
     async abilityByName(name: String) {
         const query = `${TABLE_EXPRESSION} WHERE ability_table."abilityName" = '${name}'`
-        const results = await getConnection().query(query)
+        const results = await getConnection(DB_NAME).query(query)
         return results.length !== 0 ? results[0] : null
     }
 }

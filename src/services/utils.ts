@@ -32,7 +32,7 @@ const buildQueryExpression = (
     const sortExpr = `ORDER BY ${sortColumns}`
     const pageExpr = `LIMIT ${take} OFFSET ${skip}`
     const queryExpression = `SELECT * FROM ${tableExpr} ${filterExpr} ${sortExpr} ${pageExpr}`
-    console.log(queryExpression)
+    //console.log(queryExpression)
     return queryExpression
 }
 

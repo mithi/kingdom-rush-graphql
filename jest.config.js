@@ -3,5 +3,5 @@ module.exports = {
     maxWorkers: 1,
     preset: "ts-jest",
     testEnvironment: "node",
-    testMatch: ["**/tests/*.[jt]s?(x)"],
+    testMatch: ["**/tests/*.test.[jt]s?(x)", "**/tests/*/*.test.[jt]s?(x)"],
 }
