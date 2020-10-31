@@ -1,4 +1,26 @@
-const result = () => {
+import { gql } from "apollo-server"
+
+export const description = "Be able to get ability data by its id"
+export const testQuery = gql`
+    {
+        abilityById(id: 85) {
+            abilityDescription
+            abilityId
+            abilityName
+            kingdom
+            levelCosts
+            numberOfLevels
+            totalAbilityCost
+            totalCostWithTowers
+            towerId
+            towerImageUrl
+            towerName
+            towerType
+        }
+    }
+`
+
+export const result = () => {
     return `
     Object {
       "data": Object {
@@ -31,5 +53,3 @@ const result = () => {
     }
 `
 }
-
-export default result

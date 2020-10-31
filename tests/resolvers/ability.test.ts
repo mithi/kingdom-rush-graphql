@@ -1,6 +1,5 @@
 import { createConnection, getConnection } from "typeorm"
-import { gql } from "apollo-server"
-import ABILITY_BY_ID_RESULT from "./__snapshots__/ABILITY_BY_ID"
+import * as case1 from "./__snapshots__/singleAbility/case1"
 import { executeTest } from "./utils"
 
 beforeAll(async () => {
@@ -11,24 +10,6 @@ afterAll(async () => {
     await getConnection("test").close()
 })
 
-test("1. Be able to get ability data by its id", async () => {
-    const testQuery = gql`
-        {
-            abilityById(id: 85) {
-                abilityDescription
-                abilityId
-                abilityName
-                kingdom
-                levelCosts
-                numberOfLevels
-                totalAbilityCost
-                totalCostWithTowers
-                towerId
-                towerImageUrl
-                towerName
-                towerType
-            }
-        }
-    `
-    await executeTest(testQuery, ABILITY_BY_ID_RESULT())
+test(case1.description, async () => {
+    await executeTest(case1.testQuery, case1.result())
 })
