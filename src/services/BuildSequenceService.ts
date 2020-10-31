@@ -4,8 +4,10 @@ import { buildFilterExpression, buildSortExpression } from "./utils"
 import { convertToBuildSequenceShape } from "./utilsBuildSequence"
 import { TABLE_EXPRESSION } from "./utilsBuildSequenceTableExpr"
 
+const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
+
 const findOneBuildSequence = async (queryExpression: string) => {
-    const results = await getConnection().query(queryExpression)
+    const results = await getConnection(DB_NAME).query(queryExpression)
     const result = results.length !== 0 ? results[0] : null
     if (result === null) {
         return null
