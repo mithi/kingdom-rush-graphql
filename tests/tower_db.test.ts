@@ -36,6 +36,11 @@ afterAll(async () => {
     await getConnection("empty_test").close()
 })
 
+const expectCount = async (entity: Function, expectedCount: number) => {
+    const actualCount = await getRepository(entity, DB_NAME).count()
+    expect(actualCount).toBe(expectedCount)
+}
+
 test("1. Be able to store, fetch, and remove a tower", async () => {
     const TOWER_REPO = getRepository(Tower, DB_NAME)
 
@@ -55,7 +60,7 @@ test("1. Be able to store, fetch, and remove a tower", async () => {
      * increasing entry count of table by one
      ********************/
     await TOWER_REPO.insert(EXAMPLE_TOWER_DATA)
-    expect(await TOWER_REPO.count()).toBe(1)
+    await expectCount(Tower, 1)
 
     /********************
      * We should able to find our inserted tower by name
@@ -75,12 +80,11 @@ test("1. Be able to store, fetch, and remove a tower", async () => {
      * We should be able to remove the tower we inserted
      ********************/
     await TOWER_REPO.remove(retrievedTower)
-    expect(await TOWER_REPO.count()).toBe(0)
+    await expectCount(Tower, 0)
 })
 
 test("2. Store a tower and add main stats deleting the tower would also delete main stats", async () => {
     const TOWER_REPO = getRepository(Tower, DB_NAME)
-    const MAIN_STATS_REPO = getRepository(MainStats, DB_NAME)
 
     let tower = getExampleTower()
     let mainStats = getExampleMainStats()
@@ -102,8 +106,8 @@ test("2. Store a tower and add main stats deleting the tower would also delete m
      * Saving our tower should also save its main stats
      ********************/
     await TOWER_REPO.save(tower)
-    expect(await TOWER_REPO.count()).toBe(1)
-    expect(await MAIN_STATS_REPO.count()).toBe(1)
+    await expectCount(Tower, 1)
+    await expectCount(MainStats, 1)
 
     /********************
      * Querying the tower should also load its main stats
@@ -126,21 +130,20 @@ test("2. Store a tower and add main stats deleting the tower would also delete m
      * Removing the tower should also remove its mainstats
      ********************/
     await TOWER_REPO.remove(retrievedTower)
-    expect(await TOWER_REPO.count()).toBe(0)
-    expect(await MAIN_STATS_REPO.count()).toBe(0)
+    await expectCount(Tower, 0)
+    await expectCount(MainStats, 0)
 })
 
 test("3. Be able to store abilities and ability levels of a tower, deleting tower would remove ability and ability levels", async () => {
     const TOWER_REPO = getRepository(Tower, DB_NAME)
     const ABILITY_REPO = getRepository(Ability, DB_NAME)
-    const ABILITY_LEVEL_REPO = getRepository(AbilityLevel, DB_NAME)
 
     /********************
      * We should start with an empty database
      ********************/
-    expect(await TOWER_REPO.count()).toBe(0)
-    expect(await ABILITY_REPO.count()).toBe(0)
-    expect(await ABILITY_LEVEL_REPO.count()).toBe(0)
+    await expectCount(Tower, 0)
+    await expectCount(Ability, 0)
+    await expectCount(AbilityLevel, 0)
 
     /********************
      * Saving a tower should also save its
@@ -160,9 +163,9 @@ test("3. Be able to store abilities and ability levels of a tower, deleting towe
 
     await TOWER_REPO.save(tower)
 
-    expect(await TOWER_REPO.count()).toBe(1)
-    expect(await ABILITY_REPO.count()).toBe(1)
-    expect(await ABILITY_LEVEL_REPO.count()).toBe(1)
+    await expectCount(Tower, 1)
+    await expectCount(Ability, 1)
+    await expectCount(AbilityLevel, 1)
 
     /********************
      * Querying the tower should also load its main stats
@@ -195,7 +198,7 @@ test("3. Be able to store abilities and ability levels of a tower, deleting towe
      * Removing a tower should also remove its ability and ability levels
      ********************/
     await TOWER_REPO.remove(retrievedTower)
-    expect(await TOWER_REPO.count()).toBe(0)
-    expect(await ABILITY_REPO.count()).toBe(0)
-    expect(await ABILITY_LEVEL_REPO.count()).toBe(0)
+    await expectCount(Tower, 0)
+    await expectCount(Ability, 0)
+    await expectCount(AbilityLevel, 0)
 })
