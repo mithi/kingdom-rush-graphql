@@ -1,5 +1,5 @@
 # Generates json files from raw/yaml files
-# Populates the database tables using these table files
+# Populates the "kingdom_rush_db" database tables using these table files
 # Gets the all data from the tables and saves it both as txt and csv
 python ./scripts/json-towers.py;
 python ./scripts/json-barracks-stats.py;
