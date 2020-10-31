@@ -1,10 +1,7 @@
 import { createConnection, getConnection } from "typeorm"
-import { buildSchema } from "type-graphql"
-import { AbilityResolver } from "../../src/resolvers/AbilityResolver"
-import { ApolloServer, gql } from "apollo-server"
-import { createTestClient } from "apollo-server-testing"
+import { gql } from "apollo-server"
 import ABILITY_BY_ID_RESULT from "./__snapshots__/ABILITY_BY_ID"
-import { DocumentNode } from "graphql"
+import { executeTest } from "./utils"
 
 beforeAll(async () => {
     await createConnection("test")
@@ -13,14 +10,6 @@ beforeAll(async () => {
 afterAll(async () => {
     await getConnection("test").close()
 })
-
-const executeTest = async (testQuery: DocumentNode, correctAnswer: string) => {
-    const schema = await buildSchema({ resolvers: [AbilityResolver] })
-    const { query } = createTestClient(new ApolloServer({ schema }))
-
-    const result = await query({ query: testQuery })
-    expect(result).toMatchInlineSnapshot(correctAnswer)
-}
 
 test("1. Be able to get ability data by its id", async () => {
     const testQuery = gql`

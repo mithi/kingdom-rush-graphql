@@ -1,13 +1,10 @@
 import { createConnection, getConnection } from "typeorm"
-import { buildSchema } from "type-graphql"
-import { TowerResolver } from "../../src/resolvers/TowerResolver"
-import { ApolloServer, gql } from "apollo-server"
-import { createTestClient } from "apollo-server-testing"
+import { gql } from "apollo-server"
 import ascendingTowerIds from "./__snapshots__/ASCENDING_TOWER_IDS"
 import attackTowersTypes from "./__snapshots__/ATTACK_TOWER_TYPES"
 import attackTowersFireIntervalDescending from "./__snapshots__/ATTACK_TOWER_FIRE_INTERVAL_DESCEND"
 import barracksTowers from "./__snapshots__/BARRACKS_TOWERS"
-import { DocumentNode } from "graphql"
+import { executeTest } from "./utils"
 
 beforeAll(async () => {
     await createConnection("test")
@@ -16,14 +13,6 @@ beforeAll(async () => {
 afterAll(async () => {
     await getConnection("test").close()
 })
-
-const executeTest = async (testQuery: DocumentNode, correctAnswer: string) => {
-    const schema = await buildSchema({ resolvers: [TowerResolver] })
-    const { query } = createTestClient(new ApolloServer({ schema }))
-
-    const result = await query({ query: testQuery })
-    expect(result).toMatchInlineSnapshot(correctAnswer)
-}
 
 test("1. Be able to get towers, ids would be sorted in ascending order by default", async () => {
     const testQuery = gql`
