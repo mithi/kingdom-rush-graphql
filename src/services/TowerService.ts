@@ -96,7 +96,7 @@ export class TowerService {
             towerWithNullableFields = { ...towerStats, level: Number(towerStats.level) }
         }
 
-        if (basicStats.level !== TowerLevel.LVL4) {
+        if (Number(basicStats.level) !== TowerLevel.LVL4) {
             const towerVerbose: TowerVerbose = {
                 allStats: towerWithNullableFields,
             }
