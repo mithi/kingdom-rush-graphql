@@ -76,7 +76,7 @@ export class TowerService {
         let towerWithNullableFields: TowerWithNullableFields | null = null
 
         if (basicStats.towerType === TowerType.BARRACKS) {
-            query = `SELECT * FROM "Towers" INNER JOIN barracks_stats ON "Towers".id = barracks_stats."towerId" WHERE "Towers".id = ${id}`
+            query = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN barracks_stats ON "Towers".id = barracks_stats."towerId" WHERE "Towers".id = ${id}`
             results = await getTowerRepo().query(query)
 
             if (results.length === 0) {
@@ -86,7 +86,7 @@ export class TowerService {
             let towerStats: BarracksTower = results[0]
             towerWithNullableFields = { ...towerStats, level: Number(towerStats.level) }
         } else {
-            query = `SELECT * FROM "Towers" INNER JOIN attack_stats ON "Towers".id = attack_stats."towerId" WHERE "Towers".id = ${id}`
+            query = `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON "Towers".id = attack_stats."towerId" WHERE "Towers".id = ${id}`
             results = await getTowerRepo().query(query)
 
             if (results.length === 0) {
