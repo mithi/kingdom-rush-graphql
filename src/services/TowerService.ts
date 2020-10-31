@@ -17,18 +17,18 @@ import { BuildSequenceService } from "./BuildSequenceService"
 
 const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
 
+const getTowerRepo = () => getRepository(Tower, DB_NAME)
+
 export class TowerService {
-    async towers(towerArgs: TowerArgs) {
-        if (nothingLeft(towerArgs)) {
+    async towers(args: TowerArgs) {
+        if (nothingLeft(args)) {
             return []
         }
 
-        const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
-        const queryExpression = buildQueryExpression(towerArgs, tableExpression)
+        const table = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId"`
+        const query = buildQueryExpression(args, table)
 
-        const result: TowerWithStats[] = await getRepository(Tower, DB_NAME).query(
-            queryExpression
-        )
+        const result: TowerWithStats[] = await getTowerRepo().query(query)
         return result.map(tower => ({ ...tower, level: Number(tower.level) }))
     }
 
@@ -37,17 +37,15 @@ export class TowerService {
             return []
         }
 
-        const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
-        const queryExpression = buildQueryExpression(attackTowerArgs, tableExpression)
-        const result: AttackTower[] = await getRepository(Tower, DB_NAME).query(
-            queryExpression
-        )
+        const table = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN attack_stats ON main_stats."towerId" = attack_stats."towerId"`
+        const query = buildQueryExpression(attackTowerArgs, table)
+        const result: AttackTower[] = await getTowerRepo().query(query)
         return result.map(tower => ({ ...tower, level: Number(tower.level) }))
     }
 
-    async barracksTowers(barracksTowerArgs: BarracksTowerArgs) {
+    async barracksTowers(args: BarracksTowerArgs) {
         const buildQueryArgs = {
-            ...barracksTowerArgs,
+            ...args,
             onlyTowerTypes: [TowerType.BARRACKS],
         }
 
@@ -55,11 +53,9 @@ export class TowerService {
             return []
         }
 
-        const tableExpression = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN barracks_stats ON main_stats."towerId" = barracks_stats."towerId"`
-        const queryExpression = buildQueryExpression(buildQueryArgs, tableExpression)
-        const result: BarracksTower[] = await getRepository(Tower, DB_NAME).query(
-            queryExpression
-        )
+        const table = `"Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" INNER JOIN barracks_stats ON main_stats."towerId" = barracks_stats."towerId"`
+        const query = buildQueryExpression(buildQueryArgs, table)
+        const result: BarracksTower[] = await getTowerRepo().query(query)
         return result.map(tower => ({ ...tower, level: Number(tower.level) }))
     }
 
@@ -77,7 +73,7 @@ export class TowerService {
           update accordingly
          */
 
-        let results = await getRepository(Tower, DB_NAME).query(
+        let results = await getTowerRepo().query(
             `SELECT * FROM "Towers" INNER JOIN main_stats ON "Towers".id = main_stats."towerId" WHERE "Towers".id = ${id}`
         )
 
@@ -89,7 +85,7 @@ export class TowerService {
         let towerWithNullableFields: TowerWithNullableFields | null = null
 
         if (basicStats.towerType === TowerType.BARRACKS) {
-            results = await getRepository(Tower, DB_NAME).query(
+            results = await getTowerRepo().query(
                 `SELECT * FROM "Towers" INNER JOIN barracks_stats ON "Towers".id = barracks_stats."towerId" WHERE "Towers".id = ${id}`
             )
 
@@ -100,7 +96,7 @@ export class TowerService {
             let towerStats: BarracksTower = results[0]
             towerWithNullableFields = towerStats
         } else {
-            results = await getRepository(Tower, DB_NAME).query(
+            results = await getTowerRepo().query(
                 `SELECT * FROM "Towers" INNER JOIN attack_stats ON "Towers".id = attack_stats."towerId" WHERE "Towers".id = ${id}`
             )
 
