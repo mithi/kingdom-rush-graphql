@@ -41,13 +41,13 @@ const expectCount = async (entity: Function, expectedCount: number) => {
     expect(actualCount).toBe(expectedCount)
 }
 
-test("1. Be able to store, fetch, and remove a tower", async () => {
-    const TOWER_REPO = getRepository(Tower, DB_NAME)
+const getTowerRepo = () => getRepository(Tower, DB_NAME)
 
+test("1. Be able to store, fetch, and remove a tower", async () => {
     /********************
      * Our example tower shouldn't exist yet in our empty test database
      ********************/
-    let retrievedTowers = await TOWER_REPO.find({
+    let retrievedTowers = await getTowerRepo().find({
         where: {
             name: EXAMPLE_TOWER_DATA.name,
         },
@@ -59,13 +59,13 @@ test("1. Be able to store, fetch, and remove a tower", async () => {
      * We shoud ne able to successfully insert the tower,
      * increasing entry count of table by one
      ********************/
-    await TOWER_REPO.insert(EXAMPLE_TOWER_DATA)
+    await getTowerRepo().insert(EXAMPLE_TOWER_DATA)
     await expectCount(Tower, 1)
 
     /********************
      * We should able to find our inserted tower by name
      ********************/
-    retrievedTowers = await TOWER_REPO.find({
+    retrievedTowers = await getTowerRepo().find({
         where: {
             name: EXAMPLE_TOWER_DATA.name,
         },
@@ -79,13 +79,11 @@ test("1. Be able to store, fetch, and remove a tower", async () => {
     /********************
      * We should be able to remove the tower we inserted
      ********************/
-    await TOWER_REPO.remove(retrievedTower)
+    await getTowerRepo().remove(retrievedTower)
     await expectCount(Tower, 0)
 })
 
 test("2. Store a tower and add main stats deleting the tower would also delete main stats", async () => {
-    const TOWER_REPO = getRepository(Tower, DB_NAME)
-
     let tower = getExampleTower()
     let mainStats = getExampleMainStats()
     tower.mainStats = mainStats
@@ -94,7 +92,7 @@ test("2. Store a tower and add main stats deleting the tower would also delete m
      * Our example tower shouldn't exist in our empty database yet
      * It is currently just in memory
      ********************/
-    let retrievedTowers = await TOWER_REPO.find({
+    let retrievedTowers = await getTowerRepo().find({
         where: {
             name: tower.name,
         },
@@ -105,7 +103,7 @@ test("2. Store a tower and add main stats deleting the tower would also delete m
     /********************
      * Saving our tower should also save its main stats
      ********************/
-    await TOWER_REPO.save(tower)
+    await getTowerRepo().save(tower)
     await expectCount(Tower, 1)
     await expectCount(MainStats, 1)
 
@@ -113,7 +111,7 @@ test("2. Store a tower and add main stats deleting the tower would also delete m
      * Querying the tower should also load its main stats
      * With the expected column entries
      ********************/
-    retrievedTowers = await TOWER_REPO.find({
+    retrievedTowers = await getTowerRepo().find({
         where: {
             name: tower.name,
         },
@@ -129,13 +127,12 @@ test("2. Store a tower and add main stats deleting the tower would also delete m
     /********************
      * Removing the tower should also remove its mainstats
      ********************/
-    await TOWER_REPO.remove(retrievedTower)
+    await getTowerRepo().remove(retrievedTower)
     await expectCount(Tower, 0)
     await expectCount(MainStats, 0)
 })
 
 test("3. Be able to store abilities and ability levels of a tower, deleting tower would remove ability and ability levels", async () => {
-    const TOWER_REPO = getRepository(Tower, DB_NAME)
     const ABILITY_REPO = getRepository(Ability, DB_NAME)
 
     /********************
@@ -175,7 +172,7 @@ test("3. Be able to store abilities and ability levels of a tower, deleting towe
 
     tower.abilities = [ability1, ability2]
 
-    await TOWER_REPO.save(tower)
+    await getTowerRepo().save(tower)
 
     await expectCount(Tower, 1)
     await expectCount(Ability, 2)
@@ -184,7 +181,7 @@ test("3. Be able to store abilities and ability levels of a tower, deleting towe
     /********************
      * Querying the tower should also load its main stats
      ********************/
-    let retrievedTowers = await TOWER_REPO.find({
+    let retrievedTowers = await getTowerRepo().find({
         where: {
             name: tower.name,
         },
@@ -211,7 +208,7 @@ test("3. Be able to store abilities and ability levels of a tower, deleting towe
     /********************
      * Removing a tower should also remove its ability and ability levels
      ********************/
-    await TOWER_REPO.remove(retrievedTower)
+    await getTowerRepo().remove(retrievedTower)
     await expectCount(Tower, 0)
     await expectCount(Ability, 0)
     await expectCount(AbilityLevel, 0)
