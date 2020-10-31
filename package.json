@@ -5,20 +5,19 @@
     "main": "dist/index.js",
     "scripts": {
         "tsc": "tsc -p tsconfig.json",
-        "start": "nodemon -e ts  --exec \"npm run compile\"",
+        "start": "nodemon --ignore tests -e ts --exec \"npm run compile\"",
         "build": "npm run format && npm run compile",
         "compile": "npm run tsc && node dist/index.js",
         "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
         "setup": "bash ./scripts/run_setup.sh",
         "db:e2e": "bash ./scripts/run_end_to_end.sh",
         "db:create": "bash ./scripts/run_db_create.sh",
-        "db:migrate-all": "rm -rf ./dist/migrations && npm run tsc && typeorm migration:run",
-        "db:create-migrate": "npm run db:create && npm run db:migrate-all",
+        "db:migrate": "rm -rf ./dist/migrations && npm run tsc && typeorm migration:run && ts-node ./node_modules/typeorm/cli.js migration:run -c \"test\";",
         "db:update-data": "bash ./scripts/run_save_data.sh",
         "db:seed-json": "npm run tsc && node dist/seed/populate.js",
         "db:drop": "bash ./scripts/run_db_cleanup.sh",
-        "test": "jest --verbose",
-        "test:resolver": "jest -i tests/resolvers/tower_resolver.test.ts"
+        "test:resolver": "jest --testPathPattern=tests/resolvers --verbose",
+        "test": "jest --verbose"
     },
     "repository": {
         "type": "git",
