@@ -1,3 +1,24 @@
+import { gql } from "apollo-server"
+import { DocumentNode } from "graphql"
+
+const description = "4. Be able to get barracks...."
+
+const testQuery = gql`
+    {
+        barracksTowers(
+            sortDefinition: [
+                { column: numberOfUnits, sortOrder: ASCEND }
+                { column: kingdom, sortOrder: DESCEND }
+                { column: name, sortOrder: DESCEND }
+            ]
+        ) {
+            name
+            kingdom
+            numberOfUnits
+        }
+    }
+`
+
 const result = () => {
     return `
     Object {
@@ -151,4 +172,9 @@ const result = () => {
 `
 }
 
-export default result
+const testCase: [string, { testQuery: DocumentNode; result: Function }] = [
+    description,
+    { testQuery, result },
+]
+
+export default testCase

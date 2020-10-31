@@ -1,3 +1,17 @@
+import { gql } from "apollo-server"
+import { DocumentNode } from "graphql"
+
+const description =
+    "1. Be able to get towers, ids would be sorted in ascending order by default"
+
+const testQuery = gql`
+    {
+        towers {
+            id
+        }
+    }
+`
+
 const result = () => {
     return `
     Object {
@@ -328,4 +342,9 @@ const result = () => {
 `
 }
 
-export default result
+const testCase: [string, { testQuery: DocumentNode; result: Function }] = [
+    description,
+    { testQuery, result },
+]
+
+export default testCase

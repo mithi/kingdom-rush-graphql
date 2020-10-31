@@ -8,6 +8,7 @@ const DB_NAME = process.env.NODE_ENV === "test" ? "test" : "default"
 const nothingLeft = (arrays: any[]): boolean => {
     return arrays.some(list => list.length === 0)
 }
+
 export class AbilityService {
     async abilities(args: AbilityArgs) {
         const { onlyKingdoms, onlyTowerTypes, take, skip, sortDefinition } = args

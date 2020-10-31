@@ -55,9 +55,9 @@ const result = () => {
 `
 }
 
-const returnValue: [string, { testQuery: DocumentNode; result: Function }] = [
+const testCase: [string, { testQuery: DocumentNode; result: Function }] = [
     description,
     { testQuery, result },
 ]
 
-export default returnValue
+export default testCase

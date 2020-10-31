@@ -1,3 +1,23 @@
+import { gql } from "apollo-server"
+import { DocumentNode } from "graphql"
+
+const description =
+    "3. Be able to get attack towers sorted by fire interval in descending order"
+
+const testQuery = gql`
+    {
+        attackTowers(
+            sortDefinition: [
+                { column: fireInterval, sortOrder: DESCEND }
+                { column: towerType, sortOrder: ASCEND }
+            ]
+        ) {
+            fireInterval
+            towerType
+        }
+    }
+`
+
 const result = () => {
     return `
     Object {
@@ -324,4 +344,9 @@ const result = () => {
 `
 }
 
-export default result
+const testCase: [string, { testQuery: DocumentNode; result: Function }] = [
+    description,
+    { testQuery, result },
+]
+
+export default testCase
