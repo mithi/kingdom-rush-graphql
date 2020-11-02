@@ -84,23 +84,6 @@ export const result = () => {
         "towerById": Object {
           "abilities": Array [
             Object {
-              "abilityDescription": "increases the maximum number of targets that the bolt arcs to. base is 3 targets. Every upgrade level increase the number of maximum targets.",
-              "abilityId": 18,
-              "abilityName": "supercharged bolt",
-              "kingdom": "KR",
-              "levelCosts": Array [
-                250,
-                250,
-              ],
-              "numberOfLevels": 2,
-              "totalAbilityCost": 500,
-              "totalCostWithTowers": 1540,
-              "towerId": 5,
-              "towerImageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-tesla-x104-4b.png",
-              "towerName": "tesla x104",
-              "towerType": "ARTILLERY",
-            },
-            Object {
               "abilityDescription": "creates a static field around the tower when attacking dealing explosive to all nearby enemies. Every upgrade level increases the damage dealt by the field.",
               "abilityId": 17,
               "abilityName": "overcharge",
@@ -111,6 +94,23 @@ export const result = () => {
                 125,
               ],
               "numberOfLevels": 3,
+              "totalAbilityCost": 500,
+              "totalCostWithTowers": 1540,
+              "towerId": 5,
+              "towerImageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/kr-artillery-tesla-x104-4b.png",
+              "towerName": "tesla x104",
+              "towerType": "ARTILLERY",
+            },
+            Object {
+              "abilityDescription": "increases the maximum number of targets that the bolt arcs to. base is 3 targets. Every upgrade level increase the number of maximum targets.",
+              "abilityId": 18,
+              "abilityName": "supercharged bolt",
+              "kingdom": "KR",
+              "levelCosts": Array [
+                250,
+                250,
+              ],
+              "numberOfLevels": 2,
               "totalAbilityCost": 500,
               "totalCostWithTowers": 1540,
               "towerId": 5,
