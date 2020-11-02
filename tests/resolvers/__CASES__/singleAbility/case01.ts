@@ -1,7 +1,7 @@
 import { gql } from "apollo-server"
 import { DocumentNode } from "graphql"
 
-const description = "Be able to get ability data by its id"
+const description = "abilitiesById: When ability id exists"
 const testQuery = gql`
     {
         abilityById(id: 85) {
