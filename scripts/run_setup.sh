@@ -1,18 +1,29 @@
+# Create databases: kingdom_rush_db, test_db, empty_test_db
 npm run db:create;
-npm install;
+
+# install packages
+#npm install;
+
+# copy .env.sample to .env
 cp .env.sample .env;
 
-# migrate and populate kingdom_rush_db
+# Run migrations for test_db and kingdom_rush_db
 npm run db:migrate;
-psql kingdom_rush_user -h localhost -d kingdom_rush_db -f ./scripts/db_load_csv.sql;
 
-# migrate and populate test_db
+# Populate kingdom_rush_db from yaml to json to database tables to csv
+npm run db:update-data;
+
+# Populate test_db
 psql kingdom_rush_user -h localhost -d test_db -f ./scripts/db_load_csv.sql;
+
+# Print the information about the test_db
 psql kingdom_rush_user -h localhost -d test_db --pset=pager -f ./scripts/db_gen_info.sql;
 psql kingdom_rush_user -h localhost -d test_db --pset=pager -f ./scripts/db_table_info.sql;
 
-# sleep for a while to help prevent errors in testing the database
+# Wait for a while before accessing the database when testing
+# to make sure that the database is already populated before accessing it
+# this helps prevent errors in testing the database
 sleep 5
 
-# run tests
+# Run tests
 npm run test
