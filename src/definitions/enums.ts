@@ -2,15 +2,15 @@ import { registerEnumType } from "type-graphql"
 
 export enum TowerType {
     ARCHER = "archer",
+    ARTILLERY = "artillery",
     BARRACKS = "barracks",
     MAGE = "mage",
-    ARTILLERY = "artillery",
 }
 
 export enum AttackTowerType {
     ARCHER = "archer",
-    MAGE = "mage",
     ARTILLERY = "artillery",
+    MAGE = "mage",
 }
 
 export enum TowerLevel {
