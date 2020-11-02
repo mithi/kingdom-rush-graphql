@@ -1,6 +1,6 @@
 import { createConnection, getConnection } from "typeorm"
-import sAcase1 from "./__CASES__/singleAbility/case1"
-import sTcase1 from "./__CASES__/singleTower/case1"
+import sAcase1 from "./__CASES__/singleAbility/case01"
+import sTcase1 from "./__CASES__/singleTower/case01"
 import { executeTest } from "./utils"
 import VARIOUS_CASES from "./__CASES__/various"
 
