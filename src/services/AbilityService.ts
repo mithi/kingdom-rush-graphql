@@ -29,7 +29,7 @@ export class AbilityService {
     }
 
     async abilitiesByTowerId(id: Number) {
-        const query = `${TABLE_EXPRESSION} WHERE t4.id = ${id}`
+        const query = `${TABLE_EXPRESSION} WHERE t4.id = ${id} ORDER BY ability_table."abilityId" ASC`
         return await getConnection(DB_NAME).query(query)
     }
 

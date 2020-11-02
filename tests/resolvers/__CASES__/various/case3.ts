@@ -237,11 +237,11 @@ const result = () => {
           },
           Object {
             "fireInterval": 1,
-            "towerType": "MAGE",
+            "towerType": "ARTILLERY",
           },
           Object {
             "fireInterval": 1,
-            "towerType": "ARTILLERY",
+            "towerType": "MAGE",
           },
           Object {
             "fireInterval": 0.8,

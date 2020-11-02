@@ -28,7 +28,7 @@ INNER JOIN (
         "Towers".kingdom AS kingdom,
         "Towers"."towerType" AS "towerType",
         COUNT(ability_level.level) AS "numberOfLevels",
-        ARRAY_AGG (ability_level.cost) "levelCosts"
+        ARRAY_AGG (ability_level.cost ORDER BY ability_level.level) "levelCosts"
     FROM "Towers"
         INNER JOIN ability ON ability."towerId" = "Towers".id
         INNER JOIN ability_level ON ability.id = ability_level."abilityId"
