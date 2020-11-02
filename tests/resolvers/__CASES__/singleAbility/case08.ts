@@ -1,10 +1,10 @@
 import { gql } from "apollo-server"
 import { DocumentNode } from "graphql"
 
-const description = "Be able to get ability data by its id"
+const description = "abilityByName: When ability name exists"
 const testQuery = gql`
     {
-        abilityById(id: 85) {
+        abilityByName(name: "Biggarangs") {
             abilityDescription
             abilityId
             abilityName
@@ -25,23 +25,23 @@ const result = () => {
     return `
     Object {
       "data": Object {
-        "abilityById": Object {
-          "abilityDescription": "Fills a zone with powerful healing roots. Allies over it heal over 4 seconds. Each upgrade level increases HP healed",
-          "abilityId": 85,
-          "abilityName": "Healing Roots",
+        "abilityByName": Object {
+          "abilityDescription": "Throws a massive boomerang which deals damage in an area of 70. In upgrade level increases the damage dealt.",
+          "abilityId": 76,
+          "abilityName": "Biggarangs",
           "kingdom": "KRV",
           "levelCosts": Array [
-            130,
-            130,
-            130,
+            200,
+            100,
+            100,
           ],
           "numberOfLevels": 3,
-          "totalAbilityCost": 390,
-          "totalCostWithTowers": 1290,
-          "towerId": 104,
-          "towerImageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-shaman4.png",
-          "towerName": "orc shaman, 4",
-          "towerType": "MAGE",
+          "totalAbilityCost": 400,
+          "totalCostWithTowers": 1100,
+          "towerId": 68,
+          "towerImageUrl": "https://storage.googleapis.com/kingdom-rush-towers.appspot.com/krv-goblirangs-4.png",
+          "towerName": "goblirangs, 4",
+          "towerType": "ARCHER",
         },
       },
       "errors": undefined,

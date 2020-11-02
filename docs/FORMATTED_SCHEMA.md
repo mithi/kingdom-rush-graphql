@@ -1,9 +1,11 @@
-This is a better formatted version of the automatically generated schema by type graphql.
+# SCHEMA
+
+Here's better formatted version of the automatically generated schema by type graphql.
 This may or may not be updated. The source of truth is the link below:
 
 -   https://github.com/mithi/kingdom-rush-graphql/blob/main/schema.gql
 
-# QUERIES
+## QUERIES
 
 ```graphql
 type Query {
@@ -29,7 +31,7 @@ type Query {
         ]
         take: Int = 104
     ): [BuildSequence!]!
-    
+
     towers(
         onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV]
         onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4]
@@ -38,7 +40,7 @@ type Query {
         sortDefinition: [SortDefinitionElement!] = [{ column: id, sortOrder: ASCEND }]
         take: Int = 104
     ): [TowerWithStats!]!
-    
+
     attackTowers(
         onlyKingdoms: [TowerKingdom!] = [KR, KRF, KRO, KRV]
         onlyLevels: [TowerLevel!] = [LVL1, LVL2, LVL3, LVL4]
