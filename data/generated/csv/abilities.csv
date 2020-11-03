@@ -51,7 +51,7 @@ id,name,description,towerId
 50,Arcane Sentinel,Summons magic sentinels that seek and attack nearby enemies at long range. Every upgrade level increases damage per bolt and the number of sentinels.,30
 51,sylvan curse,"Curses an enemy for 5 seconds, causing a percentage of all damage dealt to it to also affect nearby enemies. Increases the percentage.",14
 52,Runed Bears,Invokes a mythical runed bear to block and fight enemies. Every upgrade level increases the number of bears.,14
-53,Fiery Nut,"hrows a burning nut that explodes for area damage, setting the ground on fire for 5 seconds. Every upgrade level increases the explosive damage and the maximum fire damage dealt over time.",15
+53,Fiery Nut,"Throws a burning nut that explodes for area damage, setting the ground on fire for 5 seconds. Every upgrade level increases the explosive damage and the maximum fire damage dealt over time.",15
 54,Clobber,"Shakes the ground, dealing True Damage and stunning enemies in the range. Increases the damage and stun in seconds",15
 55,Shadow Mark,"Shoots an arrow that marks a target, making it suffer extra damage from all sources for 5 seconds.  Each upgrade level increases the extra damage (30%, 60%, 100%)",80
 56,Blade of Demise,"Stabs an enemy in the back and kills it instantly. Each upgrade level decreases the cooldown (40 seconds, 30 seconds, 24 seconds)",80

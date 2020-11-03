@@ -2,7 +2,7 @@ import { gql } from "apollo-server"
 import { DocumentNode } from "graphql"
 
 const description =
-    "Be able to query by a level 4 artillery tower by id.\
+    "towerById: Be able to query by a level 4 artillery tower by id.\
  Build sequence and abilities must not be null.\
  Because it is not a barracks type tower, \
  numberOfUnits, respawnInterval, health and armor must be null."

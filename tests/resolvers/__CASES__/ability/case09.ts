@@ -1,7 +1,7 @@
 import { gql } from "apollo-server"
 import { DocumentNode } from "graphql"
 
-const description = "abilityByName: When ability name dost NOT exist"
+const description = "abilityByName: When ability name does NOT exist"
 const testQuery = gql`
     {
         abilityByName(name: "Biggies") {

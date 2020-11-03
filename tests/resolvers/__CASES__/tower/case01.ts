@@ -2,7 +2,7 @@ import { gql } from "apollo-server"
 import { DocumentNode } from "graphql"
 
 const description =
-    "1. Be able to get towers, ids would be sorted in ascending order by default"
+    "towers: Be able to get towers, ids would be sorted in ascending order by default"
 
 const testQuery = gql`
     {

@@ -2,7 +2,7 @@ import { gql } from "apollo-server"
 import { DocumentNode } from "graphql"
 
 const description =
-    "3. Be able to get attack towers sorted by fire interval in descending order"
+    "attackTowers: Be able to get attack towers sorted by fire interval in descending order"
 
 const testQuery = gql`
     {
