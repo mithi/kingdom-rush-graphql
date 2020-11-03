@@ -37,12 +37,6 @@ const populateBuildSequence = async ({ dbName = "default", verbose = true } = {}
             ],
         })
 
-        if (verbose) {
-            console.log("...")
-            console.log("BUILD SEQUENCE", buildSequenceData)
-            console.log("RESULT", retrievedTowers)
-        }
-
         let buildSequence = new BuildSequence()
         retrievedTowers.forEach(tower => {
             if (tower.level === 1) {
@@ -81,7 +75,7 @@ const populateBuildSequence = async ({ dbName = "default", verbose = true } = {}
             console.log("ERROR", e, buildSequence)
         }
         if (verbose) {
-            console.log("saved buildSequence", buildSequence)
+            console.log("saved buildSequence.", buildSequence.level4.name)
         }
     }
 }
