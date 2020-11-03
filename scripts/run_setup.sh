@@ -1,8 +1,8 @@
+# install packages
+npm install;
+
 # Create databases: kingdom_rush_db, test_db, empty_test_db
 npm run db:create;
-
-# install packages
-#npm install;
 
 # copy .env.sample to .env
 cp .env.sample .env;
@@ -11,10 +11,8 @@ cp .env.sample .env;
 npm run db:migrate;
 
 # Populate kingdom_rush_db from yaml to json to database tables to csv
+# then populates test_db with csv data
 npm run db:update-data;
-
-# Populate test_db
-psql kingdom_rush_user -h localhost -d test_db -f ./scripts/db_load_csv.sql;
 
 # Print the information about the test_db
 psql kingdom_rush_user -h localhost -d test_db --pset=pager -f ./scripts/db_gen_info.sql;
