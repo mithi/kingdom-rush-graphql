@@ -50,7 +50,7 @@ export class AbilityResolver {
 
     @Query(() => [Ability])
     async abilitiesByTowerName(@Arg("name") name: String) {
-        return this.abilityService.abilitiesByTowerName(name)
+        return this.abilityService.abilitiesByTowerName(name.toLowerCase())
     }
 
     @Query(() => Ability, { nullable: true })
@@ -60,6 +60,6 @@ export class AbilityResolver {
 
     @Query(() => Ability, { nullable: true })
     async abilityByName(@Arg("name") name: String) {
-        return this.abilityService.abilityByName(name)
+        return this.abilityService.abilityByName(name.toLowerCase())
     }
 }

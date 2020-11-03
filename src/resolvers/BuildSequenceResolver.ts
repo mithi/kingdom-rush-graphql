@@ -5,7 +5,7 @@ buildSequences(
   onlyKingdoms: []
   onlyTowerTypes: []
   sortBy: [
-    tower4Name,
+    towerName,
     towerType
     kingdom
     totalBuildCost
@@ -53,6 +53,6 @@ export class BuildSequenceResolver {
 
     @Query(() => BuildSequence, { nullable: true })
     async buildSequenceByTowerName(@Arg("name") name: String) {
-        return this.buildSequenceService.buildSequenceByTowerName(name)
+        return this.buildSequenceService.buildSequenceByTowerName(name.toLowerCase())
     }
 }
