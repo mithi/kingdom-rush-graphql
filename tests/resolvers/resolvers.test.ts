@@ -1,5 +1,5 @@
 import { createConnection, getConnection } from "typeorm"
-import ABILITY_CASES from "./__CASES__/singleAbility/"
+import ABILITY_CASES from "./__CASES__/ability/"
 import BUILD_SEQUENCE_CASES from "./__CASES__/buildSequence"
 import sTcase1 from "./__CASES__/singleTower/case01"
 import { executeTest } from "./utils"
