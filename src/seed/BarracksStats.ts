@@ -25,11 +25,6 @@ type BarracksData = {
 const populateBarracksStats = async ({ dbName = "default", verbose = true } = {}) => {
     const barracks: [BarracksData] = (<any>barracksJson).towers
     for (let tower of barracks) {
-        if (verbose) {
-            console.log("...")
-            console.log(tower.name, "|", tower.kingdom)
-        }
-
         let retrievedTower = await getRepository(Tower, dbName).findOne({
             where: {
                 name: tower.name,
@@ -49,7 +44,12 @@ const populateBarracksStats = async ({ dbName = "default", verbose = true } = {}
 
         if (retrievedTower.barracksStats) {
             if (verbose) {
-                console.log("> This tower already has barracks stats.")
+                console.log(
+                    "> This tower already has barracks stats.",
+                    tower.name,
+                    "|",
+                    tower.kingdom
+                )
             }
             continue
         }
@@ -64,7 +64,7 @@ const populateBarracksStats = async ({ dbName = "default", verbose = true } = {}
         try {
             await getRepository(Tower, dbName).save(retrievedTower)
             if (verbose) {
-                console.log("Barracks stats saved.")
+                console.log("Barracks stats saved.", tower.name, "|", tower.kingdom)
             }
         } catch (error) {
             logError(error)

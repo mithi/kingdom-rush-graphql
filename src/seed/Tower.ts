@@ -74,11 +74,6 @@ const mapStringToTowerType = {
 const populateTowers = async ({ dbName = "default", verbose = true } = {}) => {
     const towers: [TowerData] = (<any>towerJson).towers
     for (let tower of towers) {
-        if (verbose) {
-            console.log("...")
-            console.log(tower.name, "|", tower.kingdom)
-        }
-
         const newTower = new Tower()
         newTower.name = tower.name
         newTower.towerType = mapStringToTowerType[tower.towerType]
@@ -95,7 +90,7 @@ const populateTowers = async ({ dbName = "default", verbose = true } = {}) => {
             await getRepository(Tower, dbName).save(newTower)
 
             if (verbose) {
-                console.log("> Tower saved.")
+                console.log("> Tower saved.", tower.name, "|", tower.kingdom)
             }
         } catch (error) {
             logError(error)
@@ -125,7 +120,12 @@ const populateImageUrls = async ({ dbName = "default", verbose = true } = {}) =>
 
         if (retrievedTower.imageUrl) {
             if (verbose) {
-                console.log("> This tower already has an image url")
+                console.log(
+                    "> This tower already has an image url",
+                    tower.name,
+                    "|",
+                    tower.kingdom
+                )
             }
             continue
         }

@@ -24,10 +24,6 @@ type AttacksData = {
 const populateAttackStats = async ({ dbName = "default", verbose = true } = {}) => {
     const attackTowers: [AttacksData] = attackJson.towers
     for (let tower of attackTowers) {
-        if (verbose) {
-            console.log("...")
-            console.log(tower.name, "|", tower.kingdom)
-        }
         let retrievedTower = await getRepository(Tower, dbName).findOne({
             where: {
                 name: tower.name,
@@ -39,7 +35,10 @@ const populateAttackStats = async ({ dbName = "default", verbose = true } = {}) 
         if (!retrievedTower) {
             if (verbose) {
                 console.log(
-                    "> The tower you want to populate attack stats does not exist"
+                    "> The tower you want to populate attack stats does not exist",
+                    tower.name,
+                    "|",
+                    tower.kingdom
                 )
             }
             continue
@@ -47,7 +46,12 @@ const populateAttackStats = async ({ dbName = "default", verbose = true } = {}) 
 
         if (retrievedTower.attackStats) {
             if (verbose) {
-                console.log("> This tower already has attack stats")
+                console.log(
+                    "> This tower already has attack stats",
+                    tower.name,
+                    "|",
+                    tower.kingdom
+                )
             }
             continue
         }
@@ -60,7 +64,7 @@ const populateAttackStats = async ({ dbName = "default", verbose = true } = {}) 
         try {
             await getRepository(Tower, dbName).save(retrievedTower)
             if (verbose) {
-                console.log("> Attack stats saved.")
+                console.log("> Attack stats saved.", tower.name, "|", tower.kingdom)
             }
         } catch (error) {
             logError(error)
