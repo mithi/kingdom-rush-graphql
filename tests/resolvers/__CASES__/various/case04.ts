@@ -2,7 +2,7 @@ import { gql } from "apollo-server"
 import { DocumentNode } from "graphql"
 
 const description =
-    "4. Be able to get barracks, with the more soldiers first, then sorted by kingdom, then sorted by name."
+    "barracksTowers: Be able to get barracks, with the more soldiers first, then sorted by kingdom, then sorted by name."
 
 const testQuery = gql`
     {
