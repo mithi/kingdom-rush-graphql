@@ -2,9 +2,9 @@ import { createConnection, getConnection } from "typeorm"
 import ABILITY_CASES from "./__CASES__/ability/"
 import BUILD_SEQUENCE_CASES from "./__CASES__/buildSequence"
 import { executeTest } from "./utils"
-import VARIOUS_CASES from "./__CASES__/various"
+import TOWER_CASES from "./__CASES__/tower"
 
-const CASES = [...ABILITY_CASES, ...BUILD_SEQUENCE_CASES, ...VARIOUS_CASES]
+const CASES = [...ABILITY_CASES, ...BUILD_SEQUENCE_CASES, ...TOWER_CASES]
 beforeAll(async () => {
     await createConnection("test")
 })
