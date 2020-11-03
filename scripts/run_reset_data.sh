@@ -1,3 +1,7 @@
+# Drop database if currently exists and make a new one from scratch
+# including all the tables
+npm run db:reset
+
 # Generates json files from raw/yaml files
 python ./scripts/json-towers.py;
 python ./scripts/json-barracks-stats.py;
