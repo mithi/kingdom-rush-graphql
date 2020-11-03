@@ -23,7 +23,7 @@ def get_build_sequence(tower_type, kingdom):
     build_sequence = []
     kr_towers = yaml.load_all(stream, yaml.Loader)
     for i, tower in enumerate(kr_towers):
-        tower_names.append(tower["name"])
+        tower_names.append(tower["name"].lower())
 
     name4a, name4b = tower_names[3:]
 
@@ -71,7 +71,7 @@ for path in krv_files_path:
     krv_towers_raw = yaml.load_all(stream, yaml.Loader)
 
     for i, tower_raw in enumerate(krv_towers_raw):
-        name = tower_raw["name"]
+        name = tower_raw["name"].lower()
         krv_build_sequences.append({
             "kingdom": "kingdom rush: vengeance",
             "levels": [

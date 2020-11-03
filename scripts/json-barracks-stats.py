@@ -55,7 +55,7 @@ def get_barracks_stats(kingdom):
     for i, tower in enumerate(kr_towers):
         number_of_units = 3 if "number_of_units" not in tower.keys() else tower["number_of_units"]
         base_barracks_stats = {
-            "name": tower["name"],
+            "name": tower["name"].lower(),
             "kingdom": KINGDOM_NAME[kingdom],
             "health": tower["hp_magnitude"],
             "armor": tower["armor_magnitude"],
@@ -84,7 +84,7 @@ for path in [b1, b2, b3]:
             number_of_units = 3 if "number_of_units" not in tower_raw.keys() else tower_raw["number_of_units"]
             name = tower_raw["name"]
             tower = {
-                "name": f"{name}, {i}",
+                "name": f"{name}, {i}".lower(),
                 "health": stats["health"],
                 "armor": stats["armor"],
                 "respawnInterval": stats["respawn"],
