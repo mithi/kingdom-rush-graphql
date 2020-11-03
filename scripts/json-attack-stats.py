@@ -37,7 +37,7 @@ def get_attack_stats(tower_type, kingdom):
             fire_interval = tower["fire_rate_in_seconds"]
 
         new_tower = {
-            "name": tower["name"],
+            "name": tower["name"].lower(),
             "kingdom": kingdom_string,
             "fireInterval": fire_interval,
             "range": tower["range_magnitude"],
@@ -80,7 +80,7 @@ for path in krv_files_path:
         for i in [1, 2, 3, 4]:
             stats = tower_raw["levels"][i]
             tower = {
-                "name": f"{name}, {i}",
+                "name": f"{name}, {i}".lower(),
                 "kingdom": "kingdom rush: vengeance",
                 "fireInterval": stats["fire_rate"],
                 "range": stats["range"],

@@ -26,9 +26,9 @@ const result = () => {
     Object {
       "data": Object {
         "abilityById": Object {
-          "abilityDescription": "Fills a zone with powerful healing roots. Allies over it heal over 4 seconds. Each upgrade level increases HP healed",
+          "abilityDescription": "fills a zone with powerful healing roots. allies over it heal over 4 seconds. each upgrade level increases hp healed",
           "abilityId": 85,
-          "abilityName": "Healing Roots",
+          "abilityName": "healing roots",
           "kingdom": "KRV",
           "levelCosts": Array [
             130,

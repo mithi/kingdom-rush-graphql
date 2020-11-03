@@ -4,7 +4,7 @@ import { DocumentNode } from "graphql"
 const description = "abilityByName: When ability name exists"
 const testQuery = gql`
     {
-        abilityByName(name: "Biggarangs") {
+        abilityByName(name: "biggarangs") {
             abilityDescription
             abilityId
             abilityName
@@ -26,9 +26,9 @@ const result = () => {
     Object {
       "data": Object {
         "abilityByName": Object {
-          "abilityDescription": "Throws a massive boomerang which deals damage in an area of 70. In upgrade level increases the damage dealt.",
+          "abilityDescription": "throws a massive boomerang which deals damage in an area of 70. in upgrade level increases the damage dealt.",
           "abilityId": 76,
-          "abilityName": "Biggarangs",
+          "abilityName": "biggarangs",
           "kingdom": "KRV",
           "levelCosts": Array [
             200,

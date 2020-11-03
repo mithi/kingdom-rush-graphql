@@ -27,9 +27,9 @@ const result = () => {
       "data": Object {
         "abilitiesByTowerName": Array [
           Object {
-            "abilityDescription": "Phases enemies out of the battlefield for 5 seconds, dealing magical damage. Every upgrade level increases maximum number of targets and damage dealt.",
+            "abilityDescription": "phases enemies out of the battlefield for 5 seconds, dealing magical damage. every upgrade level increases maximum number of targets and damage dealt.",
             "abilityId": 49,
-            "abilityName": "Timelapse",
+            "abilityName": "timelapse",
             "kingdom": "KRO",
             "levelCosts": Array [
               225,
@@ -45,9 +45,9 @@ const result = () => {
             "towerType": "MAGE",
           },
           Object {
-            "abilityDescription": "Summons magic sentinels that seek and attack nearby enemies at long range. Every upgrade level increases damage per bolt and the number of sentinels.",
+            "abilityDescription": "summons magic sentinels that seek and attack nearby enemies at long range. every upgrade level increases damage per bolt and the number of sentinels.",
             "abilityId": 50,
-            "abilityName": "Arcane Sentinel",
+            "abilityName": "arcane sentinel",
             "kingdom": "KRO",
             "levelCosts": Array [
               300,

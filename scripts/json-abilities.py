@@ -82,15 +82,15 @@ def get_abilities(path, kingdom):
                 })
 
             cleaned_abilities.append({
-                "abilityName": ability["name"],
-                "description": ability["description"],
+                "abilityName": ability["name"].lower(),
+                "description": ability["description"].lower(),
                 "levels": cleaned_levels
             })
 
         tower_abilities = {
-            "towerName": tower["name"],
+            "towerName": tower["name"].lower(),
             "kingdom": kingdom,
-            "abilities":cleaned_abilities
+            "abilities": cleaned_abilities
         }
 
         towers.append(tower_abilities)

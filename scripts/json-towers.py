@@ -34,7 +34,7 @@ def get_towers(tower_type, kingdom):
     for i, tower in enumerate(kr_towers):
         print(i, tower["name"], kingdom)
         new_tower = {
-            "name": tower["name"],
+            "name": tower["name"].lower(),
             "buildCost": tower["build_cost"],
             "kingdom": kingdom_string,
             "level": tower["level"],
@@ -84,7 +84,7 @@ for path in krv_files_path:
         for i in [1, 2, 3, 4]:
             stats = tower_raw["levels"][i]
             tower = {
-                "name": f"{name}, {i}",
+                "name": f"{name}, {i}".lower(),
                 "level": i,
                 "buildCost": stats["build_cost"],
                 "towerType": tower_raw["type"],

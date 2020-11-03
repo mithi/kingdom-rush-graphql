@@ -27,7 +27,7 @@ const result = () => {
       "data": Object {
         "abilitiesByTowerId": Array [
           Object {
-            "abilityDescription": "Sends an automated mining drill towards an enemy, reducing it to a mound of gibs. Every upgrade level decreases cooldown.",
+            "abilityDescription": "sends an automated mining drill towards an enemy, reducing it to a mound of gibs. every upgrade level decreases cooldown.",
             "abilityId": 33,
             "abilityName": "core drill",
             "kingdom": "KRF",
@@ -45,7 +45,7 @@ const result = () => {
             "towerType": "ARTILLERY",
           },
           Object {
-            "abilityDescription": "Burns all enemies in close range over 4 seconds. Every upgrade level increases maximum damage and damage per second",
+            "abilityDescription": "burns all enemies in close range over 4 seconds. every upgrade level increases maximum damage and damage per second",
             "abilityId": 34,
             "abilityName": "furnace blast",
             "kingdom": "KRF",
