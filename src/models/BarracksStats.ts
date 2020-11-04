@@ -5,6 +5,7 @@ import {
     OneToOne,
     JoinColumn,
     BaseEntity,
+    Index,
 } from "typeorm"
 import { Tower } from "./Tower"
 
@@ -30,6 +31,7 @@ export class BarracksStats extends BaseEntity {
     })
     armor: number
 
+    @Index("UNIQUE_INDEX_barracks_stats__tower_id", { unique: true })
     @OneToOne(_type => Tower, tower => tower.barracksStats, {
         onDelete: "CASCADE",
         nullable: false,

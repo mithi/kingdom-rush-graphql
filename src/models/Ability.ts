@@ -6,14 +6,17 @@ import {
     OneToMany,
     JoinColumn,
     BaseEntity,
+    Index,
 } from "typeorm"
 import { Tower } from "./Tower"
 import { AbilityLevel } from "./AbilityLevel"
+
 @Entity()
 export class Ability extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number
 
+    @Index("UNIQUE_INDEX_ability__name", { unique: true })
     @Column()
     name: string
 
@@ -25,6 +28,7 @@ export class Ability extends BaseEntity {
     })
     levels: AbilityLevel[]
 
+    // Tower is unique
     @ManyToOne(_type => Tower, tower => tower.abilities, {
         onDelete: "CASCADE",
         nullable: false,

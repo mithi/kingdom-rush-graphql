@@ -6,6 +6,7 @@ import {
     OneToMany,
     Unique,
     OneToOne,
+    Index,
 } from "typeorm"
 import { TowerType, TowerKingdom, TowerLevel } from "../definitions/enums"
 import { MainStats } from "./MainStats"
@@ -16,6 +17,7 @@ import { Ability } from "./Ability"
 @Entity({ name: "Towers" })
 @Unique("unique_tower", ["name", "kingdom"])
 export class Tower extends BaseEntity {
+    @Index("PK_tower_id")
     @PrimaryGeneratedColumn()
     id: number
 
