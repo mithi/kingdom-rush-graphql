@@ -6,7 +6,6 @@ import {
     OneToMany,
     Unique,
     OneToOne,
-    Index,
 } from "typeorm"
 import { TowerType, TowerKingdom, TowerLevel } from "../definitions/enums"
 import { MainStats } from "./MainStats"
