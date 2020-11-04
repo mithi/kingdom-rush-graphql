@@ -5,6 +5,7 @@ import {
     OneToOne,
     JoinColumn,
     BaseEntity,
+    Index,
 } from "typeorm"
 import { Tower } from "./Tower"
 
@@ -22,6 +23,7 @@ export class MainStats extends BaseEntity {
     @Column({ type: "real" })
     buildCost: number
 
+    @Index("UNIQUE_INDEX_main_stats__tower_id", { unique: true })
     @OneToOne(_type => Tower, tower => tower.mainStats, {
         onDelete: "CASCADE",
         nullable: false,

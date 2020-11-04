@@ -4,6 +4,7 @@ import {
     ManyToOne,
     JoinColumn,
     BaseEntity,
+    Index,
 } from "typeorm"
 import { Tower } from "./Tower"
 
@@ -24,6 +25,7 @@ export class BuildSequence extends BaseEntity {
     @JoinColumn()
     level3: Tower
 
+    @Index("UNIQUE_INDEX_build_sequence__level4_id", { unique: true })
     @ManyToOne(() => Tower)
     @JoinColumn()
     level4: Tower
