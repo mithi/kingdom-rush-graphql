@@ -17,7 +17,6 @@ import { Ability } from "./Ability"
 @Entity({ name: "Towers" })
 @Unique("unique_tower", ["name", "kingdom"])
 export class Tower extends BaseEntity {
-    @Index("PK_tower_id")
     @PrimaryGeneratedColumn()
     id: number
 
