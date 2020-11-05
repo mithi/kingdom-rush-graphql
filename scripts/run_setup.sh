@@ -1,6 +1,3 @@
-# install packages
-npm install;
-
 # copy .env.sample to .env
 cp .env.sample .env;
 

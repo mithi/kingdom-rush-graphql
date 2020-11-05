@@ -7,14 +7,6 @@
         "node": "12.x"
     },
     "scripts": {
-        "tsc": "tsc -p tsconfig.json",
-        "start:dev": "nodemon --ignore tests -e ts --exec \"npm run compile\"",
-        "start": "node dist/index.js",
-        "build": "npm run format && npm run tsc",
-        "compile": "npm run tsc && node dist/index.js",
-        "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
-        "setup": "bash ./scripts/run_setup.sh",
-        "db:e2e": "bash ./scripts/run_end_to_end.sh",
         "db:create": "bash ./scripts/run_db_create.sh",
         "db:migrate": "rm -rf ./dist/migrations && npm run tsc && typeorm migration:run && npm run db:migrate-test;",
         "db:migrate-test": "ts-node ./node_modules/typeorm/cli.js migration:run -c \"test\"",
@@ -22,6 +14,13 @@
         "db:reset-data": "bash ./scripts/run_reset_data.sh",
         "db:seed-json": "npm run tsc && node dist/seed/populate.js",
         "db:drop": "bash ./scripts/run_db_cleanup.sh",
+        "postinstall": "bash ./scripts/run_setup.sh",
+        "tsc": "tsc -p tsconfig.json",
+        "build": "npm run format && npm run tsc",
+        "compile": "npm run tsc && node dist/index.js",
+        "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
+        "start:dev": "nodemon --ignore tests -e ts --exec \"npm run compile\"",
+        "start": "node dist/index.js",
         "test:resolver": "jest --testPathPattern=tests/resolvers --verbose",
         "test": "jest --verbose"
     },
@@ -48,26 +47,26 @@
     },
     "homepage": "https://github.com/mithi/kingdom-rush-graphql#readme",
     "devDependencies": {
+        "@types/express": "^4.17.8",
         "@types/graphql": "^14.5.0",
         "@types/jest": "^26.0.14",
         "apollo-server-testing": "^2.18.2",
         "class-validator": "^0.12.2",
+        "dotenv": "^8.2.0",
         "jest": "^26.5.2",
         "nodemon": "^2.0.5",
         "prettier": "^2.1.2",
         "ts-jest": "^26.4.1",
         "ts-node": "^9.0.0",
-        "type-graphql": "^1.1.0",
         "typescript": "^4.0.3"
     },
     "dependencies": {
-        "@types/express": "^4.17.8",
         "apollo-server": "^2.18.2",
-        "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "graphql": "^15.3.0",
         "pg": "^8.4.1",
-        "reflect-metadata": "^0.1.13",
-        "typeorm": "^0.2.28"
+        "type-graphql": "^1.1.0",
+        "typeorm": "^0.2.28",
+        "reflect-metadata": "^0.1.13"
     }
 }
