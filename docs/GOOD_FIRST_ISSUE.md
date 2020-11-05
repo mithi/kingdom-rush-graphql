@@ -27,17 +27,15 @@ cd kingdom-rush-graphql
 ## 3. Set things up
 
 ```bash
-npm install
+npm run setup
 ```
 
-After installing the required packages, running the command above will also run `npm run postinstall`
-which will do the following:
-
-1. Setup a local `.env` file
-2. Create the necessary user roles and database
-3. Run the migrations to ensure that your default database has the correct schema.
-4. Populate the database
-5. Run the tests
+1. Install the packages
+2. Setup a local `.env` file
+3. Create the necessary user roles and database
+4. Run the migrations to ensure that your default database has the correct schema.
+5. Populate the database
+6. Run the tests
 
 Submit and issue if something goes wrong.
 

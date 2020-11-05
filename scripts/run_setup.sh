@@ -1,4 +1,7 @@
-# copy .env.sample to .env
+# Install node packages
+npm install
+
+# Copy .env.sample to .env
 cp .env.sample .env;
 
 # Create databases: kingdom_rush_db, test_db, empty_test_db
