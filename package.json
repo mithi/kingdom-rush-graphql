@@ -7,14 +7,6 @@
         "node": "12.x"
     },
     "scripts": {
-        "tsc": "tsc -p tsconfig.json",
-        "start:dev": "nodemon --ignore tests -e ts --exec \"npm run compile\"",
-        "start": "node dist/index.js",
-        "build": "npm run format && npm run tsc",
-        "compile": "npm run tsc && node dist/index.js",
-        "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
-        "setup": "bash ./scripts/run_setup.sh",
-        "db:e2e": "bash ./scripts/run_end_to_end.sh",
         "db:create": "bash ./scripts/run_db_create.sh",
         "db:migrate": "rm -rf ./dist/migrations && npm run tsc && typeorm migration:run && npm run db:migrate-test;",
         "db:migrate-test": "ts-node ./node_modules/typeorm/cli.js migration:run -c \"test\"",
@@ -22,6 +14,13 @@
         "db:reset-data": "bash ./scripts/run_reset_data.sh",
         "db:seed-json": "npm run tsc && node dist/seed/populate.js",
         "db:drop": "bash ./scripts/run_db_cleanup.sh",
+        "postinstall": "bash ./scripts/run_setup.sh",
+        "tsc": "tsc -p tsconfig.json",
+        "build": "npm run format && npm run tsc",
+        "compile": "npm run tsc && node dist/index.js",
+        "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
+        "start:dev": "nodemon --ignore tests -e ts --exec \"npm run compile\"",
+        "start": "node dist/index.js",
         "test:resolver": "jest --testPathPattern=tests/resolvers --verbose",
         "test": "jest --verbose"
     },
