@@ -3,10 +3,14 @@
     "version": "0.0.0",
     "description": "Simply get Kingdom Rush Tower information through queries in GraphQL",
     "main": "dist/index.js",
+    "engines": {
+        "node": "12.x"
+    },
     "scripts": {
         "tsc": "tsc -p tsconfig.json",
-        "start": "nodemon --ignore tests -e ts --exec \"npm run compile\"",
-        "build": "npm run format && npm run compile",
+        "start:dev": "nodemon --ignore tests -e ts --exec \"npm run compile\"",
+        "start": "node dist/index.js",
+        "build": "npm run format && npm run tsc",
         "compile": "npm run tsc && node dist/index.js",
         "format": "prettier --config ./.prettierrc.yaml --write ./src/*.ts",
         "setup": "bash ./scripts/run_setup.sh",
