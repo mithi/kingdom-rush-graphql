@@ -3,7 +3,7 @@ module.exports = [
     {
         name: "default",
         type: "postgres",
-        url: `${process.env.DB_DEFAULT_URL}`,
+        url: `${process.env.DATABASE_URL}`,
         entities: ["dist/models/*.js"],
         logging: false,
         synchronize: false,

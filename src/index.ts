@@ -1,3 +1,4 @@
+require("dotenv").config()
 import "reflect-metadata"
 import { createConnection } from "typeorm"
 import { ApolloServer } from "apollo-server"
@@ -13,8 +14,10 @@ async function main() {
         emitSchemaFile: true,
     })
     const server = new ApolloServer({ schema })
-    server.listen({ port: 4000 }, () =>
-        console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+    server.listen({ port: process.env.PORT }, () =>
+        console.log(
+            `🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`
+        )
     )
 }
 
