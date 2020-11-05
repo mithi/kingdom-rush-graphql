@@ -7,6 +7,8 @@ import { TowerResolver } from "./resolvers/TowerResolver"
 import { AbilityResolver } from "./resolvers/AbilityResolver"
 import { BuildSequenceResolver } from "./resolvers/BuildSequenceResolver"
 
+const PORT = process.env.PORT || 5000
+
 async function main() {
     await createConnection()
     const schema = await buildSchema({
@@ -14,10 +16,8 @@ async function main() {
         emitSchemaFile: true,
     })
     const server = new ApolloServer({ schema })
-    server.listen({ port: process.env.PORT }, () =>
-        console.log(
-            `🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`
-        )
+    server.listen({ port: PORT }, () =>
+        console.log(`🚀 Server ready: http://localhost:${PORT}${server.graphqlPath}`)
     )
 }
 
