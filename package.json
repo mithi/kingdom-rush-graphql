@@ -14,7 +14,7 @@
         "db:reset-data": "bash ./scripts/run_reset_data.sh",
         "db:seed-json": "npm run tsc && node dist/seed/populate.js",
         "db:drop": "bash ./scripts/run_db_cleanup.sh",
-        "postinstall": "bash ./scripts/run_setup.sh",
+        "setup": "bash ./scripts/run_setup.sh",
         "tsc": "tsc -p tsconfig.json",
         "build": "npm run format && npm run tsc",
         "compile": "npm run tsc && node dist/index.js",
