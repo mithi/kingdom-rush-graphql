@@ -14,6 +14,7 @@ KINGDOM_DIRECTORY = {
     "KRO": "kingdom rush: origins",
 }
 
+
 def get_build_sequence(tower_type, kingdom):
     path = f"./data/raw/{kingdom}/{tower_type}.yml"
     kingdom_string = KINGDOM_DIRECTORY[kingdom]
@@ -27,15 +28,13 @@ def get_build_sequence(tower_type, kingdom):
 
     name4a, name4b = tower_names[3:]
 
-    build_sequence.append({
-        "kingdom": kingdom_string,
-        "levels": tower_names[0:3] + [name4a]
-    })
+    build_sequence.append(
+        {"kingdom": kingdom_string, "levels": tower_names[0:3] + [name4a]}
+    )
 
-    build_sequence.append({
-        "kingdom": kingdom_string,
-        "levels": tower_names[0:3] + [name4b]
-    })
+    build_sequence.append(
+        {"kingdom": kingdom_string, "levels": tower_names[0:3] + [name4b]}
+    )
 
     return build_sequence
 
@@ -72,24 +71,26 @@ for path in krv_files_path:
 
     for i, tower_raw in enumerate(krv_towers_raw):
         name = tower_raw["name"].lower()
-        krv_build_sequences.append({
-            "kingdom": "kingdom rush: vengeance",
-            "levels": [
-                f"{name}, 1",
-                f"{name}, 2",
-                f"{name}, 3",
-                f"{name}, 4",
-            ]
-        })
+        krv_build_sequences.append(
+            {
+                "kingdom": "kingdom rush: vengeance",
+                "levels": [
+                    f"{name}, 1",
+                    f"{name}, 2",
+                    f"{name}, 3",
+                    f"{name}, 4",
+                ],
+            }
+        )
 
 
 build_sequences_2d.append(krv_build_sequences)
 build_sequences = [item for sublist in build_sequences_2d for item in sublist]
-data = { "buildSequences": build_sequences }
+data = {"buildSequences": build_sequences}
 
 for i, build_sequence in enumerate(build_sequences):
     print(i, build_sequence)
 
-with open("./data/generated/json/build-sequences.json", 'w') as fout:
+with open("./data/generated/json/build-sequences.json", "w") as fout:
     json_dumps_str = json.dumps(data, indent=4)
     print(json_dumps_str, file=fout)

@@ -21,6 +21,7 @@ KINGDOM_DIRECTORY = {
     "KRO": "kingdom rush: origins",
 }
 
+
 def get_attack_stats(tower_type, kingdom):
     path = f"./data/raw/{kingdom}/{tower_type}.yml"
     kingdom_string = KINGDOM_DIRECTORY[kingdom]
@@ -30,10 +31,10 @@ def get_attack_stats(tower_type, kingdom):
     for i, tower in enumerate(kr_towers):
         keys = tower.keys()
         fire_interval = 0
-        if 'fire_rate_magnitude' in keys:
+        if "fire_rate_magnitude" in keys:
             fire_interval = tower["fire_rate_magnitude"]
 
-        if 'fire_rate_in_seconds' in keys:
+        if "fire_rate_in_seconds" in keys:
             fire_interval = tower["fire_rate_in_seconds"]
 
         new_tower = {
@@ -47,6 +48,7 @@ def get_attack_stats(tower_type, kingdom):
         towers.append(new_tower)
 
     return towers
+
 
 TYPE_ARTILLERY = "artillery"
 TYPE_MAGIC = "magic"
@@ -92,11 +94,11 @@ for path in krv_files_path:
 towers2d.append(krv_towers)
 towers = [item for sublist in towers2d for item in sublist]
 
-data = { "towers": towers }
+data = {"towers": towers}
 
 for i, tower in enumerate(towers):
     print(i, tower["name"])
 
-with open("./data/generated/json/attack-stats.json", 'w') as fout:
+with open("./data/generated/json/attack-stats.json", "w") as fout:
     json_dumps_str = json.dumps(data, indent=4)
     print(json_dumps_str, file=fout)
