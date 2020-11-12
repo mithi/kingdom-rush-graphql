@@ -1,13 +1,24 @@
 require("dotenv").config()
 import "reflect-metadata"
 import { createConnection } from "typeorm"
-import { ApolloServer } from "apollo-server"
+import { ApolloServer } from "apollo-server-express"
 import { buildSchema } from "type-graphql"
 import { TowerResolver } from "./resolvers/TowerResolver"
 import { AbilityResolver } from "./resolvers/AbilityResolver"
 import { BuildSequenceResolver } from "./resolvers/BuildSequenceResolver"
+const express = require("express")
 
 const PORT = process.env.PORT || 5000
+
+const app = express()
+
+app.get("/", (_: any, response: any) => {
+    return response.redirect("https://github.com/mithi/kingdom-rush-graphql")
+})
+
+app.get("*", (_: any, response: any) => {
+    return response.redirect("https://github.com/mithi/kingdom-rush-graphql")
+})
 
 async function main() {
     await createConnection()
@@ -16,7 +27,9 @@ async function main() {
         emitSchemaFile: true,
     })
     const server = new ApolloServer({ schema })
-    server.listen({ port: PORT }, () =>
+    server.applyMiddleware({ app })
+
+    app.listen({ port: PORT }, () =>
         console.log(`🚀 Server ready: http://localhost:${PORT}${server.graphqlPath}`)
     )
 }
