@@ -16,13 +16,13 @@ data_dicts = [
     {
         "name": datum["name"].lower(),
         "kingdom": datum["kingdom"],
-        "imageUrl": datum["imageUrl"]
-    } for datum in data
+        "imageUrl": datum["imageUrl"],
+    }
+    for datum in data
 ]
 
-json_data = { "data": data_dicts }
+json_data = {"data": data_dicts}
 
-with open("./data/generated/json/image-urls.json", 'w') as fout:
+with open("./data/generated/json/image-urls.json", "w") as fout:
     json_dumps_str = json.dumps(json_data, indent=4)
     print(json_dumps_str, file=fout)
-
