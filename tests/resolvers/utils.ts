@@ -10,7 +10,7 @@ export const executeTest = async (testQuery: DocumentNode, correctAnswer: string
     const schema = await buildSchema({
         resolvers: [AbilityResolver, TowerResolver, BuildSequenceResolver],
     })
-    const { query } = createTestClient(new ApolloServer({ schema }) as any)
+    const { query } = createTestClient(new ApolloServer({ schema }))
 
     const result = await query({ query: testQuery })
     expect(result).toMatchInlineSnapshot(correctAnswer)
