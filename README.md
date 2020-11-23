@@ -6,7 +6,7 @@
 
 > Simply get Kingdom Rush Tower information through queries in GraphQL
 
-> Try it! **`post`** queries to [`kingdom-rush-graphql.herokuapp.com`](http://kingdom-rush-graphql.herokuapp.com/) with [`insomnia.rest/graphql`](https://insomnia.rest/graphql/)
+> Try it! **`post`** queries to [`kingdom-rush-graphql.herokuapp.com`](http://kingdom-rush-graphql.herokuapp.com/) with [`hoppscotch.io/graphql`](https://hoppscotch.io/graphql) or [`insomnia.rest/graphql`](https://insomnia.rest/graphql/). You can also play with it directly since the playground is also set to true. 
 
 ![Query Kingdom Rush Tower Information Insomnia](https://user-images.githubusercontent.com/1670421/98984589-5dc04500-255d-11eb-827d-5a80676d2eff.png)
 
