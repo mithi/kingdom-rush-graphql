@@ -17,9 +17,12 @@ async function main() {
     })
     const server = new ApolloServer({ schema })
 
-    server.listen({ port: PORT }).then(({ url }) => {
-        console.log(`🚀 Server ready at ${url}`)
-    })
+    server
+        .listen({ port: PORT })
+        .then(({ url }) => {
+            console.log(`🚀 Server ready at ${url}`)
+        })
+        .catch(error => console.log(error))
 }
 
 main()
