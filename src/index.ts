@@ -15,7 +15,7 @@ async function main() {
         resolvers: [TowerResolver, AbilityResolver, BuildSequenceResolver],
         emitSchemaFile: true,
     })
-    const server = new ApolloServer({ schema })
+    const server = new ApolloServer({ schema, introspection: true, playground: true })
 
     server
         .listen({ port: PORT })
