@@ -16,9 +16,10 @@ async function main() {
         emitSchemaFile: true,
     })
     const server = new ApolloServer({ schema })
-    server.listen({ port: PORT }, () =>
-        console.log(`🚀 Server ready: http://localhost:${PORT}${server.graphqlPath}`)
-    )
+
+    server.listen({ port: PORT }).then(({ url }) => {
+        console.log(`🚀 Server ready at ${url}`)
+    })
 }
 
 main()
